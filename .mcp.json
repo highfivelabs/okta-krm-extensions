@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "okta-krm": {
+      "command": "go",
+      "args": ["run", "./cmd/mcp"]
+    }
+  }
+}
