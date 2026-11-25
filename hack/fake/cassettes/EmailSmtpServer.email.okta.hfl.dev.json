@@ -1,0 +1,106 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "agaApp": 280000003,
+    "agaGroup": 280000004,
+    "ascAS": 280000013,
+    "aspAS": 280000015,
+    "asrAS": 280000017,
+    "asrGroup": 280000019,
+    "asrPolicy": 280000018,
+    "assAS": 280000011,
+    "auApp": 280000006,
+    "auUser": 280000007,
+    "cspBrand": 280000021,
+    "edBrand": 280000025,
+    "orgId": 280000001,
+    "prGroup": 280000010,
+    "prPolicy": 280000009,
+    "pspBrand": 280000022,
+    "rsGroup": 280000002,
+    "thBrand": 280000023,
+    "thTheme": "rehearsal-thTheme"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/email-servers",
+      "body": "{\"alias\":\"{{name}}\",\"enabled\":false,\"host\":\"www.example.com\",\"password\":\"{{redacted}}\",\"port\":587,\"username\":\"hfl-live\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"{{name}}\",\"enabled\":false,\"host\":\"www.example.com\",\"id\":270000021,\"port\":587,\"username\":\"hfl-live\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/email-servers/270000021",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"{{name}}\",\"enabled\":false,\"host\":\"www.example.com\",\"id\":270000021,\"port\":587,\"username\":\"hfl-live\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/email-servers/270000021",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"{{name}}\",\"enabled\":false,\"host\":\"www.example.com\",\"id\":270000021,\"port\":587,\"username\":\"hfl-live\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/email-servers/270000021",
+      "body": "{\"alias\":\"{{name}}-2\",\"enabled\":false,\"host\":\"www.example.com\",\"password\":\"{{redacted}}\",\"port\":587,\"username\":\"hfl-live\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"{{name}}-2\",\"enabled\":false,\"host\":\"www.example.com\",\"id\":270000021,\"port\":587,\"username\":\"hfl-live\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/email-servers/270000021",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"{{name}}-2\",\"enabled\":false,\"host\":\"www.example.com\",\"id\":270000021,\"port\":587,\"username\":\"hfl-live\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/email-servers/270000021",
+      "body": "{\"alias\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"hfl-live-drift\",\"enabled\":false,\"host\":\"www.example.com\",\"id\":270000021,\"port\":587,\"username\":\"hfl-live\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/email-servers/270000021",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"hfl-live-drift\",\"enabled\":false,\"host\":\"www.example.com\",\"id\":270000021,\"port\":587,\"username\":\"hfl-live\"}\n"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/email-servers/270000021",
+      "body": "{\"alias\":\"{{name}}-2\",\"enabled\":false,\"host\":\"www.example.com\",\"password\":\"{{redacted}}\",\"port\":587,\"username\":\"hfl-live\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"{{name}}-2\",\"enabled\":false,\"host\":\"www.example.com\",\"id\":270000021,\"port\":587,\"username\":\"hfl-live\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/email-servers/270000021",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"{{name}}-2\",\"enabled\":false,\"host\":\"www.example.com\",\"id\":270000021,\"port\":587,\"username\":\"hfl-live\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/email-servers/270000021",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/email-servers/270000021",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

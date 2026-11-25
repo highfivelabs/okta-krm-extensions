@@ -1,0 +1,106 @@
+{
+  "recorded": "2026-11-20T23:57:40Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "ascAS": "aus1a5d5lco5hVnpo698",
+    "aspAS": "aus1a5d7xao0ETI8w698",
+    "asrAS": "aus1a5d92wqVRei1R698",
+    "asrGroup": "00g1a5d79iaCH1Z7n698",
+    "asrPolicy": "00p1a5d7zs3Jr87U8698",
+    "assAS": "aus1a5d7849QKfQlb698",
+    "auApp": "0oa1a5d5vh1J50WFa698",
+    "auUser": "00u1a5d75s3uKgUNV698",
+    "cspBrand": "bnd1a5d2wkvwx3YqE698",
+    "edBrand": "bnd1a5d85vaNOwFus698",
+    "orgId": "{{redacted}}",
+    "prGroup": "00g1a5d7103FF3HnP698",
+    "prPolicy": "rst1a5d85sx0UeqpU698",
+    "pspBrand": "bnd1a5d240aLpp4zT698",
+    "rsGroup": "00g1a5d7plc3tGO1v698",
+    "thBrand": "bnd1a5d5sixEbT59w698",
+    "thTheme": "the1a5d5siyxEFQOz698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/email-servers",
+      "body": "{\"alias\":\"{{name}}\",\"enabled\":false,\"host\":\"www.example.com\",\"password\":\"{{redacted}}\",\"port\":587,\"username\":\"hfl-live\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"{{name}}\",\"host\":\"www.example.com\",\"port\":587,\"id\":\"ces1a5d6zewofr93J698\",\"username\":\"hfl-live\",\"enabled\":false,\"authType\":\"BASIC_SMTP_AUTH\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/email-servers/ces1a5d6zewofr93J698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"{{name}}\",\"host\":\"www.example.com\",\"port\":587,\"id\":\"ces1a5d6zewofr93J698\",\"username\":\"hfl-live\",\"enabled\":false,\"authType\":\"BASIC_SMTP_AUTH\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/email-servers/ces1a5d6zewofr93J698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"{{name}}\",\"host\":\"www.example.com\",\"port\":587,\"id\":\"ces1a5d6zewofr93J698\",\"username\":\"hfl-live\",\"enabled\":false,\"authType\":\"BASIC_SMTP_AUTH\"}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/email-servers/ces1a5d6zewofr93J698",
+      "body": "{\"alias\":\"{{name}}-2\",\"enabled\":false,\"host\":\"www.example.com\",\"password\":\"{{redacted}}\",\"port\":587,\"username\":\"hfl-live\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"{{name}}-2\",\"host\":\"www.example.com\",\"port\":587,\"id\":\"ces1a5d6zewofr93J698\",\"username\":\"hfl-live\",\"enabled\":false,\"authType\":\"BASIC_SMTP_AUTH\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/email-servers/ces1a5d6zewofr93J698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"{{name}}-2\",\"host\":\"www.example.com\",\"port\":587,\"id\":\"ces1a5d6zewofr93J698\",\"username\":\"hfl-live\",\"enabled\":false,\"authType\":\"BASIC_SMTP_AUTH\"}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/email-servers/ces1a5d6zewofr93J698",
+      "body": "{\"alias\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"hfl-live-drift\",\"host\":\"www.example.com\",\"port\":587,\"id\":\"ces1a5d6zewofr93J698\",\"username\":\"hfl-live\",\"enabled\":false,\"authType\":\"BASIC_SMTP_AUTH\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/email-servers/ces1a5d6zewofr93J698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"hfl-live-drift\",\"host\":\"www.example.com\",\"port\":587,\"id\":\"ces1a5d6zewofr93J698\",\"username\":\"hfl-live\",\"enabled\":false,\"authType\":\"BASIC_SMTP_AUTH\"}"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/email-servers/ces1a5d6zewofr93J698",
+      "body": "{\"alias\":\"{{name}}-2\",\"enabled\":false,\"host\":\"www.example.com\",\"password\":\"{{redacted}}\",\"port\":587,\"username\":\"hfl-live\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"{{name}}-2\",\"host\":\"www.example.com\",\"port\":587,\"id\":\"ces1a5d6zewofr93J698\",\"username\":\"hfl-live\",\"enabled\":false,\"authType\":\"BASIC_SMTP_AUTH\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/email-servers/ces1a5d6zewofr93J698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alias\":\"{{name}}-2\",\"host\":\"www.example.com\",\"port\":587,\"id\":\"ces1a5d6zewofr93J698\",\"username\":\"hfl-live\",\"enabled\":false,\"authType\":\"BASIC_SMTP_AUTH\"}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/email-servers/ces1a5d6zewofr93J698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/email-servers/ces1a5d6zewofr93J698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: ces1a5d6zewofr93J698 (EmailSMTPServer)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaewnIGjScKSn2wk0HR5vmZ9A\",\"errorCauses\":[]}"
+    }
+  ]
+}

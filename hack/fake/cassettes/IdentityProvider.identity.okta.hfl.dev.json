@@ -1,0 +1,122 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "agaApp": 280000003,
+    "agaGroup": 280000004,
+    "ascAS": 280000013,
+    "aspAS": 280000015,
+    "asrAS": 280000017,
+    "asrGroup": 280000019,
+    "asrPolicy": 280000018,
+    "assAS": 280000011,
+    "auApp": 280000006,
+    "auUser": 280000007,
+    "cspBrand": 280000021,
+    "edBrand": 280000025,
+    "grGroup": 280000026,
+    "grlGroup": 280000027,
+    "orgId": 280000001,
+    "prGroup": 280000010,
+    "prPolicy": 280000009,
+    "pspBrand": 280000022,
+    "rsGroup": 280000002,
+    "thBrand": 280000023,
+    "thTheme": "rehearsal-thTheme"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/idps",
+      "body": "{\"issuerMode\":\"ORG_URL\",\"name\":\"{{name}}\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\"},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}}},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"type\":\"GOOGLE\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"created\":\"2016-01-03T18:15:47Z\",\"id\":270000026,\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2016-01-03T18:15:47Z\",\"name\":\"{{name}}\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\"},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}}},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/idps/270000026",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created\":\"2016-01-03T18:15:47Z\",\"id\":270000026,\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2016-01-03T18:15:47Z\",\"name\":\"{{name}}\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\"},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}}},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/idps/270000026",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created\":\"2016-01-03T18:15:47Z\",\"id\":270000026,\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2016-01-03T18:15:47Z\",\"name\":\"{{name}}\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\"},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}}},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/idps/270000026",
+      "body": "{\"issuerMode\":\"ORG_URL\",\"name\":\"{{name}}-2\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\"},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}}},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"type\":\"GOOGLE\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created\":\"2016-01-03T18:15:47Z\",\"id\":270000026,\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2016-01-03T18:15:47Z\",\"name\":\"{{name}}-2\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\"},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}}},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/idps/270000026",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created\":\"2016-01-03T18:15:47Z\",\"id\":270000026,\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2016-01-03T18:15:47Z\",\"name\":\"{{name}}-2\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\"},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}}},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/idps/270000026",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created\":\"2016-01-03T18:15:47Z\",\"id\":270000026,\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2016-01-03T18:15:47Z\",\"name\":\"{{name}}-2\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\"},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}}},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/idps/270000026",
+      "body": "{\"created\":\"2016-01-03T18:15:47Z\",\"id\":270000026,\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2016-01-03T18:15:47Z\",\"name\":\"hfl-live-drift\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\"},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}}},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"type\":\"GOOGLE\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created\":\"2016-01-03T18:15:47Z\",\"id\":270000026,\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2016-01-03T18:15:47Z\",\"name\":\"hfl-live-drift\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\"},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}}},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/idps/270000026",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created\":\"2016-01-03T18:15:47Z\",\"id\":270000026,\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2016-01-03T18:15:47Z\",\"name\":\"hfl-live-drift\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\"},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}}},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/idps/270000026",
+      "body": "{\"issuerMode\":\"ORG_URL\",\"name\":\"{{name}}-2\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\"},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}}},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"type\":\"GOOGLE\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created\":\"2016-01-03T18:15:47Z\",\"id\":270000026,\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2016-01-03T18:15:47Z\",\"name\":\"{{name}}-2\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\"},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}}},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/idps/270000026",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created\":\"2016-01-03T18:15:47Z\",\"id\":270000026,\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2016-01-03T18:15:47Z\",\"name\":\"{{name}}-2\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\"},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}}},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/idps/270000026/lifecycle/deactivate",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"created\":\"2016-01-03T18:15:47Z\",\"id\":270000026,\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2016-01-03T18:15:47Z\",\"name\":\"{{name}}-2\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\"},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}}},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/idps/270000026",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/idps/270000026",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

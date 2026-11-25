@@ -1,0 +1,92 @@
+{
+  "recorded": "2026-11-20T23:56:36Z",
+  "target": "Okta Integrator org",
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/trustedOrigins",
+      "body": "{\"name\":\"{{name}}\",\"origin\":\"https://{{name}}.example.com\",\"scopes\":[{\"type\":\"CORS\"}]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"tos1a5d7r6nCWcRiw698\",\"name\":\"{{name}}\",\"origin\":\"https://{{name}}.example.com\",\"scopes\":[{\"type\":\"CORS\"}],\"status\":\"ACTIVE\",\"created\":\"2026-11-20T23:56:35.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdated\":\"2026-11-20T23:56:35.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"tos1a5d7r6nCWcRiw698\",\"name\":\"{{name}}\",\"origin\":\"https://{{name}}.example.com\",\"scopes\":[{\"type\":\"CORS\"}],\"status\":\"ACTIVE\",\"created\":\"2026-11-20T23:56:35.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdated\":\"2026-11-20T23:56:35.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"tos1a5d7r6nCWcRiw698\",\"name\":\"{{name}}\",\"origin\":\"https://{{name}}.example.com\",\"scopes\":[{\"type\":\"CORS\"}],\"status\":\"ACTIVE\",\"created\":\"2026-11-20T23:56:35.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdated\":\"2026-11-20T23:56:35.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698",
+      "body": "{\"name\":\"{{name}}-2\",\"origin\":\"https://{{name}}.example.com\",\"scopes\":[{\"type\":\"CORS\"}]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"tos1a5d7r6nCWcRiw698\",\"name\":\"{{name}}-2\",\"origin\":\"https://{{name}}.example.com\",\"scopes\":[{\"type\":\"CORS\"}],\"status\":\"ACTIVE\",\"created\":\"2026-11-20T23:56:35.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdated\":\"2026-11-20T23:56:35.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"tos1a5d7r6nCWcRiw698\",\"name\":\"{{name}}-2\",\"origin\":\"https://{{name}}.example.com\",\"scopes\":[{\"type\":\"CORS\"}],\"status\":\"ACTIVE\",\"created\":\"2026-11-20T23:56:35.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdated\":\"2026-11-20T23:56:35.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"tos1a5d7r6nCWcRiw698\",\"name\":\"{{name}}-2\",\"origin\":\"https://{{name}}.example.com\",\"scopes\":[{\"type\":\"CORS\"}],\"status\":\"ACTIVE\",\"created\":\"2026-11-20T23:56:35.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdated\":\"2026-11-20T23:56:35.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698",
+      "body": "{\"_links\":{\"deactivate\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698/lifecycle/deactivate\"},\"self\":{\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]},\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698\"}},\"created\":\"2026-11-20T23:56:35.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"id\":\"tos1a5d7r6nCWcRiw698\",\"lastUpdated\":\"2026-11-20T23:56:35.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"name\":\"hfl-live-drift\",\"origin\":\"https://{{name}}.example.com\",\"scopes\":[{\"type\":\"CORS\"}],\"status\":\"ACTIVE\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"tos1a5d7r6nCWcRiw698\",\"name\":\"hfl-live-drift\",\"origin\":\"https://{{name}}.example.com\",\"scopes\":[{\"type\":\"CORS\"}],\"status\":\"ACTIVE\",\"created\":\"2026-11-20T23:56:35.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdated\":\"2026-11-20T23:56:36.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"tos1a5d7r6nCWcRiw698\",\"name\":\"hfl-live-drift\",\"origin\":\"https://{{name}}.example.com\",\"scopes\":[{\"type\":\"CORS\"}],\"status\":\"ACTIVE\",\"created\":\"2026-11-20T23:56:35.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdated\":\"2026-11-20T23:56:36.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698",
+      "body": "{\"name\":\"{{name}}-2\",\"origin\":\"https://{{name}}.example.com\",\"scopes\":[{\"type\":\"CORS\"}]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"tos1a5d7r6nCWcRiw698\",\"name\":\"{{name}}-2\",\"origin\":\"https://{{name}}.example.com\",\"scopes\":[{\"type\":\"CORS\"}],\"status\":\"ACTIVE\",\"created\":\"2026-11-20T23:56:35.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdated\":\"2026-11-20T23:56:36.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"tos1a5d7r6nCWcRiw698\",\"name\":\"{{name}}-2\",\"origin\":\"https://{{name}}.example.com\",\"scopes\":[{\"type\":\"CORS\"}],\"status\":\"ACTIVE\",\"created\":\"2026-11-20T23:56:35.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdated\":\"2026-11-20T23:56:36.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/trustedOrigins/tos1a5d7r6nCWcRiw698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: tos1a5d7r6nCWcRiw698 (TrustedOrigin)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaeI7i_L223Rruxqlewj3Wang\",\"errorCauses\":[]}"
+    }
+  ]
+}

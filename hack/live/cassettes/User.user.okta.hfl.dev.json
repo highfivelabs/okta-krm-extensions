@@ -1,0 +1,118 @@
+{
+  "recorded": "2026-11-20T23:58:12Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "afcApp": "0oa1a5d6fq1GlNShb698",
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "ascAS": "aus1a5d5lco5hVnpo698",
+    "aspAS": "aus1a5d7xao0ETI8w698",
+    "asrAS": "aus1a5d92wqVRei1R698",
+    "asrGroup": "00g1a5d79iaCH1Z7n698",
+    "asrPolicy": "00p1a5d7zs3Jr87U8698",
+    "assAS": "aus1a5d7849QKfQlb698",
+    "auApp": "0oa1a5d5vh1J50WFa698",
+    "auUser": "00u1a5d75s3uKgUNV698",
+    "cspBrand": "bnd1a5d2wkvwx3YqE698",
+    "edBrand": "bnd1a5d85vaNOwFus698",
+    "fUser": "00u1a5dao0q9MOeI7698",
+    "grGroup": "00g1a5d5vk6BBV0aa698",
+    "grlGroup": "00g1a5d9xr5pJ4Mq6698",
+    "orgId": "{{redacted}}",
+    "prGroup": "00g1a5d7103FF3HnP698",
+    "prPolicy": "rst1a5d85sx0UeqpU698",
+    "pspBrand": "bnd1a5d240aLpp4zT698",
+    "rsGroup": "00g1a5d7plc3tGO1v698",
+    "thBrand": "bnd1a5d5sixEbT59w698",
+    "thTheme": "the1a5d5siyxEFQOz698",
+    "uarUser": "00u1a5dalm7wDjAI7698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/users?activate=false",
+      "body": "{\"profile\":{\"email\":\"{{name}}@example.com\",\"firstName\":\"hfl\",\"lastName\":\"first\",\"login\":\"{{name}}@example.com\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00u1a5d2u9dY5Oiiy698\",\"status\":\"STAGED\",\"created\":\"2026-11-20T23:58:10.000Z\",\"activated\":null,\"statusChanged\":null,\"lastLogin\":null,\"lastUpdated\":\"2026-11-20T23:58:10.000Z\",\"passwordChanged\":null,\"type\":{\"id\":\"oty19y29nyfuxEes6698\"},\"profile\":{\"firstName\":\"hfl\",\"lastName\":\"first\",\"mobilePhone\":null,\"secondEmail\":null,\"login\":\"{{name}}@example.com\",\"email\":\"{{name}}@example.com\"},\"credentials\":{\"provider\":{\"type\":\"OKTA\",\"name\":\"OKTA\"}},\"_links\":{\"schema\":{\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc19y29nyfuxEes6698\"},\"activate\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698/lifecycle/activate\",\"method\":\"POST\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698\"},\"resetFactors\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698/lifecycle/reset_factors\",\"method\":\"POST\"},\"type\":{\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty19y29nyfuxEes6698\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/00u1a5d2u9dY5Oiiy698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00u1a5d2u9dY5Oiiy698\",\"status\":\"STAGED\",\"created\":\"2026-11-20T23:58:10.000Z\",\"activated\":null,\"statusChanged\":null,\"lastLogin\":null,\"lastUpdated\":\"2026-11-20T23:58:10.000Z\",\"passwordChanged\":null,\"type\":{\"id\":\"oty19y29nyfuxEes6698\"},\"profile\":{\"firstName\":\"hfl\",\"lastName\":\"first\",\"mobilePhone\":null,\"secondEmail\":null,\"login\":\"{{name}}@example.com\",\"email\":\"{{name}}@example.com\"},\"credentials\":{\"provider\":{\"type\":\"OKTA\",\"name\":\"OKTA\"}},\"_links\":{\"schema\":{\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc19y29nyfuxEes6698\"},\"activate\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698/lifecycle/activate\",\"method\":\"POST\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698\"},\"resetFactors\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698/lifecycle/reset_factors\",\"method\":\"POST\"},\"type\":{\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty19y29nyfuxEes6698\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/00u1a5d2u9dY5Oiiy698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00u1a5d2u9dY5Oiiy698\",\"status\":\"STAGED\",\"created\":\"2026-11-20T23:58:10.000Z\",\"activated\":null,\"statusChanged\":null,\"lastLogin\":null,\"lastUpdated\":\"2026-11-20T23:58:10.000Z\",\"passwordChanged\":null,\"type\":{\"id\":\"oty19y29nyfuxEes6698\"},\"profile\":{\"firstName\":\"hfl\",\"lastName\":\"first\",\"mobilePhone\":null,\"secondEmail\":null,\"login\":\"{{name}}@example.com\",\"email\":\"{{name}}@example.com\"},\"credentials\":{\"provider\":{\"type\":\"OKTA\",\"name\":\"OKTA\"}},\"_links\":{\"schema\":{\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc19y29nyfuxEes6698\"},\"activate\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698/lifecycle/activate\",\"method\":\"POST\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698\"},\"resetFactors\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698/lifecycle/reset_factors\",\"method\":\"POST\"},\"type\":{\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty19y29nyfuxEes6698\"}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/users/00u1a5d2u9dY5Oiiy698",
+      "body": "{\"profile\":{\"email\":\"{{name}}@example.com\",\"firstName\":\"hfl\",\"lastName\":\"second\",\"login\":\"{{name}}@example.com\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00u1a5d2u9dY5Oiiy698\",\"status\":\"STAGED\",\"created\":\"2026-11-20T23:58:10.000Z\",\"activated\":null,\"statusChanged\":null,\"lastLogin\":null,\"lastUpdated\":\"2026-11-20T23:58:11.000Z\",\"passwordChanged\":null,\"type\":{\"id\":\"oty19y29nyfuxEes6698\"},\"profile\":{\"firstName\":\"hfl\",\"lastName\":\"second\",\"mobilePhone\":null,\"secondEmail\":null,\"login\":\"{{name}}@example.com\",\"email\":\"{{name}}@example.com\"},\"credentials\":{\"provider\":{\"type\":\"OKTA\",\"name\":\"OKTA\"}},\"_links\":{\"schema\":{\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc19y29nyfuxEes6698\"},\"activate\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698/lifecycle/activate\",\"method\":\"POST\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698\"},\"resetFactors\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698/lifecycle/reset_factors\",\"method\":\"POST\"},\"type\":{\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty19y29nyfuxEes6698\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/00u1a5d2u9dY5Oiiy698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00u1a5d2u9dY5Oiiy698\",\"status\":\"STAGED\",\"created\":\"2026-11-20T23:58:10.000Z\",\"activated\":null,\"statusChanged\":null,\"lastLogin\":null,\"lastUpdated\":\"2026-11-20T23:58:11.000Z\",\"passwordChanged\":null,\"type\":{\"id\":\"oty19y29nyfuxEes6698\"},\"profile\":{\"firstName\":\"hfl\",\"lastName\":\"second\",\"mobilePhone\":null,\"secondEmail\":null,\"login\":\"{{name}}@example.com\",\"email\":\"{{name}}@example.com\"},\"credentials\":{\"provider\":{\"type\":\"OKTA\",\"name\":\"OKTA\"}},\"_links\":{\"schema\":{\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc19y29nyfuxEes6698\"},\"activate\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698/lifecycle/activate\",\"method\":\"POST\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698\"},\"resetFactors\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698/lifecycle/reset_factors\",\"method\":\"POST\"},\"type\":{\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty19y29nyfuxEes6698\"}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/users/00u1a5d2u9dY5Oiiy698",
+      "body": "{\"profile\":{\"email\":\"{{name}}@example.com\",\"firstName\":\"hfl\",\"lastName\":\"drift\",\"login\":\"{{name}}@example.com\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00u1a5d2u9dY5Oiiy698\",\"status\":\"STAGED\",\"created\":\"2026-11-20T23:58:10.000Z\",\"activated\":null,\"statusChanged\":null,\"lastLogin\":null,\"lastUpdated\":\"2026-11-20T23:58:11.000Z\",\"passwordChanged\":null,\"type\":{\"id\":\"oty19y29nyfuxEes6698\"},\"profile\":{\"firstName\":\"hfl\",\"lastName\":\"drift\",\"mobilePhone\":null,\"secondEmail\":null,\"login\":\"{{name}}@example.com\",\"email\":\"{{name}}@example.com\"},\"credentials\":{\"provider\":{\"type\":\"OKTA\",\"name\":\"OKTA\"}},\"_links\":{\"schema\":{\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc19y29nyfuxEes6698\"},\"activate\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698/lifecycle/activate\",\"method\":\"POST\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698\"},\"resetFactors\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698/lifecycle/reset_factors\",\"method\":\"POST\"},\"type\":{\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty19y29nyfuxEes6698\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/00u1a5d2u9dY5Oiiy698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00u1a5d2u9dY5Oiiy698\",\"status\":\"STAGED\",\"created\":\"2026-11-20T23:58:10.000Z\",\"activated\":null,\"statusChanged\":null,\"lastLogin\":null,\"lastUpdated\":\"2026-11-20T23:58:11.000Z\",\"passwordChanged\":null,\"type\":{\"id\":\"oty19y29nyfuxEes6698\"},\"profile\":{\"firstName\":\"hfl\",\"lastName\":\"drift\",\"mobilePhone\":null,\"secondEmail\":null,\"login\":\"{{name}}@example.com\",\"email\":\"{{name}}@example.com\"},\"credentials\":{\"provider\":{\"type\":\"OKTA\",\"name\":\"OKTA\"}},\"_links\":{\"schema\":{\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc19y29nyfuxEes6698\"},\"activate\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698/lifecycle/activate\",\"method\":\"POST\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698\"},\"resetFactors\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698/lifecycle/reset_factors\",\"method\":\"POST\"},\"type\":{\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty19y29nyfuxEes6698\"}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/users/00u1a5d2u9dY5Oiiy698",
+      "body": "{\"profile\":{\"email\":\"{{name}}@example.com\",\"firstName\":\"hfl\",\"lastName\":\"second\",\"login\":\"{{name}}@example.com\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00u1a5d2u9dY5Oiiy698\",\"status\":\"STAGED\",\"created\":\"2026-11-20T23:58:10.000Z\",\"activated\":null,\"statusChanged\":null,\"lastLogin\":null,\"lastUpdated\":\"2026-11-20T23:58:11.000Z\",\"passwordChanged\":null,\"type\":{\"id\":\"oty19y29nyfuxEes6698\"},\"profile\":{\"firstName\":\"hfl\",\"lastName\":\"second\",\"mobilePhone\":null,\"secondEmail\":null,\"login\":\"{{name}}@example.com\",\"email\":\"{{name}}@example.com\"},\"credentials\":{\"provider\":{\"type\":\"OKTA\",\"name\":\"OKTA\"}},\"_links\":{\"schema\":{\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc19y29nyfuxEes6698\"},\"activate\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698/lifecycle/activate\",\"method\":\"POST\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698\"},\"resetFactors\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698/lifecycle/reset_factors\",\"method\":\"POST\"},\"type\":{\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty19y29nyfuxEes6698\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/00u1a5d2u9dY5Oiiy698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00u1a5d2u9dY5Oiiy698\",\"status\":\"STAGED\",\"created\":\"2026-11-20T23:58:10.000Z\",\"activated\":null,\"statusChanged\":null,\"lastLogin\":null,\"lastUpdated\":\"2026-11-20T23:58:11.000Z\",\"passwordChanged\":null,\"type\":{\"id\":\"oty19y29nyfuxEes6698\"},\"profile\":{\"firstName\":\"hfl\",\"lastName\":\"second\",\"mobilePhone\":null,\"secondEmail\":null,\"login\":\"{{name}}@example.com\",\"email\":\"{{name}}@example.com\"},\"credentials\":{\"provider\":{\"type\":\"OKTA\",\"name\":\"OKTA\"}},\"_links\":{\"schema\":{\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc19y29nyfuxEes6698\"},\"activate\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698/lifecycle/activate\",\"method\":\"POST\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698\"},\"resetFactors\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d2u9dY5Oiiy698/lifecycle/reset_factors\",\"method\":\"POST\"},\"type\":{\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty19y29nyfuxEes6698\"}}}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/users/00u1a5d2u9dY5Oiiy698/lifecycle/deactivate",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/users/00u1a5d2u9dY5Oiiy698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/00u1a5d2u9dY5Oiiy698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: 00u1a5d2u9dY5Oiiy698 (User)\",\"errorLink\":\"E0000007\",\"errorId\":\"oae5sGgg-GaSyGCVzDJVrCKkg\",\"errorCauses\":[]}"
+    }
+  ]
+}

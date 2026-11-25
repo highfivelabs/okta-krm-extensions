@@ -1,0 +1,149 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "agaApp": 280000003,
+    "agaGroup": 280000004,
+    "ascAS": 280000013,
+    "aspAS": 280000015,
+    "asrAS": 280000017,
+    "asrGroup": 280000019,
+    "asrPolicy": 280000018,
+    "assAS": 280000011,
+    "auApp": 280000006,
+    "auUser": 280000007,
+    "orgId": 280000001,
+    "prGroup": 280000010,
+    "prPolicy": 280000009,
+    "rsGroup": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/authorizationServers",
+      "body": "{\"audiences\":[\"api://{{name}}\"],\"description\":\"hfl-live\",\"name\":\"{{name}}-as\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"audiences\":[\"api://{{name}}\"],\"description\":\"hfl-live\",\"id\":280000017,\"name\":\"{{name}}-as\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/authorizationServers/280000017/policies",
+      "body": "{\"conditions\":{\"clients\":{\"include\":[\"ALL_CLIENTS\"]}},\"description\":\"hfl-live\",\"name\":\"{{name}}-p\",\"priority\":1,\"type\":\"OAUTH_AUTHORIZATION_POLICY\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"conditions\":{\"clients\":{\"include\":[\"ALL_CLIENTS\"]}},\"description\":\"hfl-live\",\"id\":280000018,\"name\":\"{{name}}-p\",\"priority\":1,\"type\":\"OAUTH_AUTHORIZATION_POLICY\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/groups",
+      "body": "{\"profile\":{\"name\":\"{{name}}-g\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000019,\"profile\":{\"name\":\"{{name}}-g\"}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/authorizationServers/280000017/policies/280000018/rules",
+      "body": "{\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"conditions\":{\"grantTypes\":{\"include\":[\"client_credentials\"]},\"people\":{\"groups\":{\"include\":[280000019]}},\"scopes\":{\"include\":[\"*\"]}},\"name\":\"{{name}}\",\"priority\":1,\"type\":\"RESOURCE_ACCESS\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"conditions\":{\"grantTypes\":{\"include\":[\"client_credentials\"]},\"people\":{\"groups\":{\"include\":[280000019]}},\"scopes\":{\"include\":[\"*\"]}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000015,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}\",\"priority\":1,\"type\":\"RESOURCE_ACCESS\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/280000017/policies/280000018/rules/270000015",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"conditions\":{\"grantTypes\":{\"include\":[\"client_credentials\"]},\"people\":{\"groups\":{\"include\":[280000019]}},\"scopes\":{\"include\":[\"*\"]}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000015,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}\",\"priority\":1,\"type\":\"RESOURCE_ACCESS\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/280000017/policies/280000018/rules/270000015",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"conditions\":{\"grantTypes\":{\"include\":[\"client_credentials\"]},\"people\":{\"groups\":{\"include\":[280000019]}},\"scopes\":{\"include\":[\"*\"]}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000015,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}\",\"priority\":1,\"type\":\"RESOURCE_ACCESS\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/authorizationServers/280000017/policies/280000018/rules/270000015",
+      "body": "{\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"conditions\":{\"grantTypes\":{\"include\":[\"client_credentials\"]},\"people\":{\"groups\":{\"include\":[280000019]}},\"scopes\":{\"include\":[\"*\"]}},\"name\":\"{{name}}-2\",\"priority\":1,\"type\":\"RESOURCE_ACCESS\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"conditions\":{\"grantTypes\":{\"include\":[\"client_credentials\"]},\"people\":{\"groups\":{\"include\":[280000019]}},\"scopes\":{\"include\":[\"*\"]}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000015,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}-2\",\"priority\":1,\"type\":\"RESOURCE_ACCESS\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/280000017/policies/280000018/rules/270000015",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"conditions\":{\"grantTypes\":{\"include\":[\"client_credentials\"]},\"people\":{\"groups\":{\"include\":[280000019]}},\"scopes\":{\"include\":[\"*\"]}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000015,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}-2\",\"priority\":1,\"type\":\"RESOURCE_ACCESS\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/280000017/policies/280000018/rules/270000015",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"conditions\":{\"grantTypes\":{\"include\":[\"client_credentials\"]},\"people\":{\"groups\":{\"include\":[280000019]}},\"scopes\":{\"include\":[\"*\"]}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000015,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}-2\",\"priority\":1,\"type\":\"RESOURCE_ACCESS\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/authorizationServers/280000017/policies/280000018/rules/270000015",
+      "body": "{\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"conditions\":{\"grantTypes\":{\"include\":[\"client_credentials\"]},\"people\":{\"groups\":{\"include\":[280000019]}},\"scopes\":{\"include\":[\"*\"]}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000015,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"hfl-live-drift\",\"priority\":1,\"type\":\"RESOURCE_ACCESS\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"conditions\":{\"grantTypes\":{\"include\":[\"client_credentials\"]},\"people\":{\"groups\":{\"include\":[280000019]}},\"scopes\":{\"include\":[\"*\"]}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000015,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"hfl-live-drift\",\"priority\":1,\"type\":\"RESOURCE_ACCESS\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/280000017/policies/280000018/rules/270000015",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"conditions\":{\"grantTypes\":{\"include\":[\"client_credentials\"]},\"people\":{\"groups\":{\"include\":[280000019]}},\"scopes\":{\"include\":[\"*\"]}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000015,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"hfl-live-drift\",\"priority\":1,\"type\":\"RESOURCE_ACCESS\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/authorizationServers/280000017/policies/280000018/rules/270000015",
+      "body": "{\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"conditions\":{\"grantTypes\":{\"include\":[\"client_credentials\"]},\"people\":{\"groups\":{\"include\":[280000019]}},\"scopes\":{\"include\":[\"*\"]}},\"name\":\"{{name}}-2\",\"priority\":1,\"type\":\"RESOURCE_ACCESS\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"conditions\":{\"grantTypes\":{\"include\":[\"client_credentials\"]},\"people\":{\"groups\":{\"include\":[280000019]}},\"scopes\":{\"include\":[\"*\"]}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000015,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}-2\",\"priority\":1,\"type\":\"RESOURCE_ACCESS\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/280000017/policies/280000018/rules/270000015",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"conditions\":{\"grantTypes\":{\"include\":[\"client_credentials\"]},\"people\":{\"groups\":{\"include\":[280000019]}},\"scopes\":{\"include\":[\"*\"]}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000015,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}-2\",\"priority\":1,\"type\":\"RESOURCE_ACCESS\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/authorizationServers/280000017/policies/280000018/rules/270000015",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/280000017/policies/280000018/rules/270000015",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/authorizationServers/280000017/lifecycle/deactivate",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000020}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/authorizationServers/280000017",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/groups/280000019",
+      "status": 204
+    }
+  ]
+}

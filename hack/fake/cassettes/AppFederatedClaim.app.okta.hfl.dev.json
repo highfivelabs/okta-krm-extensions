@@ -1,0 +1,138 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "afcApp": 280000030,
+    "agaApp": 280000003,
+    "agaGroup": 280000004,
+    "ascAS": 280000013,
+    "aspAS": 280000015,
+    "asrAS": 280000017,
+    "asrGroup": 280000019,
+    "asrPolicy": 280000018,
+    "assAS": 280000011,
+    "auApp": 280000006,
+    "auUser": 280000007,
+    "cspBrand": 280000021,
+    "edBrand": 280000025,
+    "fUser": 280000029,
+    "grGroup": 280000026,
+    "grlGroup": 280000027,
+    "orgId": 280000001,
+    "prGroup": 280000010,
+    "prPolicy": 280000009,
+    "pspBrand": 280000022,
+    "rsGroup": 280000002,
+    "thBrand": 280000023,
+    "thTheme": "rehearsal-thTheme",
+    "uarUser": 280000028
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/apps",
+      "body": "{\"credentials\":{\"oauthClient\":{\"token_endpoint_auth_method\":\"client_secret_basic\"}},\"label\":\"{{name}}-app\",\"name\":\"oidc_client\",\"settings\":{\"oauthClient\":{\"application_type\":\"web\",\"grant_types\":[\"authorization_code\"],\"redirect_uris\":[\"https://www.example.com/{{name}}/cb\"],\"response_types\":[\"code\"]}},\"signOnMode\":\"OPENID_CONNECT\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"credentials\":{\"oauthClient\":{\"token_endpoint_auth_method\":\"client_secret_basic\"}},\"id\":280000030,\"label\":\"{{name}}-app\",\"name\":\"oidc_client\",\"settings\":{\"oauthClient\":{\"application_type\":\"web\",\"grant_types\":[\"authorization_code\"],\"redirect_uris\":[\"https://www.example.com/{{name}}/cb\"],\"response_types\":[\"code\"]}},\"signOnMode\":\"OPENID_CONNECT\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/apps/280000030/federated-claims",
+      "body": "{\"expression\":\"user.profile.login\",\"name\":\"{{name_}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"expression\":\"user.profile.login\",\"id\":270000034,\"name\":\"{{name_}}\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/280000030/federated-claims/270000034",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"expression\":\"user.profile.login\",\"id\":270000034,\"name\":\"{{name_}}\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/280000030/federated-claims/270000034",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"expression\":\"user.profile.login\",\"id\":270000034,\"name\":\"{{name_}}\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/apps/280000030/federated-claims/270000034",
+      "body": "{\"expression\":\"user.profile.email\",\"name\":\"{{name_}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"expression\":\"user.profile.email\",\"id\":270000034,\"name\":\"{{name_}}\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/280000030/federated-claims/270000034",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"expression\":\"user.profile.email\",\"id\":270000034,\"name\":\"{{name_}}\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/280000030/federated-claims/270000034",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"expression\":\"user.profile.email\",\"id\":270000034,\"name\":\"{{name_}}\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/apps/280000030/federated-claims/270000034",
+      "body": "{\"expression\":\"hfl-live-drift\",\"id\":270000034,\"name\":\"{{name_}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"expression\":\"hfl-live-drift\",\"id\":270000034,\"name\":\"{{name_}}\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/280000030/federated-claims/270000034",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"expression\":\"hfl-live-drift\",\"id\":270000034,\"name\":\"{{name_}}\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/apps/280000030/federated-claims/270000034",
+      "body": "{\"expression\":\"user.profile.email\",\"name\":\"{{name_}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"expression\":\"user.profile.email\",\"id\":270000034,\"name\":\"{{name_}}\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/280000030/federated-claims/270000034",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"expression\":\"user.profile.email\",\"id\":270000034,\"name\":\"{{name_}}\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/apps/280000030/federated-claims/270000034",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/280000030/federated-claims/270000034",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/apps/280000030/lifecycle/deactivate",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000031}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/apps/280000030",
+      "status": 204
+    }
+  ]
+}

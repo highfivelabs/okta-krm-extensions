@@ -1,0 +1,68 @@
+{
+  "recorded": "2026-11-20T23:57:46Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "ascAS": "aus1a5d5lco5hVnpo698",
+    "aspAS": "aus1a5d7xao0ETI8w698",
+    "asrAS": "aus1a5d92wqVRei1R698",
+    "asrGroup": "00g1a5d79iaCH1Z7n698",
+    "asrPolicy": "00p1a5d7zs3Jr87U8698",
+    "assAS": "aus1a5d7849QKfQlb698",
+    "auApp": "0oa1a5d5vh1J50WFa698",
+    "auUser": "00u1a5d75s3uKgUNV698",
+    "cspBrand": "bnd1a5d2wkvwx3YqE698",
+    "edBrand": "bnd1a5d85vaNOwFus698",
+    "grGroup": "00g1a5d5vk6BBV0aa698",
+    "orgId": "{{redacted}}",
+    "prGroup": "00g1a5d7103FF3HnP698",
+    "prPolicy": "rst1a5d85sx0UeqpU698",
+    "pspBrand": "bnd1a5d240aLpp4zT698",
+    "rsGroup": "00g1a5d7plc3tGO1v698",
+    "thBrand": "bnd1a5d5sixEbT59w698",
+    "thTheme": "the1a5d5siyxEFQOz698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/groups",
+      "body": "{\"profile\":{\"name\":\"{{name}}-g\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00g1a5d5vk6BBV0aa698\",\"created\":\"2026-11-20T23:57:45.000Z\",\"lastUpdated\":\"2026-11-20T23:57:45.000Z\",\"lastMembershipUpdated\":\"2026-11-20T23:57:45.000Z\",\"objectClass\":[\"okta:user_group\"],\"type\":\"OKTA_GROUP\",\"profile\":{\"name\":\"{{name}}-g\"},\"_links\":{\"logo\":[{\"name\":\"medium\",\"href\":\"https://ok14static.oktacdn.com/assets/img/logos/groups/odyssey/okta-medium.30ce6d4085dff29412984e4c191bc874.png\",\"type\":\"image/png\"},{\"name\":\"large\",\"href\":\"https://ok14static.oktacdn.com/assets/img/logos/groups/odyssey/okta-large.c3cb8cda8ae0add1b4fe928f5844dbe3.png\",\"type\":\"image/png\"}],\"users\":{\"href\":\"{{baseURL}}/api/v1/groups/00g1a5d5vk6BBV0aa698/users\"},\"apps\":{\"href\":\"{{baseURL}}/api/v1/groups/00g1a5d5vk6BBV0aa698/apps\"}}}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/groups/00g1a5d5vk6BBV0aa698/roles",
+      "body": "{\"type\":\"READ_ONLY_ADMIN\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"id\":\"gra1a5d79jbN3RVa5698\",\"label\":\"Read-only Administrator\",\"type\":\"READ_ONLY_ADMIN\",\"status\":\"ACTIVE\",\"created\":\"2026-11-20T23:57:46.000Z\",\"lastUpdated\":\"2026-11-20T23:57:46.000Z\",\"assignmentType\":\"GROUP\",\"_links\":{\"assignee\":{\"href\":\"{{baseURL}}/api/v1/groups/00g1a5d5vk6BBV0aa698\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/00g1a5d5vk6BBV0aa698/roles/gra1a5d79jbN3RVa5698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"gra1a5d79jbN3RVa5698\",\"label\":\"Read-only Administrator\",\"type\":\"READ_ONLY_ADMIN\",\"status\":\"ACTIVE\",\"created\":\"2026-11-20T23:57:46.000Z\",\"lastUpdated\":\"2026-11-20T23:57:46.000Z\",\"assignmentType\":\"GROUP\",\"_links\":{\"assignee\":{\"href\":\"{{baseURL}}/api/v1/groups/00g1a5d5vk6BBV0aa698\"}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/groups/00g1a5d5vk6BBV0aa698/roles/gra1a5d79jbN3RVa5698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/00g1a5d5vk6BBV0aa698/roles/gra1a5d79jbN3RVa5698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: gra1a5d79jbN3RVa5698 (GroupRoleAssignment)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaeRxfA_SS2Rj-xdazaxUBzjg\",\"errorCauses\":[]}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/groups/00g1a5d5vk6BBV0aa698",
+      "status": 204
+    }
+  ]
+}

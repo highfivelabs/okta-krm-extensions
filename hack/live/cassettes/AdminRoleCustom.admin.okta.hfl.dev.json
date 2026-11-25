@@ -1,0 +1,55 @@
+{
+  "recorded": "2026-11-20T23:56:45Z",
+  "target": "Okta Integrator org",
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/iam/roles",
+      "body": "{\"description\":\"first\",\"label\":\"{{name}}\",\"permissions\":[\"okta.users.read\"]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"cr01a5d7cikMCo1zM698\",\"label\":\"{{name}}\",\"isCloneable\":false,\"description\":\"first\",\"created\":\"2026-11-20T23:56:44.000Z\",\"lastUpdated\":\"2026-11-20T23:56:44.000Z\",\"_links\":{\"permissions\":{\"href\":\"https://{{tenant}}-admin.okta.com/api/v1/iam/roles/cr01a5d7cikMCo1zM698/permissions\"},\"self\":{\"href\":\"https://{{tenant}}-admin.okta.com/api/v1/iam/roles/cr01a5d7cikMCo1zM698\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/iam/roles/cr01a5d7cikMCo1zM698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"cr01a5d7cikMCo1zM698\",\"label\":\"{{name}}\",\"isCloneable\":false,\"description\":\"first\",\"created\":\"2026-11-20T23:56:44.000Z\",\"lastUpdated\":\"2026-11-20T23:56:44.000Z\",\"_links\":{\"permissions\":{\"href\":\"https://{{tenant}}-admin.okta.com/api/v1/iam/roles/cr01a5d7cikMCo1zM698/permissions\"},\"self\":{\"href\":\"https://{{tenant}}-admin.okta.com/api/v1/iam/roles/cr01a5d7cikMCo1zM698\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/iam/roles/cr01a5d7cikMCo1zM698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"cr01a5d7cikMCo1zM698\",\"label\":\"{{name}}\",\"isCloneable\":false,\"description\":\"first\",\"created\":\"2026-11-20T23:56:44.000Z\",\"lastUpdated\":\"2026-11-20T23:56:44.000Z\",\"_links\":{\"permissions\":{\"href\":\"https://{{tenant}}-admin.okta.com/api/v1/iam/roles/cr01a5d7cikMCo1zM698/permissions\"},\"self\":{\"href\":\"https://{{tenant}}-admin.okta.com/api/v1/iam/roles/cr01a5d7cikMCo1zM698\"}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/iam/roles/cr01a5d7cikMCo1zM698",
+      "body": "{\"description\":\"second\",\"label\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"cr01a5d7cikMCo1zM698\",\"label\":\"{{name}}\",\"isCloneable\":false,\"description\":\"second\",\"created\":\"2026-11-20T23:56:44.000Z\",\"lastUpdated\":\"2026-11-20T23:56:44.000Z\",\"_links\":{\"permissions\":{\"href\":\"https://{{tenant}}-admin.okta.com/api/v1/iam/roles/cr01a5d7cikMCo1zM698/permissions\"},\"self\":{\"href\":\"https://{{tenant}}-admin.okta.com/api/v1/iam/roles/cr01a5d7cikMCo1zM698\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/iam/roles/cr01a5d7cikMCo1zM698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"cr01a5d7cikMCo1zM698\",\"label\":\"{{name}}\",\"isCloneable\":false,\"description\":\"second\",\"created\":\"2026-11-20T23:56:44.000Z\",\"lastUpdated\":\"2026-11-20T23:56:44.000Z\",\"_links\":{\"permissions\":{\"href\":\"https://{{tenant}}-admin.okta.com/api/v1/iam/roles/cr01a5d7cikMCo1zM698/permissions\"},\"self\":{\"href\":\"https://{{tenant}}-admin.okta.com/api/v1/iam/roles/cr01a5d7cikMCo1zM698\"}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/iam/roles/cr01a5d7cikMCo1zM698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/iam/roles/cr01a5d7cikMCo1zM698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: cr01a5d7cikMCo1zM698 (CustomRole)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaec4SGSVqDSa-cc4tEFQVMEQ\",\"errorCauses\":[]}"
+    }
+  ]
+}

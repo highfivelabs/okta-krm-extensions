@@ -1,0 +1,105 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "agaApp": 280000003,
+    "agaGroup": 280000004,
+    "ascAS": 280000013,
+    "aspAS": 280000015,
+    "asrAS": 280000017,
+    "asrGroup": 280000019,
+    "asrPolicy": 280000018,
+    "assAS": 280000011,
+    "auApp": 280000006,
+    "auUser": 280000007,
+    "cspBrand": 280000021,
+    "orgId": 280000001,
+    "prGroup": 280000010,
+    "prPolicy": 280000009,
+    "pspBrand": 280000022,
+    "rsGroup": 280000002,
+    "thBrand": 280000023,
+    "thTheme": "rehearsal-thTheme"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/brands",
+      "body": "{\"name\":\"{{name}}-b\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000023,\"name\":\"{{name}}-b\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/280000023/themes",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000024}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/280000023/themes/rehearsal-thTheme",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"backgroundImage\":\"example-backgroundImage\",\"favicon\":\"example-favicon\",\"logo\":\"example-logo\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/280000023/themes/rehearsal-thTheme",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"backgroundImage\":\"example-backgroundImage\",\"favicon\":\"example-favicon\",\"logo\":\"example-logo\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/brands/280000023/themes/rehearsal-thTheme",
+      "body": "{\"emailTemplateTouchPointVariant\":\"OKTA_DEFAULT\",\"endUserDashboardTouchPointVariant\":\"OKTA_DEFAULT\",\"errorPageTouchPointVariant\":\"OKTA_DEFAULT\",\"primaryColorHex\":\"#1662dd\",\"secondaryColorHex\":\"#ebebed\",\"signInPageTouchPointVariant\":\"OKTA_DEFAULT\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"backgroundImage\":\"example-backgroundImage\",\"emailTemplateTouchPointVariant\":\"OKTA_DEFAULT\",\"endUserDashboardTouchPointVariant\":\"OKTA_DEFAULT\",\"errorPageTouchPointVariant\":\"OKTA_DEFAULT\",\"favicon\":\"example-favicon\",\"logo\":\"example-logo\",\"primaryColorHex\":\"#1662dd\",\"secondaryColorHex\":\"#ebebed\",\"signInPageTouchPointVariant\":\"OKTA_DEFAULT\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/280000023/themes/rehearsal-thTheme",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"backgroundImage\":\"example-backgroundImage\",\"emailTemplateTouchPointVariant\":\"OKTA_DEFAULT\",\"endUserDashboardTouchPointVariant\":\"OKTA_DEFAULT\",\"errorPageTouchPointVariant\":\"OKTA_DEFAULT\",\"favicon\":\"example-favicon\",\"logo\":\"example-logo\",\"primaryColorHex\":\"#1662dd\",\"secondaryColorHex\":\"#ebebed\",\"signInPageTouchPointVariant\":\"OKTA_DEFAULT\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/280000023/themes/rehearsal-thTheme",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"backgroundImage\":\"example-backgroundImage\",\"emailTemplateTouchPointVariant\":\"OKTA_DEFAULT\",\"endUserDashboardTouchPointVariant\":\"OKTA_DEFAULT\",\"errorPageTouchPointVariant\":\"OKTA_DEFAULT\",\"favicon\":\"example-favicon\",\"logo\":\"example-logo\",\"primaryColorHex\":\"#1662dd\",\"secondaryColorHex\":\"#ebebed\",\"signInPageTouchPointVariant\":\"OKTA_DEFAULT\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/brands/280000023/themes/rehearsal-thTheme",
+      "body": "{\"emailTemplateTouchPointVariant\":\"OKTA_DEFAULT\",\"endUserDashboardTouchPointVariant\":\"OKTA_DEFAULT\",\"errorPageTouchPointVariant\":\"OKTA_DEFAULT\",\"primaryColorHex\":\"#123456\",\"secondaryColorHex\":\"#ebebed\",\"signInPageTouchPointVariant\":\"OKTA_DEFAULT\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"backgroundImage\":\"example-backgroundImage\",\"emailTemplateTouchPointVariant\":\"OKTA_DEFAULT\",\"endUserDashboardTouchPointVariant\":\"OKTA_DEFAULT\",\"errorPageTouchPointVariant\":\"OKTA_DEFAULT\",\"favicon\":\"example-favicon\",\"logo\":\"example-logo\",\"primaryColorHex\":\"#123456\",\"secondaryColorHex\":\"#ebebed\",\"signInPageTouchPointVariant\":\"OKTA_DEFAULT\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/280000023/themes/rehearsal-thTheme",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"backgroundImage\":\"example-backgroundImage\",\"emailTemplateTouchPointVariant\":\"OKTA_DEFAULT\",\"endUserDashboardTouchPointVariant\":\"OKTA_DEFAULT\",\"errorPageTouchPointVariant\":\"OKTA_DEFAULT\",\"favicon\":\"example-favicon\",\"logo\":\"example-logo\",\"primaryColorHex\":\"#123456\",\"secondaryColorHex\":\"#ebebed\",\"signInPageTouchPointVariant\":\"OKTA_DEFAULT\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/brands/280000023/themes/rehearsal-thTheme",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"backgroundImage\":\"example-backgroundImage\",\"emailTemplateTouchPointVariant\":\"OKTA_DEFAULT\",\"endUserDashboardTouchPointVariant\":\"OKTA_DEFAULT\",\"errorPageTouchPointVariant\":\"OKTA_DEFAULT\",\"favicon\":\"example-favicon\",\"logo\":\"example-logo\",\"primaryColorHex\":\"#123456\",\"secondaryColorHex\":\"#ebebed\",\"signInPageTouchPointVariant\":\"OKTA_DEFAULT\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/brands/280000023",
+      "status": 204
+    }
+  ]
+}

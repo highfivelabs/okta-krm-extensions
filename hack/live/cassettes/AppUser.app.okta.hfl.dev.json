@@ -1,0 +1,79 @@
+{
+  "recorded": "2026-11-20T23:56:58Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "auApp": "0oa1a5d5vh1J50WFa698",
+    "auUser": "00u1a5d75s3uKgUNV698",
+    "orgId": "{{redacted}}",
+    "rsGroup": "00g1a5d7plc3tGO1v698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/apps",
+      "body": "{\"label\":\"{{name}}-app\",\"settings\":{\"signOn\":{\"loginUrl\":\"https://{{name}}.example.com/login\"}},\"signOnMode\":\"AUTO_LOGIN\",\"visibility\":{\"autoSubmitToolbar\":false,\"hide\":{\"iOS\":false,\"web\":false}}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{\"accessPolicy\":{\"href\":\"{{baseURL}}/api/v1/policies/rst19y29o1kfDk353698\"},\"appLinks\":[{\"href\":\"{{baseURL}}/home/{{tenant}}_hfllive261120235608d410app_1/0oa1a5d5vh1J50WFa698/aln1a5df76uR7MAYI698\",\"name\":\"{{tenant}}_hfllive261120235608d410app_1_link\",\"type\":\"text/html\"}],\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d5vh1J50WFa698/lifecycle/deactivate\"},\"groups\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d5vh1J50WFa698/groups\"},\"logo\":[{\"href\":\"https://ok14static.oktacdn.com/assets/img/logos/default.6770228fb0dab49a1695ef440a5279bb.png\",\"name\":\"medium\",\"type\":\"image/png\"}],\"policies\":{\"hints\":{\"allow\":[\"PUT\"]},\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d5vh1J50WFa698/policies\"},\"profileEnrollment\":{\"href\":\"{{baseURL}}/api/v1/policies/rst19y29o1mWcG8j3698\"},\"uploadLogo\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d5vh1J50WFa698/logo\"},\"users\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d5vh1J50WFa698/users\"}},\"accessibility\":{\"errorRedirectUrl\":null,\"loginRedirectUrl\":null,\"selfService\":false},\"created\":\"2026-11-20T23:56:55.000Z\",\"credentials\":{\"revealPassword\":false,\"scheme\":\"EDIT_USERNAME_AND_PASSWORD\",\"signing\":{},\"userNameTemplate\":{\"template\":\"{{redacted}}\",\"type\":\"BUILT_IN\"}},\"features\":[],\"id\":\"0oa1a5d5vh1J50WFa698\",\"label\":\"{{name}}-app\",\"lastUpdated\":\"2026-11-20T23:56:56.000Z\",\"name\":\"{{tenant}}_hfllive261120235608d410app_1\",\"orn\":\"orn:okta:idp:{{redacted}}:apps:{{tenant}}_hfllive261120235608d410app_1:0oa1a5d5vh1J50WFa698\",\"settings\":{\"app\":{},\"emOptInStatus\":\"NONE\",\"implicitAssignment\":false,\"manualProvisioning\":false,\"notes\":{\"admin\":null,\"enduser\":null},\"notifications\":{\"vpn\":{\"helpUrl\":null,\"message\":null,\"network\":{\"connection\":\"DISABLED\"}}},\"signOn\":{\"loginUrl\":\"https://{{name}}.example.com/login\",\"redirectUrl\":null}},\"signOnMode\":\"AUTO_LOGIN\",\"status\":\"ACTIVE\",\"universalLogout\":{\"status\":\"UNSUPPORTED\"},\"visibility\":{\"appLinks\":{\"{{tenant}}_hfllive261120235608d410app_1_link\":true},\"autoLaunch\":false,\"autoSubmitToolbar\":false,\"hide\":{\"iOS\":false,\"web\":false}}}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/users?activate=false",
+      "body": "{\"profile\":{\"email\":\"{{name}}-u@example.com\",\"firstName\":\"hfl\",\"lastName\":\"live\",\"login\":\"{{name}}-u@example.com\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00u1a5d75s3uKgUNV698\",\"status\":\"STAGED\",\"created\":\"2026-11-20T23:56:56.000Z\",\"activated\":null,\"statusChanged\":null,\"lastLogin\":null,\"lastUpdated\":\"2026-11-20T23:56:56.000Z\",\"passwordChanged\":null,\"type\":{\"id\":\"oty19y29nyfuxEes6698\"},\"profile\":{\"firstName\":\"hfl\",\"lastName\":\"live\",\"mobilePhone\":null,\"secondEmail\":null,\"login\":\"{{name}}-u@example.com\",\"email\":\"{{name}}-u@example.com\"},\"credentials\":{\"provider\":{\"type\":\"OKTA\",\"name\":\"OKTA\"}},\"_links\":{\"schema\":{\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc19y29nyfuxEes6698\"},\"activate\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d75s3uKgUNV698/lifecycle/activate\",\"method\":\"POST\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d75s3uKgUNV698\"},\"resetFactors\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d75s3uKgUNV698/lifecycle/reset_factors\",\"method\":\"POST\"},\"type\":{\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty19y29nyfuxEes6698\"}}}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/apps/0oa1a5d5vh1J50WFa698/users",
+      "body": "{\"credentials\":{\"userName\":\"{{redacted}}\"},\"id\":\"00u1a5d75s3uKgUNV698\",\"scope\":\"USER\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{\"app\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d5vh1J50WFa698\"},\"user\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d75s3uKgUNV698\"}},\"created\":\"2026-11-20T23:56:56.000Z\",\"credentials\":{\"userName\":\"{{redacted}}\"},\"externalId\":null,\"id\":\"00u1a5d75s3uKgUNV698\",\"lastUpdated\":\"2026-11-20T23:56:56.000Z\",\"passwordChanged\":null,\"profile\":{},\"scope\":\"USER\",\"status\":\"ACTIVE\",\"statusChanged\":\"2026-11-20T23:56:56.000Z\",\"syncState\":\"DISABLED\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/0oa1a5d5vh1J50WFa698/users/00u1a5d75s3uKgUNV698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{\"app\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d5vh1J50WFa698\"},\"user\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5d75s3uKgUNV698\"}},\"created\":\"2026-11-20T23:56:56.000Z\",\"credentials\":{\"userName\":\"{{redacted}}\"},\"externalId\":null,\"id\":\"00u1a5d75s3uKgUNV698\",\"lastUpdated\":\"2026-11-20T23:56:56.000Z\",\"passwordChanged\":null,\"profile\":{},\"scope\":\"USER\",\"status\":\"ACTIVE\",\"statusChanged\":\"2026-11-20T23:56:56.000Z\",\"syncState\":\"DISABLED\"}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/apps/0oa1a5d5vh1J50WFa698/users/00u1a5d75s3uKgUNV698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/0oa1a5d5vh1J50WFa698/users/00u1a5d75s3uKgUNV698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: 00u1a5d75s3uKgUNV6980oa1a5d5vh1J50WFa698 (AppUser)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaeRQwP_kH1RkqG2CSnk0JXcQ\",\"errorCauses\":[]}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/apps/0oa1a5d5vh1J50WFa698/lifecycle/deactivate",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/apps/0oa1a5d5vh1J50WFa698",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/users/00u1a5d75s3uKgUNV698",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/users/00u1a5d75s3uKgUNV698",
+      "status": 204
+    }
+  ]
+}

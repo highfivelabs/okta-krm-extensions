@@ -1,0 +1,47 @@
+openapi: 3.0.3
+info:
+  title: Okta security notification emails (supplement)
+  version: 2026-11-22
+servers:
+- url: https://{yourOktaOrg}-admin.okta.com
+  variables:
+    yourOktaOrg: {default: subdomain}
+paths:
+  /api/internal/org/settings/security-notification-settings:
+    get:
+      operationId: getSecurityNotificationSettings
+      summary: Retrieve the security notification email settings
+      responses:
+        '200':
+          description: The settings
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/SecurityNotificationSettings'}
+    put:
+      operationId: replaceSecurityNotificationSettings
+      summary: Replace the security notification email settings
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/SecurityNotificationSettings'}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/SecurityNotificationSettings'}
+components:
+  schemas:
+    SecurityNotificationSettings:
+      type: object
+      properties:
+        sendEmailForNewDeviceEnabled:
+          type: boolean
+        sendEmailForFactorEnrollmentEnabled:
+          type: boolean
+        sendEmailForFactorResetEnabled:
+          type: boolean
+        sendEmailForPasswordChangedEnabled:
+          type: boolean
+        reportSuspiciousActivityEnabled:
+          type: boolean

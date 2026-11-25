@@ -1,0 +1,36 @@
+openapi: 3.0.3
+info:
+  title: Okta org factors (supplement)
+  version: 2026-11-22
+paths:
+  /api/v1/org/factors/{factorId}:
+    parameters:
+    - {name: factorId, in: path, required: true, schema: {type: string}}
+    get:
+      operationId: getOrgFactor
+      summary: Retrieve an org factor
+      responses:
+        '200':
+          description: The factor
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/OrgFactor'}
+components:
+  schemas:
+    OrgFactor:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+          description: The factor's ID.
+        provider:
+          type: string
+          readOnly: true
+        factorType:
+          type: string
+          readOnly: true
+        status:
+          type: string
+          readOnly: true
+          enum: [ACTIVE, INACTIVE]

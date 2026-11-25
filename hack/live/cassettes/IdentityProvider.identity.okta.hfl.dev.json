@@ -1,0 +1,122 @@
+{
+  "recorded": "2026-11-20T23:57:52Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "ascAS": "aus1a5d5lco5hVnpo698",
+    "aspAS": "aus1a5d7xao0ETI8w698",
+    "asrAS": "aus1a5d92wqVRei1R698",
+    "asrGroup": "00g1a5d79iaCH1Z7n698",
+    "asrPolicy": "00p1a5d7zs3Jr87U8698",
+    "assAS": "aus1a5d7849QKfQlb698",
+    "auApp": "0oa1a5d5vh1J50WFa698",
+    "auUser": "00u1a5d75s3uKgUNV698",
+    "cspBrand": "bnd1a5d2wkvwx3YqE698",
+    "edBrand": "bnd1a5d85vaNOwFus698",
+    "grGroup": "00g1a5d5vk6BBV0aa698",
+    "grlGroup": "00g1a5d9xr5pJ4Mq6698",
+    "orgId": "{{redacted}}",
+    "prGroup": "00g1a5d7103FF3HnP698",
+    "prPolicy": "rst1a5d85sx0UeqpU698",
+    "pspBrand": "bnd1a5d240aLpp4zT698",
+    "rsGroup": "00g1a5d7plc3tGO1v698",
+    "thBrand": "bnd1a5d5sixEbT59w698",
+    "thTheme": "the1a5d5siyxEFQOz698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/idps",
+      "body": "{\"issuerMode\":\"ORG_URL\",\"name\":\"{{name}}\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\"},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}}},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"type\":\"GOOGLE\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{\"authorize\":{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize?idp=0oa1a5d3byepmqnkE698\u0026client_id={clientId}\u0026response_type={responseType}\u0026response_mode={responseMode}\u0026scope={scopes}\u0026redirect_uri={redirectUri}\u0026state={state}\u0026nonce={nonce}\",\"templated\":true},\"clientRedirectUri\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize/callback\"}},\"created\":\"2026-11-20T23:57:49.000Z\",\"id\":\"0oa1a5d3byepmqnkE698\",\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2026-11-20T23:57:49.000Z\",\"name\":\"{{name}}\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\",\"filter\":null},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"conditions\":{\"deprovisioned\":{\"action\":\"NONE\"},\"suspended\":{\"action\":\"NONE\"}},\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"filter\":null,\"matchAttribute\":null,\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}},\"transformedUsernameMatchingEnabled\":false},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"endpoints\":{\"authorization\":{\"binding\":\"HTTP-REDIRECT\",\"url\":\"https://accounts.google.com/o/oauth2/auth\"},\"token\":{\"binding\":\"HTTP-POST\",\"url\":\"https://www.googleapis.com/oauth2/v3/token\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"status\":\"ACTIVE\",\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/idps/0oa1a5d3byepmqnkE698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{\"authorize\":{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize?idp=0oa1a5d3byepmqnkE698\u0026client_id={clientId}\u0026response_type={responseType}\u0026response_mode={responseMode}\u0026scope={scopes}\u0026redirect_uri={redirectUri}\u0026state={state}\u0026nonce={nonce}\",\"templated\":true},\"clientRedirectUri\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize/callback\"}},\"created\":\"2026-11-20T23:57:49.000Z\",\"id\":\"0oa1a5d3byepmqnkE698\",\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2026-11-20T23:57:49.000Z\",\"name\":\"{{name}}\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\",\"filter\":null},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"conditions\":{\"deprovisioned\":{\"action\":\"NONE\"},\"suspended\":{\"action\":\"NONE\"}},\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"filter\":null,\"matchAttribute\":null,\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}},\"transformedUsernameMatchingEnabled\":false},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"endpoints\":{\"authorization\":{\"binding\":\"HTTP-REDIRECT\",\"url\":\"https://accounts.google.com/o/oauth2/auth\"},\"token\":{\"binding\":\"HTTP-POST\",\"url\":\"https://www.googleapis.com/oauth2/v3/token\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"status\":\"ACTIVE\",\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/idps/0oa1a5d3byepmqnkE698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{\"authorize\":{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize?idp=0oa1a5d3byepmqnkE698\u0026client_id={clientId}\u0026response_type={responseType}\u0026response_mode={responseMode}\u0026scope={scopes}\u0026redirect_uri={redirectUri}\u0026state={state}\u0026nonce={nonce}\",\"templated\":true},\"clientRedirectUri\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize/callback\"}},\"created\":\"2026-11-20T23:57:49.000Z\",\"id\":\"0oa1a5d3byepmqnkE698\",\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2026-11-20T23:57:49.000Z\",\"name\":\"{{name}}\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\",\"filter\":null},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"conditions\":{\"deprovisioned\":{\"action\":\"NONE\"},\"suspended\":{\"action\":\"NONE\"}},\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"filter\":null,\"matchAttribute\":null,\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}},\"transformedUsernameMatchingEnabled\":false},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"endpoints\":{\"authorization\":{\"binding\":\"HTTP-REDIRECT\",\"url\":\"https://accounts.google.com/o/oauth2/auth\"},\"token\":{\"binding\":\"HTTP-POST\",\"url\":\"https://www.googleapis.com/oauth2/v3/token\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"status\":\"ACTIVE\",\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/idps/0oa1a5d3byepmqnkE698",
+      "body": "{\"issuerMode\":\"ORG_URL\",\"name\":\"{{name}}-2\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\"},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}}},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"type\":\"GOOGLE\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{\"authorize\":{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize?idp=0oa1a5d3byepmqnkE698\u0026client_id={clientId}\u0026response_type={responseType}\u0026response_mode={responseMode}\u0026scope={scopes}\u0026redirect_uri={redirectUri}\u0026state={state}\u0026nonce={nonce}\",\"templated\":true},\"clientRedirectUri\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize/callback\"}},\"created\":null,\"id\":\"0oa1a5d3byepmqnkE698\",\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2026-11-20T23:57:50.000Z\",\"name\":\"{{name}}-2\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\",\"filter\":null},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"conditions\":{\"deprovisioned\":{\"action\":\"NONE\"},\"suspended\":{\"action\":\"NONE\"}},\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"filter\":null,\"matchAttribute\":null,\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}},\"transformedUsernameMatchingEnabled\":false},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"endpoints\":{\"authorization\":{\"binding\":\"HTTP-REDIRECT\",\"url\":\"https://accounts.google.com/o/oauth2/auth\"},\"token\":{\"binding\":\"HTTP-POST\",\"url\":\"https://www.googleapis.com/oauth2/v3/token\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"status\":\"INACTIVE\",\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/idps/0oa1a5d3byepmqnkE698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{\"authorize\":{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize?idp=0oa1a5d3byepmqnkE698\u0026client_id={clientId}\u0026response_type={responseType}\u0026response_mode={responseMode}\u0026scope={scopes}\u0026redirect_uri={redirectUri}\u0026state={state}\u0026nonce={nonce}\",\"templated\":true},\"clientRedirectUri\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize/callback\"}},\"created\":\"2026-11-20T23:57:49.000Z\",\"id\":\"0oa1a5d3byepmqnkE698\",\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2026-11-20T23:57:50.000Z\",\"name\":\"{{name}}-2\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\",\"filter\":null},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"conditions\":{\"deprovisioned\":{\"action\":\"NONE\"},\"suspended\":{\"action\":\"NONE\"}},\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"filter\":null,\"matchAttribute\":null,\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}},\"transformedUsernameMatchingEnabled\":false},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"endpoints\":{\"authorization\":{\"binding\":\"HTTP-REDIRECT\",\"url\":\"https://accounts.google.com/o/oauth2/auth\"},\"token\":{\"binding\":\"HTTP-POST\",\"url\":\"https://www.googleapis.com/oauth2/v3/token\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"status\":\"INACTIVE\",\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/idps/0oa1a5d3byepmqnkE698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{\"authorize\":{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize?idp=0oa1a5d3byepmqnkE698\u0026client_id={clientId}\u0026response_type={responseType}\u0026response_mode={responseMode}\u0026scope={scopes}\u0026redirect_uri={redirectUri}\u0026state={state}\u0026nonce={nonce}\",\"templated\":true},\"clientRedirectUri\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize/callback\"}},\"created\":\"2026-11-20T23:57:49.000Z\",\"id\":\"0oa1a5d3byepmqnkE698\",\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2026-11-20T23:57:50.000Z\",\"name\":\"{{name}}-2\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\",\"filter\":null},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"conditions\":{\"deprovisioned\":{\"action\":\"NONE\"},\"suspended\":{\"action\":\"NONE\"}},\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"filter\":null,\"matchAttribute\":null,\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}},\"transformedUsernameMatchingEnabled\":false},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"endpoints\":{\"authorization\":{\"binding\":\"HTTP-REDIRECT\",\"url\":\"https://accounts.google.com/o/oauth2/auth\"},\"token\":{\"binding\":\"HTTP-POST\",\"url\":\"https://www.googleapis.com/oauth2/v3/token\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"status\":\"INACTIVE\",\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/idps/0oa1a5d3byepmqnkE698",
+      "body": "{\"_links\":{\"authorize\":{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize?idp=0oa1a5d3byepmqnkE698\u0026client_id={clientId}\u0026response_type={responseType}\u0026response_mode={responseMode}\u0026scope={scopes}\u0026redirect_uri={redirectUri}\u0026state={state}\u0026nonce={nonce}\",\"templated\":true},\"clientRedirectUri\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize/callback\"}},\"created\":\"2026-11-20T23:57:49.000Z\",\"id\":\"0oa1a5d3byepmqnkE698\",\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2026-11-20T23:57:50.000Z\",\"name\":\"hfl-live-drift\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\",\"filter\":null},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"conditions\":{\"deprovisioned\":{\"action\":\"NONE\"},\"suspended\":{\"action\":\"NONE\"}},\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"filter\":null,\"matchAttribute\":null,\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}},\"transformedUsernameMatchingEnabled\":false},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"endpoints\":{\"authorization\":{\"binding\":\"HTTP-REDIRECT\",\"url\":\"https://accounts.google.com/o/oauth2/auth\"},\"token\":{\"binding\":\"HTTP-POST\",\"url\":\"https://www.googleapis.com/oauth2/v3/token\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"status\":\"INACTIVE\",\"type\":\"GOOGLE\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{\"authorize\":{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize?idp=0oa1a5d3byepmqnkE698\u0026client_id={clientId}\u0026response_type={responseType}\u0026response_mode={responseMode}\u0026scope={scopes}\u0026redirect_uri={redirectUri}\u0026state={state}\u0026nonce={nonce}\",\"templated\":true},\"clientRedirectUri\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize/callback\"}},\"created\":null,\"id\":\"0oa1a5d3byepmqnkE698\",\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2026-11-20T23:57:51.000Z\",\"name\":\"hfl-live-drift\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\",\"filter\":null},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"conditions\":{\"deprovisioned\":{\"action\":\"NONE\"},\"suspended\":{\"action\":\"NONE\"}},\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"filter\":null,\"matchAttribute\":null,\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}},\"transformedUsernameMatchingEnabled\":false},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"endpoints\":{\"authorization\":{\"binding\":\"HTTP-REDIRECT\",\"url\":\"https://accounts.google.com/o/oauth2/auth\"},\"token\":{\"binding\":\"HTTP-POST\",\"url\":\"https://www.googleapis.com/oauth2/v3/token\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"status\":\"INACTIVE\",\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/idps/0oa1a5d3byepmqnkE698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{\"authorize\":{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize?idp=0oa1a5d3byepmqnkE698\u0026client_id={clientId}\u0026response_type={responseType}\u0026response_mode={responseMode}\u0026scope={scopes}\u0026redirect_uri={redirectUri}\u0026state={state}\u0026nonce={nonce}\",\"templated\":true},\"clientRedirectUri\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize/callback\"}},\"created\":\"2026-11-20T23:57:49.000Z\",\"id\":\"0oa1a5d3byepmqnkE698\",\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2026-11-20T23:57:51.000Z\",\"name\":\"hfl-live-drift\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\",\"filter\":null},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"conditions\":{\"deprovisioned\":{\"action\":\"NONE\"},\"suspended\":{\"action\":\"NONE\"}},\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"filter\":null,\"matchAttribute\":null,\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}},\"transformedUsernameMatchingEnabled\":false},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"endpoints\":{\"authorization\":{\"binding\":\"HTTP-REDIRECT\",\"url\":\"https://accounts.google.com/o/oauth2/auth\"},\"token\":{\"binding\":\"HTTP-POST\",\"url\":\"https://www.googleapis.com/oauth2/v3/token\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"status\":\"INACTIVE\",\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/idps/0oa1a5d3byepmqnkE698",
+      "body": "{\"issuerMode\":\"ORG_URL\",\"name\":\"{{name}}-2\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\"},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}}},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"type\":\"GOOGLE\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{\"authorize\":{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize?idp=0oa1a5d3byepmqnkE698\u0026client_id={clientId}\u0026response_type={responseType}\u0026response_mode={responseMode}\u0026scope={scopes}\u0026redirect_uri={redirectUri}\u0026state={state}\u0026nonce={nonce}\",\"templated\":true},\"clientRedirectUri\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize/callback\"}},\"created\":null,\"id\":\"0oa1a5d3byepmqnkE698\",\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2026-11-20T23:57:51.000Z\",\"name\":\"{{name}}-2\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\",\"filter\":null},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"conditions\":{\"deprovisioned\":{\"action\":\"NONE\"},\"suspended\":{\"action\":\"NONE\"}},\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"filter\":null,\"matchAttribute\":null,\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}},\"transformedUsernameMatchingEnabled\":false},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"endpoints\":{\"authorization\":{\"binding\":\"HTTP-REDIRECT\",\"url\":\"https://accounts.google.com/o/oauth2/auth\"},\"token\":{\"binding\":\"HTTP-POST\",\"url\":\"https://www.googleapis.com/oauth2/v3/token\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"status\":\"INACTIVE\",\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/idps/0oa1a5d3byepmqnkE698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{\"authorize\":{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize?idp=0oa1a5d3byepmqnkE698\u0026client_id={clientId}\u0026response_type={responseType}\u0026response_mode={responseMode}\u0026scope={scopes}\u0026redirect_uri={redirectUri}\u0026state={state}\u0026nonce={nonce}\",\"templated\":true},\"clientRedirectUri\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize/callback\"}},\"created\":\"2026-11-20T23:57:49.000Z\",\"id\":\"0oa1a5d3byepmqnkE698\",\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2026-11-20T23:57:51.000Z\",\"name\":\"{{name}}-2\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\",\"filter\":null},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"conditions\":{\"deprovisioned\":{\"action\":\"NONE\"},\"suspended\":{\"action\":\"NONE\"}},\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"filter\":null,\"matchAttribute\":null,\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}},\"transformedUsernameMatchingEnabled\":false},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"endpoints\":{\"authorization\":{\"binding\":\"HTTP-REDIRECT\",\"url\":\"https://accounts.google.com/o/oauth2/auth\"},\"token\":{\"binding\":\"HTTP-POST\",\"url\":\"https://www.googleapis.com/oauth2/v3/token\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"status\":\"INACTIVE\",\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/idps/0oa1a5d3byepmqnkE698/lifecycle/deactivate",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{\"authorize\":{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize?idp=0oa1a5d3byepmqnkE698\u0026client_id={clientId}\u0026response_type={responseType}\u0026response_mode={responseMode}\u0026scope={scopes}\u0026redirect_uri={redirectUri}\u0026state={state}\u0026nonce={nonce}\",\"templated\":true},\"clientRedirectUri\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/oauth2/v1/authorize/callback\"}},\"created\":\"2026-11-20T23:57:49.000Z\",\"id\":\"0oa1a5d3byepmqnkE698\",\"issuerMode\":\"ORG_URL\",\"lastUpdated\":\"2026-11-20T23:57:52.000Z\",\"name\":\"{{name}}-2\",\"policy\":{\"accountLink\":{\"action\":\"AUTO\",\"filter\":null},\"maxClockSkew\":0,\"provisioning\":{\"action\":\"AUTO\",\"conditions\":{\"deprovisioned\":{\"action\":\"NONE\"},\"suspended\":{\"action\":\"NONE\"}},\"groups\":{\"action\":\"NONE\"},\"profileMaster\":false},\"subject\":{\"filter\":null,\"matchAttribute\":null,\"matchType\":\"USERNAME\",\"userNameTemplate\":{\"template\":\"idpuser.email\"}},\"transformedUsernameMatchingEnabled\":false},\"protocol\":{\"credentials\":{\"client\":{\"client_id\":\"hfl-live-client\",\"client_secret\":\"{{redacted}}\"}},\"endpoints\":{\"authorization\":{\"binding\":\"HTTP-REDIRECT\",\"url\":\"https://accounts.google.com/o/oauth2/auth\"},\"token\":{\"binding\":\"HTTP-POST\",\"url\":\"https://www.googleapis.com/oauth2/v3/token\"}},\"scopes\":[\"email\",\"openid\",\"profile\"],\"type\":\"OIDC\"},\"status\":\"INACTIVE\",\"type\":\"GOOGLE\"}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/idps/0oa1a5d3byepmqnkE698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/idps/0oa1a5d3byepmqnkE698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: 0oa1a5d3byepmqnkE698 (IdpTrust)\",\"errorLink\":\"E0000007\",\"errorId\":\"oae6NRQIYTmRHSzHVLIU5XBUg\",\"errorCauses\":[]}"
+    }
+  ]
+}

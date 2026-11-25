@@ -1,0 +1,121 @@
+{
+  "recorded": "2026-11-20T23:57:10Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "assAS": "aus1a5d7849QKfQlb698",
+    "auApp": "0oa1a5d5vh1J50WFa698",
+    "auUser": "00u1a5d75s3uKgUNV698",
+    "orgId": "{{redacted}}",
+    "prGroup": "00g1a5d7103FF3HnP698",
+    "prPolicy": "rst1a5d85sx0UeqpU698",
+    "rsGroup": "00g1a5d7plc3tGO1v698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/authorizationServers",
+      "body": "{\"audiences\":[\"api://{{name}}\"],\"description\":\"hfl-live\",\"name\":\"{{name}}-as\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_links\":{\"claims\":{\"hints\":{\"allow\":[\"GET\",\"POST\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7849QKfQlb698/claims\"},\"deactivate\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7849QKfQlb698/lifecycle/deactivate\"},\"keys\":{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7849QKfQlb698/credentials/keys\"},\"metadata\":[{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/.well-known/oauth-authorization-server/oauth2/aus1a5d7849QKfQlb698\",\"name\":\"oauth-authorization-server\"},{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/oauth2/aus1a5d7849QKfQlb698/.well-known/openid-configuration\",\"name\":\"openid-configuration\"}],\"policies\":{\"hints\":{\"allow\":[\"GET\",\"POST\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7849QKfQlb698/policies\"},\"resourceServerCredentialsKeys\":{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{redacted}}\"},\"rotateKey\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7849QKfQlb698/credentials/lifecycle/keyRotate\"},\"scopes\":{\"hints\":{\"allow\":[\"GET\",\"POST\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes\"},\"self\":{\"hints\":{\"allow\":[\"GET\",\"DELETE\",\"PUT\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7849QKfQlb698\"}},\"audiences\":[\"api://{{name}}\"],\"created\":\"2026-11-20T23:57:06.000Z\",\"credentials\":{\"signing\":{\"kid\":\"{{redacted}}\",\"lastRotated\":\"2026-11-20T23:57:06.000Z\",\"nextRotation\":\"2027-02-18T23:57:06.000Z\",\"rotationMode\":\"AUTO\"}},\"default\":false,\"description\":\"hfl-live\",\"id\":\"aus1a5d7849QKfQlb698\",\"issuer\":\"{{baseURL}}/oauth2/aus1a5d7849QKfQlb698\",\"issuerMode\":\"DYNAMIC\",\"lastUpdated\":\"2026-11-20T23:57:06.000Z\",\"name\":\"{{name}}-as\",\"status\":\"ACTIVE\"}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes",
+      "body": "{\"consent\":\"IMPLICIT\",\"description\":\"first\",\"metadataPublish\":\"NO_CLIENTS\",\"name\":\"{{name}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"id\":\"scp1a5d3tnjIvWqmd698\",\"name\":\"{{name}}\",\"description\":\"first\",\"system\":false,\"metadataPublish\":\"NO_CLIENTS\",\"consent\":\"IMPLICIT\",\"optional\":false,\"default\":false,\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"scp1a5d3tnjIvWqmd698\",\"name\":\"{{name}}\",\"description\":\"first\",\"system\":false,\"metadataPublish\":\"NO_CLIENTS\",\"consent\":\"IMPLICIT\",\"optional\":false,\"default\":false,\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"scp1a5d3tnjIvWqmd698\",\"name\":\"{{name}}\",\"description\":\"first\",\"system\":false,\"metadataPublish\":\"NO_CLIENTS\",\"consent\":\"IMPLICIT\",\"optional\":false,\"default\":false,\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698",
+      "body": "{\"consent\":\"IMPLICIT\",\"description\":\"second\",\"metadataPublish\":\"NO_CLIENTS\",\"name\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"scp1a5d3tnjIvWqmd698\",\"name\":\"{{name}}\",\"description\":\"second\",\"system\":false,\"metadataPublish\":\"NO_CLIENTS\",\"consent\":\"IMPLICIT\",\"optional\":false,\"default\":false,\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"scp1a5d3tnjIvWqmd698\",\"name\":\"{{name}}\",\"description\":\"second\",\"system\":false,\"metadataPublish\":\"NO_CLIENTS\",\"consent\":\"IMPLICIT\",\"optional\":false,\"default\":false,\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"scp1a5d3tnjIvWqmd698\",\"name\":\"{{name}}\",\"description\":\"second\",\"system\":false,\"metadataPublish\":\"NO_CLIENTS\",\"consent\":\"IMPLICIT\",\"optional\":false,\"default\":false,\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698",
+      "body": "{\"_links\":{\"self\":{\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698\"}},\"consent\":\"IMPLICIT\",\"default\":false,\"description\":\"hfl-live-drift\",\"id\":\"scp1a5d3tnjIvWqmd698\",\"metadataPublish\":\"NO_CLIENTS\",\"name\":\"{{name}}\",\"optional\":false,\"system\":false}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"scp1a5d3tnjIvWqmd698\",\"name\":\"{{name}}\",\"description\":\"hfl-live-drift\",\"system\":false,\"metadataPublish\":\"NO_CLIENTS\",\"consent\":\"IMPLICIT\",\"optional\":false,\"default\":false,\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"scp1a5d3tnjIvWqmd698\",\"name\":\"{{name}}\",\"description\":\"hfl-live-drift\",\"system\":false,\"metadataPublish\":\"NO_CLIENTS\",\"consent\":\"IMPLICIT\",\"optional\":false,\"default\":false,\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698",
+      "body": "{\"consent\":\"IMPLICIT\",\"description\":\"second\",\"metadataPublish\":\"NO_CLIENTS\",\"name\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"scp1a5d3tnjIvWqmd698\",\"name\":\"{{name}}\",\"description\":\"second\",\"system\":false,\"metadataPublish\":\"NO_CLIENTS\",\"consent\":\"IMPLICIT\",\"optional\":false,\"default\":false,\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"scp1a5d3tnjIvWqmd698\",\"name\":\"{{name}}\",\"description\":\"second\",\"system\":false,\"metadataPublish\":\"NO_CLIENTS\",\"consent\":\"IMPLICIT\",\"optional\":false,\"default\":false,\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/aus1a5d7849QKfQlb698/scopes/scp1a5d3tnjIvWqmd698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: scp1a5d3tnjIvWqmd698 (OAuth2Scope)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaend5SVx9dQ-qjbizByvmt1w\",\"errorCauses\":[]}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/authorizationServers/aus1a5d7849QKfQlb698/lifecycle/deactivate",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/authorizationServers/aus1a5d7849QKfQlb698",
+      "status": 204
+    }
+  ]
+}

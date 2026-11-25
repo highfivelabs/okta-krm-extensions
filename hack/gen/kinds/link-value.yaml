@@ -1,0 +1,17 @@
+terraform: [okta_link_value]
+kind: LinkValue
+shape: set
+params:
+  primaryName: {type: string}
+  associatedName: {type: string}
+  primaryUserId: {type: string}
+fields:
+  associatedUserIds:
+    type: array
+    items: {type: string}
+required: [associatedUserIds]
+set: {field: associatedUserIds, key: userId, param: userId, keyURL: _links/self/href}
+sample: {primaryName: manager, associatedName: subordinate, primaryUserId: example-primary-user-id, associatedUserIds: [example-user-id-1, example-user-id-2]}
+read: {method: GET, path: "/api/v1/users/{primaryUserId}/linkedObjects/{associatedName}"}
+create: {method: PUT, path: "/api/v1/users/{userId}/linkedObjects/{primaryName}/{primaryUserId}"}
+delete: {method: DELETE, path: "/api/v1/users/{userId}/linkedObjects/{primaryName}"}

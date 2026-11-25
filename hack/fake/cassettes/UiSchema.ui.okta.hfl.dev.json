@@ -1,0 +1,108 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "agaApp": 280000003,
+    "agaGroup": 280000004,
+    "ascAS": 280000013,
+    "aspAS": 280000015,
+    "asrAS": 280000017,
+    "asrGroup": 280000019,
+    "asrPolicy": 280000018,
+    "assAS": 280000011,
+    "auApp": 280000006,
+    "auUser": 280000007,
+    "cspBrand": 280000021,
+    "edBrand": 280000025,
+    "grGroup": 280000026,
+    "grlGroup": 280000027,
+    "orgId": 280000001,
+    "prGroup": 280000010,
+    "prPolicy": 280000009,
+    "pspBrand": 280000022,
+    "rsGroup": 280000002,
+    "thBrand": 280000023,
+    "thTheme": "rehearsal-thTheme"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/meta/uischemas",
+      "body": "{\"uiSchema\":{\"buttonLabel\":\"Submit\",\"elements\":[{\"label\":\"First name\",\"options\":{\"format\":\"text\"},\"scope\":\"#/properties/firstName\",\"type\":\"Control\"}],\"label\":\"{{name}}\",\"type\":\"Group\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000031,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"uiSchema\":{\"buttonLabel\":\"Submit\",\"elements\":[{\"label\":\"First name\",\"options\":{\"format\":\"text\"},\"scope\":\"#/properties/firstName\",\"type\":\"Control\"}],\"label\":\"{{name}}\",\"type\":\"Group\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/meta/uischemas/270000031",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000031,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"uiSchema\":{\"buttonLabel\":\"Submit\",\"elements\":[{\"label\":\"First name\",\"options\":{\"format\":\"text\"},\"scope\":\"#/properties/firstName\",\"type\":\"Control\"}],\"label\":\"{{name}}\",\"type\":\"Group\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/meta/uischemas/270000031",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000031,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"uiSchema\":{\"buttonLabel\":\"Submit\",\"elements\":[{\"label\":\"First name\",\"options\":{\"format\":\"text\"},\"scope\":\"#/properties/firstName\",\"type\":\"Control\"}],\"label\":\"{{name}}\",\"type\":\"Group\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/meta/uischemas/270000031",
+      "body": "{\"uiSchema\":{\"buttonLabel\":\"Next\",\"elements\":[{\"label\":\"First name\",\"options\":{\"format\":\"text\"},\"scope\":\"#/properties/firstName\",\"type\":\"Control\"}],\"label\":\"{{name}}\",\"type\":\"Group\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000031,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"uiSchema\":{\"buttonLabel\":\"Next\",\"elements\":[{\"label\":\"First name\",\"options\":{\"format\":\"text\"},\"scope\":\"#/properties/firstName\",\"type\":\"Control\"}],\"label\":\"{{name}}\",\"type\":\"Group\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/meta/uischemas/270000031",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000031,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"uiSchema\":{\"buttonLabel\":\"Next\",\"elements\":[{\"label\":\"First name\",\"options\":{\"format\":\"text\"},\"scope\":\"#/properties/firstName\",\"type\":\"Control\"}],\"label\":\"{{name}}\",\"type\":\"Group\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/meta/uischemas/270000031",
+      "body": "{\"uiSchema\":{\"buttonLabel\":\"Drift\",\"elements\":[{\"label\":\"First name\",\"options\":{\"format\":\"text\"},\"scope\":\"#/properties/firstName\",\"type\":\"Control\"}],\"label\":\"{{name}}\",\"type\":\"Group\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000031,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"uiSchema\":{\"buttonLabel\":\"Drift\",\"elements\":[{\"label\":\"First name\",\"options\":{\"format\":\"text\"},\"scope\":\"#/properties/firstName\",\"type\":\"Control\"}],\"label\":\"{{name}}\",\"type\":\"Group\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/meta/uischemas/270000031",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000031,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"uiSchema\":{\"buttonLabel\":\"Drift\",\"elements\":[{\"label\":\"First name\",\"options\":{\"format\":\"text\"},\"scope\":\"#/properties/firstName\",\"type\":\"Control\"}],\"label\":\"{{name}}\",\"type\":\"Group\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/meta/uischemas/270000031",
+      "body": "{\"uiSchema\":{\"buttonLabel\":\"Next\",\"elements\":[{\"label\":\"First name\",\"options\":{\"format\":\"text\"},\"scope\":\"#/properties/firstName\",\"type\":\"Control\"}],\"label\":\"{{name}}\",\"type\":\"Group\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000031,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"uiSchema\":{\"buttonLabel\":\"Next\",\"elements\":[{\"label\":\"First name\",\"options\":{\"format\":\"text\"},\"scope\":\"#/properties/firstName\",\"type\":\"Control\"}],\"label\":\"{{name}}\",\"type\":\"Group\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/meta/uischemas/270000031",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000031,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"uiSchema\":{\"buttonLabel\":\"Next\",\"elements\":[{\"label\":\"First name\",\"options\":{\"format\":\"text\"},\"scope\":\"#/properties/firstName\",\"type\":\"Control\"}],\"label\":\"{{name}}\",\"type\":\"Group\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/meta/uischemas/270000031",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/meta/uischemas/270000031",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

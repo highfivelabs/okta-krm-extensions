@@ -1,0 +1,115 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "agaApp": 280000003,
+    "agaGroup": 280000004,
+    "ascAS": 280000013,
+    "aspAS": 280000015,
+    "asrAS": 280000017,
+    "asrGroup": 280000019,
+    "asrPolicy": 280000018,
+    "assAS": 280000011,
+    "auApp": 280000006,
+    "auUser": 280000007,
+    "cspBrand": 280000021,
+    "edBrand": 280000025,
+    "grGroup": 280000026,
+    "grlGroup": 280000027,
+    "orgId": 280000001,
+    "prGroup": 280000010,
+    "prPolicy": 280000009,
+    "pspBrand": 280000022,
+    "rsGroup": 280000002,
+    "thBrand": 280000023,
+    "thTheme": "rehearsal-thTheme"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/device-assurances",
+      "body": "{\"name\":\"{{name}}\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"platform\":\"WINDOWS\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"createdBy\":\"example-createdBy\",\"createdDate\":\"example-createdDate\",\"id\":270000028,\"lastUpdate\":\"example-lastUpdate\",\"lastUpdatedBy\":\"example-lastUpdatedBy\",\"name\":\"{{name}}\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"platform\":\"WINDOWS\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/device-assurances/270000028",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"createdBy\":\"example-createdBy\",\"createdDate\":\"example-createdDate\",\"id\":270000028,\"lastUpdate\":\"example-lastUpdate\",\"lastUpdatedBy\":\"example-lastUpdatedBy\",\"name\":\"{{name}}\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"platform\":\"WINDOWS\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/device-assurances/270000028",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"createdBy\":\"example-createdBy\",\"createdDate\":\"example-createdDate\",\"id\":270000028,\"lastUpdate\":\"example-lastUpdate\",\"lastUpdatedBy\":\"example-lastUpdatedBy\",\"name\":\"{{name}}\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"platform\":\"WINDOWS\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/device-assurances/270000028",
+      "body": "{\"name\":\"{{name}}-2\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"platform\":\"WINDOWS\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"createdBy\":\"example-createdBy\",\"createdDate\":\"example-createdDate\",\"id\":270000028,\"lastUpdate\":\"example-lastUpdate\",\"lastUpdatedBy\":\"example-lastUpdatedBy\",\"name\":\"{{name}}-2\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"platform\":\"WINDOWS\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/device-assurances/270000028",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"createdBy\":\"example-createdBy\",\"createdDate\":\"example-createdDate\",\"id\":270000028,\"lastUpdate\":\"example-lastUpdate\",\"lastUpdatedBy\":\"example-lastUpdatedBy\",\"name\":\"{{name}}-2\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"platform\":\"WINDOWS\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/device-assurances/270000028",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"createdBy\":\"example-createdBy\",\"createdDate\":\"example-createdDate\",\"id\":270000028,\"lastUpdate\":\"example-lastUpdate\",\"lastUpdatedBy\":\"example-lastUpdatedBy\",\"name\":\"{{name}}-2\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"platform\":\"WINDOWS\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/device-assurances/270000028",
+      "body": "{\"_links\":{},\"createdBy\":\"example-createdBy\",\"createdDate\":\"example-createdDate\",\"id\":270000028,\"lastUpdate\":\"example-lastUpdate\",\"lastUpdatedBy\":\"example-lastUpdatedBy\",\"name\":\"hfl-live-drift\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"platform\":\"WINDOWS\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"createdBy\":\"example-createdBy\",\"createdDate\":\"example-createdDate\",\"id\":270000028,\"lastUpdate\":\"example-lastUpdate\",\"lastUpdatedBy\":\"example-lastUpdatedBy\",\"name\":\"hfl-live-drift\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"platform\":\"WINDOWS\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/device-assurances/270000028",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"createdBy\":\"example-createdBy\",\"createdDate\":\"example-createdDate\",\"id\":270000028,\"lastUpdate\":\"example-lastUpdate\",\"lastUpdatedBy\":\"example-lastUpdatedBy\",\"name\":\"hfl-live-drift\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"platform\":\"WINDOWS\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/device-assurances/270000028",
+      "body": "{\"name\":\"{{name}}-2\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"platform\":\"WINDOWS\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"createdBy\":\"example-createdBy\",\"createdDate\":\"example-createdDate\",\"id\":270000028,\"lastUpdate\":\"example-lastUpdate\",\"lastUpdatedBy\":\"example-lastUpdatedBy\",\"name\":\"{{name}}-2\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"platform\":\"WINDOWS\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/device-assurances/270000028",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"createdBy\":\"example-createdBy\",\"createdDate\":\"example-createdDate\",\"id\":270000028,\"lastUpdate\":\"example-lastUpdate\",\"lastUpdatedBy\":\"example-lastUpdatedBy\",\"name\":\"{{name}}-2\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"platform\":\"WINDOWS\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/device-assurances/270000028",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/device-assurances/270000028",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "agaApp": 280000003,
+    "agaGroup": 280000004,
+    "ascAS": 280000013,
+    "aspAS": 280000015,
+    "asrAS": 280000017,
+    "asrGroup": 280000019,
+    "asrPolicy": 280000018,
+    "assAS": 280000011,
+    "auApp": 280000006,
+    "auUser": 280000007,
+    "cspBrand": 280000021,
+    "edBrand": 280000025,
+    "grGroup": 280000026,
+    "grlGroup": 280000027,
+    "orgId": 280000001,
+    "prGroup": 280000010,
+    "prPolicy": 280000009,
+    "pspBrand": 280000022,
+    "rsGroup": 280000002,
+    "thBrand": 280000023,
+    "thTheme": "rehearsal-thTheme"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/groups",
+      "body": "{\"profile\":{\"name\":\"{{name}}-g\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000027,\"profile\":{\"name\":\"{{name}}-g\"}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/groups/rules",
+      "body": "{\"actions\":{\"assignUserToGroups\":{\"groupIds\":[280000027]}},\"conditions\":{\"expression\":{\"type\":\"urn:okta:expression:1.0\",\"value\":\"user.login == \\\"{{name}}@example.com\\\"\"}},\"name\":\"{{name}}\",\"type\":\"group_rule\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[280000027]}},\"conditions\":{\"expression\":{\"type\":\"urn:okta:expression:1.0\",\"value\":\"user.login == \\\"{{name}}@example.com\\\"\"}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000025,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}\",\"status\":\"example-status\",\"type\":\"group_rule\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/rules/270000025",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[280000027]}},\"conditions\":{\"expression\":{\"type\":\"urn:okta:expression:1.0\",\"value\":\"user.login == \\\"{{name}}@example.com\\\"\"}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000025,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}\",\"status\":\"example-status\",\"type\":\"group_rule\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/rules/270000025",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[280000027]}},\"conditions\":{\"expression\":{\"type\":\"urn:okta:expression:1.0\",\"value\":\"user.login == \\\"{{name}}@example.com\\\"\"}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000025,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}\",\"status\":\"example-status\",\"type\":\"group_rule\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/groups/rules/270000025",
+      "body": "{\"actions\":{\"assignUserToGroups\":{\"groupIds\":[280000027]}},\"conditions\":{\"expression\":{\"type\":\"urn:okta:expression:1.0\",\"value\":\"user.login == \\\"{{name}}@example.com\\\"\"}},\"name\":\"{{name}}-2\",\"type\":\"group_rule\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[280000027]}},\"conditions\":{\"expression\":{\"type\":\"urn:okta:expression:1.0\",\"value\":\"user.login == \\\"{{name}}@example.com\\\"\"}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000025,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}-2\",\"status\":\"example-status\",\"type\":\"group_rule\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/rules/270000025",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[280000027]}},\"conditions\":{\"expression\":{\"type\":\"urn:okta:expression:1.0\",\"value\":\"user.login == \\\"{{name}}@example.com\\\"\"}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000025,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}-2\",\"status\":\"example-status\",\"type\":\"group_rule\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/rules/270000025",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[280000027]}},\"conditions\":{\"expression\":{\"type\":\"urn:okta:expression:1.0\",\"value\":\"user.login == \\\"{{name}}@example.com\\\"\"}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000025,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}-2\",\"status\":\"example-status\",\"type\":\"group_rule\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/groups/rules/270000025",
+      "body": "{\"_embedded\":{},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[280000027]}},\"conditions\":{\"expression\":{\"type\":\"urn:okta:expression:1.0\",\"value\":\"user.login == \\\"{{name}}@example.com\\\"\"}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000025,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"hfl-live-drift\",\"status\":\"example-status\",\"type\":\"group_rule\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[280000027]}},\"conditions\":{\"expression\":{\"type\":\"urn:okta:expression:1.0\",\"value\":\"user.login == \\\"{{name}}@example.com\\\"\"}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000025,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"hfl-live-drift\",\"status\":\"example-status\",\"type\":\"group_rule\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/rules/270000025",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[280000027]}},\"conditions\":{\"expression\":{\"type\":\"urn:okta:expression:1.0\",\"value\":\"user.login == \\\"{{name}}@example.com\\\"\"}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000025,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"hfl-live-drift\",\"status\":\"example-status\",\"type\":\"group_rule\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/groups/rules/270000025",
+      "body": "{\"actions\":{\"assignUserToGroups\":{\"groupIds\":[280000027]}},\"conditions\":{\"expression\":{\"type\":\"urn:okta:expression:1.0\",\"value\":\"user.login == \\\"{{name}}@example.com\\\"\"}},\"name\":\"{{name}}-2\",\"type\":\"group_rule\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[280000027]}},\"conditions\":{\"expression\":{\"type\":\"urn:okta:expression:1.0\",\"value\":\"user.login == \\\"{{name}}@example.com\\\"\"}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000025,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}-2\",\"status\":\"example-status\",\"type\":\"group_rule\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/rules/270000025",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[280000027]}},\"conditions\":{\"expression\":{\"type\":\"urn:okta:expression:1.0\",\"value\":\"user.login == \\\"{{name}}@example.com\\\"\"}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000025,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}-2\",\"status\":\"example-status\",\"type\":\"group_rule\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/groups/rules/270000025/lifecycle/deactivate",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[280000027]}},\"conditions\":{\"expression\":{\"type\":\"urn:okta:expression:1.0\",\"value\":\"user.login == \\\"{{name}}@example.com\\\"\"}},\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000025,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}-2\",\"status\":\"example-status\",\"type\":\"group_rule\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/groups/rules/270000025",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/rules/270000025",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/groups/280000027",
+      "status": 204
+    }
+  ]
+}

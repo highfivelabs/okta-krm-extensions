@@ -1,0 +1,14 @@
+terraform: [okta_app_token]
+kind: AppToken
+shape: settings
+params:
+  appId: {type: string}
+  tokenId: {type: string, description: The token's ID.}
+state:
+  field: status
+  description: "REVOKED revokes the token (DELETE /api/v1/apps/{appId}/tokens/{tokenId}); deleting the object does too."
+  calls:
+    REVOKED: {method: DELETE, path: "/api/v1/apps/{appId}/tokens/{tokenId}"}
+  delete: REVOKED
+sample: {appId: example-app-id, tokenId: example-token-id}
+read: {method: GET, path: "/api/v1/apps/{appId}/tokens/{tokenId}"}

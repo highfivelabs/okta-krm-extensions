@@ -1,0 +1,128 @@
+{
+  "recorded": "2026-11-20T23:57:03Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "auApp": "0oa1a5d5vh1J50WFa698",
+    "auUser": "00u1a5d75s3uKgUNV698",
+    "orgId": "{{redacted}}",
+    "prGroup": "00g1a5d7103FF3HnP698",
+    "prPolicy": "rst1a5d85sx0UeqpU698",
+    "rsGroup": "00g1a5d7plc3tGO1v698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/policies",
+      "body": "{\"name\":\"{{name}}-p\",\"type\":\"ACCESS_POLICY\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"rst1a5d85sx0UeqpU698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}-p\",\"priority\":1,\"system\":false,\"conditions\":null,\"created\":\"2026-11-20T23:57:00.000Z\",\"lastUpdated\":\"2026-11-20T23:57:00.000Z\",\"_links\":{\"mappings\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/mappings\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"userIdentificationPolicy\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85szqQG87a698\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"ACCESS_POLICY\"}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/groups",
+      "body": "{\"profile\":{\"name\":\"{{name}}-g\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00g1a5d7103FF3HnP698\",\"created\":\"2026-11-20T23:57:00.000Z\",\"lastUpdated\":\"2026-11-20T23:57:00.000Z\",\"lastMembershipUpdated\":\"2026-11-20T23:57:00.000Z\",\"objectClass\":[\"okta:user_group\"],\"type\":\"OKTA_GROUP\",\"profile\":{\"name\":\"{{name}}-g\"},\"_links\":{\"logo\":[{\"name\":\"medium\",\"href\":\"https://ok14static.oktacdn.com/assets/img/logos/groups/odyssey/okta-medium.30ce6d4085dff29412984e4c191bc874.png\",\"type\":\"image/png\"},{\"name\":\"large\",\"href\":\"https://ok14static.oktacdn.com/assets/img/logos/groups/odyssey/okta-large.c3cb8cda8ae0add1b4fe928f5844dbe3.png\",\"type\":\"image/png\"}],\"users\":{\"href\":\"{{baseURL}}/api/v1/groups/00g1a5d7103FF3HnP698/users\"},\"apps\":{\"href\":\"{{baseURL}}/api/v1/groups/00g1a5d7103FF3HnP698/apps\"}}}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/policies/rst1a5d85sx0UeqpU698/rules",
+      "body": "{\"actions\":{\"appSignOn\":{\"access\":\"ALLOW\",\"verificationMethod\":{\"constraints\":[{\"possession\":{\"required\":true}}],\"factorMode\":\"2FA\",\"reauthenticateIn\":\"PT2H\",\"type\":\"ASSURANCE\"}}},\"conditions\":{\"people\":{\"groups\":{\"include\":[\"00g1a5d7103FF3HnP698\"]}}},\"name\":\"{{name}}\",\"type\":\"ACCESS_POLICY\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"rul1a5d23yy0oPEnX698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"priority\":0,\"created\":\"2026-11-20T23:57:00.000Z\",\"lastUpdated\":\"2026-11-20T23:57:00.000Z\",\"system\":false,\"conditions\":{\"people\":{\"users\":{\"exclude\":[]},\"groups\":{\"include\":[\"00g1a5d7103FF3HnP698\"]}},\"network\":{\"connection\":\"ANYWHERE\"},\"riskScore\":{\"level\":\"ANY\"},\"userType\":{\"include\":[],\"exclude\":[]}},\"actions\":{\"appSignOn\":{\"access\":\"ALLOW\",\"verificationMethod\":{\"factorMode\":\"2FA\",\"type\":\"ASSURANCE\",\"reauthenticateIn\":\"PT2H\",\"constraints\":[{\"possession\":{\"required\":true}}]},\"keepMeSignedIn\":{\"postAuth\":\"NOT_ALLOWED\"}}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"ACCESS_POLICY\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"rul1a5d23yy0oPEnX698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"priority\":0,\"created\":\"2026-11-20T23:57:00.000Z\",\"lastUpdated\":\"2026-11-20T23:57:00.000Z\",\"system\":false,\"conditions\":{\"people\":{\"users\":{\"exclude\":[]},\"groups\":{\"include\":[\"00g1a5d7103FF3HnP698\"]}},\"network\":{\"connection\":\"ANYWHERE\"},\"riskScore\":{\"level\":\"ANY\"},\"userType\":{\"include\":[],\"exclude\":[]}},\"actions\":{\"appSignOn\":{\"access\":\"ALLOW\",\"verificationMethod\":{\"factorMode\":\"2FA\",\"type\":\"ASSURANCE\",\"reauthenticateIn\":\"PT2H\",\"constraints\":[{\"possession\":{\"required\":true}}]},\"keepMeSignedIn\":{\"postAuth\":\"NOT_ALLOWED\"}}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"ACCESS_POLICY\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"rul1a5d23yy0oPEnX698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"priority\":0,\"created\":\"2026-11-20T23:57:00.000Z\",\"lastUpdated\":\"2026-11-20T23:57:00.000Z\",\"system\":false,\"conditions\":{\"people\":{\"users\":{\"exclude\":[]},\"groups\":{\"include\":[\"00g1a5d7103FF3HnP698\"]}},\"network\":{\"connection\":\"ANYWHERE\"},\"riskScore\":{\"level\":\"ANY\"},\"userType\":{\"include\":[],\"exclude\":[]}},\"actions\":{\"appSignOn\":{\"access\":\"ALLOW\",\"verificationMethod\":{\"factorMode\":\"2FA\",\"type\":\"ASSURANCE\",\"reauthenticateIn\":\"PT2H\",\"constraints\":[{\"possession\":{\"required\":true}}]},\"keepMeSignedIn\":{\"postAuth\":\"NOT_ALLOWED\"}}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"ACCESS_POLICY\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698",
+      "body": "{\"actions\":{\"appSignOn\":{\"access\":\"ALLOW\",\"verificationMethod\":{\"constraints\":[{\"possession\":{\"required\":true}}],\"factorMode\":\"2FA\",\"reauthenticateIn\":\"PT2H\",\"type\":\"ASSURANCE\"}}},\"conditions\":{\"people\":{\"groups\":{\"include\":[\"00g1a5d7103FF3HnP698\"]}}},\"name\":\"{{name}}-2\",\"type\":\"ACCESS_POLICY\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"rul1a5d23yy0oPEnX698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}-2\",\"priority\":0,\"created\":\"2026-11-20T23:57:00.000Z\",\"lastUpdated\":\"2026-11-20T23:57:01.000Z\",\"system\":false,\"conditions\":{\"people\":{\"users\":{\"exclude\":[]},\"groups\":{\"include\":[\"00g1a5d7103FF3HnP698\"]}},\"network\":{\"connection\":\"ANYWHERE\"},\"riskScore\":{\"level\":\"ANY\"},\"userType\":{\"include\":[],\"exclude\":[]}},\"actions\":{\"appSignOn\":{\"access\":\"ALLOW\",\"verificationMethod\":{\"factorMode\":\"2FA\",\"type\":\"ASSURANCE\",\"reauthenticateIn\":\"PT2H\",\"constraints\":[{\"possession\":{\"required\":true}}]},\"keepMeSignedIn\":{\"postAuth\":\"NOT_ALLOWED\"}}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"ACCESS_POLICY\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"rul1a5d23yy0oPEnX698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}-2\",\"priority\":0,\"created\":\"2026-11-20T23:57:00.000Z\",\"lastUpdated\":\"2026-11-20T23:57:01.000Z\",\"system\":false,\"conditions\":{\"people\":{\"users\":{\"exclude\":[]},\"groups\":{\"include\":[\"00g1a5d7103FF3HnP698\"]}},\"network\":{\"connection\":\"ANYWHERE\"},\"riskScore\":{\"level\":\"ANY\"},\"userType\":{\"include\":[],\"exclude\":[]}},\"actions\":{\"appSignOn\":{\"access\":\"ALLOW\",\"verificationMethod\":{\"factorMode\":\"2FA\",\"type\":\"ASSURANCE\",\"reauthenticateIn\":\"PT2H\",\"constraints\":[{\"possession\":{\"required\":true}}]},\"keepMeSignedIn\":{\"postAuth\":\"NOT_ALLOWED\"}}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"ACCESS_POLICY\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"rul1a5d23yy0oPEnX698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}-2\",\"priority\":0,\"created\":\"2026-11-20T23:57:00.000Z\",\"lastUpdated\":\"2026-11-20T23:57:01.000Z\",\"system\":false,\"conditions\":{\"people\":{\"users\":{\"exclude\":[]},\"groups\":{\"include\":[\"00g1a5d7103FF3HnP698\"]}},\"network\":{\"connection\":\"ANYWHERE\"},\"riskScore\":{\"level\":\"ANY\"},\"userType\":{\"include\":[],\"exclude\":[]}},\"actions\":{\"appSignOn\":{\"access\":\"ALLOW\",\"verificationMethod\":{\"factorMode\":\"2FA\",\"type\":\"ASSURANCE\",\"reauthenticateIn\":\"PT2H\",\"constraints\":[{\"possession\":{\"required\":true}}]},\"keepMeSignedIn\":{\"postAuth\":\"NOT_ALLOWED\"}}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"ACCESS_POLICY\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698",
+      "body": "{\"_links\":{\"deactivate\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698/lifecycle/deactivate\"},\"self\":{\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]},\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698\"}},\"actions\":{\"appSignOn\":{\"access\":\"ALLOW\",\"keepMeSignedIn\":{\"postAuth\":\"NOT_ALLOWED\"},\"verificationMethod\":{\"constraints\":[{\"possession\":{\"required\":true}}],\"factorMode\":\"2FA\",\"reauthenticateIn\":\"PT2H\",\"type\":\"ASSURANCE\"}}},\"conditions\":{\"network\":{\"connection\":\"ANYWHERE\"},\"people\":{\"groups\":{\"include\":[\"00g1a5d7103FF3HnP698\"]},\"users\":{\"exclude\":[]}},\"riskScore\":{\"level\":\"ANY\"},\"userType\":{\"exclude\":[],\"include\":[]}},\"created\":\"2026-11-20T23:57:00.000Z\",\"id\":\"rul1a5d23yy0oPEnX698\",\"lastUpdated\":\"2026-11-20T23:57:01.000Z\",\"name\":\"hfl-live-drift\",\"priority\":0,\"status\":\"ACTIVE\",\"system\":false,\"type\":\"ACCESS_POLICY\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"rul1a5d23yy0oPEnX698\",\"status\":\"ACTIVE\",\"name\":\"hfl-live-drift\",\"priority\":0,\"created\":\"2026-11-20T23:57:00.000Z\",\"lastUpdated\":\"2026-11-20T23:57:01.000Z\",\"system\":false,\"conditions\":{\"people\":{\"users\":{\"exclude\":[]},\"groups\":{\"include\":[\"00g1a5d7103FF3HnP698\"]}},\"network\":{\"connection\":\"ANYWHERE\"},\"riskScore\":{\"level\":\"ANY\"},\"userType\":{\"include\":[],\"exclude\":[]}},\"actions\":{\"appSignOn\":{\"access\":\"ALLOW\",\"verificationMethod\":{\"factorMode\":\"2FA\",\"type\":\"ASSURANCE\",\"reauthenticateIn\":\"PT2H\",\"constraints\":[{\"possession\":{\"required\":true}}]},\"keepMeSignedIn\":{\"postAuth\":\"NOT_ALLOWED\"}}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"ACCESS_POLICY\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"rul1a5d23yy0oPEnX698\",\"status\":\"ACTIVE\",\"name\":\"hfl-live-drift\",\"priority\":0,\"created\":\"2026-11-20T23:57:00.000Z\",\"lastUpdated\":\"2026-11-20T23:57:01.000Z\",\"system\":false,\"conditions\":{\"people\":{\"users\":{\"exclude\":[]},\"groups\":{\"include\":[\"00g1a5d7103FF3HnP698\"]}},\"network\":{\"connection\":\"ANYWHERE\"},\"riskScore\":{\"level\":\"ANY\"},\"userType\":{\"include\":[],\"exclude\":[]}},\"actions\":{\"appSignOn\":{\"access\":\"ALLOW\",\"verificationMethod\":{\"factorMode\":\"2FA\",\"type\":\"ASSURANCE\",\"reauthenticateIn\":\"PT2H\",\"constraints\":[{\"possession\":{\"required\":true}}]},\"keepMeSignedIn\":{\"postAuth\":\"NOT_ALLOWED\"}}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"ACCESS_POLICY\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698",
+      "body": "{\"actions\":{\"appSignOn\":{\"access\":\"ALLOW\",\"verificationMethod\":{\"constraints\":[{\"possession\":{\"required\":true}}],\"factorMode\":\"2FA\",\"reauthenticateIn\":\"PT2H\",\"type\":\"ASSURANCE\"}}},\"conditions\":{\"people\":{\"groups\":{\"include\":[\"00g1a5d7103FF3HnP698\"]}}},\"name\":\"{{name}}-2\",\"type\":\"ACCESS_POLICY\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"rul1a5d23yy0oPEnX698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}-2\",\"priority\":0,\"created\":\"2026-11-20T23:57:00.000Z\",\"lastUpdated\":\"2026-11-20T23:57:02.000Z\",\"system\":false,\"conditions\":{\"people\":{\"users\":{\"exclude\":[]},\"groups\":{\"include\":[\"00g1a5d7103FF3HnP698\"]}},\"network\":{\"connection\":\"ANYWHERE\"},\"riskScore\":{\"level\":\"ANY\"},\"userType\":{\"include\":[],\"exclude\":[]}},\"actions\":{\"appSignOn\":{\"access\":\"ALLOW\",\"verificationMethod\":{\"factorMode\":\"2FA\",\"type\":\"ASSURANCE\",\"reauthenticateIn\":\"PT2H\",\"constraints\":[{\"possession\":{\"required\":true}}]},\"keepMeSignedIn\":{\"postAuth\":\"NOT_ALLOWED\"}}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"ACCESS_POLICY\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"rul1a5d23yy0oPEnX698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}-2\",\"priority\":0,\"created\":\"2026-11-20T23:57:00.000Z\",\"lastUpdated\":\"2026-11-20T23:57:02.000Z\",\"system\":false,\"conditions\":{\"people\":{\"users\":{\"exclude\":[]},\"groups\":{\"include\":[\"00g1a5d7103FF3HnP698\"]}},\"network\":{\"connection\":\"ANYWHERE\"},\"riskScore\":{\"level\":\"ANY\"},\"userType\":{\"include\":[],\"exclude\":[]}},\"actions\":{\"appSignOn\":{\"access\":\"ALLOW\",\"verificationMethod\":{\"factorMode\":\"2FA\",\"type\":\"ASSURANCE\",\"reauthenticateIn\":\"PT2H\",\"constraints\":[{\"possession\":{\"required\":true}}]},\"keepMeSignedIn\":{\"postAuth\":\"NOT_ALLOWED\"}}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"ACCESS_POLICY\"}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/policies/rst1a5d85sx0UeqpU698/rules/rul1a5d23yy0oPEnX698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: rul1a5d23yy0oPEnX698 (RuleEntity)\",\"errorLink\":\"E0000007\",\"errorId\":\"oae_liOdZ4mTDKxybZUfX4nLw\",\"errorCauses\":[]}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/policies/rst1a5d85sx0UeqpU698",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/groups/00g1a5d7103FF3HnP698",
+      "status": 204
+    }
+  ]
+}

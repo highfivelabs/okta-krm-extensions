@@ -1,0 +1,108 @@
+{
+  "recorded": "2026-11-20T23:57:25Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "ascAS": "aus1a5d5lco5hVnpo698",
+    "aspAS": "aus1a5d7xao0ETI8w698",
+    "asrAS": "aus1a5d92wqVRei1R698",
+    "asrGroup": "00g1a5d79iaCH1Z7n698",
+    "asrPolicy": "00p1a5d7zs3Jr87U8698",
+    "assAS": "aus1a5d7849QKfQlb698",
+    "auApp": "0oa1a5d5vh1J50WFa698",
+    "auUser": "00u1a5d75s3uKgUNV698",
+    "orgId": "{{redacted}}",
+    "prGroup": "00g1a5d7103FF3HnP698",
+    "prPolicy": "rst1a5d85sx0UeqpU698",
+    "rsGroup": "00g1a5d7plc3tGO1v698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/brands",
+      "body": "{\"name\":\"{{name}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"id\":\"bnd1a5dal0svKV8J4698\",\"name\":\"{{name}}\",\"removePoweredByOkta\":false,\"customPrivacyPolicyUrl\":null,\"agreeToCustomPrivacyPolicy\":false,\"isDefault\":false,\"defaultApp\":{\"appInstanceId\":null,\"appLinkName\":null,\"classicApplicationUri\":null},\"_links\":{\"themes\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698/themes\",\"hints\":{\"allow\":[\"GET\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/bnd1a5dal0svKV8J4698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"bnd1a5dal0svKV8J4698\",\"name\":\"{{name}}\",\"removePoweredByOkta\":false,\"customPrivacyPolicyUrl\":null,\"agreeToCustomPrivacyPolicy\":false,\"isDefault\":false,\"defaultApp\":{\"appInstanceId\":\"0oa19y29nx2u88qPh698\",\"appLinkName\":null,\"classicApplicationUri\":null},\"_links\":{\"themes\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698/themes\",\"hints\":{\"allow\":[\"GET\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/bnd1a5dal0svKV8J4698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"bnd1a5dal0svKV8J4698\",\"name\":\"{{name}}\",\"removePoweredByOkta\":false,\"customPrivacyPolicyUrl\":null,\"agreeToCustomPrivacyPolicy\":false,\"isDefault\":false,\"defaultApp\":{\"appInstanceId\":\"0oa19y29nx2u88qPh698\",\"appLinkName\":null,\"classicApplicationUri\":null},\"_links\":{\"themes\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698/themes\",\"hints\":{\"allow\":[\"GET\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/brands/bnd1a5dal0svKV8J4698",
+      "body": "{\"name\":\"{{name}}-2\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"bnd1a5dal0svKV8J4698\",\"name\":\"{{name}}-2\",\"removePoweredByOkta\":false,\"customPrivacyPolicyUrl\":null,\"agreeToCustomPrivacyPolicy\":false,\"isDefault\":false,\"defaultApp\":{\"appInstanceId\":null,\"appLinkName\":null,\"classicApplicationUri\":null},\"_links\":{\"themes\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698/themes\",\"hints\":{\"allow\":[\"GET\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/bnd1a5dal0svKV8J4698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"bnd1a5dal0svKV8J4698\",\"name\":\"{{name}}-2\",\"removePoweredByOkta\":false,\"customPrivacyPolicyUrl\":null,\"agreeToCustomPrivacyPolicy\":false,\"isDefault\":false,\"defaultApp\":{\"appInstanceId\":null,\"appLinkName\":null,\"classicApplicationUri\":null},\"_links\":{\"themes\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698/themes\",\"hints\":{\"allow\":[\"GET\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/bnd1a5dal0svKV8J4698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"bnd1a5dal0svKV8J4698\",\"name\":\"{{name}}-2\",\"removePoweredByOkta\":false,\"customPrivacyPolicyUrl\":null,\"agreeToCustomPrivacyPolicy\":false,\"isDefault\":false,\"defaultApp\":{\"appInstanceId\":null,\"appLinkName\":null,\"classicApplicationUri\":null},\"_links\":{\"themes\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698/themes\",\"hints\":{\"allow\":[\"GET\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/brands/bnd1a5dal0svKV8J4698",
+      "body": "{\"_links\":{\"self\":{\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]},\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698\"},\"themes\":{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698/themes\"}},\"agreeToCustomPrivacyPolicy\":false,\"customPrivacyPolicyUrl\":null,\"defaultApp\":{\"appInstanceId\":null,\"appLinkName\":null,\"classicApplicationUri\":null},\"id\":\"bnd1a5dal0svKV8J4698\",\"isDefault\":false,\"name\":\"hfl-live-drift\",\"removePoweredByOkta\":false}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"bnd1a5dal0svKV8J4698\",\"name\":\"hfl-live-drift\",\"removePoweredByOkta\":false,\"customPrivacyPolicyUrl\":null,\"agreeToCustomPrivacyPolicy\":false,\"isDefault\":false,\"defaultApp\":{\"appInstanceId\":null,\"appLinkName\":null,\"classicApplicationUri\":null},\"_links\":{\"themes\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698/themes\",\"hints\":{\"allow\":[\"GET\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/bnd1a5dal0svKV8J4698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"bnd1a5dal0svKV8J4698\",\"name\":\"hfl-live-drift\",\"removePoweredByOkta\":false,\"customPrivacyPolicyUrl\":null,\"agreeToCustomPrivacyPolicy\":false,\"isDefault\":false,\"defaultApp\":{\"appInstanceId\":null,\"appLinkName\":null,\"classicApplicationUri\":null},\"_links\":{\"themes\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698/themes\",\"hints\":{\"allow\":[\"GET\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/brands/bnd1a5dal0svKV8J4698",
+      "body": "{\"name\":\"{{name}}-2\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"bnd1a5dal0svKV8J4698\",\"name\":\"{{name}}-2\",\"removePoweredByOkta\":false,\"customPrivacyPolicyUrl\":null,\"agreeToCustomPrivacyPolicy\":false,\"isDefault\":false,\"defaultApp\":{\"appInstanceId\":null,\"appLinkName\":null,\"classicApplicationUri\":null},\"_links\":{\"themes\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698/themes\",\"hints\":{\"allow\":[\"GET\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/bnd1a5dal0svKV8J4698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"bnd1a5dal0svKV8J4698\",\"name\":\"{{name}}-2\",\"removePoweredByOkta\":false,\"customPrivacyPolicyUrl\":null,\"agreeToCustomPrivacyPolicy\":false,\"isDefault\":false,\"defaultApp\":{\"appInstanceId\":null,\"appLinkName\":null,\"classicApplicationUri\":null},\"_links\":{\"themes\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698/themes\",\"hints\":{\"allow\":[\"GET\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5dal0svKV8J4698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/brands/bnd1a5dal0svKV8J4698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/bnd1a5dal0svKV8J4698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: bnd1a5dal0svKV8J4698 (Brand)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaecBq8lsjoTlizlZmw_2vc3w\",\"errorCauses\":[]}"
+    }
+  ]
+}

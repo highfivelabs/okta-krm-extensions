@@ -1,0 +1,14 @@
+terraform: [okta_request_sequence]
+kind: RequestSequence
+shape: settings
+params:
+  resourceId: {type: string}
+  sequenceId: {type: string}
+state:
+  field: status
+  description: "DELETED deletes the sequence (DELETE /governance/api/v2/request-sequences/{sequenceId}); deleting the object does too."
+  calls:
+    DELETED: {method: DELETE, path: "/governance/api/v2/request-sequences/{sequenceId}"}
+  delete: DELETED
+sample: {resourceId: example-resource-id, sequenceId: example-sequence-id}
+read: {method: GET, path: "/governance/api/v2/resources/{resourceId}/request-sequences/{sequenceId}"}

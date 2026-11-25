@@ -1,0 +1,79 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "afcApp": 280000030,
+    "agaApp": 280000003,
+    "agaGroup": 280000004,
+    "aoasApp": 280000047,
+    "aoasIssuer": "rehearsal-aoasIssuer",
+    "apaApp": 280000043,
+    "apaPolicy": 280000044,
+    "arcaIssuer": "rehearsal-arcaIssuer",
+    "arcaMember": 280000035,
+    "arcaOrg": 280000033,
+    "arcaRS": 280000036,
+    "arcaRole": 280000037,
+    "arcaTarget": 280000034,
+    "argGroup": 280000041,
+    "argKeep": 280000040,
+    "argRole": 280000039,
+    "argUser": 280000038,
+    "ascAS": 280000013,
+    "aspAS": 280000015,
+    "asrAS": 280000017,
+    "asrGroup": 280000019,
+    "asrPolicy": 280000018,
+    "assAS": 280000011,
+    "auApp": 280000006,
+    "auUser": 280000007,
+    "craApp": 280000049,
+    "craClient": "rehearsal-craClient",
+    "cspBrand": 280000021,
+    "edBrand": 280000025,
+    "fUser": 280000029,
+    "gmGroup": 280000051,
+    "gmUser": 280000052,
+    "grGroup": 280000026,
+    "grlGroup": 280000027,
+    "orgId": 280000001,
+    "prGroup": 280000010,
+    "prPolicy": 280000009,
+    "pspBrand": 280000022,
+    "rsGroup": 280000002,
+    "thBrand": 280000023,
+    "thTheme": "rehearsal-thTheme",
+    "uarUser": 280000028
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/example-appId/features/example-featureName",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"capabilities\":{},\"description\":\"Settings for provisioning users from Okta to a downstream app\",\"name\":\"USER_PROVISIONING\",\"status\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/example-appId/features/example-featureName",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"capabilities\":{},\"description\":\"Settings for provisioning users from Okta to a downstream app\",\"name\":\"USER_PROVISIONING\",\"status\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/example-appId/features/example-featureName",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"capabilities\":{},\"description\":\"Settings for provisioning users from Okta to a downstream app\",\"name\":\"USER_PROVISIONING\",\"status\":\"ENABLED\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/apps/example-appId/features/example-featureName",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"capabilities\":{},\"description\":\"Settings for provisioning users from Okta to a downstream app\",\"name\":\"USER_PROVISIONING\",\"status\":\"ENABLED\"}\n"
+    }
+  ]
+}

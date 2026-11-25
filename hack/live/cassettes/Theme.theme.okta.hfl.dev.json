@@ -1,0 +1,105 @@
+{
+  "recorded": "2026-11-20T23:57:35Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "ascAS": "aus1a5d5lco5hVnpo698",
+    "aspAS": "aus1a5d7xao0ETI8w698",
+    "asrAS": "aus1a5d92wqVRei1R698",
+    "asrGroup": "00g1a5d79iaCH1Z7n698",
+    "asrPolicy": "00p1a5d7zs3Jr87U8698",
+    "assAS": "aus1a5d7849QKfQlb698",
+    "auApp": "0oa1a5d5vh1J50WFa698",
+    "auUser": "00u1a5d75s3uKgUNV698",
+    "cspBrand": "bnd1a5d2wkvwx3YqE698",
+    "orgId": "{{redacted}}",
+    "prGroup": "00g1a5d7103FF3HnP698",
+    "prPolicy": "rst1a5d85sx0UeqpU698",
+    "pspBrand": "bnd1a5d240aLpp4zT698",
+    "rsGroup": "00g1a5d7plc3tGO1v698",
+    "thBrand": "bnd1a5d5sixEbT59w698",
+    "thTheme": "the1a5d5siyxEFQOz698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/brands",
+      "body": "{\"name\":\"{{name}}-b\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"id\":\"bnd1a5d5sixEbT59w698\",\"name\":\"{{name}}-b\",\"removePoweredByOkta\":false,\"customPrivacyPolicyUrl\":null,\"agreeToCustomPrivacyPolicy\":false,\"isDefault\":false,\"defaultApp\":{\"appInstanceId\":null,\"appLinkName\":null,\"classicApplicationUri\":null},\"_links\":{\"themes\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes\",\"hints\":{\"allow\":[\"GET\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/bnd1a5d5sixEbT59w698/themes",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "[{\"id\":\"the1a5d5siyxEFQOz698\",\"logo\":\"https://ok14static.oktacdn.com/assets/img/logos/okta-logo.1e146cad5713da744492be95eb0f7793.png\",\"favicon\":\"{{baseURL}}/favicon.ico\",\"backgroundImage\":null,\"primaryColorHex\":\"#1662dd\",\"primaryColorContrastHex\":\"#ffffff\",\"secondaryColorHex\":\"#ebebed\",\"secondaryColorContrastHex\":\"#000000\",\"signInPageTouchPointVariant\":\"BACKGROUND_IMAGE\",\"endUserDashboardTouchPointVariant\":\"FULL_THEME\",\"errorPageTouchPointVariant\":\"BACKGROUND_IMAGE\",\"emailTemplateTouchPointVariant\":\"FULL_THEME\",\"loadingPageTouchPointVariant\":\"NONE\",\"_links\":{\"favicon\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/favicon\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698\",\"hints\":{\"allow\":[\"GET\",\"PUT\"]}},\"logo\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/logo\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}},\"background-image\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/background-image\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}}}}]"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"the1a5d5siyxEFQOz698\",\"logo\":\"https://ok14static.oktacdn.com/assets/img/logos/okta-logo.1e146cad5713da744492be95eb0f7793.png\",\"favicon\":\"{{baseURL}}/favicon.ico\",\"backgroundImage\":null,\"primaryColorHex\":\"#1662dd\",\"primaryColorContrastHex\":\"#ffffff\",\"secondaryColorHex\":\"#ebebed\",\"secondaryColorContrastHex\":\"#000000\",\"signInPageTouchPointVariant\":\"BACKGROUND_IMAGE\",\"endUserDashboardTouchPointVariant\":\"FULL_THEME\",\"errorPageTouchPointVariant\":\"BACKGROUND_IMAGE\",\"emailTemplateTouchPointVariant\":\"FULL_THEME\",\"loadingPageTouchPointVariant\":\"NONE\",\"_links\":{\"favicon\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/favicon\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698\",\"hints\":{\"allow\":[\"GET\",\"PUT\"]}},\"logo\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/logo\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}},\"background-image\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/background-image\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"the1a5d5siyxEFQOz698\",\"logo\":\"https://ok14static.oktacdn.com/assets/img/logos/okta-logo.1e146cad5713da744492be95eb0f7793.png\",\"favicon\":\"{{baseURL}}/favicon.ico\",\"backgroundImage\":null,\"primaryColorHex\":\"#1662dd\",\"primaryColorContrastHex\":\"#ffffff\",\"secondaryColorHex\":\"#ebebed\",\"secondaryColorContrastHex\":\"#000000\",\"signInPageTouchPointVariant\":\"BACKGROUND_IMAGE\",\"endUserDashboardTouchPointVariant\":\"FULL_THEME\",\"errorPageTouchPointVariant\":\"BACKGROUND_IMAGE\",\"emailTemplateTouchPointVariant\":\"FULL_THEME\",\"loadingPageTouchPointVariant\":\"NONE\",\"_links\":{\"favicon\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/favicon\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698\",\"hints\":{\"allow\":[\"GET\",\"PUT\"]}},\"logo\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/logo\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}},\"background-image\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/background-image\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698",
+      "body": "{\"emailTemplateTouchPointVariant\":\"OKTA_DEFAULT\",\"endUserDashboardTouchPointVariant\":\"OKTA_DEFAULT\",\"errorPageTouchPointVariant\":\"OKTA_DEFAULT\",\"primaryColorHex\":\"#1662dd\",\"secondaryColorHex\":\"#ebebed\",\"signInPageTouchPointVariant\":\"OKTA_DEFAULT\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"the1a5d5siyxEFQOz698\",\"logo\":\"https://ok14static.oktacdn.com/assets/img/logos/okta-logo.1e146cad5713da744492be95eb0f7793.png\",\"favicon\":\"{{baseURL}}/favicon.ico\",\"backgroundImage\":null,\"primaryColorHex\":\"#1662dd\",\"primaryColorContrastHex\":\"#ffffff\",\"secondaryColorHex\":\"#ebebed\",\"secondaryColorContrastHex\":\"#000000\",\"signInPageTouchPointVariant\":\"OKTA_DEFAULT\",\"endUserDashboardTouchPointVariant\":\"OKTA_DEFAULT\",\"errorPageTouchPointVariant\":\"OKTA_DEFAULT\",\"emailTemplateTouchPointVariant\":\"OKTA_DEFAULT\",\"loadingPageTouchPointVariant\":\"OKTA_DEFAULT\",\"_links\":{\"favicon\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/favicon\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698\",\"hints\":{\"allow\":[\"GET\",\"PUT\"]}},\"logo\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/logo\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}},\"background-image\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/background-image\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"the1a5d5siyxEFQOz698\",\"logo\":\"https://ok14static.oktacdn.com/assets/img/logos/okta-logo.1e146cad5713da744492be95eb0f7793.png\",\"favicon\":\"{{baseURL}}/favicon.ico\",\"backgroundImage\":null,\"primaryColorHex\":\"#1662dd\",\"primaryColorContrastHex\":\"#ffffff\",\"secondaryColorHex\":\"#ebebed\",\"secondaryColorContrastHex\":\"#000000\",\"signInPageTouchPointVariant\":\"OKTA_DEFAULT\",\"endUserDashboardTouchPointVariant\":\"OKTA_DEFAULT\",\"errorPageTouchPointVariant\":\"OKTA_DEFAULT\",\"emailTemplateTouchPointVariant\":\"OKTA_DEFAULT\",\"loadingPageTouchPointVariant\":\"OKTA_DEFAULT\",\"_links\":{\"favicon\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/favicon\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698\",\"hints\":{\"allow\":[\"GET\",\"PUT\"]}},\"logo\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/logo\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}},\"background-image\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/background-image\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"the1a5d5siyxEFQOz698\",\"logo\":\"https://ok14static.oktacdn.com/assets/img/logos/okta-logo.1e146cad5713da744492be95eb0f7793.png\",\"favicon\":\"{{baseURL}}/favicon.ico\",\"backgroundImage\":null,\"primaryColorHex\":\"#1662dd\",\"primaryColorContrastHex\":\"#ffffff\",\"secondaryColorHex\":\"#ebebed\",\"secondaryColorContrastHex\":\"#000000\",\"signInPageTouchPointVariant\":\"OKTA_DEFAULT\",\"endUserDashboardTouchPointVariant\":\"OKTA_DEFAULT\",\"errorPageTouchPointVariant\":\"OKTA_DEFAULT\",\"emailTemplateTouchPointVariant\":\"OKTA_DEFAULT\",\"loadingPageTouchPointVariant\":\"OKTA_DEFAULT\",\"_links\":{\"favicon\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/favicon\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698\",\"hints\":{\"allow\":[\"GET\",\"PUT\"]}},\"logo\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/logo\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}},\"background-image\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/background-image\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698",
+      "body": "{\"emailTemplateTouchPointVariant\":\"OKTA_DEFAULT\",\"endUserDashboardTouchPointVariant\":\"OKTA_DEFAULT\",\"errorPageTouchPointVariant\":\"OKTA_DEFAULT\",\"primaryColorHex\":\"#123456\",\"secondaryColorHex\":\"#ebebed\",\"signInPageTouchPointVariant\":\"OKTA_DEFAULT\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"the1a5d5siyxEFQOz698\",\"logo\":\"https://ok14static.oktacdn.com/assets/img/logos/okta-logo.1e146cad5713da744492be95eb0f7793.png\",\"favicon\":\"{{baseURL}}/favicon.ico\",\"backgroundImage\":null,\"primaryColorHex\":\"#123456\",\"primaryColorContrastHex\":\"#ffffff\",\"secondaryColorHex\":\"#ebebed\",\"secondaryColorContrastHex\":\"#000000\",\"signInPageTouchPointVariant\":\"OKTA_DEFAULT\",\"endUserDashboardTouchPointVariant\":\"OKTA_DEFAULT\",\"errorPageTouchPointVariant\":\"OKTA_DEFAULT\",\"emailTemplateTouchPointVariant\":\"OKTA_DEFAULT\",\"loadingPageTouchPointVariant\":\"OKTA_DEFAULT\",\"_links\":{\"favicon\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/favicon\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698\",\"hints\":{\"allow\":[\"GET\",\"PUT\"]}},\"logo\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/logo\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}},\"background-image\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/background-image\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"the1a5d5siyxEFQOz698\",\"logo\":\"https://ok14static.oktacdn.com/assets/img/logos/okta-logo.1e146cad5713da744492be95eb0f7793.png\",\"favicon\":\"{{baseURL}}/favicon.ico\",\"backgroundImage\":null,\"primaryColorHex\":\"#123456\",\"primaryColorContrastHex\":\"#ffffff\",\"secondaryColorHex\":\"#ebebed\",\"secondaryColorContrastHex\":\"#000000\",\"signInPageTouchPointVariant\":\"OKTA_DEFAULT\",\"endUserDashboardTouchPointVariant\":\"OKTA_DEFAULT\",\"errorPageTouchPointVariant\":\"OKTA_DEFAULT\",\"emailTemplateTouchPointVariant\":\"OKTA_DEFAULT\",\"loadingPageTouchPointVariant\":\"OKTA_DEFAULT\",\"_links\":{\"favicon\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/favicon\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698\",\"hints\":{\"allow\":[\"GET\",\"PUT\"]}},\"logo\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/logo\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}},\"background-image\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/background-image\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698",
+      "body": "{\"emailTemplateTouchPointVariant\":\"FULL_THEME\",\"endUserDashboardTouchPointVariant\":\"FULL_THEME\",\"errorPageTouchPointVariant\":\"BACKGROUND_IMAGE\",\"primaryColorHex\":\"#1662dd\",\"secondaryColorHex\":\"#ebebed\",\"signInPageTouchPointVariant\":\"BACKGROUND_IMAGE\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"the1a5d5siyxEFQOz698\",\"logo\":\"https://ok14static.oktacdn.com/assets/img/logos/okta-logo.1e146cad5713da744492be95eb0f7793.png\",\"favicon\":\"{{baseURL}}/favicon.ico\",\"backgroundImage\":null,\"primaryColorHex\":\"#1662dd\",\"primaryColorContrastHex\":\"#ffffff\",\"secondaryColorHex\":\"#ebebed\",\"secondaryColorContrastHex\":\"#000000\",\"signInPageTouchPointVariant\":\"BACKGROUND_IMAGE\",\"endUserDashboardTouchPointVariant\":\"FULL_THEME\",\"errorPageTouchPointVariant\":\"BACKGROUND_IMAGE\",\"emailTemplateTouchPointVariant\":\"FULL_THEME\",\"loadingPageTouchPointVariant\":\"OKTA_DEFAULT\",\"_links\":{\"favicon\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/favicon\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698\",\"hints\":{\"allow\":[\"GET\",\"PUT\"]}},\"logo\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/logo\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}},\"background-image\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d5sixEbT59w698/themes/the1a5d5siyxEFQOz698/background-image\",\"hints\":{\"allow\":[\"POST\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/brands/bnd1a5d5sixEbT59w698",
+      "status": 204
+    }
+  ]
+}

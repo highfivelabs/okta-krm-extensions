@@ -1,0 +1,700 @@
+# Copyright 2026 High Five Labs
+# SPDX-License-Identifier: Apache-2.0
+#
+# Live tests (TestEveryKindLive, krm-rest-runtime's kindtest.Live): these
+# kinds, in this order, against the real API. Kinds not listed are not run
+# live. They skip, naming the secret, until it exists in Secret Manager; then
+#   KRM_LIVE=1 go test -tags live -run TestEveryKindLive -v .
+# Everything a run makes is named hfl-live-<stamp>-<hex> (or hfl_live_...),
+# deleted at the end; the sweep deletes older leftovers. How it works and
+# what the {{...}} templates mean: krm-rest-runtime docs/live.md.
+#
+# The token is an API token (SSWS) of the Integrator org's only user, a
+# super administrator: locking that user out is the worst outcome. So no
+# kind here touches the admin user, the Everyone or Okta Administrators
+# groups, the built-in apps, the default policies, the org's authenticators
+# or anything org-wide a sign-in depends on. Policies, rules, roles and
+# assignments act only on hfl-live- groups, users, apps and authorization
+# servers made for the test. Users are made with activate=false, at
+# @example.com: no email reaches anyone.
+secret: krm-live-okta           # JSON: {"apiToken": "00...", "baseURL": "https://integrator-NNNNNNN.okta.com"}
+target: Okta Integrator org
+# The org's own ID (GET /api/v1/org's id, in every orn:okta:... and orgId)
+# names the test account: redacted wherever it is.
+redactVars: [orgId, arcaOrg]
+redactFields: [orgId]
+
+# Only names starting hfl-live- (or hfl_live_) are ever deleted. A user takes
+# two DELETEs (deactivate, then delete), so users are listed twice.
+sweep:
+- {list: "/api/v1/trustedOrigins?q=hfl-live-", name: name, id: id, delete: "/api/v1/trustedOrigins/{id}"}
+- {list: /api/v1/meta/types/user, name: name, id: id, delete: "/api/v1/meta/types/user/{id}"}
+- {list: /api/v1/hook-keys, name: name, id: id, delete: "/api/v1/hook-keys/{id}"}
+- {list: "/api/v1/apps?q=hfl-live-", name: label, id: id, before: "/api/v1/apps/{id}/lifecycle/deactivate", delete: "/api/v1/apps/{id}"}
+- {list: "/api/v1/groups/rules?search=hfl-live-", name: name, id: id, delete: "/api/v1/groups/rules/{id}"}
+- {list: "/api/v1/groups?q=hfl-live-", name: profile/name, id: id, delete: "/api/v1/groups/{id}"}
+- {list: "/api/v1/users?q=hfl-live-", name: profile/login, id: id, delete: "/api/v1/users/{id}"}
+- {list: "/api/v1/users?q=hfl-live-", name: profile/login, id: id, delete: "/api/v1/users/{id}"}
+- {list: "/api/v1/policies?type=ACCESS_POLICY", name: name, id: id, delete: "/api/v1/policies/{id}"}
+- {list: /api/v1/iam/roles, items: roles, name: label, id: id, delete: "/api/v1/iam/roles/{id}"}
+- {list: /api/v1/iam/resource-sets, items: resource-sets, name: label, id: id, delete: "/api/v1/iam/resource-sets/{id}"}
+- {list: /api/v1/device-assurances, name: name, id: id, delete: "/api/v1/device-assurances/{id}"}
+- {list: /api/v1/brands, name: name, id: id, delete: "/api/v1/brands/{id}"}
+- {list: /api/v1/captchas, name: name, id: id, delete: "/api/v1/captchas/{id}"}
+- {list: /api/v1/templates/sms, name: name, id: id, delete: "/api/v1/templates/sms/{id}"}
+- {list: /api/v1/meta/uischemas, name: uiSchema/label, id: id, delete: "/api/v1/meta/uischemas/{id}"}
+- {list: /api/v1/meta/schemas/user/linkedObjects, name: primary/name, id: primary/name, delete: "/api/v1/meta/schemas/user/linkedObjects/{id}"}
+- {list: /api/v1/push-providers, name: name, id: id, delete: "/api/v1/push-providers/{id}"}
+- {list: /api/v1/security-events-providers, name: name, id: id, delete: "/api/v1/security-events-providers/{id}"}
+- {list: /api/v1/domains, items: domains, name: domain, id: id, delete: "/api/v1/domains/{id}"}
+
+kinds:
+- kind: TrustedOrigin
+  replaceSample: true
+  spec: {name: "{{name}}", origin: "https://{{name}}.example.com", scopes: [{type: CORS}]}
+  change: {name: "{{name}}-2"}
+  driftFull: true
+
+- kind: UserType
+  replaceSample: true
+  spec: {name: "{{name_}}", displayName: "{{name}}", description: first}
+  change: {description: second}
+  driftFull: true
+
+- kind: HookKey
+  replaceSample: true
+  spec: {name: "{{name}}"}
+  change: {name: "{{name}}-2"}
+
+- kind: Group
+  replaceSample: true
+  spec: {profile: {name: "{{name}}", description: first}}
+  change: {profile: {name: "{{name}}", description: second}}
+  drift: {name: "{{name}}", description: drift}
+
+- kind: NetworkZone
+  replaceSample: true
+  spec: {name: "{{name}}", type: IP, gateways: [{type: CIDR, value: 203.0.113.0/24}]}
+  change: {name: "{{name}}-2"}
+  driftFull: true
+
+- kind: AdminRoleCustom
+  replaceSample: true
+  spec: {label: "{{name}}", description: first, permissions: [okta.users.read]}
+  change: {description: second}
+  noDrift: "the update takes only label, description and refuses the object as read (400 E0000003); the update step covers the write"
+
+- kind: ResourceSet
+  replaceSample: true
+  before:
+  - {method: GET, path: /api/v1/org, save: {orgId: id}}
+  - {method: POST, path: /api/v1/groups, body: {profile: {name: "{{name}}-g"}}, save: {rsGroup: id}}
+  after:
+  - {method: DELETE, path: "/api/v1/groups/{{var:rsGroup}}", ok: [404]}
+  spec: {label: "{{name}}", description: first, resources: ["orn:okta:directory:{{var:orgId}}:groups:{{var:rsGroup}}"]}
+  change: {description: second}
+  driftFull: true
+
+- kind: Application
+  replaceSample: true
+  spec: {label: "{{name}}", signOnMode: AUTO_LOGIN, visibility: {autoSubmitToolbar: false, hide: {iOS: false, web: false}}, settings: {signOn: {loginUrl: "https://{{name}}.example.com/login"}}}
+  change: {label: "{{name}}-2"}
+  driftFull: true
+
+- kind: AppGroupAssignment
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v1/apps, body: {label: "{{name}}-app", signOnMode: AUTO_LOGIN, visibility: {autoSubmitToolbar: false, hide: {iOS: false, web: false}}, settings: {signOn: {loginUrl: "https://{{name}}.example.com/login"}}}, save: {agaApp: id}}
+  - {method: POST, path: /api/v1/groups, body: {profile: {name: "{{name}}-g"}}, save: {agaGroup: id}}
+  after:
+  - {method: POST, path: "/api/v1/apps/{{var:agaApp}}/lifecycle/deactivate", ok: [404]}
+  - {method: DELETE, path: "/api/v1/apps/{{var:agaApp}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/groups/{{var:agaGroup}}", ok: [404]}
+  spec: {appid: "{{var:agaApp}}", groupid: "{{var:agaGroup}}", priority: 0}
+  change: {priority: 1}
+  drift: 2
+
+- kind: AppUser
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v1/apps, body: {label: "{{name}}-app", signOnMode: AUTO_LOGIN, visibility: {autoSubmitToolbar: false, hide: {iOS: false, web: false}}, settings: {signOn: {loginUrl: "https://{{name}}.example.com/login"}}}, save: {auApp: id}}
+  - {method: POST, path: "/api/v1/users?activate=false", body: {profile: {firstName: hfl, lastName: live, email: "{{name}}-u@example.com", login: "{{name}}-u@example.com"}}, save: {auUser: id}}
+  after:
+  - {method: POST, path: "/api/v1/apps/{{var:auApp}}/lifecycle/deactivate", ok: [404]}
+  - {method: DELETE, path: "/api/v1/apps/{{var:auApp}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/users/{{var:auUser}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/users/{{var:auUser}}", ok: [404]}
+  spec: {appid: "{{var:auApp}}", id: "{{var:auUser}}", scope: USER, credentials: {userName: "{{name}}-u@example.com"}}
+
+# An app sign-in policy assigned to no app: it applies to nobody.
+- kind: Policy
+  replaceSample: true
+  spec: {name: "{{name}}", type: ACCESS_POLICY, description: first}
+  change: {description: second}
+  driftFull: true
+
+# A rule of a new app sign-in policy (assigned to no app), for an hfl-live group.
+- kind: PolicyRule
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v1/policies, body: {name: "{{name}}-p", type: ACCESS_POLICY}, save: {prPolicy: id}}
+  - {method: POST, path: /api/v1/groups, body: {profile: {name: "{{name}}-g"}}, save: {prGroup: id}}
+  after:
+  - {method: DELETE, path: "/api/v1/policies/{{var:prPolicy}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/groups/{{var:prGroup}}", ok: [404]}
+  spec:
+    policyid: "{{var:prPolicy}}"
+    name: "{{name}}"
+    type: ACCESS_POLICY
+    conditions: {people: {groups: {include: ["{{var:prGroup}}"]}}}
+    actions: {appSignOn: {access: ALLOW, verificationMethod: {type: ASSURANCE, factorMode: 2FA, reauthenticateIn: PT2H, constraints: [{possession: {required: true}}]}}}
+  change: {name: "{{name}}-2"}
+  driftFull: true
+
+- kind: AuthServer
+  replaceSample: true
+  spec: {name: "{{name}}", description: first, audiences: ["api://{{name}}"], issuerMode: ORG_URL}
+  change: {description: second}
+  driftFull: true
+
+- kind: AuthServerScope
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v1/authorizationServers, body: {name: "{{name}}-as", description: hfl-live, audiences: ["api://{{name}}"]}, save: {assAS: id}}
+  after:
+  - {method: POST, path: "/api/v1/authorizationServers/{{var:assAS}}/lifecycle/deactivate", ok: [404]}
+  - {method: DELETE, path: "/api/v1/authorizationServers/{{var:assAS}}", ok: [404]}
+  spec: {authserverid: "{{var:assAS}}", name: "{{name}}", description: first, consent: IMPLICIT, metadataPublish: NO_CLIENTS}
+  change: {description: second}
+  driftFull: true
+
+- kind: AuthServerClaim
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v1/authorizationServers, body: {name: "{{name}}-as", description: hfl-live, audiences: ["api://{{name}}"]}, save: {ascAS: id}}
+  after:
+  - {method: POST, path: "/api/v1/authorizationServers/{{var:ascAS}}/lifecycle/deactivate", ok: [404]}
+  - {method: DELETE, path: "/api/v1/authorizationServers/{{var:ascAS}}", ok: [404]}
+  spec: {authserverid: "{{var:ascAS}}", name: "{{name_}}", status: ACTIVE, claimType: RESOURCE, valueType: EXPRESSION, value: '"first"', alwaysIncludeInToken: true, conditions: {scopes: []}}
+  change: {value: '"second"'}
+  drift: '"drift"'
+  driftFull: true
+
+- kind: AuthServerPolicy
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v1/authorizationServers, body: {name: "{{name}}-as", description: hfl-live, audiences: ["api://{{name}}"]}, save: {aspAS: id}}
+  after:
+  - {method: POST, path: "/api/v1/authorizationServers/{{var:aspAS}}/lifecycle/deactivate", ok: [404]}
+  - {method: DELETE, path: "/api/v1/authorizationServers/{{var:aspAS}}", ok: [404]}
+  spec: {authserverid: "{{var:aspAS}}", name: "{{name}}", description: first, type: OAUTH_AUTHORIZATION_POLICY, priority: 1, conditions: {clients: {include: [ALL_CLIENTS]}}}
+  change: {description: second}
+  driftFull: true
+
+- kind: AuthServerPolicyRule
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v1/authorizationServers, body: {name: "{{name}}-as", description: hfl-live, audiences: ["api://{{name}}"]}, save: {asrAS: id}}
+  - {method: POST, path: "/api/v1/authorizationServers/{{var:asrAS}}/policies", body: {name: "{{name}}-p", description: hfl-live, type: OAUTH_AUTHORIZATION_POLICY, priority: 1, conditions: {clients: {include: [ALL_CLIENTS]}}}, save: {asrPolicy: id}}
+  - {method: POST, path: /api/v1/groups, body: {profile: {name: "{{name}}-g"}}, save: {asrGroup: id}}
+  after:
+  - {method: POST, path: "/api/v1/authorizationServers/{{var:asrAS}}/lifecycle/deactivate", ok: [404]}
+  - {method: DELETE, path: "/api/v1/authorizationServers/{{var:asrAS}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/groups/{{var:asrGroup}}", ok: [404]}
+  spec:
+    authserverid: "{{var:asrAS}}"
+    policyid: "{{var:asrPolicy}}"
+    name: "{{name}}"
+    type: RESOURCE_ACCESS
+    priority: 1
+    conditions: {people: {groups: {include: ["{{var:asrGroup}}"]}}, grantTypes: {include: [client_credentials]}, scopes: {include: ["*"]}}
+    actions: {token: {accessTokenLifetimeMinutes: 60, refreshTokenLifetimeMinutes: 0, refreshTokenWindowMinutes: 10080}}
+  change: {name: "{{name}}-2"}
+  driftFull: true
+
+- kind: Behavior
+  replaceSample: true
+  spec: {name: "{{name}}", type: ANOMALOUS_DEVICE, settings: {maxEventsUsedForEvaluation: 20}}
+  change: {name: "{{name}}-2"}
+  driftFull: true
+
+- kind: Brand
+  replaceSample: true
+  spec: {name: "{{name}}"}
+  change: {name: "{{name}}-2"}
+  driftFull: true
+
+- kind: Captcha
+  replaceSample: true
+  spec: {name: "{{name}}", type: HCAPTCHA, siteKey: 10000000-ffff-ffff-ffff-000000000001, secretKey: "0x0000000000000000000000000000000000000000"}
+  change: {name: "{{name}}-2"}
+  driftFull: true
+
+- kind: CustomizedSigninPage
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v1/brands, body: {name: "{{name}}-b"}, save: {cspBrand: id}}
+  after:
+  - {method: DELETE, path: "/api/v1/brands/{{var:cspBrand}}", ok: [404]}
+  spec: {brandid: "{{var:cspBrand}}", pageContent: "<html><body>{{name}} first</body></html>", widgetVersion: "^7", widgetCustomizations: {signInLabel: Sign in}}
+  change: {pageContent: "<html><body>{{name}} second</body></html>"}
+  driftFull: true
+
+- kind: PreviewSigninPage
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v1/brands, body: {name: "{{name}}-b"}, save: {pspBrand: id}}
+  after:
+  - {method: DELETE, path: "/api/v1/brands/{{var:pspBrand}}", ok: [404]}
+  spec: {brandid: "{{var:pspBrand}}", pageContent: "<html><body>{{name}} first</body></html>", widgetVersion: "^7", widgetCustomizations: {signInLabel: Sign in}}
+  change: {pageContent: "<html><body>{{name}} second</body></html>"}
+  driftFull: true
+
+- kind: Theme
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v1/brands, body: {name: "{{name}}-b"}, save: {thBrand: id}}
+  - {method: GET, path: "/api/v1/brands/{{var:thBrand}}/themes", save: {thTheme: 0/id}}
+  after:
+  - {method: DELETE, path: "/api/v1/brands/{{var:thBrand}}", ok: [404]}
+  spec: {brandid: "{{var:thBrand}}", themeid: "{{var:thTheme}}", primaryColorHex: "#1662dd", secondaryColorHex: "#ebebed", signInPageTouchPointVariant: OKTA_DEFAULT, endUserDashboardTouchPointVariant: OKTA_DEFAULT, errorPageTouchPointVariant: OKTA_DEFAULT, emailTemplateTouchPointVariant: OKTA_DEFAULT}
+  change: {primaryColorHex: "#123456"}
+  noDrift: "Okta's theme update wants every variant and color, and refuses the theme as read (logo, favicon, _links); the update step covers the write"
+
+# Okta makes a brand named after a new custom domain, and keeps it when the
+# domain is deleted; the brands sweep entry deletes it on a later run.
+- kind: Domain
+  replaceSample: true
+  spec: {domain: "{{name}}.example.com", certificateSourceType: MANUAL}
+  noUpdate: "the update takes only brandId, which the CRD (the create's schema) has no field for"
+
+- kind: EmailDomain
+  replaceSample: true
+  stays: "a deleted email domain still reads back, with validationStatus DELETED"
+  before:
+  - {method: POST, path: /api/v1/brands, body: {name: "{{name}}-b"}, save: {edBrand: id}}
+  after:
+  - {method: DELETE, path: "/api/v1/brands/{{var:edBrand}}", ok: [404]}
+  spec: {brandId: "{{var:edBrand}}", domain: "{{name}}.example.com", displayName: first, userName: noreply}
+  change: {displayName: second}
+  noDrift: "the update takes only displayName, userName and refuses the object as read (400 E0000003); the update step covers the write"
+
+# Disabled: Okta keeps sending every email itself.
+- kind: EmailSmtpServer
+  replaceSample: true
+  spec: {alias: "{{name}}", enabled: false, host: www.example.com, port: 587, username: hfl-live, password: not-a-password}
+  change: {alias: "{{name}}-2"}
+
+# Never verified, so never called.
+- kind: EventHook
+  replaceSample: true
+  spec:
+    name: "{{name}}"
+    description: first
+    events: {type: EVENT_TYPE, items: [group.lifecycle.create]}
+    channel: {type: HTTP, version: 1.0.0, config: {uri: "https://www.example.com/{{name}}"}}
+  change: {description: second}
+  driftFull: true
+
+- kind: InlineHook
+  replaceSample: true
+  spec:
+    name: "{{name}}"
+    type: com.okta.oauth2.tokens.transform
+    version: 1.0.0
+    channel: {type: HTTP, version: 1.0.0, config: {uri: "https://www.example.com/{{name}}", method: POST}}
+  change: {name: "{{name}}-2"}
+  driftFull: true
+
+# Read-only administrator, for an empty hfl-live group.
+- kind: GroupRole
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v1/groups, body: {profile: {name: "{{name}}-g"}}, save: {grGroup: id}}
+  after:
+  - {method: DELETE, path: "/api/v1/groups/{{var:grGroup}}", ok: [404]}
+  spec: {groupid: "{{var:grGroup}}", type: READ_ONLY_ADMIN}
+
+# Made inactive (Okta's default), into an hfl-live group, matching nobody.
+- kind: GroupRule
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v1/groups, body: {profile: {name: "{{name}}-g"}}, save: {grlGroup: id}}
+  after:
+  - {method: DELETE, path: "/api/v1/groups/{{var:grlGroup}}", ok: [404]}
+  spec:
+    name: "{{name}}"
+    type: group_rule
+    conditions: {expression: {type: "urn:okta:expression:1.0", value: 'user.login == "{{name}}@example.com"'}}
+    actions: {assignUserToGroups: {groupIds: ["{{var:grlGroup}}"]}}
+  change: {name: "{{name}}-2"}
+  driftFull: true
+
+# A Google IdP that no routing rule names: nobody is sent to it. (Once, its
+# delete right after the deactivation did not take: it stayed readable for
+# minutes, until the cleanup deleted it again.)
+- kind: IdentityProvider
+  replaceSample: true
+  deleteWait: 3m
+  spec:
+    type: GOOGLE
+    name: "{{name}}"
+    issuerMode: ORG_URL
+    protocol: {type: OIDC, scopes: [email, openid, profile], credentials: {client: {client_id: hfl-live-client, client_secret: hfl-live-secret}}}
+    policy:
+      provisioning: {action: AUTO, profileMaster: false, groups: {action: NONE}}
+      accountLink: {action: AUTO}
+      subject: {userNameTemplate: {template: idpuser.email}, matchType: USERNAME}
+      maxClockSkew: 0
+  change: {name: "{{name}}-2"}
+  driftFull: true
+
+- kind: IdpSamlKey
+  replaceSample: true
+  spec: {x5c: [MIIDCjCCAfKgAwIBAgIUDllLB5vtvzm9Fj23EK1pio+gbQcwDQYJKoZIhvcNAQELBQAwJTEjMCEGA1UEAwwaaGZsLWxpdmUtaWRwLTEuZXhhbXBsZS5jb20wHhcNMjYxMTE2MDYzNTQwWhcNMzYxMTEzMDYzNTQwWjAlMSMwIQYDVQQDDBpoZmwtbGl2ZS1pZHAtMS5leGFtcGxlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANeh8lsgmQsJEk+OyRub8ytpNboDjOZKGts+v2CwxkGMrbVlVYp4gCa01K+3mtaUEt3kLyIPFpYeeWEfohFT4MfZS+TK88kj3tWpjhIjvirfGr0DDOSmtDhAxzB9Ph7cwgMluMwz/BWOjVL3bjS3qKvSv0vPI0B4AGz00Ag+4Tnbr8PWGegDNr77sS4C8OwCCXnndaBOe5dm2nJbxESPpTinRvFDYJNVjDqulPaaqiWUGXQjftM3uX3WbBLqlNMtm+MpwB4e8zeZ/t41IMIaV5BAj8KqKZpUuJS9Gz45PyNHwAboH99X4eCvgXbfCdwtVm5TqnFmIlmDSv/dG4UptO0CAwEAAaMyMDAwHQYDVR0OBBYEFF42JahTikkX63PpvMFBrH0lWs7LMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAJX7A9S65WVtGn16GiND+Hdv+rsSwgnUvcF9S/DA12g1M8TKUZCpqnRm70Z8JSeSkTX7PTLHgXrUU5lILdnkwpHhW7Hmc7OBdBM478pL2zpH02F9z8H4r/ooOa32I0i5PJy6JbDR1Z5vtaSUJJDRU+TuiKEfVsyv90/aoYzyGGIgPgI3ymOeq0xxSjCSv8gdF1ffYvqQM9IH2MHhR725s8jOr7v9sL8TxgzEKAN3EEzfAUxCmA8+pytJLo/f58TUCgMMm5MBnDZXrUSRf5rhJfEEMrRbCCl0/wrF2xlmpAJdEvxGxSnh51B385rwv3S6t9W1OyjQ699bxpVF9T9f1tA=]}
+  change: {x5c: [MIIDCjCCAfKgAwIBAgIUY3oPml5arxzIMVV4NNwdppQOq7QwDQYJKoZIhvcNAQELBQAwJTEjMCEGA1UEAwwaaGZsLWxpdmUtaWRwLTIuZXhhbXBsZS5jb20wHhcNMjYxMTE2MDYzNTQwWhcNMzYxMTEzMDYzNTQwWjAlMSMwIQYDVQQDDBpoZmwtbGl2ZS1pZHAtMi5leGFtcGxlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKsLf23IXIf5JDP+K9Wf7w3GXBcPCmQtJq/F+oxzT+lJtX8WWe1iVkO+HC5J++lPPLIhEdbNdSteL/E07Fio1spk+YdOLiZsYA2Mqm2ZRedYqegrtjB3zgQOLGcaaLkrygfRDtpZE+a++QPlB5aYZk2bdcIA9faL4PWnMCSOzWhdoXEdoEyjpqrTXYacBCUCxzn5dDgbP0HNSO2rFih/+a2N2pPZkxPmPJzoKIL8fzRMg5vbXHMGJurQMEkNsl0CQ4K/Rvc2NVWSJ7TfWwAPZyQmaSzJncegohRsLc9mgv1+WGMWlyHLPZaGFFE9AxRPo5FaOqjXoJs25LzfZcFPnk8CAwEAAaMyMDAwHQYDVR0OBBYEFE1bfDCEN6NERjL6CMUyyCgwgFFvMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAHI/yx63HFyDU2V0WmEBxaCvt1JIdVcKqgQ0bm13CjrL0+uOrjAK0qUpAS5lkprR71dN0fUyVai5ESSTCmkyEqfoploQq+NC8GLiakcrfSN4Pak7ZJeb/D0USRqCaeeFlgqBzToaVQysvEHBY1rV7S0vIk0xDy/j8uq/+/aHwaGPrAsIyFhYE7ec9W174UIzUFSV2vjKfuqu27GcqNteqUh7y0SyFqlaKGugSmPgqgt3wc7f0KKqrHv0EnPYcMhMun36/znsicQwiXo5IyNCmQhdgeIqnUzCacqZdAlMBfmcm7PhxSQ6qZPAMM6OW+RR3sCghEEsh0xDeJLPb8yax+c=]}
+  noDrift: the key is its certificate; there is no other field to change
+
+- kind: LinkDefinition
+  replaceSample: true
+  spec:
+    primary: {name: "{{name_}}_m", title: Manager, description: hfl-live, type: USER}
+    associated: {name: "{{name_}}_r", title: Report, description: hfl-live, type: USER}
+
+- kind: PolicyDeviceAssurance
+  replaceSample: true
+  spec: {name: "{{name}}", platform: WINDOWS, osVersion: {minimum: 10.0.19045}}
+  change: {name: "{{name}}-2"}
+  driftFull: true
+
+- kind: PushProvider
+  replaceSample: true
+  spec:
+    name: "{{name}}"
+    providerType: APNS
+    configuration:
+      keyId: ABC123DEFG
+      teamId: DEF123GHIJ
+      fileName: hfl-live.p8
+      tokenSigningKey: "{{env:OKTA_LIVE_APNS_KEY}}"
+  change: {name: "{{name}}-2"}
+  driftFull: true
+
+- kind: RateLimitAdminNotificationSettings
+  replaceSample: true
+  spec: {notificationsEnabled: true}
+  change: {notificationsEnabled: false}
+  drift: true
+
+- kind: RateLimitWarningThresholdPercentage
+  replaceSample: true
+  spec: {warningThreshold: 90}
+  change: {warningThreshold: 80}
+  drift: 70
+
+- kind: SecurityEventsProvider
+  replaceSample: true
+  spec: {name: "{{name}}", type: custom, settings: {issuer: "https://accounts.google.com", jwks_url: "https://www.googleapis.com/oauth2/v3/certs"}}
+  change: {name: "{{name}}-2"}
+  driftFull: true
+
+- kind: UiSchema
+  replaceSample: true
+  spec: {uiSchema: {type: Group, label: "{{name}}", buttonLabel: Submit, elements: [{type: Control, scope: "#/properties/firstName", label: First name, options: {format: text}}]}}
+  change: {uiSchema: {type: Group, label: "{{name}}", buttonLabel: Next, elements: [{type: Control, scope: "#/properties/firstName", label: First name, options: {format: text}}]}}
+  drift: {type: Group, label: "{{name}}", buttonLabel: Drift, elements: [{type: Control, scope: "#/properties/firstName", label: First name, options: {format: text}}]}
+
+- kind: UserAdminRoles
+  replaceSample: true
+  before:
+  - {method: POST, path: "/api/v1/users?activate=false", body: {profile: {firstName: hfl, lastName: live, email: "{{name}}-u@example.com", login: "{{name}}-u@example.com"}}, save: {uarUser: id}}
+  after:
+  - {method: DELETE, path: "/api/v1/users/{{var:uarUser}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/users/{{var:uarUser}}", ok: [404]}
+  spec: {userid: "{{var:uarUser}}", type: READ_ONLY_ADMIN}
+
+- kind: Factor
+  replaceSample: true
+  before:
+  - {method: POST, path: "/api/v1/users?activate=false", body: {profile: {firstName: hfl, lastName: live, email: "{{name}}-u@example.com", login: "{{name}}-u@example.com"}}, save: {fUser: id}}
+  after:
+  - {method: DELETE, path: "/api/v1/users/{{var:fUser}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/users/{{var:fUser}}", ok: [404]}
+  spec: {userid: "{{var:fUser}}", factorType: email, provider: OKTA, profile: {email: "{{name}}-u@example.com"}}
+
+- kind: AppFederatedClaim
+  replaceSample: true
+  before:
+  - method: POST
+    path: /api/v1/apps
+    body:
+      name: oidc_client
+      label: "{{name}}-app"
+      signOnMode: OPENID_CONNECT
+      credentials: {oauthClient: {token_endpoint_auth_method: client_secret_basic}}
+      settings: {oauthClient: {grant_types: [authorization_code], response_types: [code], redirect_uris: ["https://www.example.com/{{name}}/cb"], application_type: web}}
+    save: {afcApp: id}
+  after:
+  - {method: POST, path: "/api/v1/apps/{{var:afcApp}}/lifecycle/deactivate", ok: [404]}
+  - {method: DELETE, path: "/api/v1/apps/{{var:afcApp}}", ok: [404]}
+  spec: {appid: "{{var:afcApp}}", name: "{{name_}}", expression: user.profile.login}
+  change: {expression: user.profile.email}
+  driftFull: true
+
+- kind: User
+  replaceSample: true
+  spec: {profile: {firstName: hfl, lastName: first, email: "{{name}}@example.com", login: "{{name}}@example.com"}}
+  change: {profile: {firstName: hfl, lastName: second, email: "{{name}}@example.com", login: "{{name}}@example.com"}}
+  drift: {firstName: hfl, lastName: drift, email: "{{name}}@example.com", login: "{{name}}@example.com"}
+
+# An empty hfl-live group, given the hfl-live custom role over an hfl-live
+# resource set (a group): it grants nobody anything.
+- kind: AdminRoleCustomAssignments
+  replaceSample: true
+  before:
+  - {method: GET, path: /.well-known/openid-configuration, save: {arcaIssuer: issuer}}
+  - {method: GET, path: /api/v1/org, save: {arcaOrg: id}}
+  - {method: POST, path: /api/v1/groups, body: {profile: {name: "{{name}}-t"}}, save: {arcaTarget: id}}
+  - {method: POST, path: /api/v1/groups, body: {profile: {name: "{{name}}-m"}}, save: {arcaMember: id}}
+  - {method: POST, path: /api/v1/iam/resource-sets, body: {label: "{{name}}-rs", description: hfl-live, resources: ["orn:okta:directory:{{var:arcaOrg}}:groups:{{var:arcaTarget}}"]}, save: {arcaRS: id}}
+  - {method: POST, path: /api/v1/iam/roles, body: {label: "{{name}}-r", description: hfl-live, permissions: [okta.users.read]}, save: {arcaRole: id}}
+  after:
+  - {method: DELETE, path: "/api/v1/iam/resource-sets/{{var:arcaRS}}/bindings/{{var:arcaRole}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/iam/resource-sets/{{var:arcaRS}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/iam/roles/{{var:arcaRole}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/groups/{{var:arcaMember}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/groups/{{var:arcaTarget}}", ok: [404]}
+  spec: {resourcesetidorlabel: "{{var:arcaRS}}", role: "{{var:arcaRole}}", members: ["{{var:arcaIssuer}}/api/v1/groups/{{var:arcaMember}}"]}
+
+# A group target on a group membership administrator role of an hfl-live user
+# (made with activate=false). Okta refuses to remove a role's last group
+# target, so the before calls give the role a first one.
+- kind: AdminRoleGroupTarget
+  replaceSample: true
+  before:
+  - {method: POST, path: "/api/v1/users?activate=false", body: {profile: {firstName: hfl, lastName: live, email: "{{name}}-u@example.com", login: "{{name}}-u@example.com"}}, save: {argUser: id}}
+  - {method: POST, path: "/api/v1/users/{{var:argUser}}/roles?disableNotifications=true", body: {type: GROUP_MEMBERSHIP_ADMIN}, save: {argRole: id}}
+  - {method: POST, path: /api/v1/groups, body: {profile: {name: "{{name}}-g1"}}, save: {argKeep: id}}
+  - {method: POST, path: /api/v1/groups, body: {profile: {name: "{{name}}-g2"}}, save: {argGroup: id}}
+  - {method: PUT, path: "/api/v1/users/{{var:argUser}}/roles/{{var:argRole}}/targets/groups/{{var:argKeep}}"}
+  after:
+  - {method: DELETE, path: "/api/v1/users/{{var:argUser}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/users/{{var:argUser}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/groups/{{var:argGroup}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/groups/{{var:argKeep}}", ok: [404]}
+  spec: {userid: "{{var:argUser}}", roleassignmentid: "{{var:argRole}}", groupid: "{{var:argGroup}}"}
+
+# An hfl-live app moved onto a new app sign-in policy (an hfl-live one); both
+# are deleted after.
+- kind: AppPolicyAssignment
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v1/apps, body: {label: "{{name}}-app", signOnMode: AUTO_LOGIN, visibility: {autoSubmitToolbar: false, hide: {iOS: false, web: false}}, settings: {signOn: {loginUrl: "https://{{name}}.example.com/login"}}}, save: {apaApp: id}}
+  - {method: POST, path: /api/v1/policies, body: {name: "{{name}}-p", type: ACCESS_POLICY}, save: {apaPolicy: id}}
+  after:
+  - {method: POST, path: "/api/v1/apps/{{var:apaApp}}/lifecycle/deactivate", ok: [404]}
+  - {method: DELETE, path: "/api/v1/apps/{{var:apaApp}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/policies/{{var:apaPolicy}}", ok: [404]}
+  spec: {appid: "{{var:apaApp}}", policyid: "{{var:apaPolicy}}"}
+  noUpdate: "the assignment has no field but its app and policy, both path parameters"
+
+# okta.users.read granted to an hfl-live service app that has no client
+# secret (private_key_jwt against a JWKS URL that serves no key): nothing can
+# get a token with it. The issuer is the org's own URL.
+- kind: AppOauthApiScope
+  replaceSample: true
+  before:
+  - {method: GET, path: /.well-known/openid-configuration, save: {aoasIssuer: issuer}}
+  - method: POST
+    path: /api/v1/apps
+    body:
+      name: oidc_client
+      label: "{{name}}-app"
+      signOnMode: OPENID_CONNECT
+      credentials: {oauthClient: {token_endpoint_auth_method: private_key_jwt}}
+      settings: {oauthClient: {grant_types: [client_credentials], response_types: [token], application_type: service, jwks_uri: "https://www.example.com/{{name}}/jwks"}}
+    save: {aoasApp: id}
+  after:
+  - {method: POST, path: "/api/v1/apps/{{var:aoasApp}}/lifecycle/deactivate", ok: [404]}
+  - {method: DELETE, path: "/api/v1/apps/{{var:aoasApp}}", ok: [404]}
+  spec: {appid: "{{var:aoasApp}}", issuer: "{{var:aoasIssuer}}", scopeId: okta.users.read}
+
+# Read-only administrator, for an hfl-live service app that has no client
+# secret (as above).
+- kind: ClientRoleAssignment
+  replaceSample: true
+  before:
+  - method: POST
+    path: /api/v1/apps
+    body:
+      name: oidc_client
+      label: "{{name}}-app"
+      signOnMode: OPENID_CONNECT
+      credentials: {oauthClient: {token_endpoint_auth_method: private_key_jwt}}
+      settings: {oauthClient: {grant_types: [client_credentials], response_types: [token], application_type: service, jwks_uri: "https://www.example.com/{{name}}/jwks"}}
+    save: {craApp: id, craClient: credentials/oauthClient/client_id}
+  after:
+  - {method: POST, path: "/api/v1/apps/{{var:craApp}}/lifecycle/deactivate", ok: [404]}
+  - {method: DELETE, path: "/api/v1/apps/{{var:craApp}}", ok: [404]}
+  spec: {clientid: "{{var:craClient}}", type: READ_ONLY_ADMIN}
+
+# An hfl-live user (made with activate=false) in an hfl-live group.
+- kind: GroupMembership
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v1/groups, body: {profile: {name: "{{name}}-g"}}, save: {gmGroup: id}}
+  - {method: POST, path: "/api/v1/users?activate=false", body: {profile: {firstName: hfl, lastName: live, email: "{{name}}-u@example.com", login: "{{name}}-u@example.com"}}, save: {gmUser: id}}
+  after:
+  - {method: DELETE, path: "/api/v1/users/{{var:gmUser}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/users/{{var:gmUser}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/groups/{{var:gmGroup}}", ok: [404]}
+  spec: {groupid: "{{var:gmGroup}}", userid: "{{var:gmUser}}"}
+
+- kind: ApiToken
+  skip: "acts on existing API tokens; the org's only one is the admin's own, and deleting it revokes it"
+- kind: OrgCaptcha
+  skip: "org-wide: puts a CAPTCHA on the org's own sign-in page, which a test CAPTCHA would break"
+- kind: AuthenticatorMethodWebauthn
+  skip: "org-wide: changes the Passkeys authenticator the admin may sign in with"
+- kind: AuthenticatorWebauthnCustomAaguid
+  skip: "org-wide: changes the Passkeys authenticator the admin may sign in with"
+- kind: AgentPoolUpdate
+  skip: "needs an Active Directory or LDAP agent pool; the Integrator org has none"
+- kind: AppFeatures
+  skip: "needs a provisioning-enabled app from the Okta Integration Network"
+- kind: PushGroup
+  skip: "needs a provisioning-enabled app with Group Push from the Okta Integration Network"
+- kind: ApiServiceIntegration
+  skip: "needs an API service integration published in the Okta Integration Network"
+- kind: LogStream
+  skip: "streams the org's System Log to a real AWS EventBridge or Splunk Cloud account"
+- kind: IdentitySourceGroup
+  skip: "needs a custom identity source (Anything-as-a-Source), made in the Admin Console; the org has none"
+- kind: IdentitySourceUser
+  skip: "needs a custom identity source (Anything-as-a-Source), made in the Admin Console; the org has none"
+- kind: EmailTemplateSettings
+  skip: "email templates: the Integrator org answers 403 E0000006, on an hfl-live brand and the default brand alike"
+- kind: EmailCustomization
+  skip: "email templates: the Integrator org answers 403 E0000006 for an hfl-live brand; the default brand's are the org's real emails"
+- kind: TemplateSms
+  skip: "custom SMS templates: the Integrator org answers 403 E0000228 (SMS template customization is not permitted)"
+- kind: UserRisk
+  skip: "user risk (Identity Threat Protection): the Integrator org answers 401 E0000015 (not in its SKU)"
+- kind: Realm
+  skip: "Okta Realms: the Integrator org answers 401 E0000015 (not in its SKU)"
+- kind: RealmAssignment
+  skip: "Okta Realms: the Integrator org answers 401 E0000015 (not in its SKU)"
+- kind: EntitlementBundle
+  fakeOnly: "Okta Identity Governance, sold separately by contract"
+- kind: Entitlement
+  fakeOnly: "Okta Identity Governance, sold separately by contract"
+- kind: Campaign
+  fakeOnly: "Okta Identity Governance, sold separately by contract"
+- kind: Label
+  fakeOnly: "Okta Identity Governance, sold separately by contract"
+- kind: RequestCondition
+  fakeOnly: "Okta Identity Governance, sold separately by contract"
+- kind: RequestSettingOrganization
+  fakeOnly: "Okta Identity Governance, sold separately by contract"
+- kind: RequestSettingResource
+  fakeOnly: "Okta Identity Governance, sold separately by contract"
+- kind: OrgConfiguration
+  skip: "org-wide: replaces the org's own name, contact details and settings"
+- kind: RateLimiting
+  skip: "org-wide: changes the client-based rate limit mode of the org's sign-in"
+- kind: PrincipalRateLimit
+  skip: "acts on existing principal rate limits; the org's only API token is the admin's own"
+- kind: AppConnection
+  skip: "needs a provisioning-enabled app from the Okta Integration Network"
+- kind: AppUserSchema
+  skip: "not yet tried: the CRD's definitions.custom has no id or type, which Okta's partial schema update may want, and a custom property reads back with fields it was not sent"
+- kind: FactorTotp
+  skip: "not yet tried: /api/v1/org/factors/hotp/profiles is not in Okta's published API; whether the Integrator org has it, and whether a profile can be deleted, is unknown"
+- kind: GroupOwner
+  fakeOnly: "group owners are Okta Identity Governance (the API needs a subscription), sold separately by contract"
+- kind: EndUserMyRequest
+  fakeOnly: "Okta Identity Governance, sold separately by contract (an access request cannot be deleted either)"
+- kind: RequestV2
+  fakeOnly: "Okta Identity Governance, sold separately by contract (an access request cannot be deleted either)"
+- kind: GroupSchema
+  skip: "org-wide: the group profile schema every group shares; putting it back cannot remove a property the test adds"
+- kind: SecurityNotificationEmails
+  skip: "org-wide: the security notification emails Okta sends the org's users (an internal API)"
+- kind: ThreatInsightConfiguration
+  skip: "org-wide: what ThreatInsight does to every sign-in to the org from a suspicious IP"
+- kind: AuthServerDefault
+  skip: "org-wide: the org's default authorization server, which the org's own apps sign in through"
+- kind: AuthServerClaimDefault
+  skip: "org-wide: a claim of the default authorization server, in the tokens the org's apps get"
+- kind: Authenticator
+  skip: "org-wide: adopts and, on delete, deactivates one of the org's authenticators, which the admin may sign in with"
+- kind: OrgFactor
+  skip: "org-wide: deactivating an org factor on delete may lock the admin out"
+- kind: Feature
+  skip: "org-wide: turns an Okta feature on or off for the whole org, and some cannot be turned back"
+- kind: OrgSupport
+  skip: "org-wide: grants or revokes Okta Support's access to the org"
+- kind: PolicyMfaDefault
+  skip: "org-wide: the default MFA enrollment policy every user signs in under"
+- kind: PolicyPasswordDefault
+  skip: "org-wide: the default password policy every user's password is checked against"
+- kind: PostAuthSessionPolicyRule
+  skip: "org-wide: a rule of the post-auth session policy, which applies to every sign-in"
+- kind: SessionViolationPolicyRule
+  skip: "org-wide: a rule of the session violation detection policy, which applies to every session"
+- kind: UserBaseSchemaProperty
+  skip: "org-wide: a base property of the user profile every user, the admin included, has"
+- kind: ProfileMapping
+  skip: "acts on a profile mapping Okta makes for an app; needs an app with provisioning, which the test apps lack"
+- kind: RoleSubscription
+  skip: "org-wide: the admin notifications a whole administrator role gets, the admin's included"
+- kind: UserSubscription
+  skip: "subscribes or unsubscribes a user to admin notifications; the only user who gets them is the admin"
+- kind: TrustedServer
+  skip: "not yet written: needs two custom authorization servers made for the run, the second named by the first's ID"
+- kind: IdentitySourceGroupMembership
+  skip: "needs a custom identity source (Okta's Identity Source API), which the Integrator org has none of"
+- kind: AppOauthRedirectUri
+  skip: "not yet written: needs an OIDC app made for the run, whose ID the kind's appId takes"
+- kind: AppOauthPostLogoutRedirectUri
+  skip: "not yet written: needs an OIDC app made for the run, whose ID the kind's appId takes"
+- kind: AppSamlAppSettings
+  skip: "settings.app holds a catalog SAML app's own settings (a preconfigured app such as Amazon AWS); not yet tried whether the Integrator org takes such an app, and a custom SAML app has none to set"
+- kind: Device
+  skip: "needs a device registered by Okta Verify; the Integrator org has none"
+- kind: AppToken
+  skip: "needs a refresh token issued by a user's sign-in to an app; the test makes no sign-ins"
+- kind: DomainCertificate
+  skip: "needs a custom domain the run owns, with its DNS and a certificate for it"
+- kind: DomainVerification
+  skip: "needs a custom domain whose DNS records the run can set"
+- kind: EmailDomainVerification
+  skip: "needs an email domain whose DNS records the run can set"
+- kind: EventHookVerification
+  skip: "needs an event hook endpoint that answers Okta's one-time verification challenge"
+- kind: RequestSequence
+  fakeOnly: "made in Okta Workflows, under Okta Identity Governance (sold separately by contract); the Integrator org has neither"
+- kind: Review
+  fakeOnly: "Okta Identity Governance (sold separately by contract): needs an access certification campaign with a review to reassign"
+- kind: ResourceOwner
+  fakeOnly: "Okta Identity Governance (sold separately by contract): needs governed resources (an app, an entitlement bundle) to own"
+  change: {principalOrns: ["orn:okta:directory:00o1example:users:00u1example", "orn:okta:directory:00o1example:groups:00g1example"]}
+
+# A link definition of the run's, and three users made for it (never
+# activated): the first is the primary, the other two its associated users.
+- kind: LinkValue
+  replaceSample: true
+  before:
+  - {method: POST, path: /api/v1/meta/schemas/user/linkedObjects, body: {primary: {name: "{{name_}}_lm", title: Manager, description: hfl-live, type: USER}, associated: {name: "{{name_}}_lr", title: Report, description: hfl-live, type: USER}}}
+  - {method: POST, path: "/api/v1/users?activate=false", body: {profile: {firstName: hfl, lastName: live, email: "{{name}}-p@example.com", login: "{{name}}-p@example.com"}}, save: {lvPrimary: id}}
+  - {method: POST, path: "/api/v1/users?activate=false", body: {profile: {firstName: hfl, lastName: live, email: "{{name}}-a@example.com", login: "{{name}}-a@example.com"}}, save: {lvA: id}}
+  - {method: POST, path: "/api/v1/users?activate=false", body: {profile: {firstName: hfl, lastName: live, email: "{{name}}-b@example.com", login: "{{name}}-b@example.com"}}, save: {lvB: id}}
+  after:
+  - {method: DELETE, path: "/api/v1/users/{{var:lvA}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/users/{{var:lvA}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/users/{{var:lvB}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/users/{{var:lvB}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/users/{{var:lvPrimary}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/users/{{var:lvPrimary}}", ok: [404]}
+  - {method: DELETE, path: "/api/v1/meta/schemas/user/linkedObjects/{{name_}}_lm", ok: [404]}
+  spec: {primaryName: "{{name_}}_lm", associatedName: "{{name_}}_lr", primaryUserId: "{{var:lvPrimary}}", associatedUserIds: ["{{var:lvA}}", "{{var:lvB}}"]}

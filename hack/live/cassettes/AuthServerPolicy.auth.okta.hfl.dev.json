@@ -1,0 +1,123 @@
+{
+  "recorded": "2026-11-20T23:57:17Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "ascAS": "aus1a5d5lco5hVnpo698",
+    "aspAS": "aus1a5d7xao0ETI8w698",
+    "assAS": "aus1a5d7849QKfQlb698",
+    "auApp": "0oa1a5d5vh1J50WFa698",
+    "auUser": "00u1a5d75s3uKgUNV698",
+    "orgId": "{{redacted}}",
+    "prGroup": "00g1a5d7103FF3HnP698",
+    "prPolicy": "rst1a5d85sx0UeqpU698",
+    "rsGroup": "00g1a5d7plc3tGO1v698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/authorizationServers",
+      "body": "{\"audiences\":[\"api://{{name}}\"],\"description\":\"hfl-live\",\"name\":\"{{name}}-as\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_links\":{\"claims\":{\"hints\":{\"allow\":[\"GET\",\"POST\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/claims\"},\"deactivate\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/lifecycle/deactivate\"},\"keys\":{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/credentials/keys\"},\"metadata\":[{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/.well-known/oauth-authorization-server/oauth2/aus1a5d7xao0ETI8w698\",\"name\":\"oauth-authorization-server\"},{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/oauth2/aus1a5d7xao0ETI8w698/.well-known/openid-configuration\",\"name\":\"openid-configuration\"}],\"policies\":{\"hints\":{\"allow\":[\"GET\",\"POST\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies\"},\"resourceServerCredentialsKeys\":{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{redacted}}\"},\"rotateKey\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/credentials/lifecycle/keyRotate\"},\"scopes\":{\"hints\":{\"allow\":[\"GET\",\"POST\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/scopes\"},\"self\":{\"hints\":{\"allow\":[\"GET\",\"DELETE\",\"PUT\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698\"}},\"audiences\":[\"api://{{name}}\"],\"created\":\"2026-11-20T23:57:13.000Z\",\"credentials\":{\"signing\":{\"kid\":\"{{redacted}}\",\"lastRotated\":\"2026-11-20T23:57:13.000Z\",\"nextRotation\":\"2027-02-18T23:57:13.000Z\",\"rotationMode\":\"AUTO\"}},\"default\":false,\"description\":\"hfl-live\",\"id\":\"aus1a5d7xao0ETI8w698\",\"issuer\":\"{{baseURL}}/oauth2/aus1a5d7xao0ETI8w698\",\"issuerMode\":\"DYNAMIC\",\"lastUpdated\":\"2026-11-20T23:57:13.000Z\",\"name\":\"{{name}}-as\",\"status\":\"ACTIVE\"}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies",
+      "body": "{\"conditions\":{\"clients\":{\"include\":[\"ALL_CLIENTS\"]}},\"description\":\"first\",\"name\":\"{{name}}\",\"priority\":1,\"type\":\"OAUTH_AUTHORIZATION_POLICY\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00p1a5d3it6wL86nz698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"description\":\"first\",\"priority\":1,\"system\":false,\"conditions\":{\"clients\":{\"include\":[\"ALL_CLIENTS\"],\"cimd\":[]}},\"created\":\"2026-11-20T23:57:14.000Z\",\"lastUpdated\":\"2026-11-20T23:57:14.000Z\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/rules\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"OAUTH_AUTHORIZATION_POLICY\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00p1a5d3it6wL86nz698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"description\":\"first\",\"priority\":1,\"system\":false,\"conditions\":{\"clients\":{\"include\":[\"ALL_CLIENTS\"],\"cimd\":[]}},\"created\":\"2026-11-20T23:57:14.000Z\",\"lastUpdated\":\"2026-11-20T23:57:14.000Z\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/rules\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"OAUTH_AUTHORIZATION_POLICY\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00p1a5d3it6wL86nz698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"description\":\"first\",\"priority\":1,\"system\":false,\"conditions\":{\"clients\":{\"include\":[\"ALL_CLIENTS\"],\"cimd\":[]}},\"created\":\"2026-11-20T23:57:14.000Z\",\"lastUpdated\":\"2026-11-20T23:57:14.000Z\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/rules\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"OAUTH_AUTHORIZATION_POLICY\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698",
+      "body": "{\"conditions\":{\"clients\":{\"include\":[\"ALL_CLIENTS\"]}},\"description\":\"second\",\"name\":\"{{name}}\",\"priority\":1,\"type\":\"OAUTH_AUTHORIZATION_POLICY\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00p1a5d3it6wL86nz698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"description\":\"second\",\"priority\":1,\"system\":false,\"conditions\":{\"clients\":{\"include\":[\"ALL_CLIENTS\"],\"cimd\":[]}},\"created\":\"2026-11-20T23:57:14.000Z\",\"lastUpdated\":\"2026-11-20T23:57:15.000Z\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/rules\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"OAUTH_AUTHORIZATION_POLICY\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00p1a5d3it6wL86nz698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"description\":\"second\",\"priority\":1,\"system\":false,\"conditions\":{\"clients\":{\"include\":[\"ALL_CLIENTS\"],\"cimd\":[]}},\"created\":\"2026-11-20T23:57:14.000Z\",\"lastUpdated\":\"2026-11-20T23:57:15.000Z\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/rules\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"OAUTH_AUTHORIZATION_POLICY\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00p1a5d3it6wL86nz698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"description\":\"second\",\"priority\":1,\"system\":false,\"conditions\":{\"clients\":{\"include\":[\"ALL_CLIENTS\"],\"cimd\":[]}},\"created\":\"2026-11-20T23:57:14.000Z\",\"lastUpdated\":\"2026-11-20T23:57:15.000Z\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/rules\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"OAUTH_AUTHORIZATION_POLICY\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698",
+      "body": "{\"_links\":{\"deactivate\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/lifecycle/deactivate\"},\"rules\":{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/rules\"},\"self\":{\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698\"}},\"conditions\":{\"clients\":{\"cimd\":[],\"include\":[\"ALL_CLIENTS\"]}},\"created\":\"2026-11-20T23:57:14.000Z\",\"description\":\"hfl-live-drift\",\"id\":\"00p1a5d3it6wL86nz698\",\"lastUpdated\":\"2026-11-20T23:57:15.000Z\",\"name\":\"{{name}}\",\"priority\":1,\"status\":\"ACTIVE\",\"system\":false,\"type\":\"OAUTH_AUTHORIZATION_POLICY\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00p1a5d3it6wL86nz698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"description\":\"hfl-live-drift\",\"priority\":1,\"system\":false,\"conditions\":{\"clients\":{\"include\":[\"ALL_CLIENTS\"],\"cimd\":[]}},\"created\":\"2026-11-20T23:57:14.000Z\",\"lastUpdated\":\"2026-11-20T23:57:16.000Z\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/rules\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"OAUTH_AUTHORIZATION_POLICY\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00p1a5d3it6wL86nz698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"description\":\"hfl-live-drift\",\"priority\":1,\"system\":false,\"conditions\":{\"clients\":{\"include\":[\"ALL_CLIENTS\"],\"cimd\":[]}},\"created\":\"2026-11-20T23:57:14.000Z\",\"lastUpdated\":\"2026-11-20T23:57:16.000Z\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/rules\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"OAUTH_AUTHORIZATION_POLICY\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698",
+      "body": "{\"conditions\":{\"clients\":{\"include\":[\"ALL_CLIENTS\"]}},\"description\":\"second\",\"name\":\"{{name}}\",\"priority\":1,\"type\":\"OAUTH_AUTHORIZATION_POLICY\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00p1a5d3it6wL86nz698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"description\":\"second\",\"priority\":1,\"system\":false,\"conditions\":{\"clients\":{\"include\":[\"ALL_CLIENTS\"],\"cimd\":[]}},\"created\":\"2026-11-20T23:57:14.000Z\",\"lastUpdated\":\"2026-11-20T23:57:16.000Z\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/rules\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"OAUTH_AUTHORIZATION_POLICY\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00p1a5d3it6wL86nz698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"description\":\"second\",\"priority\":1,\"system\":false,\"conditions\":{\"clients\":{\"include\":[\"ALL_CLIENTS\"],\"cimd\":[]}},\"created\":\"2026-11-20T23:57:14.000Z\",\"lastUpdated\":\"2026-11-20T23:57:16.000Z\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/rules\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"OAUTH_AUTHORIZATION_POLICY\"}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/policies/00p1a5d3it6wL86nz698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: 00p1a5d3it6wL86nz698 (Policy)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaeG9l4vCOhRSKmH4ID2BwIGA\",\"errorCauses\":[]}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/authorizationServers/aus1a5d7xao0ETI8w698/lifecycle/deactivate",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/authorizationServers/aus1a5d7xao0ETI8w698",
+      "status": 204
+    }
+  ]
+}

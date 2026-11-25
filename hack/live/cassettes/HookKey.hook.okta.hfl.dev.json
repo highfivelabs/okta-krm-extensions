@@ -1,0 +1,85 @@
+{
+  "recorded": "2026-11-20T23:56:40Z",
+  "target": "Okta Integrator org",
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/hook-keys",
+      "body": "{\"name\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"HKY1a5d79f89Odk4B698\",\"keyId\":\"934a7067-abd0-429a-9969-931751904cc9\",\"name\":\"{{name}}\",\"created\":\"2026-11-20T23:56:38.000Z\",\"lastUpdated\":\"2026-11-20T23:56:38.000Z\",\"isUsed\":false,\"_embedded\":{\"kty\":\"RSA\",\"alg\":\"RSA\",\"kid\":\"934a7067-abd0-429a-9969-931751904cc9\",\"use\":null,\"e\":\"AQAB\",\"n\":\"xqMbiDWOu_tJzScgAjHhQokdfxsIT1dm2gBdukzUuDBobqDrANjQRpyiuTzWZeriQxhySBYqJILdT2kROFPULP2N1ctCFj9zso9n9ye0jM0v952fLzda5WPL4_X7AW-6B4e-FdBVSWLCKVPHydKnJGHM6nzL2iKeE4ZMazmw_1Df7AOg73ayAUbqrCdlv6hNNe1rNLh_ns0VWhXr1mvrV03fuRdqF2Cc2PNe1iRXPll4kiUNWIs7p-gY02HXNd2b2GVrEY_-iaWc2TT6hZcZdDPGMcuitUfxMcDKuqCh7ITG2H1__e8XL4DhQyQkef1oQVhbK1Ty49UUkwJPAPTg9w\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/hook-keys/HKY1a5d79f89Odk4B698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"HKY1a5d79f89Odk4B698\",\"keyId\":\"934a7067-abd0-429a-9969-931751904cc9\",\"name\":\"{{name}}\",\"created\":\"2026-11-20T23:56:38.000Z\",\"lastUpdated\":\"2026-11-20T23:56:38.000Z\",\"isUsed\":false}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/hook-keys/HKY1a5d79f89Odk4B698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"HKY1a5d79f89Odk4B698\",\"keyId\":\"934a7067-abd0-429a-9969-931751904cc9\",\"name\":\"{{name}}\",\"created\":\"2026-11-20T23:56:38.000Z\",\"lastUpdated\":\"2026-11-20T23:56:38.000Z\",\"isUsed\":false}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/hook-keys/HKY1a5d79f89Odk4B698",
+      "body": "{\"name\":\"{{name}}-2\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"HKY1a5d79f89Odk4B698\",\"keyId\":\"934a7067-abd0-429a-9969-931751904cc9\",\"name\":\"{{name}}-2\",\"created\":\"2026-11-20T23:56:38.000Z\",\"lastUpdated\":\"2026-11-20T23:56:39.000Z\",\"isUsed\":false,\"_embedded\":{\"kty\":\"RSA\",\"alg\":\"RSA\",\"kid\":\"934a7067-abd0-429a-9969-931751904cc9\",\"use\":null,\"e\":\"AQAB\",\"n\":\"xqMbiDWOu_tJzScgAjHhQokdfxsIT1dm2gBdukzUuDBobqDrANjQRpyiuTzWZeriQxhySBYqJILdT2kROFPULP2N1ctCFj9zso9n9ye0jM0v952fLzda5WPL4_X7AW-6B4e-FdBVSWLCKVPHydKnJGHM6nzL2iKeE4ZMazmw_1Df7AOg73ayAUbqrCdlv6hNNe1rNLh_ns0VWhXr1mvrV03fuRdqF2Cc2PNe1iRXPll4kiUNWIs7p-gY02HXNd2b2GVrEY_-iaWc2TT6hZcZdDPGMcuitUfxMcDKuqCh7ITG2H1__e8XL4DhQyQkef1oQVhbK1Ty49UUkwJPAPTg9w\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/hook-keys/HKY1a5d79f89Odk4B698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"HKY1a5d79f89Odk4B698\",\"keyId\":\"934a7067-abd0-429a-9969-931751904cc9\",\"name\":\"{{name}}-2\",\"created\":\"2026-11-20T23:56:38.000Z\",\"lastUpdated\":\"2026-11-20T23:56:39.000Z\",\"isUsed\":false}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/hook-keys/HKY1a5d79f89Odk4B698",
+      "body": "{\"name\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"HKY1a5d79f89Odk4B698\",\"keyId\":\"934a7067-abd0-429a-9969-931751904cc9\",\"name\":\"hfl-live-drift\",\"created\":\"2026-11-20T23:56:38.000Z\",\"lastUpdated\":\"2026-11-20T23:56:39.000Z\",\"isUsed\":false,\"_embedded\":{\"kty\":\"RSA\",\"alg\":\"RSA\",\"kid\":\"934a7067-abd0-429a-9969-931751904cc9\",\"use\":null,\"e\":\"AQAB\",\"n\":\"xqMbiDWOu_tJzScgAjHhQokdfxsIT1dm2gBdukzUuDBobqDrANjQRpyiuTzWZeriQxhySBYqJILdT2kROFPULP2N1ctCFj9zso9n9ye0jM0v952fLzda5WPL4_X7AW-6B4e-FdBVSWLCKVPHydKnJGHM6nzL2iKeE4ZMazmw_1Df7AOg73ayAUbqrCdlv6hNNe1rNLh_ns0VWhXr1mvrV03fuRdqF2Cc2PNe1iRXPll4kiUNWIs7p-gY02HXNd2b2GVrEY_-iaWc2TT6hZcZdDPGMcuitUfxMcDKuqCh7ITG2H1__e8XL4DhQyQkef1oQVhbK1Ty49UUkwJPAPTg9w\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/hook-keys/HKY1a5d79f89Odk4B698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"HKY1a5d79f89Odk4B698\",\"keyId\":\"934a7067-abd0-429a-9969-931751904cc9\",\"name\":\"hfl-live-drift\",\"created\":\"2026-11-20T23:56:38.000Z\",\"lastUpdated\":\"2026-11-20T23:56:39.000Z\",\"isUsed\":false}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/hook-keys/HKY1a5d79f89Odk4B698",
+      "body": "{\"name\":\"{{name}}-2\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"HKY1a5d79f89Odk4B698\",\"keyId\":\"934a7067-abd0-429a-9969-931751904cc9\",\"name\":\"{{name}}-2\",\"created\":\"2026-11-20T23:56:38.000Z\",\"lastUpdated\":\"2026-11-20T23:56:40.000Z\",\"isUsed\":false,\"_embedded\":{\"kty\":\"RSA\",\"alg\":\"RSA\",\"kid\":\"934a7067-abd0-429a-9969-931751904cc9\",\"use\":null,\"e\":\"AQAB\",\"n\":\"xqMbiDWOu_tJzScgAjHhQokdfxsIT1dm2gBdukzUuDBobqDrANjQRpyiuTzWZeriQxhySBYqJILdT2kROFPULP2N1ctCFj9zso9n9ye0jM0v952fLzda5WPL4_X7AW-6B4e-FdBVSWLCKVPHydKnJGHM6nzL2iKeE4ZMazmw_1Df7AOg73ayAUbqrCdlv6hNNe1rNLh_ns0VWhXr1mvrV03fuRdqF2Cc2PNe1iRXPll4kiUNWIs7p-gY02HXNd2b2GVrEY_-iaWc2TT6hZcZdDPGMcuitUfxMcDKuqCh7ITG2H1__e8XL4DhQyQkef1oQVhbK1Ty49UUkwJPAPTg9w\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/hook-keys/HKY1a5d79f89Odk4B698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"HKY1a5d79f89Odk4B698\",\"keyId\":\"934a7067-abd0-429a-9969-931751904cc9\",\"name\":\"{{name}}-2\",\"created\":\"2026-11-20T23:56:38.000Z\",\"lastUpdated\":\"2026-11-20T23:56:40.000Z\",\"isUsed\":false}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/hook-keys/HKY1a5d79f89Odk4B698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/hook-keys/HKY1a5d79f89Odk4B698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: HKY1a5d79f89Odk4B698 (HookKey)\",\"errorLink\":\"E0000007\",\"errorId\":\"oael70tb6HYRNC8nghoicIuXA\",\"errorCauses\":[]}"
+    }
+  ]
+}

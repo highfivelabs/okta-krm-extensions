@@ -1,0 +1,399 @@
+# Inputs to krm-rest-runtime/gen/krmgen.py. Specs are pinned to the commit in each url;
+# hack/gen/fetch-specs.sh downloads them. overrides: map (Terraform type -> API item path),
+# exclude (Terraform types), excludePaths (API item paths).
+vendor: okta
+title: Okta
+groupSuffix: okta.hfl.dev
+connectionKind: Connection
+credentialKeys:
+- apiToken
+baseURLHelp: Your Okta org URL, e.g. https://example.okta.com. Required.
+terraform:
+  provider: okta/okta
+  prefix: okta
+  gaps: terraform-gaps.json
+specs:
+- file: specs/okta.yaml
+  url: https://raw.githubusercontent.com/okta/okta-sdk-golang/3926996023472119e0aa9a3ca33151a511709fed/okta/api/openapi.yaml
+# Okta Identity Governance (/governance/api/...), on the same org host: the
+# spec of okta-governance-sdk-golang v1.1.0, the SDK the Terraform provider's
+# governance resources call.
+- file: specs/okta-governance.yaml
+  url: https://raw.githubusercontent.com/okta/okta-governance-sdk-golang/c872f2f5e33797f6fc12b0a5bafe99a3bf76a1cf/governance/api/openapi.yaml
+# Hand-written supplements (hack/gen/supplement/): APIs neither spec has,
+# from the Terraform provider's own source; each file cites its sources.
+- file: supplement/factor-hotp-profiles.yaml
+- file: supplement/security-notification-settings.yaml
+- file: supplement/org-factors.yaml
+envelope: {}
+# Kinds written by hand (hack/gen/kinds/*.yaml, sources in each).
+handwritten: {dir: kinds}
+# Terraform types that will not be kinds (README "Not covered", generated).
+hardBlocks:
+  okta_email_sender: >-
+    A retired API: terraform-provider-okta 7.1.0 marks it deprecated ("The
+    api for this resource has been deprecated. Please use okta_email_domain
+    instead"), and its calls (/api/v1/org/email/sender) are in neither of
+    Okta's published OpenAPI specs, only the provider's private supplement.
+    EmailDomain replaces it.
+  okta_email_sender_verification: >-
+    A retired API, as okta_email_sender's ("Please use
+    okta_email_domain_verification instead"): EmailDomainVerification
+    replaces it.
+  okta_identity_source_import: >-
+    Not a resource: an import session (create a session, upload the users
+    and groups, start the import), which then ends; Okta keeps nothing to
+    read back or delete.
+overrides:
+  # An app's redirect URIs, each its own object: one value in the OIDC app's
+  # settings.oauthClient lists, which Okta writes only with the whole app
+  # (PUT /api/v1/apps/{appId}). Terraform's okta_app_oauth_redirect_uri and
+  # _post_logout_redirect_uri (resource_okta_app_oauth_redirect_uri.go)
+  # read the app, add or take out the URI, and PUT it back.
+  elements:
+    okta_app_oauth_redirect_uri:
+      item: /api/v1/apps/{appId}
+      in: {uri: settings/oauthClient/redirect_uris}
+      method: put
+      whole: true
+    okta_app_oauth_post_logout_redirect_uri:
+      item: /api/v1/apps/{appId}
+      in: {uri: settings/oauthClient/post_logout_redirect_uris}
+      method: put
+      whole: true
+  map:
+    okta_app_oauth: /api/v1/apps/{appId}
+    okta_app_saml: /api/v1/apps/{appId}
+    okta_app_bookmark: /api/v1/apps/{appId}
+    okta_app_basic_auth: /api/v1/apps/{appId}
+    okta_app_swa: /api/v1/apps/{appId}
+    okta_app_three_field: /api/v1/apps/{appId}
+    okta_app_auto_login: /api/v1/apps/{appId}
+    okta_app_secure_password_store: /api/v1/apps/{appId}
+    okta_app_shared_credentials: /api/v1/apps/{appId}
+    okta_app_group_assignment: /api/v1/apps/{appId}/groups/{groupId}
+    okta_auth_server: /api/v1/authorizationServers/{authServerId}
+    okta_auth_server_claim: /api/v1/authorizationServers/{authServerId}/claims/{claimId}
+    okta_auth_server_policy: /api/v1/authorizationServers/{authServerId}/policies/{policyId}
+    okta_auth_server_policy_rule: /api/v1/authorizationServers/{authServerId}/policies/{policyId}/rules/{ruleId}
+    okta_auth_server_scope: /api/v1/authorizationServers/{authServerId}/scopes/{scopeId}
+    okta_idp_oidc: /api/v1/idps/{idpId}
+    okta_idp_saml: /api/v1/idps/{idpId}
+    okta_idp_social: /api/v1/idps/{idpId}
+    okta_idp_saml_key: /api/v1/idps/credentials/keys/{kid}
+    okta_policy_mfa: /api/v1/policies/{policyId}
+    okta_policy_password: /api/v1/policies/{policyId}
+    okta_policy_signon: /api/v1/policies/{policyId}
+    okta_policy_profile_enrollment: /api/v1/policies/{policyId}
+    okta_app_signon_policy: /api/v1/policies/{policyId}
+    okta_policy_rule_mfa: /api/v1/policies/{policyId}/rules/{ruleId}
+    okta_policy_rule_password: /api/v1/policies/{policyId}/rules/{ruleId}
+    okta_policy_rule_signon: /api/v1/policies/{policyId}/rules/{ruleId}
+    okta_policy_rule_profile_enrollment: /api/v1/policies/{policyId}/rules/{ruleId}
+    okta_policy_rule_idp_discovery: /api/v1/policies/{policyId}/rules/{ruleId}
+    okta_app_signon_policy_rule: /api/v1/policies/{policyId}/rules/{ruleId}
+    okta_policy_device_assurance_android: /api/v1/device-assurances/{deviceAssuranceId}
+    okta_policy_device_assurance_chromeos: /api/v1/device-assurances/{deviceAssuranceId}
+    okta_policy_device_assurance_ios: /api/v1/device-assurances/{deviceAssuranceId}
+    okta_policy_device_assurance_macos: /api/v1/device-assurances/{deviceAssuranceId}
+    okta_policy_device_assurance_windows: /api/v1/device-assurances/{deviceAssuranceId}
+    okta_network_zone: /api/v1/zones/{zoneId}
+    okta_admin_role_custom: /api/v1/iam/roles/{roleIdOrLabel}
+    okta_authenticator_webauthn_custom_aaguid: /api/v1/authenticators/{authenticatorId}/aaguids/{aaguid}
+    okta_authenticator_method_webauthn: /api/v1/authenticators/{authenticatorId}/methods/{methodType}
+    okta_email_smtp_server: /api/v1/email-servers/{emailServerId}
+    okta_link_definition: /api/v1/meta/schemas/user/linkedObjects/{linkedObjectName}
+    okta_ui_schema: /api/v1/meta/uischemas/{id}
+    okta_user_admin_roles: /api/v1/users/{userId}/roles/{roleAssignmentId}
+    okta_customized_signin_page: /api/v1/brands/{brandId}/pages/sign-in/customized
+    okta_preview_signin_page: /api/v1/brands/{brandId}/pages/sign-in/preview
+    okta_org_captcha: /api/v1/org/captcha
+    okta_rate_limit_warning_threshold_percentage: /api/v1/rate-limit-settings/warning-threshold
+    # The org-wide CAPTCHA: both types replace and delete /api/v1/org/captcha.
+    okta_captcha_org_wide_settings: /api/v1/org/captcha
+    # A user's factor (enrolled with POST /api/v1/users/{userId}/factors);
+    # the security question type is one factorType of it.
+    okta_user_factor_question: /api/v1/users/{userId}/factors/{factorId}
+    # A rule of a policy, whatever the policy's type; a "rules" type is a
+    # set of them, one object each here.
+    okta_app_signon_policy_rules: /api/v1/policies/{policyId}/rules/{ruleId}
+    okta_entity_risk_policy_rule: /api/v1/policies/{policyId}/rules/{ruleId}
+    okta_app_group_assignments: /api/v1/apps/{appId}/groups/{groupId}
+    # A scope granted to an app (POST /api/v1/apps/{appId}/grants).
+    okta_app_oauth_api_scope: /api/v1/apps/{appId}/grants/{grantId}
+    # An admin role assigned to an OAuth client: the role type (or a custom
+    # role and resource set) is the body's.
+    okta_app_oauth_role_assignment: /oauth2/v1/clients/{clientId}/roles/{roleAssignmentId}
+    okta_oauth2_v1_clients_role_access_certifications_admin: /oauth2/v1/clients/{clientId}/roles/{roleAssignmentId}
+    okta_oauth2_v1_clients_role_access_requests_admin: /oauth2/v1/clients/{clientId}/roles/{roleAssignmentId}
+    okta_oauth2_v1_clients_role_api_access_management_admin: /oauth2/v1/clients/{clientId}/roles/{roleAssignmentId}
+    okta_oauth2_v1_clients_role_app_admin: /oauth2/v1/clients/{clientId}/roles/{roleAssignmentId}
+    okta_oauth2_v1_clients_role_custom: /oauth2/v1/clients/{clientId}/roles/{roleAssignmentId}
+    okta_oauth2_v1_clients_role_group_membership_admin: /oauth2/v1/clients/{clientId}/roles/{roleAssignmentId}
+    okta_oauth2_v1_clients_role_help_desk_admin: /oauth2/v1/clients/{clientId}/roles/{roleAssignmentId}
+    okta_oauth2_v1_clients_role_org_admin: /oauth2/v1/clients/{clientId}/roles/{roleAssignmentId}
+    okta_oauth2_v1_clients_role_read_only_admin: /oauth2/v1/clients/{clientId}/roles/{roleAssignmentId}
+    okta_oauth2_v1_clients_role_report_admin: /oauth2/v1/clients/{clientId}/roles/{roleAssignmentId}
+    okta_oauth2_v1_clients_role_super_admin: /oauth2/v1/clients/{clientId}/roles/{roleAssignmentId}
+    okta_oauth2_v1_clients_role_user_admin: /oauth2/v1/clients/{clientId}/roles/{roleAssignmentId}
+    okta_oauth2_v1_clients_role_workflows_admin: /oauth2/v1/clients/{clientId}/roles/{roleAssignmentId}
+    okta_group_owner: /api/v1/groups/{groupId}/owners/{ownerId}
+    okta_group_owners: /api/v1/groups/{groupId}/owners/{ownerId}
+    # A custom role bound to a resource set, with its members.
+    okta_admin_role_custom_assignments: /api/v1/iam/resource-sets/{resourceSetIdOrLabel}/bindings/{roleIdOrLabel}
+    okta_rate_limiting: /api/v1/rate-limit-settings/per-client
+    okta_prinicipal_rate_limits: /api/v1/principal-rate-limits/{principalRateLimitId}
+    okta_org_configuration: /api/v1/org
+    # supplement/factor-hotp-profiles.yaml: a TOTP factor is an HOTP profile.
+    okta_factor_totp: /api/v1/org/factors/hotp/profiles/{profileId}
+    # supplement/security-notification-settings.yaml (the admin domain).
+    okta_security_notification_emails: /api/internal/org/settings/security-notification-settings
+    # Okta Identity Governance (specs/okta-governance.yaml).
+    okta_campaign: /governance/api/v1/campaigns/{campaignId}
+    okta_entitlement: /governance/api/v1/entitlements/{entitlementId}
+    okta_entitlement_bundle: /governance/api/v1/entitlement-bundles/{entitlementBundleId}
+    okta_label: /governance/api/v1/labels/{labelId}
+    okta_request_condition: /governance/api/v2/resources/{resourceId}/request-conditions/{requestConditionId}
+    okta_request_conditions: /governance/api/v2/resources/{resourceId}/request-conditions/{requestConditionId}
+    okta_request_setting_organization: /governance/api/v2/request-settings
+    okta_request_setting_resource: /governance/api/v2/resources/{resourceId}/request-settings
+    # An access request: the API has no delete (overrides.forget).
+    okta_request_v2: /governance/api/v2/requests/{requestId}
+    okta_end_user_my_requests: /governance/api/v2/my/catalogs/default/entries/{entryId}/requests/{requestId}
+    # Settings written by a POST to the path they are read from
+    # (overrides.postUpdates).
+    okta_threat_insight_settings: /api/v1/threats/configuration
+    okta_app_connection: /api/v1/apps/{appId}/connections/default
+    okta_app_user_schema_property: /api/v1/meta/schemas/apps/{appId}/default
+    okta_app_user_base_schema_property: /api/v1/meta/schemas/apps/{appId}/default
+    okta_group_schema_property: /api/v1/meta/schemas/group/default
+    # The same for a profile mapping and the user schema, at a path that ends
+    # in their ID (Okta's ID of the mapping; the schema's is default).
+    okta_profile_mapping: /api/v1/mappings/{mappingId}
+    okta_user_schema_property: /api/v1/meta/schemas/user/{schemaId}
+    okta_user_base_schema_property: /api/v1/meta/schemas/user/{schemaId}
+    # Written with PUT and read from a list (overrides.readFrom).
+    okta_group_memberships: /api/v1/groups/{groupId}/users/{userId}
+    okta_trusted_server: /api/v1/authorizationServers/{authServerId}/associatedServers/{associatedServerId}
+    okta_identity_source_group_membership: /api/v1/identity-sources/{identitySourceId}/groups/{groupOrExternalId}/membership/{memberExternalId}
+    okta_user_group_memberships: /api/v1/groups/{groupId}/users/{userId}
+    okta_admin_role_targets: /api/v1/users/{userId}/roles/{roleAssignmentId}/targets/groups/{groupId}
+    okta_app_access_policy_assignment: /api/v1/apps/{appId}/policies/{policyId}
+    okta_policy_profile_enrollment_apps: /api/v1/apps/{appId}/policies/{policyId}
+  # Operations to leave out, so the rest pair into a resource.
+  excludeOperationIdPrefixes:
+  # POST /api/v1/org updates part of the settings; PUT replaces them, as
+  # Terraform's okta_org_configuration does.
+  - updateOrgSettings
+  # A principal rate limit is Terraform's to adopt and replace (PUT), not
+  # create: without the create, its item path is settings named by ID.
+  - createPrincipalRateLimitEntity
+  # Governance PATCHes take a list of patch operations, not the object: an
+  # entitlement is replaced with PUT (as Terraform does); a label, with no
+  # PUT, is re-created to change.
+  - updateEntitlement
+  - updateLabel
+  # The binding's role names it (and fills its ID); the spec marks nothing
+  # required.
+  extraFields:
+    /api/v1/iam/resource-sets/{resourceSetIdOrLabel}/bindings/{roleIdOrLabel}:
+      role: {type: string, required: true}
+  # Group owners are listed, not got one by one.
+  listReads:
+    /api/v1/groups/{groupId}/owners: {field: id}
+  postUpdates:
+  - /api/v1/threats/configuration
+  - /api/v1/apps/{appId}/connections/default
+  - /api/v1/meta/schemas/apps/{appId}/default
+  - /api/v1/meta/schemas/group/default
+  - /api/v1/mappings/{mappingId}
+  - /api/v1/meta/schemas/user/{schemaId}
+  readFrom:
+    /api/v1/groups/{groupId}/users/{userId}: {path: "/api/v1/groups/{groupId}/users", field: id}
+    /api/v1/users/{userId}/roles/{roleAssignmentId}/targets/groups/{groupId}: {path: "/api/v1/users/{userId}/roles/{roleAssignmentId}/targets/groups", field: id}
+    /api/v1/apps/{appId}/policies/{policyId}: {path: "/api/v1/policies/{policyId}/app", field: id, param: appId}
+    # A trusted authorization server (resource_okta_trusted_server.go):
+    # made by naming it in POST .../associatedServers ({"trusted": [...]},
+    # overrides.createBody), listed by GET ...?trusted=true, deleted by ID.
+    /api/v1/authorizationServers/{authServerId}/associatedServers/{associatedServerId}: {path: "/api/v1/authorizationServers/{authServerId}/associatedServers", field: id}
+    # A member of an identity source's group: made by POST .../membership
+    # ({"memberExternalId": ...}), seen only as an ID in that path's
+    # memberExternalIds, deleted by ID (resource_okta_identity_source_group_membership.go).
+    /api/v1/identity-sources/{identitySourceId}/groups/{groupOrExternalId}/membership/{memberExternalId}: {path: "/api/v1/identity-sources/{identitySourceId}/groups/{groupOrExternalId}/membership", list: memberExternalIds, field: ""}
+  forget:
+    /governance/api/v2/requests/{requestId}: "An access request cannot be deleted: Okta resolves it (approved, denied or expired)."
+    /governance/api/v2/my/catalogs/default/entries/{entryId}/requests/{requestId}: "An access request cannot be deleted: Okta resolves it (approved, denied or expired)."
+  # Okta deletes these only once deactivated (what the live run found).
+  beforeDelete:
+    /api/v1/apps/{appId}: [{method: POST, path: "/api/v1/apps/{appId}/lifecycle/deactivate"}]
+    /api/v1/authorizationServers/{authServerId}: [{method: POST, path: "/api/v1/authorizationServers/{authServerId}/lifecycle/deactivate"}]
+    /api/v1/behaviors/{behaviorId}: [{method: POST, path: "/api/v1/behaviors/{behaviorId}/lifecycle/deactivate"}]
+    /api/v1/eventHooks/{eventHookId}: [{method: POST, path: "/api/v1/eventHooks/{eventHookId}/lifecycle/deactivate"}]
+    /api/v1/groups/rules/{groupRuleId}: [{method: POST, path: "/api/v1/groups/rules/{groupRuleId}/lifecycle/deactivate"}]
+    /api/v1/idps/{idpId}: [{method: POST, path: "/api/v1/idps/{idpId}/lifecycle/deactivate"}]
+    /api/v1/inlineHooks/{inlineHookId}: [{method: POST, path: "/api/v1/inlineHooks/{inlineHookId}/lifecycle/deactivate"}]
+    /api/v1/users/{id}: [{method: POST, path: "/api/v1/users/{id}/lifecycle/deactivate"}]
+    /api/v1/zones/{zoneId}: [{method: POST, path: "/api/v1/zones/{zoneId}/lifecycle/deactivate"}]
+  # A linked object definition is named by its primary name; a create answers no id.
+  idFrom:
+    /api/v1/meta/schemas/user/linkedObjects/{linkedObjectName}: primary/name
+    # A binding is named by its role; the create answers only links.
+    /api/v1/iam/resource-sets/{resourceSetIdOrLabel}/bindings/{roleIdOrLabel}: "{role}"
+  # Never read back.
+  writeOnly:
+    /api/v1/captchas/{captchaId}: [secretKey]
+    /api/v1/email-servers/{emailServerId}: [password]
+    /api/v1/push-providers/{pushProviderId}: [configuration.tokenSigningKey]
+    # A provisioning connection reads back only its auth scheme and signing.
+    /api/v1/apps/{appId}/connections/default: [profile.token, profile.clientId, profile.settings.adminUsername, profile.settings.adminPassword]
+    # The request's catalog entry type is not read back (Terraform fills it in).
+    /governance/api/v2/requests/{requestId}: [requested.type]
+  # A role's group targets are read from their list, 20 to a page unless
+  # asked; 200 is the page the Terraform provider reads.
+  readQuery:
+    /api/v1/authorizationServers/{authServerId}/associatedServers/{associatedServerId}: {trusted: true}
+    /api/v1/users/{userId}/roles/{roleAssignmentId}/targets/groups/{groupId}: {limit: 200}
+  # Okta activates a new user, and emails it, unless told not to.
+  createQuery:
+    /api/v1/users/{id}: {activate: false}
+  # Taken by the create only, never read back; the update refuses them
+  # (400 E0000003).
+  createOnly:
+    /api/v1/iam/roles/{roleIdOrLabel}: [permissions]
+    /api/v1/iam/resource-sets/{resourceSetIdOrLabel}: [resources]
+    /api/v1/email-domains/{emailDomainId}: [brandId, domain]
+    # An authenticator is found by its key, which never changes; its PUT
+    # names it all the same (carry).
+    /api/v1/authenticators/{authenticatorId}: [key]
+  carry:
+    /api/v1/authenticators/{authenticatorId}: [key]
+  createBody:
+    /api/v1/authorizationServers/{authServerId}/associatedServers/{associatedServerId}: {trusted: ["{associatedServerId}"]}
+  kindNames:
+    /api/v1/apps/{appId}: Application
+    /api/v1/idps/{idpId}: IdentityProvider
+    /api/v1/policies/{policyId}: Policy
+    /api/v1/policies/{policyId}/rules/{ruleId}: PolicyRule
+    /api/v1/device-assurances/{deviceAssuranceId}: PolicyDeviceAssurance
+    /api/v1/users/{userId}/factors/{factorId}: Factor
+    /api/v1/org/factors/{factorId}: OrgFactor
+    /api/v1/apps/{appId}/groups/{groupId}: AppGroupAssignment
+    /api/v1/org/captcha: OrgCaptcha
+    /oauth2/v1/clients/{clientId}/roles/{roleAssignmentId}: ClientRoleAssignment
+    /api/v1/groups/{groupId}/owners/{ownerId}: GroupOwner
+    /api/v1/principal-rate-limits/{principalRateLimitId}: PrincipalRateLimit
+    /governance/api/v2/resources/{resourceId}/request-conditions/{requestConditionId}: RequestCondition
+    /api/v1/groups/{groupId}/users/{userId}: GroupMembership
+    /api/v1/threats/configuration: ThreatInsightConfiguration
+    /api/v1/users/{userId}/roles/{roleAssignmentId}/targets/groups/{groupId}: AdminRoleGroupTarget
+    /api/v1/apps/{appId}/policies/{policyId}: AppPolicyAssignment
+    /api/v1/meta/schemas/apps/{appId}/default: AppUserSchema
+    /api/v1/meta/schemas/group/default: GroupSchema
+    /governance/api/v2/my/catalogs/default/entries/{entryId}/requests/{requestId}: EndUserMyRequest
+  excludePaths:
+  # A request type (a template for access requests), which okta_request_v2
+  # matched by name; that type makes an access request
+  # (POST /governance/api/v2/requests), which the API cannot delete.
+  - /governance/api/v1/request-types/{requestTypeId}
+  adopt:
+    # An authenticator is one Okta has for each key (okta_email, phone_number,
+    # okta_verify, ...): Terraform finds the one of the spec's key and
+    # updates it ("soft create"), and on destroy deactivates it
+    # (overrides.states), resource_okta_authenticator.go.
+    okta_authenticator:
+      item: /api/v1/authenticators/{authenticatorId}
+      list: /api/v1/authenticators
+      match: {key: "{key}"}
+      sample: {key: security_question, name: Security Question}
+      reason: Okta has one authenticator per key; deleting the object deactivates it, as Terraform does.
+    okta_auth_server_default:
+      item: /api/v1/authorizationServers/{authServerId}
+      list: /api/v1/authorizationServers
+      match: {default: true}
+      # As Terraform's: the default server keeps its name and audience.
+      sample: {name: default, audiences: ["api://default"], description: Default Authorization Server for your Applications}
+      reason: Okta makes the default authorization server; deleting the object leaves it, as Terraform does.
+    okta_auth_server_claim_default:
+      item: /api/v1/authorizationServers/{authServerId}/claims/{claimId}
+      list: /api/v1/authorizationServers/{authServerId}/claims
+      match: {name: "{name}"}
+      sample: {name: sub}
+      reason: Okta makes an authorization server's default claims; deleting the object leaves the claim, as Terraform does.
+    okta_policy_mfa_default:
+      item: /api/v1/policies/{policyId}
+      list: /api/v1/policies
+      query: {type: MFA_ENROLL}
+      match: {system: true}
+      sample: {name: Default Policy, type: MFA_ENROLL}
+      reason: Okta makes the default MFA enrollment policy; deleting the object leaves it, as Terraform does.
+    okta_policy_password_default:
+      item: /api/v1/policies/{policyId}
+      list: /api/v1/policies
+      query: {type: PASSWORD}
+      match: {system: true}
+      sample: {name: Default Policy, type: PASSWORD}
+      reason: Okta makes the default password policy; deleting the object leaves it, as Terraform does.
+    okta_post_auth_session_policy_rule:
+      item: /api/v1/policies/{policyId}/rules/{ruleId}
+      list: /api/v1/policies/{policyId}/rules
+      match: {name: "{name}"}
+      reason: A post-auth session policy's rule cannot be created or deleted, only updated; deleting the object leaves it, as Terraform does.
+    okta_session_violation_policy_rule:
+      item: /api/v1/policies/{policyId}/rules/{ruleId}
+      list: /api/v1/policies/{policyId}/rules
+      match: {name: "{name}"}
+      reason: A session violation detection policy's rule cannot be created or deleted, only updated; deleting the object leaves it, as Terraform does.
+  states:
+    # A device is registered by Okta Verify, never created through the API;
+    # Terraform's okta_device (resource_okta_device.go) is imported and
+    # only moves its status by the lifecycle calls. Unsuspending
+    # (.../lifecycle/unsuspend) has no state of its own here: a suspended
+    # device is put back by setting DEACTIVATED, then ACTIVE.
+    /api/v1/devices/{deviceId}:
+      terraform: okta_device
+      field: status
+      calls:
+        ACTIVE: {method: POST, path: "/api/v1/devices/{deviceId}/lifecycle/activate"}
+        DEACTIVATED: {method: POST, path: "/api/v1/devices/{deviceId}/lifecycle/deactivate"}
+        SUSPENDED: {method: POST, path: "/api/v1/devices/{deviceId}/lifecycle/suspend"}
+    /api/v1/features/{featureId}:
+      terraform: okta_feature
+      field: status
+      calls:
+        ENABLED: {method: POST, path: "/api/v1/features/{featureId}/ENABLE"}
+        DISABLED: {method: POST, path: "/api/v1/features/{featureId}/DISABLE"}
+      delete: DISABLED
+    /api/v1/org/factors/{factorId}:
+      terraform: okta_factor
+      field: status
+      calls:
+        ACTIVE: {method: POST, path: "/api/v1/org/factors/{factorId}/lifecycle/activate"}
+        INACTIVE: {method: POST, path: "/api/v1/org/factors/{factorId}/lifecycle/deactivate"}
+      delete: INACTIVE
+    /api/v1/org/privacy/oktaSupport:
+      terraform: okta_org_support
+      field: support
+      calls:
+        ENABLED: {method: POST, path: "/api/v1/org/privacy/oktaSupport/grant"}
+        DISABLED: {method: POST, path: "/api/v1/org/privacy/oktaSupport/revoke"}
+      delete: DISABLED
+    /api/v1/roles/{roleRef}/subscriptions/{notificationType}:
+      terraform: okta_role_subscription
+      field: status
+      calls:
+        subscribed: {method: POST, path: "/api/v1/roles/{roleRef}/subscriptions/{notificationType}/subscribe"}
+        unsubscribed: {method: POST, path: "/api/v1/roles/{roleRef}/subscriptions/{notificationType}/unsubscribe"}
+      delete: unsubscribed
+    /api/v1/users/{userId}/subscriptions/{notificationType}:
+      terraform: okta_user_subscription
+      field: status
+      calls:
+        subscribed: {method: POST, path: "/api/v1/users/{userId}/subscriptions/{notificationType}/subscribe"}
+        unsubscribed: {method: POST, path: "/api/v1/users/{userId}/subscriptions/{notificationType}/unsubscribe"}
+      delete: unsubscribed
+    /api/v1/authenticators/{authenticatorId}:
+      field: status
+      calls:
+        ACTIVE: {method: POST, path: "/api/v1/authenticators/{authenticatorId}/lifecycle/activate"}
+        INACTIVE: {method: POST, path: "/api/v1/authenticators/{authenticatorId}/lifecycle/deactivate"}
+      delete: INACTIVE

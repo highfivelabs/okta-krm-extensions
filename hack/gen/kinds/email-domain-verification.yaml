@@ -1,0 +1,12 @@
+terraform: [okta_email_domain_verification]
+kind: EmailDomainVerification
+shape: settings
+params:
+  emailDomainId: {type: string}
+state:
+  field: validationStatus
+  description: "VERIFIED: POST /api/v1/email-domains/{emailDomainId}/verify is made while the email domain's status is another."
+  calls:
+    VERIFIED: {method: POST, path: "/api/v1/email-domains/{emailDomainId}/verify"}
+sample: {emailDomainId: example-email-domain-id, validationStatus: VERIFIED}
+read: {method: GET, path: "/api/v1/email-domains/{emailDomainId}"}

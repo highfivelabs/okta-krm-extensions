@@ -1,0 +1,120 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "agaApp": 280000003,
+    "agaGroup": 280000004,
+    "ascAS": 280000013,
+    "aspAS": 280000015,
+    "asrAS": 280000017,
+    "asrGroup": 280000019,
+    "asrPolicy": 280000018,
+    "assAS": 280000011,
+    "auApp": 280000006,
+    "auUser": 280000007,
+    "cspBrand": 280000021,
+    "edBrand": 280000025,
+    "orgId": 280000001,
+    "prGroup": 280000010,
+    "prPolicy": 280000009,
+    "pspBrand": 280000022,
+    "rsGroup": 280000002,
+    "thBrand": 280000023,
+    "thTheme": "rehearsal-thTheme"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/eventHooks",
+      "body": "{\"channel\":{\"config\":{\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"description\":\"first\",\"events\":{\"items\":[\"group.lifecycle.create\"],\"type\":\"EVENT_TYPE\"},\"name\":\"{{name}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"channel\":{\"config\":{\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"created\":\"2000-01-01T00:00:00Z\",\"createdBy\":\"example-createdBy\",\"description\":\"first\",\"events\":{\"items\":[\"group.lifecycle.create\"],\"type\":\"EVENT_TYPE\"},\"id\":270000022,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}\",\"status\":\"ACTIVE\",\"verificationStatus\":\"example-verificationStatus\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/eventHooks/270000022",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"channel\":{\"config\":{\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"created\":\"2000-01-01T00:00:00Z\",\"createdBy\":\"example-createdBy\",\"description\":\"first\",\"events\":{\"items\":[\"group.lifecycle.create\"],\"type\":\"EVENT_TYPE\"},\"id\":270000022,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}\",\"status\":\"ACTIVE\",\"verificationStatus\":\"example-verificationStatus\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/eventHooks/270000022",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"channel\":{\"config\":{\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"created\":\"2000-01-01T00:00:00Z\",\"createdBy\":\"example-createdBy\",\"description\":\"first\",\"events\":{\"items\":[\"group.lifecycle.create\"],\"type\":\"EVENT_TYPE\"},\"id\":270000022,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}\",\"status\":\"ACTIVE\",\"verificationStatus\":\"example-verificationStatus\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/eventHooks/270000022",
+      "body": "{\"channel\":{\"config\":{\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"description\":\"second\",\"events\":{\"items\":[\"group.lifecycle.create\"],\"type\":\"EVENT_TYPE\"},\"name\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"channel\":{\"config\":{\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"created\":\"2000-01-01T00:00:00Z\",\"createdBy\":\"example-createdBy\",\"description\":\"second\",\"events\":{\"items\":[\"group.lifecycle.create\"],\"type\":\"EVENT_TYPE\"},\"id\":270000022,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}\",\"status\":\"ACTIVE\",\"verificationStatus\":\"example-verificationStatus\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/eventHooks/270000022",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"channel\":{\"config\":{\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"created\":\"2000-01-01T00:00:00Z\",\"createdBy\":\"example-createdBy\",\"description\":\"second\",\"events\":{\"items\":[\"group.lifecycle.create\"],\"type\":\"EVENT_TYPE\"},\"id\":270000022,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}\",\"status\":\"ACTIVE\",\"verificationStatus\":\"example-verificationStatus\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/eventHooks/270000022",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"channel\":{\"config\":{\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"created\":\"2000-01-01T00:00:00Z\",\"createdBy\":\"example-createdBy\",\"description\":\"second\",\"events\":{\"items\":[\"group.lifecycle.create\"],\"type\":\"EVENT_TYPE\"},\"id\":270000022,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}\",\"status\":\"ACTIVE\",\"verificationStatus\":\"example-verificationStatus\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/eventHooks/270000022",
+      "body": "{\"channel\":{\"config\":{\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"created\":\"2000-01-01T00:00:00Z\",\"createdBy\":\"example-createdBy\",\"description\":\"hfl-live-drift\",\"events\":{\"items\":[\"group.lifecycle.create\"],\"type\":\"EVENT_TYPE\"},\"id\":270000022,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}\",\"status\":\"ACTIVE\",\"verificationStatus\":\"example-verificationStatus\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"channel\":{\"config\":{\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"created\":\"2000-01-01T00:00:00Z\",\"createdBy\":\"example-createdBy\",\"description\":\"hfl-live-drift\",\"events\":{\"items\":[\"group.lifecycle.create\"],\"type\":\"EVENT_TYPE\"},\"id\":270000022,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}\",\"status\":\"ACTIVE\",\"verificationStatus\":\"example-verificationStatus\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/eventHooks/270000022",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"channel\":{\"config\":{\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"created\":\"2000-01-01T00:00:00Z\",\"createdBy\":\"example-createdBy\",\"description\":\"hfl-live-drift\",\"events\":{\"items\":[\"group.lifecycle.create\"],\"type\":\"EVENT_TYPE\"},\"id\":270000022,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}\",\"status\":\"ACTIVE\",\"verificationStatus\":\"example-verificationStatus\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/eventHooks/270000022",
+      "body": "{\"channel\":{\"config\":{\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"description\":\"second\",\"events\":{\"items\":[\"group.lifecycle.create\"],\"type\":\"EVENT_TYPE\"},\"name\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"channel\":{\"config\":{\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"created\":\"2000-01-01T00:00:00Z\",\"createdBy\":\"example-createdBy\",\"description\":\"second\",\"events\":{\"items\":[\"group.lifecycle.create\"],\"type\":\"EVENT_TYPE\"},\"id\":270000022,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}\",\"status\":\"ACTIVE\",\"verificationStatus\":\"example-verificationStatus\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/eventHooks/270000022",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"channel\":{\"config\":{\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"created\":\"2000-01-01T00:00:00Z\",\"createdBy\":\"example-createdBy\",\"description\":\"second\",\"events\":{\"items\":[\"group.lifecycle.create\"],\"type\":\"EVENT_TYPE\"},\"id\":270000022,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}\",\"status\":\"ACTIVE\",\"verificationStatus\":\"example-verificationStatus\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/eventHooks/270000022/lifecycle/deactivate",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"channel\":{\"config\":{\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"created\":\"2000-01-01T00:00:00Z\",\"createdBy\":\"example-createdBy\",\"description\":\"second\",\"events\":{\"items\":[\"group.lifecycle.create\"],\"type\":\"EVENT_TYPE\"},\"id\":270000022,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"name\":\"{{name}}\",\"status\":\"ACTIVE\",\"verificationStatus\":\"example-verificationStatus\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/eventHooks/270000022",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/eventHooks/270000022",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

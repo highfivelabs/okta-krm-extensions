@@ -1,0 +1,72 @@
+{
+ "provider": "okta/okta",
+ "resources": {
+  "okta_app_saml_app_settings": {
+   "attributes": {
+    "app_id": {
+     "required": true,
+     "type": "string"
+    },
+    "id": {
+     "computed": true,
+     "optional": true,
+     "type": "string"
+    },
+    "settings": {
+     "required": true,
+     "type": "string"
+    }
+   }
+  },
+  "okta_link_value": {
+   "attributes": {
+    "associated_user_ids": {
+     "optional": true,
+     "type": [
+      "set",
+      "string"
+     ]
+    },
+    "id": {
+     "computed": true,
+     "optional": true,
+     "type": "string"
+    },
+    "primary_name": {
+     "required": true,
+     "type": "string"
+    },
+    "primary_user_id": {
+     "required": true,
+     "type": "string"
+    }
+   }
+  },
+  "okta_resource_owner": {
+   "attributes": {
+    "id": {
+     "computed": true
+    },
+    "principal_orns": {
+     "optional": true,
+     "sensitive": true,
+     "type": [
+      "list",
+      "string"
+     ]
+    },
+    "resource_orns": {
+     "required": true,
+     "sensitive": true,
+     "type": [
+      "list",
+      "string"
+     ]
+    }
+   }
+  }
+ },
+ "source": "terraform providers schema -json; facts only (no descriptions: the provider is MPL-2.0)",
+ "terraform": "1.17.2",
+ "version": "7.1.0"
+}

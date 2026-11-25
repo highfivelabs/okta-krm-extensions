@@ -1,0 +1,100 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "afcApp": 280000030,
+    "agaApp": 280000003,
+    "agaGroup": 280000004,
+    "aoasApp": 280000047,
+    "aoasIssuer": "rehearsal-aoasIssuer",
+    "apaApp": 280000043,
+    "apaPolicy": 280000044,
+    "arcaIssuer": "rehearsal-arcaIssuer",
+    "arcaMember": 280000035,
+    "arcaOrg": 280000033,
+    "arcaRS": 280000036,
+    "arcaRole": 280000037,
+    "arcaTarget": 280000034,
+    "argGroup": 280000041,
+    "argKeep": 280000040,
+    "argRole": 280000039,
+    "argUser": 280000038,
+    "ascAS": 280000013,
+    "aspAS": 280000015,
+    "asrAS": 280000017,
+    "asrGroup": 280000019,
+    "asrPolicy": 280000018,
+    "assAS": 280000011,
+    "auApp": 280000006,
+    "auUser": 280000007,
+    "cspBrand": 280000021,
+    "edBrand": 280000025,
+    "fUser": 280000029,
+    "grGroup": 280000026,
+    "grlGroup": 280000027,
+    "orgId": 280000001,
+    "prGroup": 280000010,
+    "prPolicy": 280000009,
+    "pspBrand": 280000022,
+    "rsGroup": 280000002,
+    "thBrand": 280000023,
+    "thTheme": "rehearsal-thTheme",
+    "uarUser": 280000028
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/.well-known/openid-configuration",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000046}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/apps",
+      "body": "{\"credentials\":{\"oauthClient\":{\"token_endpoint_auth_method\":\"private_key_jwt\"}},\"label\":\"{{name}}-app\",\"name\":\"oidc_client\",\"settings\":{\"oauthClient\":{\"application_type\":\"service\",\"grant_types\":[\"client_credentials\"],\"jwks_uri\":\"https://www.example.com/{{name}}/jwks\",\"response_types\":[\"token\"]}},\"signOnMode\":\"OPENID_CONNECT\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"credentials\":{\"oauthClient\":{\"token_endpoint_auth_method\":\"private_key_jwt\"}},\"id\":280000047,\"label\":\"{{name}}-app\",\"name\":\"oidc_client\",\"settings\":{\"oauthClient\":{\"application_type\":\"service\",\"grant_types\":[\"client_credentials\"],\"jwks_uri\":\"https://www.example.com/{{name}}/jwks\",\"response_types\":[\"token\"]}},\"signOnMode\":\"OPENID_CONNECT\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/apps/280000047/grants",
+      "body": "{\"issuer\":\"rehearsal-aoasIssuer\",\"scopeId\":\"okta.users.read\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"_links\":{},\"clientId\":\"oag3ih1zrm1cBFOiq0h6\",\"created\":\"2017-03-28T01:11:10Z\",\"createdBy\":{},\"id\":270000036,\"issuer\":\"rehearsal-aoasIssuer\",\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"scopeId\":\"okta.users.read\",\"source\":\"ADMIN\",\"status\":\"ACTIVE\",\"userId\":\"00u5t60iloOHN9pBi0h7\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/280000047/grants/270000036",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"_links\":{},\"clientId\":\"oag3ih1zrm1cBFOiq0h6\",\"created\":\"2017-03-28T01:11:10Z\",\"createdBy\":{},\"id\":270000036,\"issuer\":\"rehearsal-aoasIssuer\",\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"scopeId\":\"okta.users.read\",\"source\":\"ADMIN\",\"status\":\"ACTIVE\",\"userId\":\"00u5t60iloOHN9pBi0h7\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/apps/280000047/grants/270000036",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/280000047/grants/270000036",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/apps/280000047/lifecycle/deactivate",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000048}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/apps/280000047",
+      "status": 204
+    }
+  ]
+}

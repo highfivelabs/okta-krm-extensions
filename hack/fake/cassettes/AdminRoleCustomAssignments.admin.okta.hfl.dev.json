@@ -1,0 +1,136 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "afcApp": 280000030,
+    "agaApp": 280000003,
+    "agaGroup": 280000004,
+    "arcaIssuer": "rehearsal-arcaIssuer",
+    "arcaMember": 280000035,
+    "arcaOrg": 280000033,
+    "arcaRS": 280000036,
+    "arcaRole": 280000037,
+    "arcaTarget": 280000034,
+    "ascAS": 280000013,
+    "aspAS": 280000015,
+    "asrAS": 280000017,
+    "asrGroup": 280000019,
+    "asrPolicy": 280000018,
+    "assAS": 280000011,
+    "auApp": 280000006,
+    "auUser": 280000007,
+    "cspBrand": 280000021,
+    "edBrand": 280000025,
+    "fUser": 280000029,
+    "grGroup": 280000026,
+    "grlGroup": 280000027,
+    "orgId": 280000001,
+    "prGroup": 280000010,
+    "prPolicy": 280000009,
+    "pspBrand": 280000022,
+    "rsGroup": 280000002,
+    "thBrand": 280000023,
+    "thTheme": "rehearsal-thTheme",
+    "uarUser": 280000028
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/.well-known/openid-configuration",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000032}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/org",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000033}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/groups",
+      "body": "{\"profile\":{\"name\":\"{{name}}-t\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000034,\"profile\":{\"name\":\"{{name}}-t\"}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/groups",
+      "body": "{\"profile\":{\"name\":\"{{name}}-m\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000035,\"profile\":{\"name\":\"{{name}}-m\"}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/iam/resource-sets",
+      "body": "{\"description\":\"hfl-live\",\"label\":\"{{name}}-rs\",\"resources\":[\"orn:okta:directory:280000033:groups:280000034\"]}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"description\":\"hfl-live\",\"id\":280000036,\"label\":\"{{name}}-rs\",\"resources\":[\"orn:okta:directory:280000033:groups:280000034\"]}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/iam/roles",
+      "body": "{\"description\":\"hfl-live\",\"label\":\"{{name}}-r\",\"permissions\":[\"okta.users.read\"]}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"description\":\"hfl-live\",\"id\":280000037,\"label\":\"{{name}}-r\",\"permissions\":[\"okta.users.read\"]}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/iam/resource-sets/280000036/bindings",
+      "body": "{\"members\":[\"rehearsal-arcaIssuer/api/v1/groups/280000035\"],\"role\":280000037}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_links\":{}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/iam/resource-sets/280000036/bindings/280000037",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/iam/resource-sets/280000036/bindings/280000037",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/iam/resource-sets/280000036/bindings/280000037",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/iam/resource-sets/280000036/bindings/280000037",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/iam/resource-sets/280000036",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/iam/roles/280000037",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/groups/280000035",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/groups/280000034",
+      "status": 204
+    }
+  ]
+}

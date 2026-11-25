@@ -1,0 +1,123 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "agaApp": 280000003,
+    "agaGroup": 280000004,
+    "assAS": 280000011,
+    "auApp": 280000006,
+    "auUser": 280000007,
+    "orgId": 280000001,
+    "prGroup": 280000010,
+    "prPolicy": 280000009,
+    "rsGroup": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/authorizationServers",
+      "body": "{\"audiences\":[\"api://{{name}}\"],\"description\":\"hfl-live\",\"name\":\"{{name}}-as\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"audiences\":[\"api://{{name}}\"],\"description\":\"hfl-live\",\"id\":280000011,\"name\":\"{{name}}-as\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/authorizationServers/280000011/scopes",
+      "body": "{\"consent\":\"IMPLICIT\",\"description\":\"first\",\"metadataPublish\":\"NO_CLIENTS\",\"name\":\"{{name}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"consent\":\"IMPLICIT\",\"description\":\"first\",\"id\":270000012,\"metadataPublish\":\"NO_CLIENTS\",\"name\":\"{{name}}\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/280000011/scopes/270000012",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"consent\":\"IMPLICIT\",\"description\":\"first\",\"id\":270000012,\"metadataPublish\":\"NO_CLIENTS\",\"name\":\"{{name}}\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/280000011/scopes/270000012",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"consent\":\"IMPLICIT\",\"description\":\"first\",\"id\":270000012,\"metadataPublish\":\"NO_CLIENTS\",\"name\":\"{{name}}\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/authorizationServers/280000011/scopes/270000012",
+      "body": "{\"consent\":\"IMPLICIT\",\"description\":\"second\",\"metadataPublish\":\"NO_CLIENTS\",\"name\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"consent\":\"IMPLICIT\",\"description\":\"second\",\"id\":270000012,\"metadataPublish\":\"NO_CLIENTS\",\"name\":\"{{name}}\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/280000011/scopes/270000012",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"consent\":\"IMPLICIT\",\"description\":\"second\",\"id\":270000012,\"metadataPublish\":\"NO_CLIENTS\",\"name\":\"{{name}}\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/280000011/scopes/270000012",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"consent\":\"IMPLICIT\",\"description\":\"second\",\"id\":270000012,\"metadataPublish\":\"NO_CLIENTS\",\"name\":\"{{name}}\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/authorizationServers/280000011/scopes/270000012",
+      "body": "{\"_links\":{},\"consent\":\"IMPLICIT\",\"description\":\"hfl-live-drift\",\"id\":270000012,\"metadataPublish\":\"NO_CLIENTS\",\"name\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"consent\":\"IMPLICIT\",\"description\":\"hfl-live-drift\",\"id\":270000012,\"metadataPublish\":\"NO_CLIENTS\",\"name\":\"{{name}}\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/280000011/scopes/270000012",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"consent\":\"IMPLICIT\",\"description\":\"hfl-live-drift\",\"id\":270000012,\"metadataPublish\":\"NO_CLIENTS\",\"name\":\"{{name}}\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/authorizationServers/280000011/scopes/270000012",
+      "body": "{\"consent\":\"IMPLICIT\",\"description\":\"second\",\"metadataPublish\":\"NO_CLIENTS\",\"name\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"consent\":\"IMPLICIT\",\"description\":\"second\",\"id\":270000012,\"metadataPublish\":\"NO_CLIENTS\",\"name\":\"{{name}}\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/280000011/scopes/270000012",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{},\"consent\":\"IMPLICIT\",\"description\":\"second\",\"id\":270000012,\"metadataPublish\":\"NO_CLIENTS\",\"name\":\"{{name}}\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/authorizationServers/280000011/scopes/270000012",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/280000011/scopes/270000012",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/authorizationServers/280000011/lifecycle/deactivate",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000012}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/authorizationServers/280000011",
+      "status": 204
+    }
+  ]
+}

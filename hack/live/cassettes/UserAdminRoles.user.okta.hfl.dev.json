@@ -1,0 +1,75 @@
+{
+  "recorded": "2026-11-20T23:58:06Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "ascAS": "aus1a5d5lco5hVnpo698",
+    "aspAS": "aus1a5d7xao0ETI8w698",
+    "asrAS": "aus1a5d92wqVRei1R698",
+    "asrGroup": "00g1a5d79iaCH1Z7n698",
+    "asrPolicy": "00p1a5d7zs3Jr87U8698",
+    "assAS": "aus1a5d7849QKfQlb698",
+    "auApp": "0oa1a5d5vh1J50WFa698",
+    "auUser": "00u1a5d75s3uKgUNV698",
+    "cspBrand": "bnd1a5d2wkvwx3YqE698",
+    "edBrand": "bnd1a5d85vaNOwFus698",
+    "grGroup": "00g1a5d5vk6BBV0aa698",
+    "grlGroup": "00g1a5d9xr5pJ4Mq6698",
+    "orgId": "{{redacted}}",
+    "prGroup": "00g1a5d7103FF3HnP698",
+    "prPolicy": "rst1a5d85sx0UeqpU698",
+    "pspBrand": "bnd1a5d240aLpp4zT698",
+    "rsGroup": "00g1a5d7plc3tGO1v698",
+    "thBrand": "bnd1a5d5sixEbT59w698",
+    "thTheme": "the1a5d5siyxEFQOz698",
+    "uarUser": "00u1a5dalm7wDjAI7698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/users?activate=false",
+      "body": "{\"profile\":{\"email\":\"{{name}}-u@example.com\",\"firstName\":\"hfl\",\"lastName\":\"live\",\"login\":\"{{name}}-u@example.com\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00u1a5dalm7wDjAI7698\",\"status\":\"STAGED\",\"created\":\"2026-11-20T23:58:04.000Z\",\"activated\":null,\"statusChanged\":null,\"lastLogin\":null,\"lastUpdated\":\"2026-11-20T23:58:04.000Z\",\"passwordChanged\":null,\"type\":{\"id\":\"oty19y29nyfuxEes6698\"},\"profile\":{\"firstName\":\"hfl\",\"lastName\":\"live\",\"mobilePhone\":null,\"secondEmail\":null,\"login\":\"{{name}}-u@example.com\",\"email\":\"{{name}}-u@example.com\"},\"credentials\":{\"provider\":{\"type\":\"OKTA\",\"name\":\"OKTA\"}},\"_links\":{\"schema\":{\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc19y29nyfuxEes6698\"},\"activate\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5dalm7wDjAI7698/lifecycle/activate\",\"method\":\"POST\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5dalm7wDjAI7698\"},\"resetFactors\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5dalm7wDjAI7698/lifecycle/reset_factors\",\"method\":\"POST\"},\"type\":{\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty19y29nyfuxEes6698\"}}}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/users/00u1a5dalm7wDjAI7698/roles",
+      "body": "{\"type\":\"READ_ONLY_ADMIN\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"id\":\"ra11a5d2u8leC78XM698\",\"label\":\"Read-only Administrator\",\"type\":\"READ_ONLY_ADMIN\",\"status\":\"ACTIVE\",\"created\":\"2026-11-20T23:58:04.000Z\",\"lastUpdated\":\"2026-11-20T23:58:04.000Z\",\"assignmentType\":\"USER\",\"_links\":{\"assignee\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5dalm7wDjAI7698\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/00u1a5dalm7wDjAI7698/roles/ra11a5d2u8leC78XM698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"ra11a5d2u8leC78XM698\",\"label\":\"Read-only Administrator\",\"type\":\"READ_ONLY_ADMIN\",\"status\":\"ACTIVE\",\"created\":\"2026-11-20T23:58:04.000Z\",\"lastUpdated\":\"2026-11-20T23:58:04.000Z\",\"assignmentType\":\"USER\",\"_links\":{\"assignee\":{\"href\":\"{{baseURL}}/api/v1/users/00u1a5dalm7wDjAI7698\"}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/users/00u1a5dalm7wDjAI7698/roles/ra11a5d2u8leC78XM698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/00u1a5dalm7wDjAI7698/roles/ra11a5d2u8leC78XM698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: ra11a5d2u8leC78XM698 (RoleAssignment)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaeTe5BYfAcQvOjhbHnYi4jmQ\",\"errorCauses\":[]}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/users/00u1a5dalm7wDjAI7698",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/users/00u1a5dalm7wDjAI7698",
+      "status": 204
+    }
+  ]
+}

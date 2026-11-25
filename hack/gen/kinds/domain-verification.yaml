@@ -1,0 +1,12 @@
+terraform: [okta_domain_verification]
+kind: DomainVerification
+shape: settings
+params:
+  domainId: {type: string}
+state:
+  field: validationStatus
+  description: "VERIFIED: POST /api/v1/domains/{domainId}/verify is made while the domain's status is another (a domain with its certificate reads COMPLETED, and is verified again, harmlessly, on each sync)."
+  calls:
+    VERIFIED: {method: POST, path: "/api/v1/domains/{domainId}/verify"}
+sample: {domainId: example-domain-id, validationStatus: VERIFIED}
+read: {method: GET, path: "/api/v1/domains/{domainId}"}

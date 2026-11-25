@@ -1,0 +1,115 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "agaApp": 280000003,
+    "agaGroup": 280000004,
+    "ascAS": 280000013,
+    "aspAS": 280000015,
+    "asrAS": 280000017,
+    "asrGroup": 280000019,
+    "asrPolicy": 280000018,
+    "assAS": 280000011,
+    "auApp": 280000006,
+    "auUser": 280000007,
+    "orgId": 280000001,
+    "prGroup": 280000010,
+    "prPolicy": 280000009,
+    "rsGroup": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/behaviors",
+      "body": "{\"name\":\"{{name}}\",\"settings\":{\"maxEventsUsedForEvaluation\":20},\"type\":\"ANOMALOUS_DEVICE\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_link\":{},\"created\":\"example-created\",\"id\":270000016,\"lastUpdated\":\"example-lastUpdated\",\"name\":\"{{name}}\",\"settings\":{\"maxEventsUsedForEvaluation\":20},\"type\":\"ANOMALOUS_DEVICE\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/behaviors/270000016",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_link\":{},\"created\":\"example-created\",\"id\":270000016,\"lastUpdated\":\"example-lastUpdated\",\"name\":\"{{name}}\",\"settings\":{\"maxEventsUsedForEvaluation\":20},\"type\":\"ANOMALOUS_DEVICE\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/behaviors/270000016",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_link\":{},\"created\":\"example-created\",\"id\":270000016,\"lastUpdated\":\"example-lastUpdated\",\"name\":\"{{name}}\",\"settings\":{\"maxEventsUsedForEvaluation\":20},\"type\":\"ANOMALOUS_DEVICE\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/behaviors/270000016",
+      "body": "{\"name\":\"{{name}}-2\",\"settings\":{\"maxEventsUsedForEvaluation\":20},\"type\":\"ANOMALOUS_DEVICE\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_link\":{},\"created\":\"example-created\",\"id\":270000016,\"lastUpdated\":\"example-lastUpdated\",\"name\":\"{{name}}-2\",\"settings\":{\"maxEventsUsedForEvaluation\":20},\"type\":\"ANOMALOUS_DEVICE\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/behaviors/270000016",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_link\":{},\"created\":\"example-created\",\"id\":270000016,\"lastUpdated\":\"example-lastUpdated\",\"name\":\"{{name}}-2\",\"settings\":{\"maxEventsUsedForEvaluation\":20},\"type\":\"ANOMALOUS_DEVICE\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/behaviors/270000016",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_link\":{},\"created\":\"example-created\",\"id\":270000016,\"lastUpdated\":\"example-lastUpdated\",\"name\":\"{{name}}-2\",\"settings\":{\"maxEventsUsedForEvaluation\":20},\"type\":\"ANOMALOUS_DEVICE\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/behaviors/270000016",
+      "body": "{\"_link\":{},\"created\":\"example-created\",\"id\":270000016,\"lastUpdated\":\"example-lastUpdated\",\"name\":\"hfl-live-drift\",\"settings\":{\"maxEventsUsedForEvaluation\":20},\"type\":\"ANOMALOUS_DEVICE\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_link\":{},\"created\":\"example-created\",\"id\":270000016,\"lastUpdated\":\"example-lastUpdated\",\"name\":\"hfl-live-drift\",\"settings\":{\"maxEventsUsedForEvaluation\":20},\"type\":\"ANOMALOUS_DEVICE\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/behaviors/270000016",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_link\":{},\"created\":\"example-created\",\"id\":270000016,\"lastUpdated\":\"example-lastUpdated\",\"name\":\"hfl-live-drift\",\"settings\":{\"maxEventsUsedForEvaluation\":20},\"type\":\"ANOMALOUS_DEVICE\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/behaviors/270000016",
+      "body": "{\"name\":\"{{name}}-2\",\"settings\":{\"maxEventsUsedForEvaluation\":20},\"type\":\"ANOMALOUS_DEVICE\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_link\":{},\"created\":\"example-created\",\"id\":270000016,\"lastUpdated\":\"example-lastUpdated\",\"name\":\"{{name}}-2\",\"settings\":{\"maxEventsUsedForEvaluation\":20},\"type\":\"ANOMALOUS_DEVICE\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/behaviors/270000016",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_link\":{},\"created\":\"example-created\",\"id\":270000016,\"lastUpdated\":\"example-lastUpdated\",\"name\":\"{{name}}-2\",\"settings\":{\"maxEventsUsedForEvaluation\":20},\"type\":\"ANOMALOUS_DEVICE\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/behaviors/270000016/lifecycle/deactivate",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_link\":{},\"created\":\"example-created\",\"id\":270000016,\"lastUpdated\":\"example-lastUpdated\",\"name\":\"{{name}}-2\",\"settings\":{\"maxEventsUsedForEvaluation\":20},\"type\":\"ANOMALOUS_DEVICE\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/behaviors/270000016",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/behaviors/270000016",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

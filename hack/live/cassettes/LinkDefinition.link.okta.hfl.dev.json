@@ -1,0 +1,56 @@
+{
+  "recorded": "2026-11-20T23:57:54Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "ascAS": "aus1a5d5lco5hVnpo698",
+    "aspAS": "aus1a5d7xao0ETI8w698",
+    "asrAS": "aus1a5d92wqVRei1R698",
+    "asrGroup": "00g1a5d79iaCH1Z7n698",
+    "asrPolicy": "00p1a5d7zs3Jr87U8698",
+    "assAS": "aus1a5d7849QKfQlb698",
+    "auApp": "0oa1a5d5vh1J50WFa698",
+    "auUser": "00u1a5d75s3uKgUNV698",
+    "cspBrand": "bnd1a5d2wkvwx3YqE698",
+    "edBrand": "bnd1a5d85vaNOwFus698",
+    "grGroup": "00g1a5d5vk6BBV0aa698",
+    "grlGroup": "00g1a5d9xr5pJ4Mq6698",
+    "orgId": "{{redacted}}",
+    "prGroup": "00g1a5d7103FF3HnP698",
+    "prPolicy": "rst1a5d85sx0UeqpU698",
+    "pspBrand": "bnd1a5d240aLpp4zT698",
+    "rsGroup": "00g1a5d7plc3tGO1v698",
+    "thBrand": "bnd1a5d5sixEbT59w698",
+    "thTheme": "the1a5d5siyxEFQOz698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/meta/schemas/user/linkedObjects",
+      "body": "{\"associated\":{\"description\":\"hfl-live\",\"name\":\"{{name_}}_r\",\"title\":\"Report\",\"type\":\"USER\"},\"primary\":{\"description\":\"hfl-live\",\"name\":\"{{name_}}_m\",\"title\":\"Manager\",\"type\":\"USER\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"primary\":{\"name\":\"{{name_}}_m\",\"title\":\"Manager\",\"description\":\"hfl-live\",\"type\":\"USER\"},\"associated\":{\"name\":\"{{name_}}_r\",\"title\":\"Report\",\"description\":\"hfl-live\",\"type\":\"USER\"},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/linkedObjects/{{name_}}_m\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/meta/schemas/user/linkedObjects/{{name_}}_m",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"primary\":{\"name\":\"{{name_}}_m\",\"title\":\"Manager\",\"description\":\"hfl-live\",\"type\":\"USER\"},\"associated\":{\"name\":\"{{name_}}_r\",\"title\":\"Report\",\"description\":\"hfl-live\",\"type\":\"USER\"},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/linkedObjects/{{name_}}_m\"}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/meta/schemas/user/linkedObjects/{{name_}}_m",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/meta/schemas/user/linkedObjects/{{name_}}_m",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: {{name_}}_m (LinkedObjectProperty)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaeZvJKuUnzQ-u_x_XQMj6aCQ\",\"errorCauses\":[]}"
+    }
+  ]
+}

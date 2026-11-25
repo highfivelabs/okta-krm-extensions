@@ -1,0 +1,135 @@
+{
+  "recorded": "2026-11-20T23:57:48Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "ascAS": "aus1a5d5lco5hVnpo698",
+    "aspAS": "aus1a5d7xao0ETI8w698",
+    "asrAS": "aus1a5d92wqVRei1R698",
+    "asrGroup": "00g1a5d79iaCH1Z7n698",
+    "asrPolicy": "00p1a5d7zs3Jr87U8698",
+    "assAS": "aus1a5d7849QKfQlb698",
+    "auApp": "0oa1a5d5vh1J50WFa698",
+    "auUser": "00u1a5d75s3uKgUNV698",
+    "cspBrand": "bnd1a5d2wkvwx3YqE698",
+    "edBrand": "bnd1a5d85vaNOwFus698",
+    "grGroup": "00g1a5d5vk6BBV0aa698",
+    "grlGroup": "00g1a5d9xr5pJ4Mq6698",
+    "orgId": "{{redacted}}",
+    "prGroup": "00g1a5d7103FF3HnP698",
+    "prPolicy": "rst1a5d85sx0UeqpU698",
+    "pspBrand": "bnd1a5d240aLpp4zT698",
+    "rsGroup": "00g1a5d7plc3tGO1v698",
+    "thBrand": "bnd1a5d5sixEbT59w698",
+    "thTheme": "the1a5d5siyxEFQOz698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/groups",
+      "body": "{\"profile\":{\"name\":\"{{name}}-g\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00g1a5d9xr5pJ4Mq6698\",\"created\":\"2026-11-20T23:57:46.000Z\",\"lastUpdated\":\"2026-11-20T23:57:46.000Z\",\"lastMembershipUpdated\":\"2026-11-20T23:57:46.000Z\",\"objectClass\":[\"okta:user_group\"],\"type\":\"OKTA_GROUP\",\"profile\":{\"name\":\"{{name}}-g\"},\"_links\":{\"logo\":[{\"name\":\"medium\",\"href\":\"https://ok14static.oktacdn.com/assets/img/logos/groups/odyssey/okta-medium.30ce6d4085dff29412984e4c191bc874.png\",\"type\":\"image/png\"},{\"name\":\"large\",\"href\":\"https://ok14static.oktacdn.com/assets/img/logos/groups/odyssey/okta-large.c3cb8cda8ae0add1b4fe928f5844dbe3.png\",\"type\":\"image/png\"}],\"users\":{\"href\":\"{{baseURL}}/api/v1/groups/00g1a5d9xr5pJ4Mq6698/users\"},\"apps\":{\"href\":\"{{baseURL}}/api/v1/groups/00g1a5d9xr5pJ4Mq6698/apps\"}}}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/groups/rules",
+      "body": "{\"actions\":{\"assignUserToGroups\":{\"groupIds\":[\"00g1a5d9xr5pJ4Mq6698\"]}},\"conditions\":{\"expression\":{\"type\":\"urn:okta:expression:1.0\",\"value\":\"user.login == \\\"{{name}}@example.com\\\"\"}},\"name\":\"{{name}}\",\"type\":\"group_rule\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"type\":\"group_rule\",\"id\":\"0pr1a5d2q9mYucJBC698\",\"status\":\"INACTIVE\",\"name\":\"{{name}}\",\"created\":\"2026-11-20T23:57:47.000Z\",\"lastUpdated\":\"2026-11-20T23:57:47.000Z\",\"conditions\":{\"expression\":{\"value\":\"user.login == \\\"{{name}}@example.com\\\"\",\"type\":\"urn:okta:expression:1.0\"}},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[\"00g1a5d9xr5pJ4Mq6698\"]}},\"allGroupsValid\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/rules/0pr1a5d2q9mYucJBC698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"type\":\"group_rule\",\"id\":\"0pr1a5d2q9mYucJBC698\",\"status\":\"INACTIVE\",\"name\":\"{{name}}\",\"created\":\"2026-11-20T23:57:47.000Z\",\"lastUpdated\":\"2026-11-20T23:57:47.000Z\",\"conditions\":{\"expression\":{\"value\":\"user.login == \\\"{{name}}@example.com\\\"\",\"type\":\"urn:okta:expression:1.0\"}},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[\"00g1a5d9xr5pJ4Mq6698\"]}},\"allGroupsValid\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/rules/0pr1a5d2q9mYucJBC698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"type\":\"group_rule\",\"id\":\"0pr1a5d2q9mYucJBC698\",\"status\":\"INACTIVE\",\"name\":\"{{name}}\",\"created\":\"2026-11-20T23:57:47.000Z\",\"lastUpdated\":\"2026-11-20T23:57:47.000Z\",\"conditions\":{\"expression\":{\"value\":\"user.login == \\\"{{name}}@example.com\\\"\",\"type\":\"urn:okta:expression:1.0\"}},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[\"00g1a5d9xr5pJ4Mq6698\"]}},\"allGroupsValid\":true}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/groups/rules/0pr1a5d2q9mYucJBC698",
+      "body": "{\"actions\":{\"assignUserToGroups\":{\"groupIds\":[\"00g1a5d9xr5pJ4Mq6698\"]}},\"conditions\":{\"expression\":{\"type\":\"urn:okta:expression:1.0\",\"value\":\"user.login == \\\"{{name}}@example.com\\\"\"}},\"name\":\"{{name}}-2\",\"type\":\"group_rule\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"type\":\"group_rule\",\"id\":\"0pr1a5d2q9mYucJBC698\",\"status\":\"INACTIVE\",\"name\":\"{{name}}-2\",\"created\":\"2026-11-20T23:57:47.000Z\",\"lastUpdated\":\"2026-11-20T23:57:47.000Z\",\"conditions\":{\"expression\":{\"value\":\"user.login == \\\"{{name}}@example.com\\\"\",\"type\":\"urn:okta:expression:1.0\"}},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[\"00g1a5d9xr5pJ4Mq6698\"]}},\"allGroupsValid\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/rules/0pr1a5d2q9mYucJBC698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"type\":\"group_rule\",\"id\":\"0pr1a5d2q9mYucJBC698\",\"status\":\"INACTIVE\",\"name\":\"{{name}}-2\",\"created\":\"2026-11-20T23:57:47.000Z\",\"lastUpdated\":\"2026-11-20T23:57:47.000Z\",\"conditions\":{\"expression\":{\"value\":\"user.login == \\\"{{name}}@example.com\\\"\",\"type\":\"urn:okta:expression:1.0\"}},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[\"00g1a5d9xr5pJ4Mq6698\"]}},\"allGroupsValid\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/rules/0pr1a5d2q9mYucJBC698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"type\":\"group_rule\",\"id\":\"0pr1a5d2q9mYucJBC698\",\"status\":\"INACTIVE\",\"name\":\"{{name}}-2\",\"created\":\"2026-11-20T23:57:47.000Z\",\"lastUpdated\":\"2026-11-20T23:57:47.000Z\",\"conditions\":{\"expression\":{\"value\":\"user.login == \\\"{{name}}@example.com\\\"\",\"type\":\"urn:okta:expression:1.0\"}},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[\"00g1a5d9xr5pJ4Mq6698\"]}},\"allGroupsValid\":true}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/groups/rules/0pr1a5d2q9mYucJBC698",
+      "body": "{\"actions\":{\"assignUserToGroups\":{\"groupIds\":[\"00g1a5d9xr5pJ4Mq6698\"]}},\"allGroupsValid\":true,\"conditions\":{\"expression\":{\"type\":\"urn:okta:expression:1.0\",\"value\":\"user.login == \\\"{{name}}@example.com\\\"\"}},\"created\":\"2026-11-20T23:57:47.000Z\",\"id\":\"0pr1a5d2q9mYucJBC698\",\"lastUpdated\":\"2026-11-20T23:57:47.000Z\",\"name\":\"hfl-live-drift\",\"status\":\"INACTIVE\",\"type\":\"group_rule\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"type\":\"group_rule\",\"id\":\"0pr1a5d2q9mYucJBC698\",\"status\":\"INACTIVE\",\"name\":\"hfl-live-drift\",\"created\":\"2026-11-20T23:57:47.000Z\",\"lastUpdated\":\"2026-11-20T23:57:47.000Z\",\"conditions\":{\"expression\":{\"value\":\"user.login == \\\"{{name}}@example.com\\\"\",\"type\":\"urn:okta:expression:1.0\"}},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[\"00g1a5d9xr5pJ4Mq6698\"]}},\"allGroupsValid\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/rules/0pr1a5d2q9mYucJBC698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"type\":\"group_rule\",\"id\":\"0pr1a5d2q9mYucJBC698\",\"status\":\"INACTIVE\",\"name\":\"hfl-live-drift\",\"created\":\"2026-11-20T23:57:47.000Z\",\"lastUpdated\":\"2026-11-20T23:57:47.000Z\",\"conditions\":{\"expression\":{\"value\":\"user.login == \\\"{{name}}@example.com\\\"\",\"type\":\"urn:okta:expression:1.0\"}},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[\"00g1a5d9xr5pJ4Mq6698\"]}},\"allGroupsValid\":true}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/groups/rules/0pr1a5d2q9mYucJBC698",
+      "body": "{\"actions\":{\"assignUserToGroups\":{\"groupIds\":[\"00g1a5d9xr5pJ4Mq6698\"]}},\"conditions\":{\"expression\":{\"type\":\"urn:okta:expression:1.0\",\"value\":\"user.login == \\\"{{name}}@example.com\\\"\"}},\"name\":\"{{name}}-2\",\"type\":\"group_rule\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"type\":\"group_rule\",\"id\":\"0pr1a5d2q9mYucJBC698\",\"status\":\"INACTIVE\",\"name\":\"{{name}}-2\",\"created\":\"2026-11-20T23:57:47.000Z\",\"lastUpdated\":\"2026-11-20T23:57:48.000Z\",\"conditions\":{\"expression\":{\"value\":\"user.login == \\\"{{name}}@example.com\\\"\",\"type\":\"urn:okta:expression:1.0\"}},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[\"00g1a5d9xr5pJ4Mq6698\"]}},\"allGroupsValid\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/rules/0pr1a5d2q9mYucJBC698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"type\":\"group_rule\",\"id\":\"0pr1a5d2q9mYucJBC698\",\"status\":\"INACTIVE\",\"name\":\"{{name}}-2\",\"created\":\"2026-11-20T23:57:47.000Z\",\"lastUpdated\":\"2026-11-20T23:57:48.000Z\",\"conditions\":{\"expression\":{\"value\":\"user.login == \\\"{{name}}@example.com\\\"\",\"type\":\"urn:okta:expression:1.0\"}},\"actions\":{\"assignUserToGroups\":{\"groupIds\":[\"00g1a5d9xr5pJ4Mq6698\"]}},\"allGroupsValid\":true}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/groups/rules/0pr1a5d2q9mYucJBC698/lifecycle/deactivate",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/groups/rules/0pr1a5d2q9mYucJBC698",
+      "status": 202,
+      "contentType": "application/json",
+      "response": "{}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/rules/0pr1a5d2q9mYucJBC698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: 0pr1a5d2q9mYucJBC698 (PolicyRule)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaezsJncTxJQbuQE30bZEei_Q\",\"errorCauses\":[]}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/groups/00g1a5d9xr5pJ4Mq6698",
+      "status": 204
+    }
+  ]
+}

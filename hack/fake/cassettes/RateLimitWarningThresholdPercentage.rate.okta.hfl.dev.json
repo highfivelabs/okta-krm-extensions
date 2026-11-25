@@ -1,0 +1,118 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "agaApp": 280000003,
+    "agaGroup": 280000004,
+    "ascAS": 280000013,
+    "aspAS": 280000015,
+    "asrAS": 280000017,
+    "asrGroup": 280000019,
+    "asrPolicy": 280000018,
+    "assAS": 280000011,
+    "auApp": 280000006,
+    "auUser": 280000007,
+    "cspBrand": 280000021,
+    "edBrand": 280000025,
+    "grGroup": 280000026,
+    "grlGroup": 280000027,
+    "orgId": 280000001,
+    "prGroup": 280000010,
+    "prPolicy": 280000009,
+    "pspBrand": 280000022,
+    "rsGroup": 280000002,
+    "thBrand": 280000023,
+    "thTheme": "rehearsal-thTheme"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/api/v1/rate-limit-settings/warning-threshold",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/rate-limit-settings/warning-threshold",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/rate-limit-settings/warning-threshold",
+      "body": "{\"warningThreshold\":90}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"warningThreshold\":90}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/rate-limit-settings/warning-threshold",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"warningThreshold\":90}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/rate-limit-settings/warning-threshold",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"warningThreshold\":90}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/rate-limit-settings/warning-threshold",
+      "body": "{\"warningThreshold\":80}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"warningThreshold\":80}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/rate-limit-settings/warning-threshold",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"warningThreshold\":80}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/rate-limit-settings/warning-threshold",
+      "body": "{\"warningThreshold\":70}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"warningThreshold\":70}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/rate-limit-settings/warning-threshold",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"warningThreshold\":70}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/rate-limit-settings/warning-threshold",
+      "body": "{\"warningThreshold\":80}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"warningThreshold\":80}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/rate-limit-settings/warning-threshold",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"warningThreshold\":80}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/rate-limit-settings/warning-threshold",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"warningThreshold\":80}\n"
+    }
+  ]
+}

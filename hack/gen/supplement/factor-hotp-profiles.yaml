@@ -1,0 +1,88 @@
+openapi: 3.0.3
+info:
+  title: Okta TOTP factor profiles (supplement)
+  version: 2026-11-22
+paths:
+  /api/v1/org/factors/hotp/profiles:
+    post:
+      operationId: createHotpFactorProfile
+      summary: Create a TOTP factor profile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/HotpFactorProfile'}
+      responses:
+        '200':
+          description: The profile made
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/HotpFactorProfile'}
+  /api/v1/org/factors/hotp/profiles/{profileId}:
+    parameters:
+    - {name: profileId, in: path, required: true, schema: {type: string}, description: The profile's ID}
+    get:
+      operationId: getHotpFactorProfile
+      summary: Retrieve a TOTP factor profile
+      responses:
+        '200':
+          description: The profile
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/HotpFactorProfile'}
+    put:
+      operationId: replaceHotpFactorProfile
+      summary: Replace a TOTP factor profile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/HotpFactorProfile'}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/HotpFactorProfile'}
+    delete:
+      operationId: deleteHotpFactorProfile
+      summary: Delete a TOTP factor profile
+      responses:
+        '204':
+          description: Deleted
+components:
+  schemas:
+    HotpFactorProfile:
+      type: object
+      required: [name, settings]
+      properties:
+        id:
+          type: string
+          readOnly: true
+          description: The profile's ID.
+        name:
+          type: string
+        default:
+          type: boolean
+        settings:
+          $ref: '#/components/schemas/HotpFactorProfileSettings'
+    HotpFactorProfileSettings:
+      type: object
+      properties:
+        timeBased:
+          type: boolean
+        otpLength:
+          type: integer
+        timeStep:
+          type: integer
+          enum: [15, 30, 60]
+        acceptableAdjacentIntervals:
+          type: integer
+          enum: [3, 5, 10]
+        encoding:
+          type: string
+          enum: [base32, base64, hexadecimal]
+          description: Shared secret encoding.
+        hmacAlgorithm:
+          type: string
+          enum: [HMacSHA1, HMacSHA256, HMacSHA512]
+          description: HMAC algorithm.

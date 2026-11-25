@@ -1,0 +1,92 @@
+{
+  "recorded": "2026-11-20T23:56:38Z",
+  "target": "Okta Integrator org",
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/meta/types/user",
+      "body": "{\"description\":\"first\",\"displayName\":\"{{name}}\",\"name\":\"{{name_}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"oty1a5d0su693FbMr698\",\"displayName\":\"{{name}}\",\"name\":\"{{name_}}\",\"description\":\"first\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"created\":\"2026-11-20T23:56:36.000Z\",\"lastUpdated\":\"2026-11-20T23:56:36.000Z\",\"default\":false,\"_links\":{\"schema\":{\"rel\":\"schema\",\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc1a5d0su693FbMr698\",\"method\":\"GET\"},\"self\":{\"rel\":\"self\",\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty1a5d0su693FbMr698\",\"method\":\"GET\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/meta/types/user/oty1a5d0su693FbMr698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"oty1a5d0su693FbMr698\",\"displayName\":\"{{name}}\",\"name\":\"{{name_}}\",\"description\":\"first\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"created\":\"2026-11-20T23:56:36.000Z\",\"lastUpdated\":\"2026-11-20T23:56:36.000Z\",\"default\":false,\"_links\":{\"schema\":{\"rel\":\"schema\",\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc1a5d0su693FbMr698\",\"method\":\"GET\"},\"self\":{\"rel\":\"self\",\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty1a5d0su693FbMr698\",\"method\":\"GET\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/meta/types/user/oty1a5d0su693FbMr698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"oty1a5d0su693FbMr698\",\"displayName\":\"{{name}}\",\"name\":\"{{name_}}\",\"description\":\"first\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"created\":\"2026-11-20T23:56:36.000Z\",\"lastUpdated\":\"2026-11-20T23:56:36.000Z\",\"default\":false,\"_links\":{\"schema\":{\"rel\":\"schema\",\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc1a5d0su693FbMr698\",\"method\":\"GET\"},\"self\":{\"rel\":\"self\",\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty1a5d0su693FbMr698\",\"method\":\"GET\"}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/meta/types/user/oty1a5d0su693FbMr698",
+      "body": "{\"description\":\"second\",\"displayName\":\"{{name}}\",\"name\":\"{{name_}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"oty1a5d0su693FbMr698\",\"displayName\":\"{{name}}\",\"name\":\"{{name_}}\",\"description\":\"second\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"created\":\"2026-11-20T23:56:36.000Z\",\"lastUpdated\":\"2026-11-20T23:56:37.000Z\",\"default\":false,\"_links\":{\"schema\":{\"rel\":\"schema\",\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc1a5d0su693FbMr698\",\"method\":\"GET\"},\"self\":{\"rel\":\"self\",\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty1a5d0su693FbMr698\",\"method\":\"GET\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/meta/types/user/oty1a5d0su693FbMr698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"oty1a5d0su693FbMr698\",\"displayName\":\"{{name}}\",\"name\":\"{{name_}}\",\"description\":\"second\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"created\":\"2026-11-20T23:56:36.000Z\",\"lastUpdated\":\"2026-11-20T23:56:37.000Z\",\"default\":false,\"_links\":{\"schema\":{\"rel\":\"schema\",\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc1a5d0su693FbMr698\",\"method\":\"GET\"},\"self\":{\"rel\":\"self\",\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty1a5d0su693FbMr698\",\"method\":\"GET\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/meta/types/user/oty1a5d0su693FbMr698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"oty1a5d0su693FbMr698\",\"displayName\":\"{{name}}\",\"name\":\"{{name_}}\",\"description\":\"second\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"created\":\"2026-11-20T23:56:36.000Z\",\"lastUpdated\":\"2026-11-20T23:56:37.000Z\",\"default\":false,\"_links\":{\"schema\":{\"rel\":\"schema\",\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc1a5d0su693FbMr698\",\"method\":\"GET\"},\"self\":{\"rel\":\"self\",\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty1a5d0su693FbMr698\",\"method\":\"GET\"}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/meta/types/user/oty1a5d0su693FbMr698",
+      "body": "{\"_links\":{\"schema\":{\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc1a5d0su693FbMr698\",\"method\":\"GET\",\"rel\":\"schema\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty1a5d0su693FbMr698\",\"method\":\"GET\",\"rel\":\"self\"}},\"created\":\"2026-11-20T23:56:36.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"default\":false,\"description\":\"hfl-live-drift\",\"displayName\":\"{{name}}\",\"id\":\"oty1a5d0su693FbMr698\",\"lastUpdated\":\"2026-11-20T23:56:37.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"name\":\"{{name_}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"oty1a5d0su693FbMr698\",\"displayName\":\"{{name}}\",\"name\":\"{{name_}}\",\"description\":\"hfl-live-drift\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"created\":\"2026-11-20T23:56:36.000Z\",\"lastUpdated\":\"2026-11-20T23:56:37.000Z\",\"default\":false,\"_links\":{\"schema\":{\"rel\":\"schema\",\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc1a5d0su693FbMr698\",\"method\":\"GET\"},\"self\":{\"rel\":\"self\",\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty1a5d0su693FbMr698\",\"method\":\"GET\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/meta/types/user/oty1a5d0su693FbMr698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"oty1a5d0su693FbMr698\",\"displayName\":\"{{name}}\",\"name\":\"{{name_}}\",\"description\":\"hfl-live-drift\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"created\":\"2026-11-20T23:56:36.000Z\",\"lastUpdated\":\"2026-11-20T23:56:37.000Z\",\"default\":false,\"_links\":{\"schema\":{\"rel\":\"schema\",\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc1a5d0su693FbMr698\",\"method\":\"GET\"},\"self\":{\"rel\":\"self\",\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty1a5d0su693FbMr698\",\"method\":\"GET\"}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/meta/types/user/oty1a5d0su693FbMr698",
+      "body": "{\"description\":\"second\",\"displayName\":\"{{name}}\",\"name\":\"{{name_}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"oty1a5d0su693FbMr698\",\"displayName\":\"{{name}}\",\"name\":\"{{name_}}\",\"description\":\"second\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"created\":\"2026-11-20T23:56:36.000Z\",\"lastUpdated\":\"2026-11-20T23:56:37.000Z\",\"default\":false,\"_links\":{\"schema\":{\"rel\":\"schema\",\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc1a5d0su693FbMr698\",\"method\":\"GET\"},\"self\":{\"rel\":\"self\",\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty1a5d0su693FbMr698\",\"method\":\"GET\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/meta/types/user/oty1a5d0su693FbMr698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"oty1a5d0su693FbMr698\",\"displayName\":\"{{name}}\",\"name\":\"{{name_}}\",\"description\":\"second\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"created\":\"2026-11-20T23:56:36.000Z\",\"lastUpdated\":\"2026-11-20T23:56:37.000Z\",\"default\":false,\"_links\":{\"schema\":{\"rel\":\"schema\",\"href\":\"{{baseURL}}/api/v1/meta/schemas/user/osc1a5d0su693FbMr698\",\"method\":\"GET\"},\"self\":{\"rel\":\"self\",\"href\":\"{{baseURL}}/api/v1/meta/types/user/oty1a5d0su693FbMr698\",\"method\":\"GET\"}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/meta/types/user/oty1a5d0su693FbMr698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/meta/types/user/oty1a5d0su693FbMr698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: oty1a5d0su693FbMr698 (CVDType)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaehIObtNkbTfGVFSun2plh6g\",\"errorCauses\":[]}"
+    }
+  ]
+}

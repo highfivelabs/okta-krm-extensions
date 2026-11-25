@@ -1,0 +1,138 @@
+{
+  "recorded": "2026-11-20T23:58:10Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "afcApp": "{{id:1}}",
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "ascAS": "aus1a5d5lco5hVnpo698",
+    "aspAS": "aus1a5d7xao0ETI8w698",
+    "asrAS": "aus1a5d92wqVRei1R698",
+    "asrGroup": "00g1a5d79iaCH1Z7n698",
+    "asrPolicy": "00p1a5d7zs3Jr87U8698",
+    "assAS": "aus1a5d7849QKfQlb698",
+    "auApp": "0oa1a5d5vh1J50WFa698",
+    "auUser": "00u1a5d75s3uKgUNV698",
+    "cspBrand": "bnd1a5d2wkvwx3YqE698",
+    "edBrand": "bnd1a5d85vaNOwFus698",
+    "fUser": "00u1a5dao0q9MOeI7698",
+    "grGroup": "00g1a5d5vk6BBV0aa698",
+    "grlGroup": "00g1a5d9xr5pJ4Mq6698",
+    "orgId": "{{redacted}}",
+    "prGroup": "00g1a5d7103FF3HnP698",
+    "prPolicy": "rst1a5d85sx0UeqpU698",
+    "pspBrand": "bnd1a5d240aLpp4zT698",
+    "rsGroup": "00g1a5d7plc3tGO1v698",
+    "thBrand": "bnd1a5d5sixEbT59w698",
+    "thTheme": "the1a5d5siyxEFQOz698",
+    "uarUser": "00u1a5dalm7wDjAI7698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/apps",
+      "body": "{\"credentials\":{\"oauthClient\":{\"token_endpoint_auth_method\":\"client_secret_basic\"}},\"label\":\"{{name}}-app\",\"name\":\"oidc_client\",\"settings\":{\"oauthClient\":{\"application_type\":\"web\",\"grant_types\":[\"authorization_code\"],\"redirect_uris\":[\"https://www.example.com/{{name}}/cb\"],\"response_types\":[\"code\"]}},\"signOnMode\":\"OPENID_CONNECT\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{\"accessPolicy\":{\"href\":\"{{baseURL}}/api/v1/policies/rst19y29o1kfDk353698\"},\"appLinks\":[{\"href\":\"{{baseURL}}/home/oidc_client/{{id:1}}/aln177a159h7Zf52X0g8\",\"name\":\"oidc_client_link\",\"type\":\"text/html\"}],\"clientCredentials\":[{\"href\":\"{{redacted}}\",\"name\":\"secrets\"}],\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/apps/{{id:1}}/lifecycle/deactivate\"},\"groups\":{\"href\":\"{{baseURL}}/api/v1/apps/{{id:1}}/groups\"},\"logo\":[{\"href\":\"https://ok14static.oktacdn.com/assets/img/logos/default.6770228fb0dab49a1695ef440a5279bb.png\",\"name\":\"medium\",\"type\":\"image/png\"}],\"policies\":{\"hints\":{\"allow\":[\"PUT\"]},\"href\":\"{{baseURL}}/api/v1/apps/{{id:1}}/policies\"},\"profileEnrollment\":{\"href\":\"{{baseURL}}/api/v1/policies/rst19y29o1mWcG8j3698\"},\"uploadLogo\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/api/v1/apps/{{id:1}}/logo\"},\"users\":{\"href\":\"{{baseURL}}/api/v1/apps/{{id:1}}/users\"}},\"accessibility\":{\"errorRedirectUrl\":null,\"loginRedirectUrl\":null,\"selfService\":false},\"created\":\"2026-11-20T23:58:08.000Z\",\"credentials\":{\"oauthClient\":{\"autoKeyRotation\":true,\"client_id\":\"{{id:1}}\",\"client_secret\":\"{{redacted}}\",\"pkce_required\":false,\"token_endpoint_auth_method\":\"client_secret_basic\"},\"signing\":{\"kid\":\"{{redacted}}\"},\"userNameTemplate\":{\"template\":\"{{redacted}}\",\"type\":\"BUILT_IN\"}},\"features\":[],\"id\":\"{{id:1}}\",\"label\":\"{{name}}-app\",\"lastUpdated\":\"2026-11-20T23:58:08.000Z\",\"name\":\"oidc_client\",\"orn\":\"orn:okta:idp:{{redacted}}:apps:oidc_client:{{id:1}}\",\"settings\":{\"app\":{},\"emOptInStatus\":\"NONE\",\"implicitAssignment\":false,\"manualProvisioning\":false,\"notes\":{\"admin\":null,\"enduser\":null},\"notifications\":{\"vpn\":{\"helpUrl\":null,\"message\":null,\"network\":{\"connection\":\"DISABLED\"}}},\"oauthClient\":{\"application_type\":\"web\",\"client_uri\":null,\"consent_method\":\"TRUSTED\",\"dpop_bound_access_tokens\":false,\"grant_types\":[\"authorization_code\"],\"idp_initiated_login\":{\"default_scope\":[],\"mode\":\"DISABLED\"},\"issuer_mode\":\"DYNAMIC\",\"logo_uri\":null,\"redirect_uris\":[\"https://www.example.com/{{name}}/cb\"],\"response_types\":[\"code\"],\"wildcard_redirect\":\"DISABLED\"}},\"signOnMode\":\"OPENID_CONNECT\",\"status\":\"ACTIVE\",\"universalLogout\":{\"identityStack\":\"NOT_SHARED\",\"protocol\":\"GLOBAL_TOKEN_REVOCATION\",\"status\":\"DISABLED\",\"supportType\":\"FULL\"},\"visibility\":{\"appLinks\":{\"oidc_client_link\":true},\"autoLaunch\":false,\"autoSubmitToolbar\":false,\"hide\":{\"iOS\":true,\"web\":true}}}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/apps/{{id:1}}/federated-claims",
+      "body": "{\"expression\":\"user.profile.login\",\"name\":\"{{name_}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"id\":\"ofc1a5d6fr0taCrP9698\",\"name\":\"{{name_}}\",\"expression\":\"user.profile.login\",\"created\":\"2026-11-20T23:58:08.000Z\",\"lastUpdated\":\"2026-11-20T23:58:08.000Z\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/{{id:1}}/federated-claims/ofc1a5d6fr0taCrP9698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"ofc1a5d6fr0taCrP9698\",\"name\":\"{{name_}}\",\"expression\":\"user.profile.login\",\"created\":\"2026-11-20T23:58:08.000Z\",\"lastUpdated\":\"2026-11-20T23:58:08.000Z\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/{{id:1}}/federated-claims/ofc1a5d6fr0taCrP9698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"ofc1a5d6fr0taCrP9698\",\"name\":\"{{name_}}\",\"expression\":\"user.profile.login\",\"created\":\"2026-11-20T23:58:08.000Z\",\"lastUpdated\":\"2026-11-20T23:58:08.000Z\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/apps/{{id:1}}/federated-claims/ofc1a5d6fr0taCrP9698",
+      "body": "{\"expression\":\"user.profile.email\",\"name\":\"{{name_}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"ofc1a5d6fr0taCrP9698\",\"name\":\"{{name_}}\",\"expression\":\"user.profile.email\",\"created\":\"2026-11-20T23:58:08.000Z\",\"lastUpdated\":\"2026-11-20T23:58:09.000Z\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/{{id:1}}/federated-claims/ofc1a5d6fr0taCrP9698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"ofc1a5d6fr0taCrP9698\",\"name\":\"{{name_}}\",\"expression\":\"user.profile.email\",\"created\":\"2026-11-20T23:58:08.000Z\",\"lastUpdated\":\"2026-11-20T23:58:09.000Z\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/{{id:1}}/federated-claims/ofc1a5d6fr0taCrP9698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"ofc1a5d6fr0taCrP9698\",\"name\":\"{{name_}}\",\"expression\":\"user.profile.email\",\"created\":\"2026-11-20T23:58:08.000Z\",\"lastUpdated\":\"2026-11-20T23:58:09.000Z\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/apps/{{id:1}}/federated-claims/ofc1a5d6fr0taCrP9698",
+      "body": "{\"created\":\"2026-11-20T23:58:08.000Z\",\"expression\":\"hfl-live-drift\",\"id\":\"ofc1a5d6fr0taCrP9698\",\"lastUpdated\":\"2026-11-20T23:58:09.000Z\",\"name\":\"{{name_}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"ofc1a5d6fr0taCrP9698\",\"name\":\"{{name_}}\",\"expression\":\"hfl-live-drift\",\"created\":\"2026-11-20T23:58:08.000Z\",\"lastUpdated\":\"2026-11-20T23:58:09.000Z\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/{{id:1}}/federated-claims/ofc1a5d6fr0taCrP9698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"ofc1a5d6fr0taCrP9698\",\"name\":\"{{name_}}\",\"expression\":\"hfl-live-drift\",\"created\":\"2026-11-20T23:58:08.000Z\",\"lastUpdated\":\"2026-11-20T23:58:09.000Z\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/apps/{{id:1}}/federated-claims/ofc1a5d6fr0taCrP9698",
+      "body": "{\"expression\":\"user.profile.email\",\"name\":\"{{name_}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"ofc1a5d6fr0taCrP9698\",\"name\":\"{{name_}}\",\"expression\":\"user.profile.email\",\"created\":\"2026-11-20T23:58:08.000Z\",\"lastUpdated\":\"2026-11-20T23:58:09.000Z\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/{{id:1}}/federated-claims/ofc1a5d6fr0taCrP9698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"ofc1a5d6fr0taCrP9698\",\"name\":\"{{name_}}\",\"expression\":\"user.profile.email\",\"created\":\"2026-11-20T23:58:08.000Z\",\"lastUpdated\":\"2026-11-20T23:58:09.000Z\"}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/apps/{{id:1}}/federated-claims/ofc1a5d6fr0taCrP9698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/{{id:1}}/federated-claims/ofc1a5d6fr0taCrP9698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: ofc1a5d6fr0taCrP9698 (FederatedClaimEntity)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaeQQeT4nwCSyeGR76zppd0fA\",\"errorCauses\":[]}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/apps/{{id:1}}/lifecycle/deactivate",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/apps/{{id:1}}",
+      "status": 204
+    }
+  ]
+}

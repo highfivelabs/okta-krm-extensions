@@ -1,0 +1,12 @@
+terraform: [okta_event_hook_verification]
+kind: EventHookVerification
+shape: settings
+params:
+  eventHookId: {type: string}
+state:
+  field: verificationStatus
+  description: "VERIFIED: POST /api/v1/eventHooks/{eventHookId}/lifecycle/verify is made while the hook's status is another."
+  calls:
+    VERIFIED: {method: POST, path: "/api/v1/eventHooks/{eventHookId}/lifecycle/verify"}
+sample: {eventHookId: example-event-hook-id, verificationStatus: VERIFIED}
+read: {method: GET, path: "/api/v1/eventHooks/{eventHookId}"}

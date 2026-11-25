@@ -1,0 +1,15 @@
+terraform: [okta_app_saml_app_settings]
+kind: AppSamlAppSettings
+shape: settings
+params:
+  appId: {type: string, description: The SAML app's ID.}
+envelope: settings
+bodyEnvelope: settings
+fields:
+  app:
+    type: object
+    x-kubernetes-preserve-unknown-fields: true
+required: [app]
+sample: {appId: example-app-id, app: {awsEnvironmentType: aws.amazon, sessionDuration: 3600}}
+read: {method: GET, path: "/api/v1/apps/{appId}"}
+update: {method: PUT, path: "/api/v1/apps/{appId}", whole: true}

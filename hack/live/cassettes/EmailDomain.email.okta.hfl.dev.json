@@ -1,0 +1,82 @@
+{
+  "recorded": "2026-11-20T23:57:38Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "ascAS": "aus1a5d5lco5hVnpo698",
+    "aspAS": "aus1a5d7xao0ETI8w698",
+    "asrAS": "aus1a5d92wqVRei1R698",
+    "asrGroup": "00g1a5d79iaCH1Z7n698",
+    "asrPolicy": "00p1a5d7zs3Jr87U8698",
+    "assAS": "aus1a5d7849QKfQlb698",
+    "auApp": "0oa1a5d5vh1J50WFa698",
+    "auUser": "00u1a5d75s3uKgUNV698",
+    "cspBrand": "bnd1a5d2wkvwx3YqE698",
+    "edBrand": "bnd1a5d85vaNOwFus698",
+    "orgId": "{{redacted}}",
+    "prGroup": "00g1a5d7103FF3HnP698",
+    "prPolicy": "rst1a5d85sx0UeqpU698",
+    "pspBrand": "bnd1a5d240aLpp4zT698",
+    "rsGroup": "00g1a5d7plc3tGO1v698",
+    "thBrand": "bnd1a5d5sixEbT59w698",
+    "thTheme": "the1a5d5siyxEFQOz698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/brands",
+      "body": "{\"name\":\"{{name}}-b\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"id\":\"bnd1a5d85vaNOwFus698\",\"name\":\"{{name}}-b\",\"removePoweredByOkta\":false,\"customPrivacyPolicyUrl\":null,\"agreeToCustomPrivacyPolicy\":false,\"isDefault\":false,\"defaultApp\":{\"appInstanceId\":null,\"appLinkName\":null,\"classicApplicationUri\":null},\"_links\":{\"themes\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d85vaNOwFus698/themes\",\"hints\":{\"allow\":[\"GET\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d85vaNOwFus698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/email-domains",
+      "body": "{\"brandId\":\"bnd1a5d85vaNOwFus698\",\"displayName\":\"first\",\"domain\":\"{{name}}.example.com\",\"userName\":\"noreply\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"id\":\"OeD1a5d3s70dGqRi3698\",\"validationStatus\":\"NOT_STARTED\",\"displayName\":\"first\",\"userName\":\"noreply\",\"domain\":\"{{name}}.example.com\",\"validationSubdomain\":\"mail\",\"dnsValidationRecords\":[{\"recordType\":\"TXT\",\"fqdn\":\"_oktaverification.{{name}}.example.com\",\"verificationValue\":\"018c4cd555794bb987f579f23e6ad358\"},{\"recordType\":\"cname\",\"fqdn\":\"mail.{{name}}.example.com\",\"verificationValue\":\"u21992032.wl033.sendgrid.net\"},{\"recordType\":\"cname\",\"fqdn\":\"okt._domainkey.{{name}}.example.com\",\"verificationValue\":\"okt.domainkey.u21992032.wl033.sendgrid.net\"},{\"recordType\":\"cname\",\"fqdn\":\"okt2._domainkey.{{name}}.example.com\",\"verificationValue\":\"okt2.domainkey.u21992032.wl033.sendgrid.net\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/email-domains/OeD1a5d3s70dGqRi3698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"OeD1a5d3s70dGqRi3698\",\"validationStatus\":\"NOT_STARTED\",\"displayName\":\"first\",\"userName\":\"noreply\",\"domain\":\"{{name}}.example.com\",\"validationSubdomain\":\"mail\",\"dnsValidationRecords\":[{\"recordType\":\"TXT\",\"fqdn\":\"_oktaverification.{{name}}.example.com\",\"verificationValue\":\"018c4cd555794bb987f579f23e6ad358\"},{\"recordType\":\"cname\",\"fqdn\":\"mail.{{name}}.example.com\",\"verificationValue\":\"u21992032.wl033.sendgrid.net\"},{\"recordType\":\"cname\",\"fqdn\":\"okt._domainkey.{{name}}.example.com\",\"verificationValue\":\"okt.domainkey.u21992032.wl033.sendgrid.net\"},{\"recordType\":\"cname\",\"fqdn\":\"okt2._domainkey.{{name}}.example.com\",\"verificationValue\":\"okt2.domainkey.u21992032.wl033.sendgrid.net\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/email-domains/OeD1a5d3s70dGqRi3698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"OeD1a5d3s70dGqRi3698\",\"validationStatus\":\"NOT_STARTED\",\"displayName\":\"first\",\"userName\":\"noreply\",\"domain\":\"{{name}}.example.com\",\"validationSubdomain\":\"mail\",\"dnsValidationRecords\":[{\"recordType\":\"TXT\",\"fqdn\":\"_oktaverification.{{name}}.example.com\",\"verificationValue\":\"018c4cd555794bb987f579f23e6ad358\"},{\"recordType\":\"cname\",\"fqdn\":\"mail.{{name}}.example.com\",\"verificationValue\":\"u21992032.wl033.sendgrid.net\"},{\"recordType\":\"cname\",\"fqdn\":\"okt._domainkey.{{name}}.example.com\",\"verificationValue\":\"okt.domainkey.u21992032.wl033.sendgrid.net\"},{\"recordType\":\"cname\",\"fqdn\":\"okt2._domainkey.{{name}}.example.com\",\"verificationValue\":\"okt2.domainkey.u21992032.wl033.sendgrid.net\"}]}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/email-domains/OeD1a5d3s70dGqRi3698",
+      "body": "{\"displayName\":\"second\",\"userName\":\"noreply\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"OeD1a5d3s70dGqRi3698\",\"validationStatus\":\"NOT_STARTED\",\"displayName\":\"second\",\"userName\":\"noreply\",\"domain\":\"{{name}}.example.com\",\"validationSubdomain\":\"mail\",\"dnsValidationRecords\":[{\"recordType\":\"TXT\",\"fqdn\":\"_oktaverification.{{name}}.example.com\",\"verificationValue\":\"018c4cd555794bb987f579f23e6ad358\"},{\"recordType\":\"cname\",\"fqdn\":\"mail.{{name}}.example.com\",\"verificationValue\":\"u21992032.wl033.sendgrid.net\"},{\"recordType\":\"cname\",\"fqdn\":\"okt._domainkey.{{name}}.example.com\",\"verificationValue\":\"okt.domainkey.u21992032.wl033.sendgrid.net\"},{\"recordType\":\"cname\",\"fqdn\":\"okt2._domainkey.{{name}}.example.com\",\"verificationValue\":\"okt2.domainkey.u21992032.wl033.sendgrid.net\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/email-domains/OeD1a5d3s70dGqRi3698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"OeD1a5d3s70dGqRi3698\",\"validationStatus\":\"NOT_STARTED\",\"displayName\":\"second\",\"userName\":\"noreply\",\"domain\":\"{{name}}.example.com\",\"validationSubdomain\":\"mail\",\"dnsValidationRecords\":[{\"recordType\":\"TXT\",\"fqdn\":\"_oktaverification.{{name}}.example.com\",\"verificationValue\":\"018c4cd555794bb987f579f23e6ad358\"},{\"recordType\":\"cname\",\"fqdn\":\"mail.{{name}}.example.com\",\"verificationValue\":\"u21992032.wl033.sendgrid.net\"},{\"recordType\":\"cname\",\"fqdn\":\"okt._domainkey.{{name}}.example.com\",\"verificationValue\":\"okt.domainkey.u21992032.wl033.sendgrid.net\"},{\"recordType\":\"cname\",\"fqdn\":\"okt2._domainkey.{{name}}.example.com\",\"verificationValue\":\"okt2.domainkey.u21992032.wl033.sendgrid.net\"}]}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/email-domains/OeD1a5d3s70dGqRi3698",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/brands/bnd1a5d85vaNOwFus698",
+      "status": 204
+    }
+  ]
+}

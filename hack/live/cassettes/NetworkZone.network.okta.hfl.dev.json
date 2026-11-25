@@ -1,0 +1,99 @@
+{
+  "recorded": "2026-11-20T23:56:44Z",
+  "target": "Okta Integrator org",
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/zones",
+      "body": "{\"gateways\":[{\"type\":\"CIDR\",\"value\":\"203.0.113.0/24\"}],\"name\":\"{{name}}\",\"type\":\"IP\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"type\":\"IP\",\"id\":\"nzo1a5d4z4hb4qhld698\",\"name\":\"{{name}}\",\"status\":\"ACTIVE\",\"usage\":\"POLICY\",\"created\":\"2026-11-20T23:56:42.000Z\",\"lastUpdated\":\"2026-11-20T23:56:42.000Z\",\"system\":false,\"gateways\":[{\"type\":\"CIDR\",\"value\":\"203.0.113.0/24\"}],\"proxies\":null,\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/zones/nzo1a5d4z4hb4qhld698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"type\":\"IP\",\"id\":\"nzo1a5d4z4hb4qhld698\",\"name\":\"{{name}}\",\"status\":\"ACTIVE\",\"usage\":\"POLICY\",\"created\":\"2026-11-20T23:56:42.000Z\",\"lastUpdated\":\"2026-11-20T23:56:42.000Z\",\"system\":false,\"gateways\":[{\"type\":\"CIDR\",\"value\":\"203.0.113.0/24\"}],\"proxies\":null,\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/zones/nzo1a5d4z4hb4qhld698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"type\":\"IP\",\"id\":\"nzo1a5d4z4hb4qhld698\",\"name\":\"{{name}}\",\"status\":\"ACTIVE\",\"usage\":\"POLICY\",\"created\":\"2026-11-20T23:56:42.000Z\",\"lastUpdated\":\"2026-11-20T23:56:42.000Z\",\"system\":false,\"gateways\":[{\"type\":\"CIDR\",\"value\":\"203.0.113.0/24\"}],\"proxies\":null,\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/zones/nzo1a5d4z4hb4qhld698",
+      "body": "{\"gateways\":[{\"type\":\"CIDR\",\"value\":\"203.0.113.0/24\"}],\"name\":\"{{name}}-2\",\"type\":\"IP\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"type\":\"IP\",\"id\":\"nzo1a5d4z4hb4qhld698\",\"name\":\"{{name}}-2\",\"status\":\"ACTIVE\",\"usage\":\"POLICY\",\"created\":\"2026-11-20T23:56:42.000Z\",\"lastUpdated\":\"2026-11-20T23:56:42.000Z\",\"system\":false,\"gateways\":[{\"type\":\"CIDR\",\"value\":\"203.0.113.0/24\"}],\"proxies\":null,\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/zones/nzo1a5d4z4hb4qhld698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"type\":\"IP\",\"id\":\"nzo1a5d4z4hb4qhld698\",\"name\":\"{{name}}-2\",\"status\":\"ACTIVE\",\"usage\":\"POLICY\",\"created\":\"2026-11-20T23:56:42.000Z\",\"lastUpdated\":\"2026-11-20T23:56:42.000Z\",\"system\":false,\"gateways\":[{\"type\":\"CIDR\",\"value\":\"203.0.113.0/24\"}],\"proxies\":null,\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/zones/nzo1a5d4z4hb4qhld698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"type\":\"IP\",\"id\":\"nzo1a5d4z4hb4qhld698\",\"name\":\"{{name}}-2\",\"status\":\"ACTIVE\",\"usage\":\"POLICY\",\"created\":\"2026-11-20T23:56:42.000Z\",\"lastUpdated\":\"2026-11-20T23:56:42.000Z\",\"system\":false,\"gateways\":[{\"type\":\"CIDR\",\"value\":\"203.0.113.0/24\"}],\"proxies\":null,\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/zones/nzo1a5d4z4hb4qhld698",
+      "body": "{\"_links\":{\"deactivate\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698/lifecycle/deactivate\"},\"self\":{\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]},\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698\"}},\"created\":\"2026-11-20T23:56:42.000Z\",\"gateways\":[{\"type\":\"CIDR\",\"value\":\"203.0.113.0/24\"}],\"id\":\"nzo1a5d4z4hb4qhld698\",\"lastUpdated\":\"2026-11-20T23:56:42.000Z\",\"name\":\"hfl-live-drift\",\"proxies\":null,\"status\":\"ACTIVE\",\"system\":false,\"type\":\"IP\",\"usage\":\"POLICY\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"type\":\"IP\",\"id\":\"nzo1a5d4z4hb4qhld698\",\"name\":\"hfl-live-drift\",\"status\":\"ACTIVE\",\"usage\":\"POLICY\",\"created\":\"2026-11-20T23:56:42.000Z\",\"lastUpdated\":\"2026-11-20T23:56:42.000Z\",\"system\":false,\"gateways\":[{\"type\":\"CIDR\",\"value\":\"203.0.113.0/24\"}],\"proxies\":null,\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/zones/nzo1a5d4z4hb4qhld698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"type\":\"IP\",\"id\":\"nzo1a5d4z4hb4qhld698\",\"name\":\"hfl-live-drift\",\"status\":\"ACTIVE\",\"usage\":\"POLICY\",\"created\":\"2026-11-20T23:56:42.000Z\",\"lastUpdated\":\"2026-11-20T23:56:43.000Z\",\"system\":false,\"gateways\":[{\"type\":\"CIDR\",\"value\":\"203.0.113.0/24\"}],\"proxies\":null,\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/zones/nzo1a5d4z4hb4qhld698",
+      "body": "{\"gateways\":[{\"type\":\"CIDR\",\"value\":\"203.0.113.0/24\"}],\"name\":\"{{name}}-2\",\"type\":\"IP\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"type\":\"IP\",\"id\":\"nzo1a5d4z4hb4qhld698\",\"name\":\"{{name}}-2\",\"status\":\"ACTIVE\",\"usage\":\"POLICY\",\"created\":\"2026-11-20T23:56:42.000Z\",\"lastUpdated\":\"2026-11-20T23:56:43.000Z\",\"system\":false,\"gateways\":[{\"type\":\"CIDR\",\"value\":\"203.0.113.0/24\"}],\"proxies\":null,\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/zones/nzo1a5d4z4hb4qhld698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"type\":\"IP\",\"id\":\"nzo1a5d4z4hb4qhld698\",\"name\":\"{{name}}-2\",\"status\":\"ACTIVE\",\"usage\":\"POLICY\",\"created\":\"2026-11-20T23:56:42.000Z\",\"lastUpdated\":\"2026-11-20T23:56:43.000Z\",\"system\":false,\"gateways\":[{\"type\":\"CIDR\",\"value\":\"203.0.113.0/24\"}],\"proxies\":null,\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/zones/nzo1a5d4z4hb4qhld698/lifecycle/deactivate",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"type\":\"IP\",\"id\":\"nzo1a5d4z4hb4qhld698\",\"name\":\"{{name}}-2\",\"status\":\"INACTIVE\",\"usage\":\"POLICY\",\"created\":\"2026-11-20T23:56:42.000Z\",\"lastUpdated\":\"2026-11-20T23:56:43.000Z\",\"system\":false,\"gateways\":[{\"type\":\"CIDR\",\"value\":\"203.0.113.0/24\"}],\"proxies\":null,\"_links\":{\"activate\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698/lifecycle/activate\",\"hints\":{\"allow\":[\"POST\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/zones/nzo1a5d4z4hb4qhld698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/zones/nzo1a5d4z4hb4qhld698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/zones/nzo1a5d4z4hb4qhld698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: nzo1a5d4z4hb4qhld698 (NetworkZone)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaeYejuX2ZnRVyLw7aaxzhu9A\",\"errorCauses\":[]}"
+    }
+  ]
+}

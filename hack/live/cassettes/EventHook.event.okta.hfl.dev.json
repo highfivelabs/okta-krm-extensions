@@ -1,0 +1,120 @@
+{
+  "recorded": "2026-11-20T23:57:43Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "ascAS": "aus1a5d5lco5hVnpo698",
+    "aspAS": "aus1a5d7xao0ETI8w698",
+    "asrAS": "aus1a5d92wqVRei1R698",
+    "asrGroup": "00g1a5d79iaCH1Z7n698",
+    "asrPolicy": "00p1a5d7zs3Jr87U8698",
+    "assAS": "aus1a5d7849QKfQlb698",
+    "auApp": "0oa1a5d5vh1J50WFa698",
+    "auUser": "00u1a5d75s3uKgUNV698",
+    "cspBrand": "bnd1a5d2wkvwx3YqE698",
+    "edBrand": "bnd1a5d85vaNOwFus698",
+    "orgId": "{{redacted}}",
+    "prGroup": "00g1a5d7103FF3HnP698",
+    "prPolicy": "rst1a5d85sx0UeqpU698",
+    "pspBrand": "bnd1a5d240aLpp4zT698",
+    "rsGroup": "00g1a5d7plc3tGO1v698",
+    "thBrand": "bnd1a5d5sixEbT59w698",
+    "thTheme": "the1a5d5siyxEFQOz698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/eventHooks",
+      "body": "{\"channel\":{\"config\":{\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"description\":\"first\",\"events\":{\"items\":[\"group.lifecycle.create\"],\"type\":\"EVENT_TYPE\"},\"name\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"who1a5d8m40V5lU4G698\",\"status\":\"ACTIVE\",\"verificationStatus\":\"UNVERIFIED\",\"name\":\"{{name}}\",\"description\":\"first\",\"created\":\"2026-11-20T23:57:40.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdated\":\"2026-11-20T23:57:40.000Z\",\"events\":{\"type\":\"EVENT_TYPE\",\"items\":[\"group.lifecycle.create\"],\"filter\":null},\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698\"},\"verify\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/verify\",\"hints\":{\"allow\":[\"POST\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/eventHooks/who1a5d8m40V5lU4G698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"who1a5d8m40V5lU4G698\",\"status\":\"ACTIVE\",\"verificationStatus\":\"UNVERIFIED\",\"name\":\"{{name}}\",\"description\":\"first\",\"created\":\"2026-11-20T23:57:40.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdated\":\"2026-11-20T23:57:40.000Z\",\"events\":{\"type\":\"EVENT_TYPE\",\"items\":[\"group.lifecycle.create\"],\"filter\":null},\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698\"},\"verify\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/verify\",\"hints\":{\"allow\":[\"POST\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/eventHooks/who1a5d8m40V5lU4G698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"who1a5d8m40V5lU4G698\",\"status\":\"ACTIVE\",\"verificationStatus\":\"UNVERIFIED\",\"name\":\"{{name}}\",\"description\":\"first\",\"created\":\"2026-11-20T23:57:40.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdated\":\"2026-11-20T23:57:40.000Z\",\"events\":{\"type\":\"EVENT_TYPE\",\"items\":[\"group.lifecycle.create\"],\"filter\":null},\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698\"},\"verify\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/verify\",\"hints\":{\"allow\":[\"POST\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/eventHooks/who1a5d8m40V5lU4G698",
+      "body": "{\"channel\":{\"config\":{\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"description\":\"second\",\"events\":{\"items\":[\"group.lifecycle.create\"],\"type\":\"EVENT_TYPE\"},\"name\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"who1a5d8m40V5lU4G698\",\"status\":\"ACTIVE\",\"verificationStatus\":\"UNVERIFIED\",\"name\":\"{{name}}\",\"description\":\"second\",\"created\":\"2026-11-20T23:57:40.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdated\":\"2026-11-20T23:57:40.000Z\",\"events\":{\"type\":\"EVENT_TYPE\",\"items\":[\"group.lifecycle.create\"],\"filter\":null},\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698\"},\"verify\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/verify\",\"hints\":{\"allow\":[\"POST\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/eventHooks/who1a5d8m40V5lU4G698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"who1a5d8m40V5lU4G698\",\"status\":\"ACTIVE\",\"verificationStatus\":\"UNVERIFIED\",\"name\":\"{{name}}\",\"description\":\"second\",\"created\":\"2026-11-20T23:57:40.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdated\":\"2026-11-20T23:57:41.000Z\",\"events\":{\"type\":\"EVENT_TYPE\",\"items\":[\"group.lifecycle.create\"],\"filter\":null},\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698\"},\"verify\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/verify\",\"hints\":{\"allow\":[\"POST\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/eventHooks/who1a5d8m40V5lU4G698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"who1a5d8m40V5lU4G698\",\"status\":\"ACTIVE\",\"verificationStatus\":\"UNVERIFIED\",\"name\":\"{{name}}\",\"description\":\"second\",\"created\":\"2026-11-20T23:57:40.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdated\":\"2026-11-20T23:57:41.000Z\",\"events\":{\"type\":\"EVENT_TYPE\",\"items\":[\"group.lifecycle.create\"],\"filter\":null},\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698\"},\"verify\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/verify\",\"hints\":{\"allow\":[\"POST\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/eventHooks/who1a5d8m40V5lU4G698",
+      "body": "{\"_links\":{\"deactivate\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/deactivate\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698\"},\"verify\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/verify\"}},\"channel\":{\"config\":{\"authScheme\":null,\"headers\":[],\"method\":\"POST\",\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"created\":\"2026-11-20T23:57:40.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"description\":\"hfl-live-drift\",\"events\":{\"filter\":null,\"items\":[\"group.lifecycle.create\"],\"type\":\"EVENT_TYPE\"},\"id\":\"who1a5d8m40V5lU4G698\",\"lastUpdated\":\"2026-11-20T23:57:41.000Z\",\"name\":\"{{name}}\",\"status\":\"ACTIVE\",\"verificationStatus\":\"UNVERIFIED\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"who1a5d8m40V5lU4G698\",\"status\":\"ACTIVE\",\"verificationStatus\":\"UNVERIFIED\",\"name\":\"{{name}}\",\"description\":\"hfl-live-drift\",\"created\":\"2026-11-20T23:57:40.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdated\":\"2026-11-20T23:57:41.000Z\",\"events\":{\"type\":\"EVENT_TYPE\",\"items\":[\"group.lifecycle.create\"],\"filter\":null},\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698\"},\"verify\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/verify\",\"hints\":{\"allow\":[\"POST\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/eventHooks/who1a5d8m40V5lU4G698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"who1a5d8m40V5lU4G698\",\"status\":\"ACTIVE\",\"verificationStatus\":\"UNVERIFIED\",\"name\":\"{{name}}\",\"description\":\"hfl-live-drift\",\"created\":\"2026-11-20T23:57:40.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdated\":\"2026-11-20T23:57:42.000Z\",\"events\":{\"type\":\"EVENT_TYPE\",\"items\":[\"group.lifecycle.create\"],\"filter\":null},\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698\"},\"verify\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/verify\",\"hints\":{\"allow\":[\"POST\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/eventHooks/who1a5d8m40V5lU4G698",
+      "body": "{\"channel\":{\"config\":{\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"description\":\"second\",\"events\":{\"items\":[\"group.lifecycle.create\"],\"type\":\"EVENT_TYPE\"},\"name\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"who1a5d8m40V5lU4G698\",\"status\":\"ACTIVE\",\"verificationStatus\":\"UNVERIFIED\",\"name\":\"{{name}}\",\"description\":\"second\",\"created\":\"2026-11-20T23:57:40.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdated\":\"2026-11-20T23:57:42.000Z\",\"events\":{\"type\":\"EVENT_TYPE\",\"items\":[\"group.lifecycle.create\"],\"filter\":null},\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698\"},\"verify\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/verify\",\"hints\":{\"allow\":[\"POST\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/eventHooks/who1a5d8m40V5lU4G698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"who1a5d8m40V5lU4G698\",\"status\":\"ACTIVE\",\"verificationStatus\":\"UNVERIFIED\",\"name\":\"{{name}}\",\"description\":\"second\",\"created\":\"2026-11-20T23:57:40.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdated\":\"2026-11-20T23:57:42.000Z\",\"events\":{\"type\":\"EVENT_TYPE\",\"items\":[\"group.lifecycle.create\"],\"filter\":null},\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698\"},\"verify\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/verify\",\"hints\":{\"allow\":[\"POST\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/deactivate",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"who1a5d8m40V5lU4G698\",\"status\":\"INACTIVE\",\"verificationStatus\":\"UNVERIFIED\",\"name\":\"{{name}}\",\"description\":\"second\",\"created\":\"2026-11-20T23:57:40.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdated\":\"2026-11-20T23:57:42.000Z\",\"events\":{\"type\":\"EVENT_TYPE\",\"items\":[\"group.lifecycle.create\"],\"filter\":null},\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"_links\":{\"activate\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698/lifecycle/activate\",\"hints\":{\"allow\":[\"POST\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698\"},\"delete\":{\"href\":\"{{baseURL}}/api/v1/eventHooks/who1a5d8m40V5lU4G698\",\"hints\":{\"allow\":[\"DELETE\"]}}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/eventHooks/who1a5d8m40V5lU4G698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/eventHooks/who1a5d8m40V5lU4G698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: who1a5d8m40V5lU4G698 (Webhook)\",\"errorLink\":\"E0000007\",\"errorId\":\"oae7BEWlberRU-Ge-BkVOXvnA\",\"errorCauses\":[]}"
+    }
+  ]
+}

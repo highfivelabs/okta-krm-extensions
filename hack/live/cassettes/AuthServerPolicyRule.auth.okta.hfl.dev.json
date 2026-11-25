@@ -1,0 +1,147 @@
+{
+  "recorded": "2026-11-20T23:57:22Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "ascAS": "aus1a5d5lco5hVnpo698",
+    "aspAS": "aus1a5d7xao0ETI8w698",
+    "asrAS": "aus1a5d92wqVRei1R698",
+    "asrGroup": "00g1a5d79iaCH1Z7n698",
+    "asrPolicy": "00p1a5d7zs3Jr87U8698",
+    "assAS": "aus1a5d7849QKfQlb698",
+    "auApp": "0oa1a5d5vh1J50WFa698",
+    "auUser": "00u1a5d75s3uKgUNV698",
+    "orgId": "{{redacted}}",
+    "prGroup": "00g1a5d7103FF3HnP698",
+    "prPolicy": "rst1a5d85sx0UeqpU698",
+    "rsGroup": "00g1a5d7plc3tGO1v698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/authorizationServers",
+      "body": "{\"audiences\":[\"api://{{name}}\"],\"description\":\"hfl-live\",\"name\":\"{{name}}-as\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_links\":{\"claims\":{\"hints\":{\"allow\":[\"GET\",\"POST\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/claims\"},\"deactivate\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/lifecycle/deactivate\"},\"keys\":{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/credentials/keys\"},\"metadata\":[{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/.well-known/oauth-authorization-server/oauth2/aus1a5d92wqVRei1R698\",\"name\":\"oauth-authorization-server\"},{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/oauth2/aus1a5d92wqVRei1R698/.well-known/openid-configuration\",\"name\":\"openid-configuration\"}],\"policies\":{\"hints\":{\"allow\":[\"GET\",\"POST\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies\"},\"resourceServerCredentialsKeys\":{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{redacted}}\"},\"rotateKey\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/credentials/lifecycle/keyRotate\"},\"scopes\":{\"hints\":{\"allow\":[\"GET\",\"POST\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/scopes\"},\"self\":{\"hints\":{\"allow\":[\"GET\",\"DELETE\",\"PUT\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698\"}},\"audiences\":[\"api://{{name}}\"],\"created\":\"2026-11-20T23:57:18.000Z\",\"credentials\":{\"signing\":{\"kid\":\"{{redacted}}\",\"lastRotated\":\"2026-11-20T23:57:18.000Z\",\"nextRotation\":\"2027-02-18T23:57:18.000Z\",\"rotationMode\":\"AUTO\"}},\"default\":false,\"description\":\"hfl-live\",\"id\":\"aus1a5d92wqVRei1R698\",\"issuer\":\"{{baseURL}}/oauth2/aus1a5d92wqVRei1R698\",\"issuerMode\":\"DYNAMIC\",\"lastUpdated\":\"2026-11-20T23:57:18.000Z\",\"name\":\"{{name}}-as\",\"status\":\"ACTIVE\"}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies",
+      "body": "{\"conditions\":{\"clients\":{\"include\":[\"ALL_CLIENTS\"]}},\"description\":\"hfl-live\",\"name\":\"{{name}}-p\",\"priority\":1,\"type\":\"OAUTH_AUTHORIZATION_POLICY\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00p1a5d7zs3Jr87U8698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}-p\",\"description\":\"hfl-live\",\"priority\":1,\"system\":false,\"conditions\":{\"clients\":{\"include\":[\"ALL_CLIENTS\"],\"cimd\":[]}},\"created\":\"2026-11-20T23:57:18.000Z\",\"lastUpdated\":\"2026-11-20T23:57:18.000Z\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"OAUTH_AUTHORIZATION_POLICY\"}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/groups",
+      "body": "{\"profile\":{\"name\":\"{{name}}-g\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00g1a5d79iaCH1Z7n698\",\"created\":\"2026-11-20T23:57:18.000Z\",\"lastUpdated\":\"2026-11-20T23:57:18.000Z\",\"lastMembershipUpdated\":\"2026-11-20T23:57:18.000Z\",\"objectClass\":[\"okta:user_group\"],\"type\":\"OKTA_GROUP\",\"profile\":{\"name\":\"{{name}}-g\"},\"_links\":{\"logo\":[{\"name\":\"medium\",\"href\":\"https://ok14static.oktacdn.com/assets/img/logos/groups/odyssey/okta-medium.30ce6d4085dff29412984e4c191bc874.png\",\"type\":\"image/png\"},{\"name\":\"large\",\"href\":\"https://ok14static.oktacdn.com/assets/img/logos/groups/odyssey/okta-large.c3cb8cda8ae0add1b4fe928f5844dbe3.png\",\"type\":\"image/png\"}],\"users\":{\"href\":\"{{baseURL}}/api/v1/groups/00g1a5d79iaCH1Z7n698/users\"},\"apps\":{\"href\":\"{{baseURL}}/api/v1/groups/00g1a5d79iaCH1Z7n698/apps\"}}}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules",
+      "body": "{\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"conditions\":{\"grantTypes\":{\"include\":[\"client_credentials\"]},\"people\":{\"groups\":{\"include\":[\"00g1a5d79iaCH1Z7n698\"]}},\"scopes\":{\"include\":[\"*\"]}},\"name\":\"{{name}}\",\"priority\":1,\"type\":\"RESOURCE_ACCESS\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"id\":\"0pr1a5d75tf82snV7698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"priority\":1,\"created\":\"2026-11-20T23:57:18.000Z\",\"lastUpdated\":\"2026-11-20T23:57:18.000Z\",\"system\":false,\"conditions\":{\"people\":{\"users\":{\"exclude\":[]},\"groups\":{\"include\":[\"00g1a5d79iaCH1Z7n698\"]}},\"grantTypes\":{\"include\":[\"client_credentials\"]},\"scopes\":{\"include\":[\"*\"]}},\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"RESOURCE_ACCESS\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"0pr1a5d75tf82snV7698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"priority\":1,\"created\":\"2026-11-20T23:57:18.000Z\",\"lastUpdated\":\"2026-11-20T23:57:18.000Z\",\"system\":false,\"conditions\":{\"people\":{\"users\":{\"exclude\":[]},\"groups\":{\"include\":[\"00g1a5d79iaCH1Z7n698\"]}},\"grantTypes\":{\"include\":[\"client_credentials\"]},\"scopes\":{\"include\":[\"*\"]}},\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"RESOURCE_ACCESS\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"0pr1a5d75tf82snV7698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"priority\":1,\"created\":\"2026-11-20T23:57:18.000Z\",\"lastUpdated\":\"2026-11-20T23:57:18.000Z\",\"system\":false,\"conditions\":{\"people\":{\"users\":{\"exclude\":[]},\"groups\":{\"include\":[\"00g1a5d79iaCH1Z7n698\"]}},\"grantTypes\":{\"include\":[\"client_credentials\"]},\"scopes\":{\"include\":[\"*\"]}},\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"RESOURCE_ACCESS\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698",
+      "body": "{\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"conditions\":{\"grantTypes\":{\"include\":[\"client_credentials\"]},\"people\":{\"groups\":{\"include\":[\"00g1a5d79iaCH1Z7n698\"]}},\"scopes\":{\"include\":[\"*\"]}},\"name\":\"{{name}}-2\",\"priority\":1,\"type\":\"RESOURCE_ACCESS\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"0pr1a5d75tf82snV7698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}-2\",\"priority\":1,\"created\":\"2026-11-20T23:57:18.000Z\",\"lastUpdated\":\"2026-11-20T23:57:19.000Z\",\"system\":false,\"conditions\":{\"people\":{\"users\":{\"exclude\":[]},\"groups\":{\"include\":[\"00g1a5d79iaCH1Z7n698\"]}},\"grantTypes\":{\"include\":[\"client_credentials\"]},\"scopes\":{\"include\":[\"*\"]}},\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"RESOURCE_ACCESS\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"0pr1a5d75tf82snV7698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}-2\",\"priority\":1,\"created\":\"2026-11-20T23:57:18.000Z\",\"lastUpdated\":\"2026-11-20T23:57:19.000Z\",\"system\":false,\"conditions\":{\"people\":{\"users\":{\"exclude\":[]},\"groups\":{\"include\":[\"00g1a5d79iaCH1Z7n698\"]}},\"grantTypes\":{\"include\":[\"client_credentials\"]},\"scopes\":{\"include\":[\"*\"]}},\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"RESOURCE_ACCESS\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"0pr1a5d75tf82snV7698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}-2\",\"priority\":1,\"created\":\"2026-11-20T23:57:18.000Z\",\"lastUpdated\":\"2026-11-20T23:57:19.000Z\",\"system\":false,\"conditions\":{\"people\":{\"users\":{\"exclude\":[]},\"groups\":{\"include\":[\"00g1a5d79iaCH1Z7n698\"]}},\"grantTypes\":{\"include\":[\"client_credentials\"]},\"scopes\":{\"include\":[\"*\"]}},\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"RESOURCE_ACCESS\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698",
+      "body": "{\"_links\":{\"deactivate\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698/lifecycle/deactivate\"},\"self\":{\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]},\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698\"}},\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"conditions\":{\"grantTypes\":{\"include\":[\"client_credentials\"]},\"people\":{\"groups\":{\"include\":[\"00g1a5d79iaCH1Z7n698\"]},\"users\":{\"exclude\":[]}},\"scopes\":{\"include\":[\"*\"]}},\"created\":\"2026-11-20T23:57:18.000Z\",\"id\":\"0pr1a5d75tf82snV7698\",\"lastUpdated\":\"2026-11-20T23:57:19.000Z\",\"name\":\"hfl-live-drift\",\"priority\":1,\"status\":\"ACTIVE\",\"system\":false,\"type\":\"RESOURCE_ACCESS\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"0pr1a5d75tf82snV7698\",\"status\":\"ACTIVE\",\"name\":\"hfl-live-drift\",\"priority\":1,\"created\":\"2026-11-20T23:57:18.000Z\",\"lastUpdated\":\"2026-11-20T23:57:20.000Z\",\"system\":false,\"conditions\":{\"people\":{\"users\":{\"exclude\":[]},\"groups\":{\"include\":[\"00g1a5d79iaCH1Z7n698\"]}},\"grantTypes\":{\"include\":[\"client_credentials\"]},\"scopes\":{\"include\":[\"*\"]}},\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"RESOURCE_ACCESS\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"0pr1a5d75tf82snV7698\",\"status\":\"ACTIVE\",\"name\":\"hfl-live-drift\",\"priority\":1,\"created\":\"2026-11-20T23:57:18.000Z\",\"lastUpdated\":\"2026-11-20T23:57:20.000Z\",\"system\":false,\"conditions\":{\"people\":{\"users\":{\"exclude\":[]},\"groups\":{\"include\":[\"00g1a5d79iaCH1Z7n698\"]}},\"grantTypes\":{\"include\":[\"client_credentials\"]},\"scopes\":{\"include\":[\"*\"]}},\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"RESOURCE_ACCESS\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698",
+      "body": "{\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"conditions\":{\"grantTypes\":{\"include\":[\"client_credentials\"]},\"people\":{\"groups\":{\"include\":[\"00g1a5d79iaCH1Z7n698\"]}},\"scopes\":{\"include\":[\"*\"]}},\"name\":\"{{name}}-2\",\"priority\":1,\"type\":\"RESOURCE_ACCESS\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"0pr1a5d75tf82snV7698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}-2\",\"priority\":1,\"created\":\"2026-11-20T23:57:18.000Z\",\"lastUpdated\":\"2026-11-20T23:57:20.000Z\",\"system\":false,\"conditions\":{\"people\":{\"users\":{\"exclude\":[]},\"groups\":{\"include\":[\"00g1a5d79iaCH1Z7n698\"]}},\"grantTypes\":{\"include\":[\"client_credentials\"]},\"scopes\":{\"include\":[\"*\"]}},\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"RESOURCE_ACCESS\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"0pr1a5d75tf82snV7698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}-2\",\"priority\":1,\"created\":\"2026-11-20T23:57:18.000Z\",\"lastUpdated\":\"2026-11-20T23:57:20.000Z\",\"system\":false,\"conditions\":{\"people\":{\"users\":{\"exclude\":[]},\"groups\":{\"include\":[\"00g1a5d79iaCH1Z7n698\"]}},\"grantTypes\":{\"include\":[\"client_credentials\"]},\"scopes\":{\"include\":[\"*\"]}},\"actions\":{\"token\":{\"accessTokenLifetimeMinutes\":60,\"refreshTokenLifetimeMinutes\":0,\"refreshTokenWindowMinutes\":10080}},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"RESOURCE_ACCESS\"}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/authorizationServers/aus1a5d92wqVRei1R698/policies/00p1a5d7zs3Jr87U8698/rules/0pr1a5d75tf82snV7698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: 0pr1a5d75tf82snV7698 (PolicyRule)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaeG0NF6uIhT-2aPC1RfZRYPw\",\"errorCauses\":[]}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/authorizationServers/aus1a5d92wqVRei1R698/lifecycle/deactivate",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/authorizationServers/aus1a5d92wqVRei1R698",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/groups/00g1a5d79iaCH1Z7n698",
+      "status": 204
+    }
+  ]
+}

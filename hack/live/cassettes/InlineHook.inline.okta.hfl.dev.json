@@ -1,0 +1,120 @@
+{
+  "recorded": "2026-11-20T23:57:45Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "ascAS": "aus1a5d5lco5hVnpo698",
+    "aspAS": "aus1a5d7xao0ETI8w698",
+    "asrAS": "aus1a5d92wqVRei1R698",
+    "asrGroup": "00g1a5d79iaCH1Z7n698",
+    "asrPolicy": "00p1a5d7zs3Jr87U8698",
+    "assAS": "aus1a5d7849QKfQlb698",
+    "auApp": "0oa1a5d5vh1J50WFa698",
+    "auUser": "00u1a5d75s3uKgUNV698",
+    "cspBrand": "bnd1a5d2wkvwx3YqE698",
+    "edBrand": "bnd1a5d85vaNOwFus698",
+    "orgId": "{{redacted}}",
+    "prGroup": "00g1a5d7103FF3HnP698",
+    "prPolicy": "rst1a5d85sx0UeqpU698",
+    "pspBrand": "bnd1a5d240aLpp4zT698",
+    "rsGroup": "00g1a5d7plc3tGO1v698",
+    "thBrand": "bnd1a5d5sixEbT59w698",
+    "thTheme": "the1a5d5siyxEFQOz698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/inlineHooks",
+      "body": "{\"channel\":{\"config\":{\"method\":\"POST\",\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"name\":\"{{name}}\",\"type\":\"com.okta.oauth2.tokens.transform\",\"version\":\"1.0.0\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"cal1a5d5h19yzeQ4G698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"type\":\"com.okta.oauth2.tokens.transform\",\"version\":\"1.0.0\",\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"created\":\"2026-11-20T23:57:43.000Z\",\"lastUpdated\":\"2026-11-20T23:57:43.000Z\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698\"},\"execute\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/execute\",\"hints\":{\"allow\":[\"POST\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"cal1a5d5h19yzeQ4G698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"type\":\"com.okta.oauth2.tokens.transform\",\"version\":\"1.0.0\",\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"created\":\"2026-11-20T23:57:43.000Z\",\"lastUpdated\":\"2026-11-20T23:57:43.000Z\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698\"},\"execute\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/execute\",\"hints\":{\"allow\":[\"POST\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"cal1a5d5h19yzeQ4G698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"type\":\"com.okta.oauth2.tokens.transform\",\"version\":\"1.0.0\",\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"created\":\"2026-11-20T23:57:43.000Z\",\"lastUpdated\":\"2026-11-20T23:57:43.000Z\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698\"},\"execute\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/execute\",\"hints\":{\"allow\":[\"POST\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698",
+      "body": "{\"channel\":{\"config\":{\"method\":\"POST\",\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"name\":\"{{name}}-2\",\"type\":\"com.okta.oauth2.tokens.transform\",\"version\":\"1.0.0\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"cal1a5d5h19yzeQ4G698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}-2\",\"type\":\"com.okta.oauth2.tokens.transform\",\"version\":\"1.0.0\",\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"created\":\"2026-11-20T23:57:43.000Z\",\"lastUpdated\":\"2026-11-20T23:57:43.000Z\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698\"},\"execute\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/execute\",\"hints\":{\"allow\":[\"POST\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"cal1a5d5h19yzeQ4G698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}-2\",\"type\":\"com.okta.oauth2.tokens.transform\",\"version\":\"1.0.0\",\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"created\":\"2026-11-20T23:57:43.000Z\",\"lastUpdated\":\"2026-11-20T23:57:43.000Z\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698\"},\"execute\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/execute\",\"hints\":{\"allow\":[\"POST\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"cal1a5d5h19yzeQ4G698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}-2\",\"type\":\"com.okta.oauth2.tokens.transform\",\"version\":\"1.0.0\",\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"created\":\"2026-11-20T23:57:43.000Z\",\"lastUpdated\":\"2026-11-20T23:57:43.000Z\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698\"},\"execute\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/execute\",\"hints\":{\"allow\":[\"POST\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698",
+      "body": "{\"_links\":{\"deactivate\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/lifecycle/deactivate\"},\"execute\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/execute\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698\"}},\"channel\":{\"config\":{\"authScheme\":null,\"headers\":[],\"method\":\"POST\",\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"created\":\"2026-11-20T23:57:43.000Z\",\"id\":\"cal1a5d5h19yzeQ4G698\",\"lastUpdated\":\"2026-11-20T23:57:43.000Z\",\"name\":\"hfl-live-drift\",\"status\":\"ACTIVE\",\"type\":\"com.okta.oauth2.tokens.transform\",\"version\":\"1.0.0\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"cal1a5d5h19yzeQ4G698\",\"status\":\"ACTIVE\",\"name\":\"hfl-live-drift\",\"type\":\"com.okta.oauth2.tokens.transform\",\"version\":\"1.0.0\",\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"created\":\"2026-11-20T23:57:43.000Z\",\"lastUpdated\":\"2026-11-20T23:57:44.000Z\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698\"},\"execute\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/execute\",\"hints\":{\"allow\":[\"POST\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"cal1a5d5h19yzeQ4G698\",\"status\":\"ACTIVE\",\"name\":\"hfl-live-drift\",\"type\":\"com.okta.oauth2.tokens.transform\",\"version\":\"1.0.0\",\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"created\":\"2026-11-20T23:57:43.000Z\",\"lastUpdated\":\"2026-11-20T23:57:44.000Z\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698\"},\"execute\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/execute\",\"hints\":{\"allow\":[\"POST\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698",
+      "body": "{\"channel\":{\"config\":{\"method\":\"POST\",\"uri\":\"https://www.example.com/{{name}}\"},\"type\":\"HTTP\",\"version\":\"1.0.0\"},\"name\":\"{{name}}-2\",\"type\":\"com.okta.oauth2.tokens.transform\",\"version\":\"1.0.0\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"cal1a5d5h19yzeQ4G698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}-2\",\"type\":\"com.okta.oauth2.tokens.transform\",\"version\":\"1.0.0\",\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"created\":\"2026-11-20T23:57:43.000Z\",\"lastUpdated\":\"2026-11-20T23:57:45.000Z\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698\"},\"execute\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/execute\",\"hints\":{\"allow\":[\"POST\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"cal1a5d5h19yzeQ4G698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}-2\",\"type\":\"com.okta.oauth2.tokens.transform\",\"version\":\"1.0.0\",\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"created\":\"2026-11-20T23:57:43.000Z\",\"lastUpdated\":\"2026-11-20T23:57:45.000Z\",\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698\"},\"execute\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/execute\",\"hints\":{\"allow\":[\"POST\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}}}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/lifecycle/deactivate",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"cal1a5d5h19yzeQ4G698\",\"status\":\"INACTIVE\",\"name\":\"{{name}}-2\",\"type\":\"com.okta.oauth2.tokens.transform\",\"version\":\"1.0.0\",\"channel\":{\"type\":\"HTTP\",\"version\":\"1.0.0\",\"config\":{\"uri\":\"https://www.example.com/{{name}}\",\"headers\":[],\"method\":\"POST\",\"authScheme\":null}},\"created\":\"2026-11-20T23:57:43.000Z\",\"lastUpdated\":\"2026-11-20T23:57:45.000Z\",\"_links\":{\"activate\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698/lifecycle/activate\",\"hints\":{\"allow\":[\"POST\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698\"},\"delete\":{\"href\":\"{{baseURL}}/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698\",\"hints\":{\"allow\":[\"DELETE\"]}}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/inlineHooks/cal1a5d5h19yzeQ4G698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: cal1a5d5h19yzeQ4G698 (InlineHook)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaeMEi9Qaz3SjidB0WZw5cpPQ\",\"errorCauses\":[]}"
+    }
+  ]
+}

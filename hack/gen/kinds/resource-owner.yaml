@@ -1,0 +1,22 @@
+terraform: [okta_resource_owner]
+kind: ResourceOwner
+shape: settings
+unread: >-
+  Okta lists resource owners only filtered by the resource's parent ORN,
+  which neither the spec nor the write names; Terraform's provider reads
+  nothing back either.
+fields:
+  principalOrns:
+    type: array
+    maxItems: 5
+    items: {type: string}
+  resourceOrns:
+    type: array
+    minItems: 1
+    maxItems: 10
+    items: {type: string}
+required: [resourceOrns]
+sample:
+  principalOrns: ["orn:okta:directory:00o1example:users:00u1example"]
+  resourceOrns: ["orn:okta:idp:00o1example:apps:salesforce:0oa1example"]
+update: {method: POST, path: /governance/api/v1/resource-owners}

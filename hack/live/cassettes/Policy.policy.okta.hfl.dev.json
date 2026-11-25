@@ -1,0 +1,100 @@
+{
+  "recorded": "2026-11-20T23:57:00Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "auApp": "0oa1a5d5vh1J50WFa698",
+    "auUser": "00u1a5d75s3uKgUNV698",
+    "orgId": "{{redacted}}",
+    "rsGroup": "00g1a5d7plc3tGO1v698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/policies",
+      "body": "{\"description\":\"first\",\"name\":\"{{name}}\",\"type\":\"ACCESS_POLICY\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"rst1a5d5gyeOg9UFY698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"description\":\"first\",\"priority\":1,\"system\":false,\"conditions\":null,\"created\":\"2026-11-20T23:56:58.000Z\",\"lastUpdated\":\"2026-11-20T23:56:58.000Z\",\"_links\":{\"mappings\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/mappings\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/rules\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"userIdentificationPolicy\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gygtbaduo698\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"ACCESS_POLICY\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/policies/rst1a5d5gyeOg9UFY698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"rst1a5d5gyeOg9UFY698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"description\":\"first\",\"priority\":1,\"system\":false,\"conditions\":null,\"created\":\"2026-11-20T23:56:58.000Z\",\"lastUpdated\":\"2026-11-20T23:56:58.000Z\",\"_links\":{\"mappings\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/mappings\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/rules\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"userIdentificationPolicy\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gygtbaduo698\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"ACCESS_POLICY\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/policies/rst1a5d5gyeOg9UFY698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"rst1a5d5gyeOg9UFY698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"description\":\"first\",\"priority\":1,\"system\":false,\"conditions\":null,\"created\":\"2026-11-20T23:56:58.000Z\",\"lastUpdated\":\"2026-11-20T23:56:58.000Z\",\"_links\":{\"mappings\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/mappings\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/rules\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"userIdentificationPolicy\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gygtbaduo698\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"ACCESS_POLICY\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/policies/rst1a5d5gyeOg9UFY698",
+      "body": "{\"description\":\"second\",\"name\":\"{{name}}\",\"type\":\"ACCESS_POLICY\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"rst1a5d5gyeOg9UFY698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"description\":\"second\",\"priority\":1,\"system\":false,\"conditions\":null,\"created\":\"2026-11-20T23:56:58.000Z\",\"lastUpdated\":\"2026-11-20T23:56:58.000Z\",\"_links\":{\"mappings\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/mappings\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/rules\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"userIdentificationPolicy\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gygtbaduo698\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"ACCESS_POLICY\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/policies/rst1a5d5gyeOg9UFY698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"rst1a5d5gyeOg9UFY698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"description\":\"second\",\"priority\":1,\"system\":false,\"conditions\":null,\"created\":\"2026-11-20T23:56:58.000Z\",\"lastUpdated\":\"2026-11-20T23:56:58.000Z\",\"_links\":{\"mappings\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/mappings\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/rules\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"userIdentificationPolicy\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gygtbaduo698\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"ACCESS_POLICY\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/policies/rst1a5d5gyeOg9UFY698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"rst1a5d5gyeOg9UFY698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"description\":\"second\",\"priority\":1,\"system\":false,\"conditions\":null,\"created\":\"2026-11-20T23:56:58.000Z\",\"lastUpdated\":\"2026-11-20T23:56:58.000Z\",\"_links\":{\"mappings\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/mappings\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/rules\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"userIdentificationPolicy\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gygtbaduo698\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"ACCESS_POLICY\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/policies/rst1a5d5gyeOg9UFY698",
+      "body": "{\"_links\":{\"deactivate\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/lifecycle/deactivate\"},\"mappings\":{\"hints\":{\"allow\":[\"GET\",\"POST\"]},\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/mappings\"},\"rules\":{\"hints\":{\"allow\":[\"GET\",\"POST\"]},\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/rules\"},\"self\":{\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]},\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698\"},\"userIdentificationPolicy\":{\"hints\":{\"allow\":[\"GET\"]},\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gygtbaduo698\"}},\"conditions\":null,\"created\":\"2026-11-20T23:56:58.000Z\",\"description\":\"hfl-live-drift\",\"id\":\"rst1a5d5gyeOg9UFY698\",\"lastUpdated\":\"2026-11-20T23:56:58.000Z\",\"name\":\"{{name}}\",\"priority\":1,\"status\":\"ACTIVE\",\"system\":false,\"type\":\"ACCESS_POLICY\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"rst1a5d5gyeOg9UFY698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"description\":\"hfl-live-drift\",\"priority\":1,\"system\":false,\"conditions\":null,\"created\":\"2026-11-20T23:56:58.000Z\",\"lastUpdated\":\"2026-11-20T23:56:59.000Z\",\"_links\":{\"mappings\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/mappings\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/rules\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"userIdentificationPolicy\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gygtbaduo698\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"ACCESS_POLICY\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/policies/rst1a5d5gyeOg9UFY698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"rst1a5d5gyeOg9UFY698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"description\":\"hfl-live-drift\",\"priority\":1,\"system\":false,\"conditions\":null,\"created\":\"2026-11-20T23:56:58.000Z\",\"lastUpdated\":\"2026-11-20T23:56:59.000Z\",\"_links\":{\"mappings\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/mappings\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/rules\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"userIdentificationPolicy\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gygtbaduo698\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"ACCESS_POLICY\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/policies/rst1a5d5gyeOg9UFY698",
+      "body": "{\"description\":\"second\",\"name\":\"{{name}}\",\"type\":\"ACCESS_POLICY\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"rst1a5d5gyeOg9UFY698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"description\":\"second\",\"priority\":1,\"system\":false,\"conditions\":null,\"created\":\"2026-11-20T23:56:58.000Z\",\"lastUpdated\":\"2026-11-20T23:56:59.000Z\",\"_links\":{\"mappings\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/mappings\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/rules\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"userIdentificationPolicy\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gygtbaduo698\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"ACCESS_POLICY\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/policies/rst1a5d5gyeOg9UFY698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"rst1a5d5gyeOg9UFY698\",\"status\":\"ACTIVE\",\"name\":\"{{name}}\",\"description\":\"second\",\"priority\":1,\"system\":false,\"conditions\":null,\"created\":\"2026-11-20T23:56:58.000Z\",\"lastUpdated\":\"2026-11-20T23:56:59.000Z\",\"_links\":{\"mappings\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/mappings\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}},\"rules\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/rules\",\"hints\":{\"allow\":[\"GET\",\"POST\"]}},\"userIdentificationPolicy\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gygtbaduo698\",\"hints\":{\"allow\":[\"GET\"]}},\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/policies/rst1a5d5gyeOg9UFY698/lifecycle/deactivate\",\"hints\":{\"allow\":[\"POST\"]}}},\"type\":\"ACCESS_POLICY\"}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/policies/rst1a5d5gyeOg9UFY698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/policies/rst1a5d5gyeOg9UFY698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: rst1a5d5gyeOg9UFY698 (RuleSetEntity)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaeQEEX9br5R6GEhKid1VmPmQ\",\"errorCauses\":[]}"
+    }
+  ]
+}

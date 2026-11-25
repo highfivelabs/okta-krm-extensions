@@ -1,0 +1,165 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "afcApp": 280000030,
+    "agaApp": 280000003,
+    "agaGroup": 280000004,
+    "aoasApp": 280000047,
+    "aoasIssuer": "rehearsal-aoasIssuer",
+    "apaApp": 280000043,
+    "apaPolicy": 280000044,
+    "arcaIssuer": "rehearsal-arcaIssuer",
+    "arcaMember": 280000035,
+    "arcaOrg": 280000033,
+    "arcaRS": 280000036,
+    "arcaRole": 280000037,
+    "arcaTarget": 280000034,
+    "argGroup": 280000041,
+    "argKeep": 280000040,
+    "argRole": 280000039,
+    "argUser": 280000038,
+    "ascAS": 280000013,
+    "aspAS": 280000015,
+    "asrAS": 280000017,
+    "asrGroup": 280000019,
+    "asrPolicy": 280000018,
+    "assAS": 280000011,
+    "auApp": 280000006,
+    "auUser": 280000007,
+    "craApp": 280000049,
+    "craClient": "rehearsal-craClient",
+    "cspBrand": 280000021,
+    "edBrand": 280000025,
+    "fUser": 280000029,
+    "gmGroup": 280000051,
+    "gmUser": 280000052,
+    "grGroup": 280000026,
+    "grlGroup": 280000027,
+    "lvA": 280000055,
+    "lvB": 280000056,
+    "lvPrimary": 280000054,
+    "orgId": 280000001,
+    "prGroup": 280000010,
+    "prPolicy": 280000009,
+    "pspBrand": 280000022,
+    "rsGroup": 280000002,
+    "thBrand": 280000023,
+    "thTheme": "rehearsal-thTheme",
+    "uarUser": 280000028
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/meta/schemas/user/linkedObjects",
+      "body": "{\"associated\":{\"description\":\"hfl-live\",\"name\":\"{{name_}}_lr\",\"title\":\"Report\",\"type\":\"USER\"},\"primary\":{\"description\":\"hfl-live\",\"name\":\"{{name_}}_lm\",\"title\":\"Manager\",\"type\":\"USER\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"associated\":{\"description\":\"hfl-live\",\"name\":\"{{name_}}_lr\",\"title\":\"Report\",\"type\":\"USER\"},\"id\":280000053,\"primary\":{\"description\":\"hfl-live\",\"name\":\"{{name_}}_lm\",\"title\":\"Manager\",\"type\":\"USER\"}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/users?activate=false",
+      "body": "{\"profile\":{\"email\":\"{{name}}-p@example.com\",\"firstName\":\"hfl\",\"lastName\":\"live\",\"login\":\"{{name}}-p@example.com\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000054,\"profile\":{\"email\":\"{{name}}-p@example.com\",\"firstName\":\"hfl\",\"lastName\":\"live\",\"login\":\"{{name}}-p@example.com\"}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/users?activate=false",
+      "body": "{\"profile\":{\"email\":\"{{name}}-a@example.com\",\"firstName\":\"hfl\",\"lastName\":\"live\",\"login\":\"{{name}}-a@example.com\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000055,\"profile\":{\"email\":\"{{name}}-a@example.com\",\"firstName\":\"hfl\",\"lastName\":\"live\",\"login\":\"{{name}}-a@example.com\"}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/users?activate=false",
+      "body": "{\"profile\":{\"email\":\"{{name}}-b@example.com\",\"firstName\":\"hfl\",\"lastName\":\"live\",\"login\":\"{{name}}-b@example.com\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000056,\"profile\":{\"email\":\"{{name}}-b@example.com\",\"firstName\":\"hfl\",\"lastName\":\"live\",\"login\":\"{{name}}-b@example.com\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/280000054/linkedObjects/{{name_}}_lr",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "[]\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/users/280000055/linkedObjects/{{name_}}_lm/280000054",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"userId\":\"280000055\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/users/280000056/linkedObjects/{{name_}}_lm/280000054",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"userId\":\"280000056\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/280000054/linkedObjects/{{name_}}_lr",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "[{\"_links\":{\"self\":{\"href\":\"/280000055\"}}},{\"_links\":{\"self\":{\"href\":\"/280000056\"}}}]\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/users/280000055/linkedObjects/{{name_}}_lm",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/users/280000056/linkedObjects/{{name_}}_lm",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/280000054/linkedObjects/{{name_}}_lr",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "[]\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/users/280000055",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/users/280000055",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/users/280000056",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/users/280000056",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/users/280000054",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/users/280000054",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/meta/schemas/user/linkedObjects/{{name_}}_lm",
+      "status": 204
+    }
+  ]
+}

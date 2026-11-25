@@ -1,0 +1,129 @@
+{
+  "recorded": "2026-11-20T23:57:30Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "ascAS": "aus1a5d5lco5hVnpo698",
+    "aspAS": "aus1a5d7xao0ETI8w698",
+    "asrAS": "aus1a5d92wqVRei1R698",
+    "asrGroup": "00g1a5d79iaCH1Z7n698",
+    "asrPolicy": "00p1a5d7zs3Jr87U8698",
+    "assAS": "aus1a5d7849QKfQlb698",
+    "auApp": "0oa1a5d5vh1J50WFa698",
+    "auUser": "00u1a5d75s3uKgUNV698",
+    "cspBrand": "bnd1a5d2wkvwx3YqE698",
+    "orgId": "{{redacted}}",
+    "prGroup": "00g1a5d7103FF3HnP698",
+    "prPolicy": "rst1a5d85sx0UeqpU698",
+    "rsGroup": "00g1a5d7plc3tGO1v698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/brands",
+      "body": "{\"name\":\"{{name}}-b\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"id\":\"bnd1a5d2wkvwx3YqE698\",\"name\":\"{{name}}-b\",\"removePoweredByOkta\":false,\"customPrivacyPolicyUrl\":null,\"agreeToCustomPrivacyPolicy\":false,\"isDefault\":false,\"defaultApp\":{\"appInstanceId\":null,\"appLinkName\":null,\"classicApplicationUri\":null},\"_links\":{\"themes\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d2wkvwx3YqE698/themes\",\"hints\":{\"allow\":[\"GET\"]}},\"self\":{\"href\":\"{{baseURL}}/api/v1/brands/bnd1a5d2wkvwx3YqE698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/bnd1a5d2wkvwx3YqE698/pages/sign-in/customized",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: bnd1a5d2wkvwx3YqE698/production (SignInPage)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaee62_COl0S86pJtHUsDI-fQ\",\"errorCauses\":[]}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/brands/bnd1a5d2wkvwx3YqE698/pages/sign-in/customized",
+      "body": "{\"pageContent\":\"\\u003chtml\\u003e\\u003cbody\\u003e{{name}} first\\u003c/body\\u003e\\u003c/html\\u003e\",\"widgetCustomizations\":{\"signInLabel\":\"Sign in\"},\"widgetVersion\":\"^7\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"pageContent\":\"\u003chtml\u003e\u003cbody\u003e{{name}} first\u003c/body\u003e\u003c/html\u003e\",\"widgetVersion\":\"^7\",\"widgetCustomizations\":{\"signInLabel\":\"Sign in\",\"usernameLabel\":null,\"usernameInfoTip\":null,\"passwordLabel\":null,\"passwordInfoTip\":null,\"showPasswordVisibilityToggle\":true,\"showUserIdentifier\":true,\"forgotPasswordLabel\":null,\"forgotPasswordUrl\":null,\"unlockAccountLabel\":null,\"unlockAccountUrl\":null,\"helpLabel\":null,\"helpUrl\":null,\"customLink1Label\":null,\"customLink1Url\":null,\"customLink2Label\":null,\"customLink2Url\":null,\"authenticatorPageCustomLinkLabel\":null,\"authenticatorPageCustomLinkUrl\":null,\"classicRecoveryFlowEmailOrUsernameLabel\":null,\"widgetGeneration\":\"G2\"},\"widgetConfiguration\":null}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/bnd1a5d2wkvwx3YqE698/pages/sign-in/customized",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"pageContent\":\"\u003chtml\u003e\u003cbody\u003e{{name}} first\u003c/body\u003e\u003c/html\u003e\",\"widgetVersion\":\"^7\",\"widgetCustomizations\":{\"signInLabel\":\"Sign in\",\"usernameLabel\":null,\"usernameInfoTip\":null,\"passwordLabel\":null,\"passwordInfoTip\":null,\"showPasswordVisibilityToggle\":true,\"showUserIdentifier\":true,\"forgotPasswordLabel\":null,\"forgotPasswordUrl\":null,\"unlockAccountLabel\":null,\"unlockAccountUrl\":null,\"helpLabel\":null,\"helpUrl\":null,\"customLink1Label\":null,\"customLink1Url\":null,\"customLink2Label\":null,\"customLink2Url\":null,\"authenticatorPageCustomLinkLabel\":null,\"authenticatorPageCustomLinkUrl\":null,\"classicRecoveryFlowEmailOrUsernameLabel\":null,\"widgetGeneration\":\"G2\",\"postAuthKeepMeSignedInPrompt\":{\"title\":null,\"subtitle\":null,\"acceptButtonText\":null,\"rejectButtonText\":null},\"gracePeriodRequiredSoon\":{\"gracePeriodRequiredSoonDescription\":null,\"gracePeriodRequiredSoonCustomLinkLabel\":null,\"gracePeriodRequiredSoonCustomLinkUrl\":null}},\"widgetConfiguration\":null}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/bnd1a5d2wkvwx3YqE698/pages/sign-in/customized",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"pageContent\":\"\u003chtml\u003e\u003cbody\u003e{{name}} first\u003c/body\u003e\u003c/html\u003e\",\"widgetVersion\":\"^7\",\"widgetCustomizations\":{\"signInLabel\":\"Sign in\",\"usernameLabel\":null,\"usernameInfoTip\":null,\"passwordLabel\":null,\"passwordInfoTip\":null,\"showPasswordVisibilityToggle\":true,\"showUserIdentifier\":true,\"forgotPasswordLabel\":null,\"forgotPasswordUrl\":null,\"unlockAccountLabel\":null,\"unlockAccountUrl\":null,\"helpLabel\":null,\"helpUrl\":null,\"customLink1Label\":null,\"customLink1Url\":null,\"customLink2Label\":null,\"customLink2Url\":null,\"authenticatorPageCustomLinkLabel\":null,\"authenticatorPageCustomLinkUrl\":null,\"classicRecoveryFlowEmailOrUsernameLabel\":null,\"widgetGeneration\":\"G2\",\"postAuthKeepMeSignedInPrompt\":{\"title\":null,\"subtitle\":null,\"acceptButtonText\":null,\"rejectButtonText\":null},\"gracePeriodRequiredSoon\":{\"gracePeriodRequiredSoonDescription\":null,\"gracePeriodRequiredSoonCustomLinkLabel\":null,\"gracePeriodRequiredSoonCustomLinkUrl\":null}},\"widgetConfiguration\":null}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/brands/bnd1a5d2wkvwx3YqE698/pages/sign-in/customized",
+      "body": "{\"pageContent\":\"\\u003chtml\\u003e\\u003cbody\\u003e{{name}} second\\u003c/body\\u003e\\u003c/html\\u003e\",\"widgetCustomizations\":{\"signInLabel\":\"Sign in\"},\"widgetVersion\":\"^7\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"pageContent\":\"\u003chtml\u003e\u003cbody\u003e{{name}} second\u003c/body\u003e\u003c/html\u003e\",\"widgetVersion\":\"^7\",\"widgetCustomizations\":{\"signInLabel\":\"Sign in\",\"usernameLabel\":null,\"usernameInfoTip\":null,\"passwordLabel\":null,\"passwordInfoTip\":null,\"showPasswordVisibilityToggle\":true,\"showUserIdentifier\":true,\"forgotPasswordLabel\":null,\"forgotPasswordUrl\":null,\"unlockAccountLabel\":null,\"unlockAccountUrl\":null,\"helpLabel\":null,\"helpUrl\":null,\"customLink1Label\":null,\"customLink1Url\":null,\"customLink2Label\":null,\"customLink2Url\":null,\"authenticatorPageCustomLinkLabel\":null,\"authenticatorPageCustomLinkUrl\":null,\"classicRecoveryFlowEmailOrUsernameLabel\":null,\"widgetGeneration\":\"G2\"},\"widgetConfiguration\":null}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/bnd1a5d2wkvwx3YqE698/pages/sign-in/customized",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"pageContent\":\"\u003chtml\u003e\u003cbody\u003e{{name}} second\u003c/body\u003e\u003c/html\u003e\",\"widgetVersion\":\"^7\",\"widgetCustomizations\":{\"signInLabel\":\"Sign in\",\"usernameLabel\":null,\"usernameInfoTip\":null,\"passwordLabel\":null,\"passwordInfoTip\":null,\"showPasswordVisibilityToggle\":true,\"showUserIdentifier\":true,\"forgotPasswordLabel\":null,\"forgotPasswordUrl\":null,\"unlockAccountLabel\":null,\"unlockAccountUrl\":null,\"helpLabel\":null,\"helpUrl\":null,\"customLink1Label\":null,\"customLink1Url\":null,\"customLink2Label\":null,\"customLink2Url\":null,\"authenticatorPageCustomLinkLabel\":null,\"authenticatorPageCustomLinkUrl\":null,\"classicRecoveryFlowEmailOrUsernameLabel\":null,\"widgetGeneration\":\"G2\",\"postAuthKeepMeSignedInPrompt\":{\"title\":null,\"subtitle\":null,\"acceptButtonText\":null,\"rejectButtonText\":null},\"gracePeriodRequiredSoon\":{\"gracePeriodRequiredSoonDescription\":null,\"gracePeriodRequiredSoonCustomLinkLabel\":null,\"gracePeriodRequiredSoonCustomLinkUrl\":null}},\"widgetConfiguration\":null}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/bnd1a5d2wkvwx3YqE698/pages/sign-in/customized",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"pageContent\":\"\u003chtml\u003e\u003cbody\u003e{{name}} second\u003c/body\u003e\u003c/html\u003e\",\"widgetVersion\":\"^7\",\"widgetCustomizations\":{\"signInLabel\":\"Sign in\",\"usernameLabel\":null,\"usernameInfoTip\":null,\"passwordLabel\":null,\"passwordInfoTip\":null,\"showPasswordVisibilityToggle\":true,\"showUserIdentifier\":true,\"forgotPasswordLabel\":null,\"forgotPasswordUrl\":null,\"unlockAccountLabel\":null,\"unlockAccountUrl\":null,\"helpLabel\":null,\"helpUrl\":null,\"customLink1Label\":null,\"customLink1Url\":null,\"customLink2Label\":null,\"customLink2Url\":null,\"authenticatorPageCustomLinkLabel\":null,\"authenticatorPageCustomLinkUrl\":null,\"classicRecoveryFlowEmailOrUsernameLabel\":null,\"widgetGeneration\":\"G2\",\"postAuthKeepMeSignedInPrompt\":{\"title\":null,\"subtitle\":null,\"acceptButtonText\":null,\"rejectButtonText\":null},\"gracePeriodRequiredSoon\":{\"gracePeriodRequiredSoonDescription\":null,\"gracePeriodRequiredSoonCustomLinkLabel\":null,\"gracePeriodRequiredSoonCustomLinkUrl\":null}},\"widgetConfiguration\":null}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/brands/bnd1a5d2wkvwx3YqE698/pages/sign-in/customized",
+      "body": "{\"pageContent\":\"hfl-live-drift\",\"widgetConfiguration\":null,\"widgetCustomizations\":{\"authenticatorPageCustomLinkLabel\":null,\"authenticatorPageCustomLinkUrl\":null,\"classicRecoveryFlowEmailOrUsernameLabel\":null,\"customLink1Label\":null,\"customLink1Url\":null,\"customLink2Label\":null,\"customLink2Url\":null,\"forgotPasswordLabel\":null,\"forgotPasswordUrl\":null,\"gracePeriodRequiredSoon\":{\"gracePeriodRequiredSoonCustomLinkLabel\":null,\"gracePeriodRequiredSoonCustomLinkUrl\":null,\"gracePeriodRequiredSoonDescription\":null},\"helpLabel\":null,\"helpUrl\":null,\"passwordInfoTip\":null,\"passwordLabel\":null,\"postAuthKeepMeSignedInPrompt\":{\"acceptButtonText\":null,\"rejectButtonText\":null,\"subtitle\":null,\"title\":null},\"showPasswordVisibilityToggle\":true,\"showUserIdentifier\":true,\"signInLabel\":\"Sign in\",\"unlockAccountLabel\":null,\"unlockAccountUrl\":null,\"usernameInfoTip\":null,\"usernameLabel\":null,\"widgetGeneration\":\"G2\"},\"widgetVersion\":\"^7\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"pageContent\":\"hfl-live-drift\",\"widgetVersion\":\"^7\",\"widgetCustomizations\":{\"signInLabel\":\"Sign in\",\"usernameLabel\":null,\"usernameInfoTip\":null,\"passwordLabel\":null,\"passwordInfoTip\":null,\"showPasswordVisibilityToggle\":true,\"showUserIdentifier\":true,\"forgotPasswordLabel\":null,\"forgotPasswordUrl\":null,\"unlockAccountLabel\":null,\"unlockAccountUrl\":null,\"helpLabel\":null,\"helpUrl\":null,\"customLink1Label\":null,\"customLink1Url\":null,\"customLink2Label\":null,\"customLink2Url\":null,\"authenticatorPageCustomLinkLabel\":null,\"authenticatorPageCustomLinkUrl\":null,\"classicRecoveryFlowEmailOrUsernameLabel\":null,\"widgetGeneration\":\"G2\",\"postAuthKeepMeSignedInPrompt\":{\"title\":null,\"subtitle\":null,\"acceptButtonText\":null,\"rejectButtonText\":null},\"gracePeriodRequiredSoon\":{\"gracePeriodRequiredSoonDescription\":null,\"gracePeriodRequiredSoonCustomLinkLabel\":null,\"gracePeriodRequiredSoonCustomLinkUrl\":null}},\"widgetConfiguration\":null}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/bnd1a5d2wkvwx3YqE698/pages/sign-in/customized",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"pageContent\":\"hfl-live-drift\",\"widgetVersion\":\"^7\",\"widgetCustomizations\":{\"signInLabel\":\"Sign in\",\"usernameLabel\":null,\"usernameInfoTip\":null,\"passwordLabel\":null,\"passwordInfoTip\":null,\"showPasswordVisibilityToggle\":true,\"showUserIdentifier\":true,\"forgotPasswordLabel\":null,\"forgotPasswordUrl\":null,\"unlockAccountLabel\":null,\"unlockAccountUrl\":null,\"helpLabel\":null,\"helpUrl\":null,\"customLink1Label\":null,\"customLink1Url\":null,\"customLink2Label\":null,\"customLink2Url\":null,\"authenticatorPageCustomLinkLabel\":null,\"authenticatorPageCustomLinkUrl\":null,\"classicRecoveryFlowEmailOrUsernameLabel\":null,\"widgetGeneration\":\"G2\",\"postAuthKeepMeSignedInPrompt\":{\"title\":null,\"subtitle\":null,\"acceptButtonText\":null,\"rejectButtonText\":null},\"gracePeriodRequiredSoon\":{\"gracePeriodRequiredSoonDescription\":null,\"gracePeriodRequiredSoonCustomLinkLabel\":null,\"gracePeriodRequiredSoonCustomLinkUrl\":null}},\"widgetConfiguration\":null}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/brands/bnd1a5d2wkvwx3YqE698/pages/sign-in/customized",
+      "body": "{\"pageContent\":\"\\u003chtml\\u003e\\u003cbody\\u003e{{name}} second\\u003c/body\\u003e\\u003c/html\\u003e\",\"widgetCustomizations\":{\"signInLabel\":\"Sign in\"},\"widgetVersion\":\"^7\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"pageContent\":\"\u003chtml\u003e\u003cbody\u003e{{name}} second\u003c/body\u003e\u003c/html\u003e\",\"widgetVersion\":\"^7\",\"widgetCustomizations\":{\"signInLabel\":\"Sign in\",\"usernameLabel\":null,\"usernameInfoTip\":null,\"passwordLabel\":null,\"passwordInfoTip\":null,\"showPasswordVisibilityToggle\":true,\"showUserIdentifier\":true,\"forgotPasswordLabel\":null,\"forgotPasswordUrl\":null,\"unlockAccountLabel\":null,\"unlockAccountUrl\":null,\"helpLabel\":null,\"helpUrl\":null,\"customLink1Label\":null,\"customLink1Url\":null,\"customLink2Label\":null,\"customLink2Url\":null,\"authenticatorPageCustomLinkLabel\":null,\"authenticatorPageCustomLinkUrl\":null,\"classicRecoveryFlowEmailOrUsernameLabel\":null,\"widgetGeneration\":\"G2\"},\"widgetConfiguration\":null}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/bnd1a5d2wkvwx3YqE698/pages/sign-in/customized",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"pageContent\":\"\u003chtml\u003e\u003cbody\u003e{{name}} second\u003c/body\u003e\u003c/html\u003e\",\"widgetVersion\":\"^7\",\"widgetCustomizations\":{\"signInLabel\":\"Sign in\",\"usernameLabel\":null,\"usernameInfoTip\":null,\"passwordLabel\":null,\"passwordInfoTip\":null,\"showPasswordVisibilityToggle\":true,\"showUserIdentifier\":true,\"forgotPasswordLabel\":null,\"forgotPasswordUrl\":null,\"unlockAccountLabel\":null,\"unlockAccountUrl\":null,\"helpLabel\":null,\"helpUrl\":null,\"customLink1Label\":null,\"customLink1Url\":null,\"customLink2Label\":null,\"customLink2Url\":null,\"authenticatorPageCustomLinkLabel\":null,\"authenticatorPageCustomLinkUrl\":null,\"classicRecoveryFlowEmailOrUsernameLabel\":null,\"widgetGeneration\":\"G2\",\"postAuthKeepMeSignedInPrompt\":{\"title\":null,\"subtitle\":null,\"acceptButtonText\":null,\"rejectButtonText\":null},\"gracePeriodRequiredSoon\":{\"gracePeriodRequiredSoonDescription\":null,\"gracePeriodRequiredSoonCustomLinkLabel\":null,\"gracePeriodRequiredSoonCustomLinkUrl\":null}},\"widgetConfiguration\":null}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/brands/bnd1a5d2wkvwx3YqE698/pages/sign-in/customized",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/brands/bnd1a5d2wkvwx3YqE698/pages/sign-in/customized",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: bnd1a5d2wkvwx3YqE698/production (SignInPage)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaeLKjlEeggTzeSFIJsoympzA\",\"errorCauses\":[]}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/brands/bnd1a5d2wkvwx3YqE698",
+      "status": 204
+    }
+  ]
+}

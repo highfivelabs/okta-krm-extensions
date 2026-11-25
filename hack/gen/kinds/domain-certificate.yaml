@@ -1,0 +1,15 @@
+terraform: [okta_domain_certificate]
+kind: DomainCertificate
+shape: settings
+params:
+  domainId: {type: string}
+fields:
+  type: {type: string, enum: [PEM]}
+  certificate: {type: string, description: The PEM-encoded certificate.}
+  certificateChain: {type: string}
+  privateKey: {type: string}
+required: [type, certificate, certificateChain, privateKey]
+writeOnly: [type, certificate, certificateChain, privateKey]
+sample: {domainId: example-domain-id, type: PEM, certificate: "-----BEGIN CERTIFICATE-----\nexample\n-----END CERTIFICATE-----", certificateChain: "-----BEGIN CERTIFICATE-----\nexample\n-----END CERTIFICATE-----", privateKey: "-----BEGIN PRIVATE KEY-----\nexample\n-----END PRIVATE KEY-----"}
+read: {method: GET, path: "/api/v1/domains/{domainId}"}
+update: {method: PUT, path: "/api/v1/domains/{domainId}/certificate"}

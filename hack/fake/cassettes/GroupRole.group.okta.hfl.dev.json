@@ -1,0 +1,68 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "agaApp": 280000003,
+    "agaGroup": 280000004,
+    "ascAS": 280000013,
+    "aspAS": 280000015,
+    "asrAS": 280000017,
+    "asrGroup": 280000019,
+    "asrPolicy": 280000018,
+    "assAS": 280000011,
+    "auApp": 280000006,
+    "auUser": 280000007,
+    "cspBrand": 280000021,
+    "edBrand": 280000025,
+    "grGroup": 280000026,
+    "orgId": 280000001,
+    "prGroup": 280000010,
+    "prPolicy": 280000009,
+    "pspBrand": 280000022,
+    "rsGroup": 280000002,
+    "thBrand": 280000023,
+    "thTheme": "rehearsal-thTheme"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/groups",
+      "body": "{\"profile\":{\"name\":\"{{name}}-g\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000026,\"profile\":{\"name\":\"{{name}}-g\"}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/groups/280000026/roles",
+      "body": "{\"type\":\"READ_ONLY_ADMIN\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"_links\":{},\"assignmentType\":\"example-assignmentType\",\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000024,\"label\":\"example-label\",\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"status\":\"example-status\",\"type\":\"READ_ONLY_ADMIN\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/280000026/roles/270000024",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"_links\":{},\"assignmentType\":\"example-assignmentType\",\"created\":\"2000-01-01T00:00:00Z\",\"id\":270000024,\"label\":\"example-label\",\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"status\":\"example-status\",\"type\":\"READ_ONLY_ADMIN\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/groups/280000026/roles/270000024",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/280000026/roles/270000024",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/groups/280000026",
+      "status": 204
+    }
+  ]
+}

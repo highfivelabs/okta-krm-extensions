@@ -1,0 +1,82 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "agaApp": 280000003,
+    "agaGroup": 280000004,
+    "ascAS": 280000013,
+    "aspAS": 280000015,
+    "asrAS": 280000017,
+    "asrGroup": 280000019,
+    "asrPolicy": 280000018,
+    "assAS": 280000011,
+    "auApp": 280000006,
+    "auUser": 280000007,
+    "cspBrand": 280000021,
+    "edBrand": 280000025,
+    "orgId": 280000001,
+    "prGroup": 280000010,
+    "prPolicy": 280000009,
+    "pspBrand": 280000022,
+    "rsGroup": 280000002,
+    "thBrand": 280000023,
+    "thTheme": "rehearsal-thTheme"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/brands",
+      "body": "{\"name\":\"{{name}}-b\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000025,\"name\":\"{{name}}-b\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/email-domains",
+      "body": "{\"brandId\":280000025,\"displayName\":\"first\",\"domain\":\"{{name}}.example.com\",\"userName\":\"noreply\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"displayName\":\"first\",\"dnsValidationRecords\":[],\"domain\":\"{{name}}.example.com\",\"id\":270000020,\"userName\":\"noreply\",\"validationStatus\":\"example-validationStatus\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/email-domains/270000020",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"displayName\":\"first\",\"dnsValidationRecords\":[],\"domain\":\"{{name}}.example.com\",\"id\":270000020,\"userName\":\"noreply\",\"validationStatus\":\"example-validationStatus\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/email-domains/270000020",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"displayName\":\"first\",\"dnsValidationRecords\":[],\"domain\":\"{{name}}.example.com\",\"id\":270000020,\"userName\":\"noreply\",\"validationStatus\":\"example-validationStatus\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/email-domains/270000020",
+      "body": "{\"displayName\":\"second\",\"userName\":\"noreply\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"displayName\":\"second\",\"dnsValidationRecords\":[],\"domain\":\"{{name}}.example.com\",\"id\":270000020,\"userName\":\"noreply\",\"validationStatus\":\"example-validationStatus\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/email-domains/270000020",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"displayName\":\"second\",\"dnsValidationRecords\":[],\"domain\":\"{{name}}.example.com\",\"id\":270000020,\"userName\":\"noreply\",\"validationStatus\":\"example-validationStatus\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/email-domains/270000020",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/brands/280000025",
+      "status": 204
+    }
+  ]
+}

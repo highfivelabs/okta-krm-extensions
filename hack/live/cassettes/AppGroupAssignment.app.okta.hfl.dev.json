@@ -1,0 +1,131 @@
+{
+  "recorded": "2026-11-20T23:56:55Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "orgId": "{{redacted}}",
+    "rsGroup": "00g1a5d7plc3tGO1v698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/apps",
+      "body": "{\"label\":\"{{name}}-app\",\"settings\":{\"signOn\":{\"loginUrl\":\"https://{{name}}.example.com/login\"}},\"signOnMode\":\"AUTO_LOGIN\",\"visibility\":{\"autoSubmitToolbar\":false,\"hide\":{\"iOS\":false,\"web\":false}}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_links\":{\"accessPolicy\":{\"href\":\"{{baseURL}}/api/v1/policies/rst19y29o1kfDk353698\"},\"appLinks\":[{\"href\":\"{{baseURL}}/home/{{tenant}}_hfllive261120235608d409app_1/0oa1a5d74uqFAM9HZ698/aln1a5df4vdIAsQ2R698\",\"name\":\"{{tenant}}_hfllive261120235608d409app_1_link\",\"type\":\"text/html\"}],\"deactivate\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698/lifecycle/deactivate\"},\"groups\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups\"},\"logo\":[{\"href\":\"https://ok14static.oktacdn.com/assets/img/logos/default.6770228fb0dab49a1695ef440a5279bb.png\",\"name\":\"medium\",\"type\":\"image/png\"}],\"policies\":{\"hints\":{\"allow\":[\"PUT\"]},\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698/policies\"},\"profileEnrollment\":{\"href\":\"{{baseURL}}/api/v1/policies/rst19y29o1mWcG8j3698\"},\"uploadLogo\":{\"hints\":{\"allow\":[\"POST\"]},\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698/logo\"},\"users\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698/users\"}},\"accessibility\":{\"errorRedirectUrl\":null,\"loginRedirectUrl\":null,\"selfService\":false},\"created\":\"2026-11-20T23:56:52.000Z\",\"credentials\":{\"revealPassword\":false,\"scheme\":\"EDIT_USERNAME_AND_PASSWORD\",\"signing\":{},\"userNameTemplate\":{\"template\":\"{{redacted}}\",\"type\":\"BUILT_IN\"}},\"features\":[],\"id\":\"0oa1a5d74uqFAM9HZ698\",\"label\":\"{{name}}-app\",\"lastUpdated\":\"2026-11-20T23:56:52.000Z\",\"name\":\"{{tenant}}_hfllive261120235608d409app_1\",\"orn\":\"orn:okta:idp:{{redacted}}:apps:{{tenant}}_hfllive261120235608d409app_1:0oa1a5d74uqFAM9HZ698\",\"settings\":{\"app\":{},\"emOptInStatus\":\"NONE\",\"implicitAssignment\":false,\"manualProvisioning\":false,\"notes\":{\"admin\":null,\"enduser\":null},\"notifications\":{\"vpn\":{\"helpUrl\":null,\"message\":null,\"network\":{\"connection\":\"DISABLED\"}}},\"signOn\":{\"loginUrl\":\"https://{{name}}.example.com/login\",\"redirectUrl\":null}},\"signOnMode\":\"AUTO_LOGIN\",\"status\":\"ACTIVE\",\"universalLogout\":{\"status\":\"UNSUPPORTED\"},\"visibility\":{\"appLinks\":{\"{{tenant}}_hfllive261120235608d409app_1_link\":true},\"autoLaunch\":false,\"autoSubmitToolbar\":false,\"hide\":{\"iOS\":false,\"web\":false}}}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/groups",
+      "body": "{\"profile\":{\"name\":\"{{name}}-g\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00g1a5d6aspgQsFNK698\",\"created\":\"2026-11-20T23:56:52.000Z\",\"lastUpdated\":\"2026-11-20T23:56:52.000Z\",\"lastMembershipUpdated\":\"2026-11-20T23:56:52.000Z\",\"objectClass\":[\"okta:user_group\"],\"type\":\"OKTA_GROUP\",\"profile\":{\"name\":\"{{name}}-g\"},\"_links\":{\"logo\":[{\"name\":\"medium\",\"href\":\"https://ok14static.oktacdn.com/assets/img/logos/groups/odyssey/okta-medium.30ce6d4085dff29412984e4c191bc874.png\",\"type\":\"image/png\"},{\"name\":\"large\",\"href\":\"https://ok14static.oktacdn.com/assets/img/logos/groups/odyssey/okta-large.c3cb8cda8ae0add1b4fe928f5844dbe3.png\",\"type\":\"image/png\"}],\"users\":{\"href\":\"{{baseURL}}/api/v1/groups/00g1a5d6aspgQsFNK698/users\"},\"apps\":{\"href\":\"{{baseURL}}/api/v1/groups/00g1a5d6aspgQsFNK698/apps\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups/00g1a5d6aspgQsFNK698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: 00g1a5d6aspgQsFNK6980oa1a5d74uqFAM9HZ698 (GroupAppAssignment)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaeNFsNZKR9TdG8lmVGMGSXvA\",\"errorCauses\":[]}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups/00g1a5d6aspgQsFNK698",
+      "body": "{\"priority\":0}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00g1a5d6aspgQsFNK698\",\"lastUpdated\":\"2026-11-20T23:56:53.000Z\",\"priority\":0,\"profile\":{},\"_links\":{\"app\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups/00g1a5d6aspgQsFNK698\"},\"group\":{\"href\":\"{{baseURL}}/api/v1/groups/00g1a5d6aspgQsFNK698\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups/00g1a5d6aspgQsFNK698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00g1a5d6aspgQsFNK698\",\"lastUpdated\":\"2026-11-20T23:56:53.000Z\",\"priority\":0,\"profile\":{},\"_links\":{\"app\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups/00g1a5d6aspgQsFNK698\"},\"group\":{\"href\":\"{{baseURL}}/api/v1/groups/00g1a5d6aspgQsFNK698\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups/00g1a5d6aspgQsFNK698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00g1a5d6aspgQsFNK698\",\"lastUpdated\":\"2026-11-20T23:56:53.000Z\",\"priority\":0,\"profile\":{},\"_links\":{\"app\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups/00g1a5d6aspgQsFNK698\"},\"group\":{\"href\":\"{{baseURL}}/api/v1/groups/00g1a5d6aspgQsFNK698\"}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups/00g1a5d6aspgQsFNK698",
+      "body": "{\"priority\":1}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00g1a5d6aspgQsFNK698\",\"lastUpdated\":\"2026-11-20T23:56:53.000Z\",\"priority\":1,\"profile\":{},\"_links\":{\"app\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups/00g1a5d6aspgQsFNK698\"},\"group\":{\"href\":\"{{baseURL}}/api/v1/groups/00g1a5d6aspgQsFNK698\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups/00g1a5d6aspgQsFNK698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00g1a5d6aspgQsFNK698\",\"lastUpdated\":\"2026-11-20T23:56:53.000Z\",\"priority\":1,\"profile\":{},\"_links\":{\"app\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups/00g1a5d6aspgQsFNK698\"},\"group\":{\"href\":\"{{baseURL}}/api/v1/groups/00g1a5d6aspgQsFNK698\"}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups/00g1a5d6aspgQsFNK698",
+      "body": "{\"priority\":2}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00g1a5d6aspgQsFNK698\",\"lastUpdated\":\"2026-11-20T23:56:53.000Z\",\"priority\":2,\"profile\":{},\"_links\":{\"app\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups/00g1a5d6aspgQsFNK698\"},\"group\":{\"href\":\"{{baseURL}}/api/v1/groups/00g1a5d6aspgQsFNK698\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups/00g1a5d6aspgQsFNK698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00g1a5d6aspgQsFNK698\",\"lastUpdated\":\"2026-11-20T23:56:53.000Z\",\"priority\":2,\"profile\":{},\"_links\":{\"app\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups/00g1a5d6aspgQsFNK698\"},\"group\":{\"href\":\"{{baseURL}}/api/v1/groups/00g1a5d6aspgQsFNK698\"}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups/00g1a5d6aspgQsFNK698",
+      "body": "{\"priority\":1}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00g1a5d6aspgQsFNK698\",\"lastUpdated\":\"2026-11-20T23:56:54.000Z\",\"priority\":1,\"profile\":{},\"_links\":{\"app\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups/00g1a5d6aspgQsFNK698\"},\"group\":{\"href\":\"{{baseURL}}/api/v1/groups/00g1a5d6aspgQsFNK698\"}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups/00g1a5d6aspgQsFNK698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":\"00g1a5d6aspgQsFNK698\",\"lastUpdated\":\"2026-11-20T23:56:54.000Z\",\"priority\":1,\"profile\":{},\"_links\":{\"app\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698\"},\"self\":{\"href\":\"{{baseURL}}/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups/00g1a5d6aspgQsFNK698\"},\"group\":{\"href\":\"{{baseURL}}/api/v1/groups/00g1a5d6aspgQsFNK698\"}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups/00g1a5d6aspgQsFNK698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/0oa1a5d74uqFAM9HZ698/groups/00g1a5d6aspgQsFNK698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: 00g1a5d6aspgQsFNK6980oa1a5d74uqFAM9HZ698 (GroupAppAssignment)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaeqi5cG--lT0qx83ULJ74RHg\",\"errorCauses\":[]}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/apps/0oa1a5d74uqFAM9HZ698/lifecycle/deactivate",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/apps/0oa1a5d74uqFAM9HZ698",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/groups/00g1a5d6aspgQsFNK698",
+      "status": 204
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+terraform: [okta_review]
+kind: Review
+shape: settings
+params:
+  campaignId: {type: string, description: The ID of the campaign.}
+  reviewId: {type: string}
+fields:
+  reviewerId: {type: string, description: The Okta user ID of the reviewer.}
+  note: {type: string}
+  reviewerLevel: {type: string, in a multi-level campaign.}
+required: [reviewerId, note]
+compareReturnedOnly: true
+sample: {campaignId: example-campaign-id, reviewId: example-review-id, reviewerId: example-user-id, note: Moved to the team lead}
+read: {method: GET, path: "/governance/api/v1/reviews/{reviewId}"}
+update: {method: POST, path: "/governance/api/v1/campaigns/{campaignId}/reviews/reassign", body: {reviewIds: ["{reviewId}"]}}

@@ -1,0 +1,79 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "agaApp": 280000003,
+    "agaGroup": 280000004,
+    "auApp": 280000006,
+    "auUser": 280000007,
+    "orgId": 280000001,
+    "rsGroup": 280000002
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/apps",
+      "body": "{\"label\":\"{{name}}-app\",\"settings\":{\"signOn\":{\"loginUrl\":\"https://{{name}}.example.com/login\"}},\"signOnMode\":\"AUTO_LOGIN\",\"visibility\":{\"autoSubmitToolbar\":false,\"hide\":{\"iOS\":false,\"web\":false}}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000006,\"label\":\"{{name}}-app\",\"settings\":{\"signOn\":{\"loginUrl\":\"https://{{name}}.example.com/login\"}},\"signOnMode\":\"AUTO_LOGIN\",\"visibility\":{\"autoSubmitToolbar\":false,\"hide\":{\"iOS\":false,\"web\":false}}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/users?activate=false",
+      "body": "{\"profile\":{\"email\":\"{{name}}-u@example.com\",\"firstName\":\"hfl\",\"lastName\":\"live\",\"login\":\"{{name}}-u@example.com\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000007,\"profile\":{\"email\":\"{{name}}-u@example.com\",\"firstName\":\"hfl\",\"lastName\":\"live\",\"login\":\"{{name}}-u@example.com\"}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/apps/280000006/users",
+      "body": "{\"credentials\":{\"userName\":\"{{redacted}}\"},\"id\":280000007,\"scope\":\"USER\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"_links\":{},\"credentials\":{\"userName\":\"{{redacted}}\"},\"externalId\":\"70c14cc17d3745e8a9f98d599a68329c\",\"id\":280000007,\"lastSync\":\"{{redacted}}\",\"passwordChanged\":\"{{redacted}}\",\"scope\":\"USER\",\"status\":\"ACTIVE\",\"statusChanged\":\"2014-06-24T15:28:14Z\",\"syncState\":\"SYNCHRONIZED\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/280000006/users/280000007",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"_embedded\":{},\"_links\":{},\"credentials\":{\"userName\":\"{{redacted}}\"},\"externalId\":\"70c14cc17d3745e8a9f98d599a68329c\",\"id\":280000007,\"lastSync\":\"{{redacted}}\",\"passwordChanged\":\"{{redacted}}\",\"scope\":\"USER\",\"status\":\"ACTIVE\",\"statusChanged\":\"2014-06-24T15:28:14Z\",\"syncState\":\"SYNCHRONIZED\"}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/apps/280000006/users/280000007",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/apps/280000006/users/280000007",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/apps/280000006/lifecycle/deactivate",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000008}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/apps/280000006",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/users/280000007",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/users/280000007",
+      "status": 204
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "recorded": "2026-11-20T23:57:56Z",
+  "target": "Okta Integrator org",
+  "vars": {
+    "agaApp": "0oa1a5d74uqFAM9HZ698",
+    "agaGroup": "00g1a5d6aspgQsFNK698",
+    "ascAS": "aus1a5d5lco5hVnpo698",
+    "aspAS": "aus1a5d7xao0ETI8w698",
+    "asrAS": "aus1a5d92wqVRei1R698",
+    "asrGroup": "00g1a5d79iaCH1Z7n698",
+    "asrPolicy": "00p1a5d7zs3Jr87U8698",
+    "assAS": "aus1a5d7849QKfQlb698",
+    "auApp": "0oa1a5d5vh1J50WFa698",
+    "auUser": "00u1a5d75s3uKgUNV698",
+    "cspBrand": "bnd1a5d2wkvwx3YqE698",
+    "edBrand": "bnd1a5d85vaNOwFus698",
+    "grGroup": "00g1a5d5vk6BBV0aa698",
+    "grlGroup": "00g1a5d9xr5pJ4Mq6698",
+    "orgId": "{{redacted}}",
+    "prGroup": "00g1a5d7103FF3HnP698",
+    "prPolicy": "rst1a5d85sx0UeqpU698",
+    "pspBrand": "bnd1a5d240aLpp4zT698",
+    "rsGroup": "00g1a5d7plc3tGO1v698",
+    "thBrand": "bnd1a5d5sixEbT59w698",
+    "thTheme": "the1a5d5siyxEFQOz698"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/v1/device-assurances",
+      "body": "{\"name\":\"{{name}}\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"platform\":\"WINDOWS\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"name\":\"{{name}}\",\"platform\":\"WINDOWS\",\"id\":\"dae1a5d5skqP6tvqf698\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"displayRemediationMode\":\"HIDE\",\"createdDate\":\"2026-11-20T23:57:54.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdate\":\"2026-11-20T23:57:54.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"resourceType\":\"DeviceAssurancePolicyEntity\",\"resourceId\":\"dae1a5d5skqP6tvqf698\",\"resourceDisplayName\":{\"value\":\"{{name}}\",\"sensitive\":false},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/device-assurances/dae1a5d5skqP6tvqf698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/device-assurances/dae1a5d5skqP6tvqf698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"name\":\"{{name}}\",\"platform\":\"WINDOWS\",\"id\":\"dae1a5d5skqP6tvqf698\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"displayRemediationMode\":\"HIDE\",\"createdDate\":\"2026-11-20T23:57:54.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdate\":\"2026-11-20T23:57:54.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"resourceType\":\"DeviceAssurancePolicyEntity\",\"resourceId\":\"dae1a5d5skqP6tvqf698\",\"resourceDisplayName\":{\"value\":\"{{name}}\",\"sensitive\":false},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/device-assurances/dae1a5d5skqP6tvqf698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/device-assurances/dae1a5d5skqP6tvqf698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"name\":\"{{name}}\",\"platform\":\"WINDOWS\",\"id\":\"dae1a5d5skqP6tvqf698\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"displayRemediationMode\":\"HIDE\",\"createdDate\":\"2026-11-20T23:57:54.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdate\":\"2026-11-20T23:57:54.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"resourceType\":\"DeviceAssurancePolicyEntity\",\"resourceId\":\"dae1a5d5skqP6tvqf698\",\"resourceDisplayName\":{\"value\":\"{{name}}\",\"sensitive\":false},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/device-assurances/dae1a5d5skqP6tvqf698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/device-assurances/dae1a5d5skqP6tvqf698",
+      "body": "{\"name\":\"{{name}}-2\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"platform\":\"WINDOWS\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"name\":\"{{name}}-2\",\"platform\":\"WINDOWS\",\"id\":\"dae1a5d5skqP6tvqf698\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"displayRemediationMode\":\"HIDE\",\"lastUpdate\":\"2026-11-20T23:57:54.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"resourceType\":\"DeviceAssurancePolicyEntity\",\"resourceId\":\"dae1a5d5skqP6tvqf698\",\"resourceDisplayName\":{\"value\":\"{{name}}-2\",\"sensitive\":false},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/device-assurances/dae1a5d5skqP6tvqf698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/device-assurances/dae1a5d5skqP6tvqf698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"name\":\"{{name}}-2\",\"platform\":\"WINDOWS\",\"id\":\"dae1a5d5skqP6tvqf698\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"displayRemediationMode\":\"HIDE\",\"createdDate\":\"2026-11-20T23:57:54.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdate\":\"2026-11-20T23:57:54.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"resourceType\":\"DeviceAssurancePolicyEntity\",\"resourceId\":\"dae1a5d5skqP6tvqf698\",\"resourceDisplayName\":{\"value\":\"{{name}}-2\",\"sensitive\":false},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/device-assurances/dae1a5d5skqP6tvqf698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/device-assurances/dae1a5d5skqP6tvqf698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"name\":\"{{name}}-2\",\"platform\":\"WINDOWS\",\"id\":\"dae1a5d5skqP6tvqf698\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"displayRemediationMode\":\"HIDE\",\"createdDate\":\"2026-11-20T23:57:54.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdate\":\"2026-11-20T23:57:54.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"resourceType\":\"DeviceAssurancePolicyEntity\",\"resourceId\":\"dae1a5d5skqP6tvqf698\",\"resourceDisplayName\":{\"value\":\"{{name}}-2\",\"sensitive\":false},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/device-assurances/dae1a5d5skqP6tvqf698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/device-assurances/dae1a5d5skqP6tvqf698",
+      "body": "{\"_links\":{\"self\":{\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]},\"href\":\"{{baseURL}}/api/v1/device-assurances/dae1a5d5skqP6tvqf698\"}},\"createdBy\":\"00u19y29o0laicDdi698\",\"createdDate\":\"2026-11-20T23:57:54.000Z\",\"displayRemediationMode\":\"HIDE\",\"id\":\"dae1a5d5skqP6tvqf698\",\"lastUpdate\":\"2026-11-20T23:57:54.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"name\":\"hfl-live-drift\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"platform\":\"WINDOWS\",\"resourceDisplayName\":{\"sensitive\":false,\"value\":\"{{name}}-2\"},\"resourceId\":\"dae1a5d5skqP6tvqf698\",\"resourceType\":\"DeviceAssurancePolicyEntity\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"name\":\"hfl-live-drift\",\"platform\":\"WINDOWS\",\"id\":\"dae1a5d5skqP6tvqf698\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"displayRemediationMode\":\"HIDE\",\"lastUpdate\":\"2026-11-20T23:57:55.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"resourceType\":\"DeviceAssurancePolicyEntity\",\"resourceId\":\"dae1a5d5skqP6tvqf698\",\"resourceDisplayName\":{\"value\":\"hfl-live-drift\",\"sensitive\":false},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/device-assurances/dae1a5d5skqP6tvqf698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/device-assurances/dae1a5d5skqP6tvqf698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"name\":\"hfl-live-drift\",\"platform\":\"WINDOWS\",\"id\":\"dae1a5d5skqP6tvqf698\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"displayRemediationMode\":\"HIDE\",\"createdDate\":\"2026-11-20T23:57:54.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdate\":\"2026-11-20T23:57:55.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"resourceType\":\"DeviceAssurancePolicyEntity\",\"resourceId\":\"dae1a5d5skqP6tvqf698\",\"resourceDisplayName\":{\"value\":\"hfl-live-drift\",\"sensitive\":false},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/device-assurances/dae1a5d5skqP6tvqf698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/device-assurances/dae1a5d5skqP6tvqf698",
+      "body": "{\"name\":\"{{name}}-2\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"platform\":\"WINDOWS\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"name\":\"{{name}}-2\",\"platform\":\"WINDOWS\",\"id\":\"dae1a5d5skqP6tvqf698\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"displayRemediationMode\":\"HIDE\",\"lastUpdate\":\"2026-11-20T23:57:55.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"resourceType\":\"DeviceAssurancePolicyEntity\",\"resourceId\":\"dae1a5d5skqP6tvqf698\",\"resourceDisplayName\":{\"value\":\"{{name}}-2\",\"sensitive\":false},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/device-assurances/dae1a5d5skqP6tvqf698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/device-assurances/dae1a5d5skqP6tvqf698",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"name\":\"{{name}}-2\",\"platform\":\"WINDOWS\",\"id\":\"dae1a5d5skqP6tvqf698\",\"osVersion\":{\"minimum\":\"10.0.19045\"},\"displayRemediationMode\":\"HIDE\",\"createdDate\":\"2026-11-20T23:57:54.000Z\",\"createdBy\":\"00u19y29o0laicDdi698\",\"lastUpdate\":\"2026-11-20T23:57:55.000Z\",\"lastUpdatedBy\":\"00u19y29o0laicDdi698\",\"resourceType\":\"DeviceAssurancePolicyEntity\",\"resourceId\":\"dae1a5d5skqP6tvqf698\",\"resourceDisplayName\":{\"value\":\"{{name}}-2\",\"sensitive\":false},\"_links\":{\"self\":{\"href\":\"{{baseURL}}/api/v1/device-assurances/dae1a5d5skqP6tvqf698\",\"hints\":{\"allow\":[\"GET\",\"PUT\",\"DELETE\"]}}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/device-assurances/dae1a5d5skqP6tvqf698",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/device-assurances/dae1a5d5skqP6tvqf698",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errorCode\":\"E0000007\",\"errorSummary\":\"Not found: Resource not found: dae1a5d5skqP6tvqf698 (DeviceAssuranceRuleManagerImpl)\",\"errorLink\":\"E0000007\",\"errorId\":\"oaeUPm8YoA-QUuQlBAZFmdA4g\",\"errorCauses\":[]}"
+    }
+  ]
+}

@@ -1,0 +1,627 @@
+{
+  "AdminRoleCustom.admin.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:56:45Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:56:45Z"
+  },
+  "AppFederatedClaim.app.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:58:10Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:58:10Z"
+  },
+  "AppGroupAssignment.app.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:56:54Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:56:54Z"
+  },
+  "AppUser.app.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:56:57Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:56:57Z"
+  },
+  "Application.application.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:56:51Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:56:51Z"
+  },
+  "AuthServer.auth.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:06Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:06Z"
+  },
+  "AuthServerClaim.auth.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:13Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:13Z"
+  },
+  "AuthServerPolicy.auth.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:17Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:17Z"
+  },
+  "AuthServerPolicyRule.auth.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:21Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:21Z"
+  },
+  "AuthServerScope.auth.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:10Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:10Z"
+  },
+  "Behavior.behavior.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:24Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:24Z"
+  },
+  "Brand.brand.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:25Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:25Z"
+  },
+  "Captcha.captcha.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:27Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:27Z"
+  },
+  "CustomizedSigninPage.customized.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:30Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:30Z"
+  },
+  "Domain.domain.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:36Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:36Z"
+  },
+  "EmailDomain.email.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "delete"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:38Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:38Z"
+  },
+  "EmailSmtpServer.email.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:40Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:40Z"
+  },
+  "EventHook.event.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:43Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:43Z"
+  },
+  "Factor.factor.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:58:07Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:58:07Z"
+  },
+  "Group.group.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:56:42Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:56:42Z"
+  },
+  "GroupRole.group.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:46Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:46Z"
+  },
+  "GroupRule.group.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:48Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:48Z"
+  },
+  "HookKey.hook.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:56:40Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:56:40Z"
+  },
+  "IdentityProvider.identity.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:52Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:52Z"
+  },
+  "IdpSamlKey.idp.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:53Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:53Z"
+  },
+  "InlineHook.inline.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:45Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:45Z"
+  },
+  "LinkDefinition.link.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:54Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:54Z"
+  },
+  "NetworkZone.network.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:56:44Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:56:44Z"
+  },
+  "Policy.policy.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:00Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:00Z"
+  },
+  "PolicyDeviceAssurance.policy.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:56Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:56Z"
+  },
+  "PolicyRule.policy.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:02Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:02Z"
+  },
+  "PreviewSigninPage.preview.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:33Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:33Z"
+  },
+  "PushProvider.push.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:58Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:58Z"
+  },
+  "RateLimitAdminNotificationSettings.rate.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:59Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:59Z"
+  },
+  "RateLimitWarningThresholdPercentage.rate.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:58:01Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:58:01Z"
+  },
+  "ResourceSet.resource.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:56:47Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:56:47Z"
+  },
+  "SecurityEventsProvider.security.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:58:03Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:58:03Z"
+  },
+  "Theme.theme.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "delete"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:57:34Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:57:34Z"
+  },
+  "TrustedOrigin.trusted.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:56:36Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:56:36Z"
+  },
+  "UiSchema.ui.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:58:04Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:58:04Z"
+  },
+  "User.user.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:58:12Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:58:12Z"
+  },
+  "UserAdminRoles.user.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:58:05Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:58:05Z"
+  },
+  "UserType.user.okta.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-08d4",
+    "date": "2026-11-20T23:56:38Z",
+    "target": "Okta Integrator org",
+    "lastPass": "2026-11-20T23:56:38Z"
+  }
+}
