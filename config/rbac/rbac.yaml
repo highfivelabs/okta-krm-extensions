@@ -1,0 +1,301 @@
+# Copyright 2026 High Five Labs
+# SPDX-License-Identifier: Apache-2.0
+# The manager reads Connections and their Secrets in every namespace it
+# reconciles; narrow the binding per namespace if that is too broad.
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: manager
+  namespace: okta-krm-extensions-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: okta-krm-extensions-manager
+rules:
+- apiGroups: &id001
+  - admin.okta.hfl.dev
+  - agent.okta.hfl.dev
+  - api.okta.hfl.dev
+  - app.okta.hfl.dev
+  - application.okta.hfl.dev
+  - auth.okta.hfl.dev
+  - authenticator.okta.hfl.dev
+  - behavior.okta.hfl.dev
+  - brand.okta.hfl.dev
+  - captcha.okta.hfl.dev
+  - customized.okta.hfl.dev
+  - domain.okta.hfl.dev
+  - email.okta.hfl.dev
+  - entitlement.okta.hfl.dev
+  - event.okta.hfl.dev
+  - factor.okta.hfl.dev
+  - group.okta.hfl.dev
+  - hook.okta.hfl.dev
+  - identity.okta.hfl.dev
+  - idp.okta.hfl.dev
+  - inline.okta.hfl.dev
+  - link.okta.hfl.dev
+  - log.okta.hfl.dev
+  - network.okta.hfl.dev
+  - org.okta.hfl.dev
+  - policy.okta.hfl.dev
+  - preview.okta.hfl.dev
+  - push.okta.hfl.dev
+  - rate.okta.hfl.dev
+  - realm.okta.hfl.dev
+  - resource.okta.hfl.dev
+  - security.okta.hfl.dev
+  - template.okta.hfl.dev
+  - theme.okta.hfl.dev
+  - trusted.okta.hfl.dev
+  - ui.okta.hfl.dev
+  - user.okta.hfl.dev
+  resources:
+  - adminrolecustoms
+  - agentpoolupdates
+  - apiserviceintegrations
+  - apitokens
+  - appfeatureses
+  - appfederatedclaims
+  - appgroupassignments
+  - applications
+  - appusers
+  - authenticatormethodwebauthns
+  - authenticatorwebauthncustomaaguids
+  - authserverclaims
+  - authserverpolicies
+  - authserverpolicyrules
+  - authservers
+  - authserverscopes
+  - behaviors
+  - brands
+  - captchas
+  - customizedsigninpages
+  - domains
+  - emailcustomizations
+  - emaildomains
+  - emailsmtpservers
+  - emailtemplatesettingses
+  - entitlementbundles
+  - eventhooks
+  - factors
+  - grouproles
+  - grouprules
+  - groups
+  - hookkeys
+  - identityproviders
+  - identitysourcegroups
+  - identitysourceusers
+  - idpsamlkeys
+  - inlinehooks
+  - linkdefinitions
+  - logstreams
+  - networkzones
+  - orgcaptchas
+  - policies
+  - policydeviceassurances
+  - policyrules
+  - previewsigninpages
+  - pushgroups
+  - pushproviders
+  - ratelimitadminnotificationsettingses
+  - ratelimitwarningthresholdpercentages
+  - realmassignments
+  - realms
+  - resourcesets
+  - securityeventsproviders
+  - templatesmses
+  - themes
+  - trustedorigins
+  - uischemas
+  - useradminroleses
+  - userrisks
+  - users
+  - usertypes
+  verbs:
+  - get
+  - list
+  - watch
+  - update
+  - patch
+- apiGroups: *id001
+  resources:
+  - adminrolecustoms/status
+  - agentpoolupdates/status
+  - apiserviceintegrations/status
+  - apitokens/status
+  - appfeatureses/status
+  - appfederatedclaims/status
+  - appgroupassignments/status
+  - applications/status
+  - appusers/status
+  - authenticatormethodwebauthns/status
+  - authenticatorwebauthncustomaaguids/status
+  - authserverclaims/status
+  - authserverpolicies/status
+  - authserverpolicyrules/status
+  - authservers/status
+  - authserverscopes/status
+  - behaviors/status
+  - brands/status
+  - captchas/status
+  - customizedsigninpages/status
+  - domains/status
+  - emailcustomizations/status
+  - emaildomains/status
+  - emailsmtpservers/status
+  - emailtemplatesettingses/status
+  - entitlementbundles/status
+  - eventhooks/status
+  - factors/status
+  - grouproles/status
+  - grouprules/status
+  - groups/status
+  - hookkeys/status
+  - identityproviders/status
+  - identitysourcegroups/status
+  - identitysourceusers/status
+  - idpsamlkeys/status
+  - inlinehooks/status
+  - linkdefinitions/status
+  - logstreams/status
+  - networkzones/status
+  - orgcaptchas/status
+  - policies/status
+  - policydeviceassurances/status
+  - policyrules/status
+  - previewsigninpages/status
+  - pushgroups/status
+  - pushproviders/status
+  - ratelimitadminnotificationsettingses/status
+  - ratelimitwarningthresholdpercentages/status
+  - realmassignments/status
+  - realms/status
+  - resourcesets/status
+  - securityeventsproviders/status
+  - templatesmses/status
+  - themes/status
+  - trustedorigins/status
+  - uischemas/status
+  - useradminroleses/status
+  - userrisks/status
+  - users/status
+  - usertypes/status
+  verbs:
+  - get
+  - update
+  - patch
+- apiGroups: *id001
+  resources:
+  - adminrolecustoms/finalizers
+  - agentpoolupdates/finalizers
+  - apiserviceintegrations/finalizers
+  - apitokens/finalizers
+  - appfeatureses/finalizers
+  - appfederatedclaims/finalizers
+  - appgroupassignments/finalizers
+  - applications/finalizers
+  - appusers/finalizers
+  - authenticatormethodwebauthns/finalizers
+  - authenticatorwebauthncustomaaguids/finalizers
+  - authserverclaims/finalizers
+  - authserverpolicies/finalizers
+  - authserverpolicyrules/finalizers
+  - authservers/finalizers
+  - authserverscopes/finalizers
+  - behaviors/finalizers
+  - brands/finalizers
+  - captchas/finalizers
+  - customizedsigninpages/finalizers
+  - domains/finalizers
+  - emailcustomizations/finalizers
+  - emaildomains/finalizers
+  - emailsmtpservers/finalizers
+  - emailtemplatesettingses/finalizers
+  - entitlementbundles/finalizers
+  - eventhooks/finalizers
+  - factors/finalizers
+  - grouproles/finalizers
+  - grouprules/finalizers
+  - groups/finalizers
+  - hookkeys/finalizers
+  - identityproviders/finalizers
+  - identitysourcegroups/finalizers
+  - identitysourceusers/finalizers
+  - idpsamlkeys/finalizers
+  - inlinehooks/finalizers
+  - linkdefinitions/finalizers
+  - logstreams/finalizers
+  - networkzones/finalizers
+  - orgcaptchas/finalizers
+  - policies/finalizers
+  - policydeviceassurances/finalizers
+  - policyrules/finalizers
+  - previewsigninpages/finalizers
+  - pushgroups/finalizers
+  - pushproviders/finalizers
+  - ratelimitadminnotificationsettingses/finalizers
+  - ratelimitwarningthresholdpercentages/finalizers
+  - realmassignments/finalizers
+  - realms/finalizers
+  - resourcesets/finalizers
+  - securityeventsproviders/finalizers
+  - templatesmses/finalizers
+  - themes/finalizers
+  - trustedorigins/finalizers
+  - uischemas/finalizers
+  - useradminroleses/finalizers
+  - userrisks/finalizers
+  - users/finalizers
+  - usertypes/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - core.okta.hfl.dev
+  resources:
+  - connections
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ''
+  resources:
+  - secrets
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - coordination.k8s.io
+  resources:
+  - leases
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ''
+  resources:
+  - events
+  verbs:
+  - create
+  - patch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: okta-krm-extensions-manager
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: okta-krm-extensions-manager
+subjects:
+- kind: ServiceAccount
+  name: manager
+  namespace: okta-krm-extensions-system
