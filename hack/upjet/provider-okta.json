@@ -1,0 +1,1683 @@
+{
+ "formatVersion": 1,
+ "generatedBy": "factory upjet sync (upjet/README.md in highfivelabs/factory)",
+ "provider": {
+  "repo": "crossplane-contrib/provider-okta",
+  "tag": "v0.3.0",
+  "commit": "da04872ff4705dbc95043339757f68cf34305d87",
+  "commitDate": "2024-06-10T20:28:56Z",
+  "licence": "Apache-2.0"
+ },
+ "join": "types.yaml terraform",
+ "counts": {
+  "ours": 114,
+  "matched": 23,
+  "references": 15,
+  "referencesOur": 15,
+  "handExamples": 32,
+  "notTested": 0
+ },
+ "entries": [
+  {
+   "ours": {
+    "kind": "AdminRoleGroupTarget",
+    "group": "admin.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_admin_role_targets",
+    "group": "admin.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "RoleTargets",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:17"
+    },
+    "references": [
+     {
+      "field": "user_id",
+      "target": "okta_user",
+      "targetKind": "user.okta.upbound.io/User",
+      "extractor": "github.com/healthcarecom/provider-okta/apis/user/v1alpha1.UserID()",
+      "source": "both",
+      "at": "config/adminroletargets/config.go:8"
+     }
+    ],
+    "examples": [
+     {
+      "at": "examples/adminroletargets/admin_role_targets.yaml",
+      "origin": "hand",
+      "fields": [
+       "apps",
+       "role_type"
+      ],
+      "refFields": [
+       "user_id"
+      ],
+      "values": {
+       "apps": [
+        "example_app"
+       ],
+       "role_type": "APP_ADMIN"
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "okta_user": [
+     "user.okta.hfl.dev/User"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "AppGroupAssignment",
+    "group": "app.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_app_group_assignment",
+    "group": "app.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "GroupAssignment",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:16"
+    },
+    "references": [
+     {
+      "field": "group_id",
+      "target": "okta_group",
+      "targetKind": "group.okta.upbound.io/Group",
+      "extractor": "github.com/healthcarecom/provider-okta/apis/group/v1alpha1.GroupID()",
+      "source": "both",
+      "at": "config/appgroupassignment/config.go:8"
+     }
+    ],
+    "examples": [
+     {
+      "at": "examples/appgroupassignment/app_group_assignment.yaml",
+      "origin": "hand",
+      "fields": [
+       "app_id"
+      ],
+      "refFields": [
+       "group_id"
+      ],
+      "values": {
+       "app_id": "appId"
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "okta_group": [
+     "group.okta.hfl.dev/Group"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "AppOauthApiScope",
+    "group": "app.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_app_oauth_api_scope",
+    "group": "app.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "OauthAPIScope",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:23"
+    },
+    "examples": [
+     {
+      "at": "examples/appoauthapiscope/app_oauth_api_scope.yaml",
+      "origin": "hand",
+      "fields": [
+       "app_id",
+       "issuer",
+       "scopes"
+      ],
+      "values": {
+       "app_id": "appId",
+       "issuer": "\u003cyour okta domain\u003e",
+       "scopes": [
+        "okta.users.read",
+        "okta.users.manage"
+       ]
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "AppPolicyAssignment",
+    "group": "app.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_app_access_policy_assignment",
+    "group": "app.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "AccessPolicyAssignment",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:18"
+    },
+    "examples": [
+     {
+      "at": "examples/appaccesspolicyassignment/app_access_policy_assignment.yaml",
+      "origin": "hand",
+      "fields": [
+       "app_id",
+       "policy_id"
+      ],
+      "values": {
+       "app_id": "appId",
+       "policy_id": "policy"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "AppSamlAppSettings",
+    "group": "app.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_app_saml_app_settings",
+    "group": "app.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "SAMLAppSettings",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:26"
+    },
+    "references": [
+     {
+      "field": "app_id",
+      "target": "okta_app_saml",
+      "targetKind": "app.okta.upbound.io/SAML",
+      "extractor": "github.com/healthcarecom/provider-okta/apis/app/v1alpha1.SamlID()",
+      "source": "both",
+      "at": "config/appsamlappsettings/appsamlappsettings.go:8"
+     }
+    ],
+    "examples": [
+     {
+      "at": "examples/appsamlappsettings/app_saml_app_settings.yaml",
+      "origin": "hand",
+      "fields": [
+       "settings"
+      ],
+      "refFields": [
+       "app_id"
+      ],
+      "values": {
+       "settings": "{\n  \"appFilter\" : \"okta\",\n  \"awsEnvironmentType\" : \"aws.amazon\",\n  \"groupFilter\" : \"aws_(?{{accountid}}\\\\\\\\d+)_(?{{role}}[a-zA-Z0-9+=,.@\\\\\\\\-_]+)\",\n  \"joinAllRoles\" : false,\n  \"loginURL\" : \"https://console.aws.amazon.com/ec2/home\",\n  \"roleValuePattern\" : \"arn:aws:iam::$${accountid}:saml-provider/OKTA,arn:aws:iam::$${accountid}:role/$${role}\",\n  \"sessionDuration\" : 3200,\n  \"useGroupMapping\" : false\n}"
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "okta_app_saml": [
+     "application.okta.hfl.dev/Application"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "Application",
+    "group": "application.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_app_auto_login",
+    "group": "app.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "AutoLogin",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:19"
+    },
+    "examples": [
+     {
+      "at": "examples/appautologin/app_auto_login.yaml",
+      "origin": "hand",
+      "fields": [
+       "credentials_scheme",
+       "label",
+       "reveal_password",
+       "sign_on_redirect_url",
+       "sign_on_url"
+      ],
+      "values": {
+       "credentials_scheme": "EDIT_USERNAME_AND_PASSWORD",
+       "label": "Example App",
+       "reveal_password": true,
+       "sign_on_redirect_url": "https://example.com/login.html",
+       "sign_on_url": "https://example.com/login.html"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "Application",
+    "group": "application.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_app_basic_auth",
+    "group": "app.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "BasicAuth",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:20"
+    },
+    "examples": [
+     {
+      "id": "app/v1alpha1/basicauth",
+      "at": "examples-generated/app/basicauth.yaml",
+      "origin": "generated",
+      "fields": [
+       "auth_url",
+       "label",
+       "url"
+      ]
+     },
+     {
+      "at": "examples/appbasicauth/app_basic_auth.yaml",
+      "origin": "hand",
+      "fields": [
+       "auth_url",
+       "label",
+       "url"
+      ],
+      "values": {
+       "auth_url": "https://example.com/auth.html",
+       "label": "Example Auth",
+       "url": "https://example.com/login.html"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "Application",
+    "group": "application.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_app_bookmark",
+    "group": "app.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "Bookmark",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:21"
+    },
+    "examples": [
+     {
+      "at": "examples/appbookmark/app_bookmark.yaml",
+      "origin": "hand",
+      "fields": [
+       "label",
+       "url"
+      ],
+      "values": {
+       "label": "Example App",
+       "url": "https://example.com"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "Application",
+    "group": "application.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_app_oauth",
+    "group": "app.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "Oauth",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:22"
+    },
+    "examples": [
+     {
+      "at": "examples/appoauth/app_oauth.yaml",
+      "origin": "hand",
+      "fields": [
+       "grant_types",
+       "label",
+       "redirect_uris",
+       "response_types",
+       "type"
+      ],
+      "values": {
+       "grant_types": [
+        "authorization_code"
+       ],
+       "label": "Example",
+       "redirect_uris": [
+        "https://example.com"
+       ],
+       "response_types": [
+        "code"
+       ],
+       "type": "web"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "Application",
+    "group": "application.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_app_saml",
+    "group": "app.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "SAML",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:25"
+    },
+    "examples": [
+     {
+      "id": "app/v1alpha1/saml",
+      "at": "examples-generated/app/saml.yaml",
+      "origin": "generated",
+      "fields": [
+       "attribute_statements",
+       "attribute_statements.filter_type",
+       "attribute_statements.filter_value",
+       "attribute_statements.name",
+       "attribute_statements.type",
+       "audience",
+       "authn_context_class_ref",
+       "destination",
+       "digest_algorithm",
+       "honor_force_authn",
+       "label",
+       "recipient",
+       "response_signed",
+       "signature_algorithm",
+       "sso_url",
+       "subject_name_id_format",
+       "subject_name_id_template"
+      ]
+     },
+     {
+      "at": "examples/appsaml/app_saml.yaml",
+      "origin": "hand",
+      "fields": [
+       "audience",
+       "destination",
+       "label",
+       "recipient",
+       "response_signed",
+       "signature_algorithm",
+       "sso_url",
+       "subject_name_id_format",
+       "subject_name_id_template"
+      ],
+      "values": {
+       "audience": "https://example.com/audience",
+       "destination": "https://example.com",
+       "label": "SAML App Name",
+       "recipient": "https://example.com",
+       "response_signed": true,
+       "signature_algorithm": "RSA_SHA256",
+       "sso_url": "https://example.com",
+       "subject_name_id_format": "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress",
+       "subject_name_id_template": "$${user.userName}}"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "Application",
+    "group": "application.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_app_secure_password_store",
+    "group": "app.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "SecurePasswordStore",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:27"
+    },
+    "examples": [
+     {
+      "at": "examples/appsecurepasswordstore/app_secure_password_store.yaml",
+      "origin": "hand",
+      "fields": [
+       "credentials_scheme",
+       "label",
+       "password_field",
+       "url",
+       "username_field"
+      ],
+      "values": {
+       "credentials_scheme": "ADMIN_SETS_CREDENTIALS",
+       "label": "Example APP",
+       "password_field": "pass",
+       "url": "https://example.com",
+       "username_field": "user"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "Application",
+    "group": "application.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_app_shared_credentials",
+    "group": "app.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "SharedCredentials",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:28"
+    },
+    "examples": [
+     {
+      "at": "examples/appsharedcredentials/app_shared_credentials.yaml",
+      "origin": "hand",
+      "fields": [
+       "accessibility_error_redirect_url",
+       "accessibility_login_redirect_url",
+       "accessibility_self_service",
+       "auto_submit_toolbar",
+       "button_field",
+       "checkbox",
+       "hide_ios",
+       "label",
+       "password_field",
+       "redirect_url",
+       "shared_password",
+       "shared_username",
+       "status",
+       "url",
+       "user_name_template",
+       "user_name_template_suffix",
+       "user_name_template_type",
+       "username_field"
+      ],
+      "values": {
+       "accessibility_error_redirect_url": "https://example.com/redirect_url_2",
+       "accessibility_login_redirect_url": "https://example.com/redirect_url_1",
+       "accessibility_self_service": true,
+       "auto_submit_toolbar": true,
+       "button_field": "btn-login",
+       "checkbox": "checkbox_red",
+       "hide_ios": true,
+       "label": "Example APP",
+       "password_field": "password",
+       "redirect_url": "https://example.com/redirect_url",
+       "shared_password": "shared_password",
+       "shared_username": "shared_username",
+       "status": "ACTIVE",
+       "url": "https://example.com/login.html",
+       "user_name_template": "user.firstName",
+       "user_name_template_suffix": "hello",
+       "user_name_template_type": "CUSTOM",
+       "username_field": "username"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "Application",
+    "group": "application.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_app_swa",
+    "group": "app.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "Swa",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:29"
+    },
+    "examples": [
+     {
+      "at": "examples/appswa/app_swa.yaml",
+      "origin": "hand",
+      "fields": [
+       "button_field",
+       "label",
+       "password_field",
+       "url",
+       "username_field"
+      ],
+      "values": {
+       "button_field": "btn-login",
+       "label": "Example",
+       "password_field": "password",
+       "url": "https://example.com/login.html",
+       "username_field": "username"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "Application",
+    "group": "application.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_app_three_field",
+    "group": "app.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "ThreeField",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:30"
+    },
+    "examples": [
+     {
+      "at": "examples/appthreefield/app_three_field.yaml",
+      "origin": "hand",
+      "fields": [
+       "button_selector",
+       "credentials_scheme",
+       "extra_field_selector",
+       "extra_field_value",
+       "label",
+       "password_selector",
+       "reveal_password",
+       "url",
+       "username_selector"
+      ],
+      "values": {
+       "button_selector": "login-button",
+       "credentials_scheme": "EDIT_USERNAME_AND_PASSWORD",
+       "extra_field_selector": "extra-field",
+       "extra_field_value": "extra-field-value",
+       "label": "Example App",
+       "password_selector": "password",
+       "reveal_password": true,
+       "url": "https://example.com/login.html",
+       "username_selector": "username"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "AuthServer",
+    "group": "auth.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_auth_server",
+    "group": "auth.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "Server",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:31"
+    },
+    "examples": [
+     {
+      "at": "examples/authserver/auth_server.yaml",
+      "origin": "hand",
+      "fields": [
+       "audiences",
+       "description",
+       "issuer_mode",
+       "name"
+      ],
+      "values": {
+       "audiences": [
+        "api://example"
+       ],
+       "description": "My Example Auth Server",
+       "issuer_mode": "CUSTOM_URL",
+       "name": "Example"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "AuthServerClaim",
+    "group": "auth.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_auth_server_claim",
+    "group": "auth.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "ServerClaim",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:32"
+    },
+    "references": [
+     {
+      "field": "auth_server_id",
+      "target": "okta_auth_server",
+      "targetKind": "auth.okta.upbound.io/Server",
+      "extractor": "github.com/healthcarecom/provider-okta/apis/auth/v1alpha1.AuthServerID()",
+      "source": "both",
+      "at": "config/authserverclaim/authserverclaim.go:8"
+     }
+    ],
+    "examples": [
+     {
+      "at": "examples/authserverclaim/auth_server_claim.yaml",
+      "origin": "hand",
+      "fields": [
+       "claim_type",
+       "name",
+       "scopes",
+       "value"
+      ],
+      "refFields": [
+       "auth_server_id"
+      ],
+      "values": {
+       "claim_type": "IDENTITY",
+       "name": "staff",
+       "scopes": [
+        "${okta_auth_server_scope.example.name}"
+       ],
+       "value": "String.substringAfter(user.email, \"@\") == \"example.com\""
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "okta_auth_server": [
+     "auth.okta.hfl.dev/AuthServer"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "AuthServerClaimDefault",
+    "group": "auth.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_auth_server_claim_default",
+    "group": "auth.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "ServerClaimDefault",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:33"
+    },
+    "references": [
+     {
+      "field": "auth_server_id",
+      "target": "okta_auth_server",
+      "targetKind": "auth.okta.upbound.io/Server",
+      "extractor": "github.com/healthcarecom/provider-okta/apis/auth/v1alpha1.AuthServerID()",
+      "source": "both",
+      "at": "config/authserverclaimdefault/authserverclaimdefault.go:8"
+     }
+    ],
+    "examples": [
+     {
+      "at": "examples/authserverclaimdefault/auth_server_claim_default.yaml",
+      "origin": "hand",
+      "fields": [
+       "name",
+       "value"
+      ],
+      "refFields": [
+       "auth_server_id"
+      ],
+      "values": {
+       "name": "sub",
+       "value": "(appuser != null) ? appuser.userName : app.clientId"
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "okta_auth_server": [
+     "auth.okta.hfl.dev/AuthServer"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "AuthServerDefault",
+    "group": "auth.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_auth_server_default",
+    "group": "auth.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "ServerDefault",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:34"
+    },
+    "examples": [
+     {
+      "at": "examples/authserverdefault/auth_server_default.yaml",
+      "origin": "hand",
+      "fields": [
+       "audiences",
+       "description"
+      ],
+      "values": {
+       "audiences": [
+        "api://default"
+       ],
+       "description": "Default Authorization Server for all Apps"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "AuthServerPolicy",
+    "group": "auth.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_auth_server_policy",
+    "group": "auth.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "ServerPolicy",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:35"
+    },
+    "references": [
+     {
+      "field": "auth_server_id",
+      "target": "okta_auth_server",
+      "targetKind": "auth.okta.upbound.io/Server",
+      "extractor": "github.com/healthcarecom/provider-okta/apis/auth/v1alpha1.AuthServerID()",
+      "source": "both",
+      "at": "config/authserverpolicy/authserverpolicy.go:8"
+     }
+    ],
+    "examples": [
+     {
+      "at": "examples/authserverpolicy/auth_server_policy.yaml",
+      "origin": "hand",
+      "fields": [
+       "client_whitelist",
+       "description",
+       "name",
+       "priority"
+      ],
+      "refFields": [
+       "auth_server_id"
+      ],
+      "values": {
+       "client_whitelist": [
+        "ALL_CLIENTS"
+       ],
+       "description": "example",
+       "name": "example",
+       "priority": 1
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "okta_auth_server": [
+     "auth.okta.hfl.dev/AuthServer"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "AuthServerPolicyRule",
+    "group": "auth.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_auth_server_policy_rule",
+    "group": "auth.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "ServerPolicyRule",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:36"
+    },
+    "references": [
+     {
+      "field": "auth_server_id",
+      "target": "okta_auth_server",
+      "targetKind": "auth.okta.upbound.io/Server",
+      "extractor": "github.com/healthcarecom/provider-okta/apis/auth/v1alpha1.AuthServerID()",
+      "source": "both",
+      "at": "config/authserverpolicyrule/authserverpolicyrule.go:8"
+     },
+     {
+      "field": "policy_id",
+      "target": "okta_auth_server_policy",
+      "targetKind": "auth.okta.upbound.io/ServerPolicy",
+      "extractor": "github.com/healthcarecom/provider-okta/apis/auth/v1alpha1.AuthServerPolicyID()",
+      "source": "both",
+      "at": "config/authserverpolicyrule/authserverpolicyrule.go:12"
+     }
+    ],
+    "examples": [
+     {
+      "at": "examples/authserverpolicyrule/auth_server_policy_rule.yaml",
+      "origin": "hand",
+      "fields": [
+       "grant_type_whitelist",
+       "group_whitelist",
+       "name",
+       "priority",
+       "scope_whitelist"
+      ],
+      "refFields": [
+       "auth_server_id",
+       "policy_id"
+      ],
+      "values": {
+       "grant_type_whitelist": [
+        "implicit"
+       ],
+       "group_whitelist": [
+        "\u003cgroup_ids\u003e"
+       ],
+       "name": "example",
+       "priority": 1,
+       "scope_whitelist": [
+        "*"
+       ]
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "okta_auth_server": [
+     "auth.okta.hfl.dev/AuthServer"
+    ],
+    "okta_auth_server_policy": [
+     "auth.okta.hfl.dev/AuthServerPolicy"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "AuthServerScope",
+    "group": "auth.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_auth_server_scope",
+    "group": "auth.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "ServerScope",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:37"
+    },
+    "references": [
+     {
+      "field": "auth_server_id",
+      "target": "okta_auth_server",
+      "targetKind": "auth.okta.upbound.io/Server",
+      "extractor": "github.com/healthcarecom/provider-okta/apis/auth/v1alpha1.AuthServerID()",
+      "source": "both",
+      "at": "config/authserverscope/authserverscope.go:8"
+     }
+    ],
+    "examples": [
+     {
+      "at": "examples/authserverscope/auth_server_scope.yaml",
+      "origin": "hand",
+      "fields": [
+       "consent",
+       "metadata_publish",
+       "name"
+      ],
+      "refFields": [
+       "auth_server_id"
+      ],
+      "values": {
+       "consent": "IMPLICIT",
+       "metadata_publish": "NO_CLIENTS",
+       "name": "example"
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "okta_auth_server": [
+     "auth.okta.hfl.dev/AuthServer"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "Behavior",
+    "group": "behavior.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_behavior",
+    "group": "okta.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "Behavior",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:38"
+    },
+    "examples": [
+     {
+      "at": "examples/behavior/behavior.yaml",
+      "origin": "hand",
+      "fields": [
+       "location_granularity_type",
+       "name",
+       "number_of_authentications",
+       "radius_from_location",
+       "type"
+      ],
+      "values": {
+       "location_granularity_type": "LAT_LONG",
+       "name": "Location",
+       "number_of_authentications": 50,
+       "radius_from_location": 20,
+       "type": "ANONYMOUS_LOCATION"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "ClientRoleAssignment",
+    "group": "client.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_app_oauth_role_assignment",
+    "group": "app.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "OauthRoleAssignment",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:24"
+    },
+    "references": [
+     {
+      "field": "client_id",
+      "target": "okta_app_oauth",
+      "targetKind": "app.okta.upbound.io/Oauth",
+      "extractor": "github.com/healthcarecom/provider-okta/apis/app/v1alpha1.OauthClientID()",
+      "source": "both",
+      "at": "config/appoauthroleassignment/appoauthroleassignment.go:8"
+     }
+    ],
+    "examples": [
+     {
+      "at": "examples/appoauthroleassignment/app_oauth_role_assignment.yaml",
+      "origin": "hand",
+      "fields": [
+       "client_id",
+       "type"
+      ],
+      "values": {
+       "client_id": "\u003cclient_id\u003e",
+       "type": "HELP_DESK_ADMIN"
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "okta_app_oauth": [
+     "application.okta.hfl.dev/Application"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "Group",
+    "group": "group.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_group",
+    "group": "group.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "Group",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:13"
+    },
+    "examples": [
+     {
+      "at": "examples/group/group.yaml",
+      "origin": "hand",
+      "fields": [
+       "description",
+       "name"
+      ],
+      "values": {
+       "description": "Example group generated by crd",
+       "name": "example-group"
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "group",
+     "at": "config/group/config.go:8"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "GroupMembership",
+    "group": "group.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_group_memberships",
+    "group": "groupmembership.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "Memberships",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:14"
+    },
+    "references": [
+     {
+      "field": "group_id",
+      "target": "okta_group",
+      "targetKind": "group.okta.upbound.io/Group",
+      "extractor": "github.com/healthcarecom/provider-okta/apis/group/v1alpha1.GroupID()",
+      "source": "both",
+      "at": "config/groupmemberships/config.go:13"
+     },
+     {
+      "field": "users",
+      "target": "okta_user",
+      "targetKind": "user.okta.upbound.io/User",
+      "extractor": "github.com/healthcarecom/provider-okta/apis/user/v1alpha1.UserID()",
+      "source": "both",
+      "at": "config/groupmemberships/config.go:9"
+     }
+    ],
+    "examples": [
+     {
+      "id": "groupmembership/v1alpha1/memberships",
+      "at": "examples-generated/groupmembership/memberships.yaml",
+      "origin": "generated",
+      "refFields": [
+       "group_id",
+       "users"
+      ]
+     },
+     {
+      "at": "examples/groupmembership/memberships.yaml",
+      "origin": "hand",
+      "refFields": [
+       "group_id",
+       "users"
+      ]
+     }
+    ],
+    "renamed": {
+     "shortGroup": "groupMembership",
+     "at": "config/groupmemberships/config.go:8"
+    }
+   },
+   "targetsOurs": {
+    "okta_group": [
+     "group.okta.hfl.dev/Group"
+    ],
+    "okta_user": [
+     "user.okta.hfl.dev/User"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "GroupRole",
+    "group": "group.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_group_role",
+    "group": "group.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "Role",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:39"
+    },
+    "references": [
+     {
+      "field": "group_id",
+      "target": "okta_group",
+      "targetKind": "group.okta.upbound.io/Group",
+      "extractor": "github.com/healthcarecom/provider-okta/apis/group/v1alpha1.GroupID()",
+      "source": "both",
+      "at": "config/grouprole/grouprole.go:9"
+     }
+    ],
+    "examples": [
+     {
+      "at": "examples/grouprole/group_role.yaml",
+      "origin": "hand",
+      "fields": [
+       "role_type"
+      ],
+      "refFields": [
+       "group_id"
+      ],
+      "values": {
+       "role_type": "READ_ONLY_ADMIN"
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "group",
+     "at": "config/grouprole/grouprole.go:8"
+    }
+   },
+   "targetsOurs": {
+    "okta_group": [
+     "group.okta.hfl.dev/Group"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "GroupRule",
+    "group": "group.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_group_rule",
+    "group": "group.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "Rule",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:40"
+    },
+    "references": [
+     {
+      "field": "group_assignments",
+      "target": "okta_group",
+      "targetKind": "group.okta.upbound.io/Group",
+      "extractor": "github.com/healthcarecom/provider-okta/apis/group/v1alpha1.GroupID()",
+      "source": "both",
+      "at": "config/grouprule/grouprule.go:9"
+     }
+    ],
+    "examples": [
+     {
+      "at": "examples/grouprule/group_rule.yaml",
+      "origin": "hand",
+      "fields": [
+       "expression_type",
+       "expression_value",
+       "name"
+      ],
+      "refFields": [
+       "group_assignments"
+      ],
+      "values": {
+       "expression_type": "urn:okta:expression:1.0",
+       "expression_value": "String.startsWith(user.firstName,\"andy\")",
+       "name": "example"
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "group",
+     "at": "config/grouprule/grouprule.go:8"
+    }
+   },
+   "targetsOurs": {
+    "okta_group": [
+     "group.okta.hfl.dev/Group"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "IdentityProvider",
+    "group": "identity.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_idp_oidc",
+    "group": "idp.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "Oidc",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:41"
+    },
+    "examples": [
+     {
+      "at": "examples/idpoidc/idp_oidc.yaml",
+      "origin": "hand",
+      "fields": [
+       "authorization_binding",
+       "authorization_url",
+       "client_id",
+       "issuer_url",
+       "jwks_binding",
+       "jwks_url",
+       "name",
+       "scopes",
+       "token_binding",
+       "token_url",
+       "user_info_binding",
+       "user_info_url",
+       "username_template"
+      ],
+      "values": {
+       "authorization_binding": "HTTP-REDIRECT",
+       "authorization_url": "https://idp.example.com/authorize",
+       "client_id": "efg456",
+       "issuer_url": "https://idp.example.com",
+       "jwks_binding": "HTTP-REDIRECT",
+       "jwks_url": "https://ipd.example.com/keys",
+       "name": "example",
+       "scopes": [
+        "openid"
+       ],
+       "token_binding": "HTTP-POST",
+       "token_url": "https://idp.example.com/token",
+       "user_info_binding": "HTTP-REDIRECT",
+       "user_info_url": "https://idp.example.com/userinfo",
+       "username_template": "idpuser.email"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "IdentityProvider",
+    "group": "identity.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_idp_saml",
+    "group": "idp.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "SAML",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:42"
+    },
+    "examples": [
+     {
+      "at": "examples/idpsaml/idp_saml.yaml",
+      "origin": "hand",
+      "fields": [
+       "acs_type",
+       "issuer",
+       "kid",
+       "name",
+       "request_signature_algorithm",
+       "request_signature_scope",
+       "sso_binding",
+       "sso_destination",
+       "sso_url",
+       "username_template"
+      ],
+      "values": {
+       "acs_type": "INSTANCE",
+       "issuer": "https://idp.example.com",
+       "kid": "${okta_idp_saml_key.test.id}",
+       "name": "test-saml-idp",
+       "request_signature_algorithm": "ANY",
+       "request_signature_scope": "REQUEST",
+       "sso_binding": "HTTP-POST",
+       "sso_destination": "https://idp.example.com",
+       "sso_url": "https://idp.example.com",
+       "username_template": "idpuser.email"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "User",
+    "group": "user.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_user",
+    "group": "user.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "User",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:15"
+    },
+    "examples": [
+     {
+      "at": "examples/user/user.yaml",
+      "origin": "hand",
+      "fields": [
+       "email",
+       "first_name",
+       "last_name",
+       "login"
+      ],
+      "values": {
+       "email": "user@example.com",
+       "first_name": "Example",
+       "last_name": "User",
+       "login": "user@example.com"
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "user",
+     "at": "config/user/config.go:8"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "UserAdminRoles",
+    "group": "user.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_user_admin_roles",
+    "group": "user.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "AdminRoles",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:43"
+    },
+    "references": [
+     {
+      "field": "user_id",
+      "target": "okta_user",
+      "targetKind": "user.okta.upbound.io/User",
+      "extractor": "github.com/healthcarecom/provider-okta/apis/user/v1alpha1.UserID()",
+      "source": "both",
+      "at": "config/useradminroles/useradminroles.go:9"
+     }
+    ],
+    "examples": [
+     {
+      "id": "user/v1alpha1/adminroles",
+      "at": "examples-generated/user/adminroles.yaml",
+      "origin": "generated",
+      "fields": [
+       "admin_roles"
+      ],
+      "refFields": [
+       "user_id"
+      ]
+     },
+     {
+      "at": "examples/useradminroles/user_admin_roles.yaml",
+      "origin": "hand",
+      "fields": [
+       "admin_roles"
+      ],
+      "refFields": [
+       "user_id"
+      ],
+      "values": {
+       "admin_roles": [
+        "APP_ADMIN"
+       ]
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "user",
+     "at": "config/useradminroles/useradminroles.go:8"
+    }
+   },
+   "targetsOurs": {
+    "okta_user": [
+     "user.okta.hfl.dev/User"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "UserBaseSchemaProperty",
+    "group": "user.okta.hfl.dev"
+   },
+   "facts": {
+    "terraform": "okta_user_base_schema_property",
+    "group": "user.okta.upbound.io",
+    "version": "v1alpha1",
+    "kind": "BaseSchemaProperty",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "provider",
+     "expr": "config.IdentifierFromProvider",
+     "at": "config/external_name.go:44"
+    },
+    "examples": [
+     {
+      "at": "examples/userbaseschemaproperty/user_base_schema_property.yaml",
+      "origin": "hand",
+      "fields": [
+       "index",
+       "master",
+       "required",
+       "title",
+       "type",
+       "user_type"
+      ],
+      "values": {
+       "index": "firstName",
+       "master": "OKTA",
+       "required": true,
+       "title": "firstName",
+       "type": "string",
+       "user_type": "${data.okta_user_type.example.id}"
+      }
+     }
+    ]
+   }
+  }
+ ],
+ "noUpjet": [
+  "admin.okta.hfl.dev/AdminRoleCustom",
+  "admin.okta.hfl.dev/AdminRoleCustomAssignments",
+  "agent.okta.hfl.dev/AgentPoolUpdate",
+  "api.okta.hfl.dev/ApiServiceIntegration",
+  "api.okta.hfl.dev/ApiToken",
+  "app.okta.hfl.dev/AppConnection",
+  "app.okta.hfl.dev/AppFeatures",
+  "app.okta.hfl.dev/AppFederatedClaim",
+  "app.okta.hfl.dev/AppOauthPostLogoutRedirectUri",
+  "app.okta.hfl.dev/AppOauthRedirectUri",
+  "app.okta.hfl.dev/AppToken",
+  "app.okta.hfl.dev/AppUser",
+  "app.okta.hfl.dev/AppUserSchema",
+  "authenticator.okta.hfl.dev/Authenticator",
+  "authenticator.okta.hfl.dev/AuthenticatorMethodWebauthn",
+  "authenticator.okta.hfl.dev/AuthenticatorWebauthnCustomAaguid",
+  "brand.okta.hfl.dev/Brand",
+  "campaign.okta.hfl.dev/Campaign",
+  "captcha.okta.hfl.dev/Captcha",
+  "customized.okta.hfl.dev/CustomizedSigninPage",
+  "device.okta.hfl.dev/Device",
+  "domain.okta.hfl.dev/Domain",
+  "domain.okta.hfl.dev/DomainCertificate",
+  "domain.okta.hfl.dev/DomainVerification",
+  "email.okta.hfl.dev/EmailCustomization",
+  "email.okta.hfl.dev/EmailDomain",
+  "email.okta.hfl.dev/EmailDomainVerification",
+  "email.okta.hfl.dev/EmailSmtpServer",
+  "email.okta.hfl.dev/EmailTemplateSettings",
+  "end.okta.hfl.dev/EndUserMyRequest",
+  "entitlement.okta.hfl.dev/Entitlement",
+  "entitlement.okta.hfl.dev/EntitlementBundle",
+  "event.okta.hfl.dev/EventHook",
+  "event.okta.hfl.dev/EventHookVerification",
+  "factor.okta.hfl.dev/Factor",
+  "factor.okta.hfl.dev/FactorTotp",
+  "feature.okta.hfl.dev/Feature",
+  "group.okta.hfl.dev/GroupOwner",
+  "group.okta.hfl.dev/GroupSchema",
+  "hook.okta.hfl.dev/HookKey",
+  "identity.okta.hfl.dev/IdentitySourceGroup",
+  "identity.okta.hfl.dev/IdentitySourceGroupMembership",
+  "identity.okta.hfl.dev/IdentitySourceUser",
+  "idp.okta.hfl.dev/IdpSamlKey",
+  "inline.okta.hfl.dev/InlineHook",
+  "label.okta.hfl.dev/Label",
+  "link.okta.hfl.dev/LinkDefinition",
+  "link.okta.hfl.dev/LinkValue",
+  "log.okta.hfl.dev/LogStream",
+  "network.okta.hfl.dev/NetworkZone",
+  "org.okta.hfl.dev/OrgCaptcha",
+  "org.okta.hfl.dev/OrgConfiguration",
+  "org.okta.hfl.dev/OrgFactor",
+  "org.okta.hfl.dev/OrgSupport",
+  "policy.okta.hfl.dev/Policy",
+  "policy.okta.hfl.dev/PolicyDeviceAssurance",
+  "policy.okta.hfl.dev/PolicyMfaDefault",
+  "policy.okta.hfl.dev/PolicyPasswordDefault",
+  "policy.okta.hfl.dev/PolicyRule",
+  "post.okta.hfl.dev/PostAuthSessionPolicyRule",
+  "preview.okta.hfl.dev/PreviewSigninPage",
+  "principal.okta.hfl.dev/PrincipalRateLimit",
+  "profile.okta.hfl.dev/ProfileMapping",
+  "push.okta.hfl.dev/PushGroup",
+  "push.okta.hfl.dev/PushProvider",
+  "rate.okta.hfl.dev/RateLimitAdminNotificationSettings",
+  "rate.okta.hfl.dev/RateLimitWarningThresholdPercentage",
+  "rate.okta.hfl.dev/RateLimiting",
+  "realm.okta.hfl.dev/Realm",
+  "realm.okta.hfl.dev/RealmAssignment",
+  "request.okta.hfl.dev/RequestCondition",
+  "request.okta.hfl.dev/RequestSequence",
+  "request.okta.hfl.dev/RequestSettingOrganization",
+  "request.okta.hfl.dev/RequestSettingResource",
+  "request.okta.hfl.dev/RequestV2",
+  "resource.okta.hfl.dev/ResourceOwner",
+  "resource.okta.hfl.dev/ResourceSet",
+  "review.okta.hfl.dev/Review",
+  "role.okta.hfl.dev/RoleSubscription",
+  "security.okta.hfl.dev/SecurityEventsProvider",
+  "security.okta.hfl.dev/SecurityNotificationEmails",
+  "session.okta.hfl.dev/SessionViolationPolicyRule",
+  "template.okta.hfl.dev/TemplateSms",
+  "theme.okta.hfl.dev/Theme",
+  "threat.okta.hfl.dev/ThreatInsightConfiguration",
+  "trusted.okta.hfl.dev/TrustedOrigin",
+  "trusted.okta.hfl.dev/TrustedServer",
+  "ui.okta.hfl.dev/UiSchema",
+  "user.okta.hfl.dev/UserRisk",
+  "user.okta.hfl.dev/UserSubscription",
+  "user.okta.hfl.dev/UserType"
+ ]
+}
