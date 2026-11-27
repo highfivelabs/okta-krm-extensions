@@ -564,7 +564,7 @@
        "label": "Example APP",
        "password_field": "password",
        "redirect_url": "https://example.com/redirect_url",
-       "shared_password": "shared_password",
+       "shared_password": "REDACTED",
        "shared_username": "shared_username",
        "status": "ACTIVE",
        "url": "https://example.com/login.html",
@@ -572,7 +572,10 @@
        "user_name_template_suffix": "hello",
        "user_name_template_type": "CUSTOM",
        "username_field": "username"
-      }
+      },
+      "redacted": [
+       "shared_password"
+      ]
      }
     ]
    }
