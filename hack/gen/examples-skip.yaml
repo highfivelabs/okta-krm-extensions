@@ -1,0 +1,8 @@
+# Upjet references that gen/examples.py (krm-rest-runtime) would turn into
+# examples/<Kind>/with-<Target>.yaml, but that don't hold here, with why.
+upjet:
+  AppSamlAppSettings: >-
+    app_id names a SAML application (okta_app_saml), but Application's own
+    example is an AUTO_LOGIN app, and these settings (awsEnvironmentType)
+    are the AWS SAML catalog app's; Okta wouldn't take them on it. The fake
+    takes any app.
