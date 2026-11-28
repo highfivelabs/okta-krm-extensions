@@ -70,6 +70,7 @@ kinds:
     role: example-role
   serverFields:
     _links: {}
+    id: example-id
   readiness: fake
 - kind: AdminRoleGroupTarget
   group: admin.okta.hfl.dev
@@ -2000,6 +2001,7 @@ kinds:
     externalId: example-externalId
   serverFields:
     created: '2000-01-01T00:00:00Z'
+    id: example-id
     lastUpdated: '2000-01-01T00:00:00Z'
   readiness: fake
 - kind: IdentityProvider
